@@ -1,0 +1,279 @@
+1
+00:00:00,000 --> 00:00:01,698
+Chapter four: one axis.
+
+2
+00:00:02,018 --> 00:00:04,946
+We now have three tools: add, fade, and correct.
+
+3
+00:00:05,266 --> 00:00:09,447
+They look like different ideas, but every rule so far has the same shape.
+
+4
+00:00:09,767 --> 00:00:13,629
+S t equals S t minus 1 times A t, plus W t.
+
+5
+00:00:14,733 --> 00:00:16,230
+W t is the write.
+
+6
+00:00:16,550 --> 00:00:19,268
+It is almost always a scaled v k transpose.
+
+7
+00:00:19,588 --> 00:00:23,746
+A t is the transition: what happens to the old state before the write.
+
+8
+00:00:24,066 --> 00:00:26,284
+The methods differ almost only in A t.
+
+9
+00:00:26,604 --> 00:00:30,953
+So let's line them up, and watch what each transition does to the space of keys.
+
+10
+00:00:31,267 --> 00:00:32,477
+One detail helps.
+
+11
+00:00:32,797 --> 00:00:36,640
+A t multiplies the state from the right, so it acts on the key side.
+
+12
+00:00:36,960 --> 00:00:39,698
+Each column of S belongs to one key direction.
+
+13
+00:00:40,018 --> 00:00:43,197
+That is why a diagonal A t fades key channels,
+
+14
+00:00:43,197 --> 00:00:46,999
+and why I minus beta k k transpose edits along one key.
+
+15
+00:00:49,500 --> 00:00:52,489
+A t equal to the identity is linear attention.
+
+16
+00:00:52,809 --> 00:00:54,489
+It does nothing to the old state.
+
+17
+00:00:54,809 --> 00:00:55,782
+It only adds.
+
+18
+00:00:56,102 --> 00:00:58,001
+A chunk is trained with plain sums.
+
+19
+00:00:58,300 --> 00:01:04,088
+A scalar times the identity, gamma or alpha t, covers RetNet, Lightning and Mamba-2.
+
+20
+00:01:04,408 --> 00:01:07,296
+It fades everything, equally, in every direction.
+
+21
+00:01:07,616 --> 00:01:10,666
+A chunk needs a cumulative product of the decays.
+
+22
+00:01:10,967 --> 00:01:13,900
+A diagonal matrix of decays is GLA.
+
+23
+00:01:14,220 --> 00:01:16,359
+It fades each key channel on its own,
+
+24
+00:01:16,359 --> 00:01:19,828
+so one direction can shrink fast while another barely moves.
+
+25
+00:01:20,148 --> 00:01:23,133
+A chunk uses a cumulative sum, in log space.
+
+26
+00:01:23,433 --> 00:01:26,405
+I minus beta k k transpose is DeltaNet.
+
+27
+00:01:26,725 --> 00:01:30,540
+It overwrites along one direction, k, and leaves the rest alone.
+
+28
+00:01:30,860 --> 00:01:35,170
+Gated DeltaNet puts a scalar decay in front: fade, then overwrite.
+
+29
+00:01:35,490 --> 00:01:40,179
+KDA puts a diagonal decay in front: fade per channel, then overwrite.
+
+30
+00:01:40,499 --> 00:01:44,023
+All three train chunks with the WY or UT form.
+
+31
+00:01:44,333 --> 00:01:50,299
+RWKV-7 and Comba use the sum form: a diagonal, minus a low rank term.
+
+32
+00:01:50,619 --> 00:01:54,726
+Their chunks are trained as a general diagonal plus low rank matrix.
+
+33
+00:01:55,033 --> 00:01:59,922
+And products of reflections, or rotations, as in DeltaProduct and Mamba-3,
+
+34
+00:01:59,922 --> 00:02:02,234
+can track structure such as parity.
+
+35
+00:02:02,554 --> 00:02:05,359
+These are trained per sub-step, or as rotations.
+
+36
+00:02:06,667 --> 00:02:08,744
+Remember the order toy from chapter three.
+
+37
+00:02:09,064 --> 00:02:13,066
+The same new fact, order 7314 now ships on day 5,
+
+38
+00:02:13,066 --> 00:02:16,904
+gives a different answer under each transition.
+
+39
+00:02:17,224 --> 00:02:18,363
+Adding gives 7.
+
+40
+00:02:18,683 --> 00:02:21,622
+The delta rule gives exactly 5, and keeps 4.
+
+41
+00:02:21,942 --> 00:02:28,110
+Gated DeltaNet gives 3.3, but fades order 2208 to 3.2.
+
+42
+00:02:28,430 --> 00:02:30,756
+KDA gives 3.3, and keeps 4.
+
+43
+00:02:31,076 --> 00:02:33,678
+The sum form gives 3.1 and 3.2.
+
+44
+00:02:33,998 --> 00:02:35,917
+Same write, different transitions.
+
+45
+00:02:37,633 --> 00:02:40,029
+Here is why the training column splits in two.
+
+46
+00:02:40,349 --> 00:02:42,863
+Diagonal transitions commute with each other.
+
+47
+00:02:43,183 --> 00:02:46,681
+Apply two of them in either order, and you land in the same place.
+
+48
+00:02:47,001 --> 00:02:49,660
+So a chunk needs only cumulative decays.
+
+49
+00:02:49,980 --> 00:02:52,595
+Householder-like transitions do not commute.
+
+50
+00:02:52,915 --> 00:02:55,195
+Swap the order, and the result changes.
+
+51
+00:02:55,515 --> 00:02:58,229
+So they need the WY or UT rewrite.
+
+52
+00:02:59,933 --> 00:03:05,403
+The 2026 research models refine the delta rule along this same axis.
+
+53
+00:03:05,723 --> 00:03:10,319
+They separate how strongly to erase, how strongly to write, and where to erase.
+
+54
+00:03:10,639 --> 00:03:13,337
+That means per channel erase and write gates,
+
+55
+00:03:13,337 --> 00:03:16,155
+an erase direction separate from the write key,
+
+56
+00:03:16,155 --> 00:03:18,912
+or a step size set by an uncertainty estimate.
+
+57
+00:03:19,232 --> 00:03:21,671
+None of them changes the size of the state.
+
+58
+00:03:22,967 --> 00:03:24,669
+So think of A t as a dial.
+
+59
+00:03:24,989 --> 00:03:26,418
+At one end, it does nothing.
+
+60
+00:03:26,738 --> 00:03:27,894
+Turn it, and it fades.
+
+61
+00:03:28,214 --> 00:03:30,308
+Turn it further, and it fades per channel.
+
+62
+00:03:30,628 --> 00:03:32,408
+Then it overwrites along a key.
+
+63
+00:03:32,728 --> 00:03:36,415
+At the far end, it reflects and rotates, and can track structure.
+
+64
+00:03:37,733 --> 00:03:38,531
+To recap.
+
+65
+00:03:38,851 --> 00:03:43,652
+Every rule is S t equals S t minus 1 times A t, plus W t.
+
+66
+00:03:43,972 --> 00:03:48,735
+The transition decides what the state can do: nothing, fade, fade per channel,
+
+67
+00:03:48,735 --> 00:03:50,566
+overwrite, or track structure.
+
+68
+00:03:51,467 --> 00:03:56,565
+Left over: the transition changes how the table is edited, never how big it is.
+
+69
+00:03:56,885 --> 00:04:01,413
+Next, a second way to read all of these rules: the state as a small model,
+
+70
+00:04:01,413 --> 00:04:02,821
+trained while it reads.
