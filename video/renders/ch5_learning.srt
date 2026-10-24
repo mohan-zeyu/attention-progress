@@ -1,0 +1,351 @@
+1
+00:00:00,000 --> 00:00:03,650
+Chapter five: the state as a small model, trained while reading.
+
+2
+00:00:03,970 --> 00:00:06,357
+So far we have treated the state as a table.
+
+3
+00:00:06,677 --> 00:00:09,056
+There is a second way to read all of these rules.
+
+4
+00:00:09,376 --> 00:00:12,210
+Think of S as the weights of a small linear model,
+
+5
+00:00:12,210 --> 00:00:14,194
+one that should map keys to values.
+
+6
+00:00:14,514 --> 00:00:18,329
+Then each write is one gradient step, on a loss for the newest pair.
+
+7
+00:00:19,433 --> 00:00:20,175
+Picture it.
+
+8
+00:00:20,495 --> 00:00:23,156
+A key goes in, the model S makes a prediction,
+
+9
+00:00:23,156 --> 00:00:26,223
+and the loss compares that prediction with the value.
+
+10
+00:00:26,543 --> 00:00:29,970
+The gradient tells S how to change, and one step is taken.
+
+11
+00:00:30,290 --> 00:00:31,837
+Then the next token arrives.
+
+12
+00:00:32,133 --> 00:00:36,700
+Linear attention uses the loss minus the inner product of S k and v.
+
+13
+00:00:37,020 --> 00:00:39,653
+Its gradient is minus v k transpose,
+
+14
+00:00:39,653 --> 00:00:44,552
+so one step adds v k transpose: exactly the linear attention write.
+
+15
+00:00:44,872 --> 00:00:49,866
+DeltaNet uses the squared error, one half the norm of S k minus v, squared.
+
+16
+00:00:50,186 --> 00:00:54,580
+Its gradient is the error times k transpose, which gives the delta rule.
+
+17
+00:00:54,867 --> 00:00:58,602
+RetNet and Mamba-2 add a scalar decay to the first loss,
+
+18
+00:00:58,602 --> 00:01:01,338
+and Gated DeltaNet adds it to the second.
+
+19
+00:01:01,658 --> 00:01:05,264
+So linear attention and DeltaNet differ only in the loss,
+
+20
+00:01:05,264 --> 00:01:07,478
+and the decay acts as weight decay.
+
+21
+00:01:07,767 --> 00:01:11,155
+A toy, with d equal to 3 and beta equal to 1.
+
+22
+00:01:11,475 --> 00:01:14,706
+The state maps e 1 to e 1, and e 2 to e 2.
+
+23
+00:01:15,026 --> 00:01:18,036
+A new pair arrives: e 1 should now map to e 3.
+
+24
+00:01:18,356 --> 00:01:21,375
+The linear attention step reads back 1, 0, 1.
+
+25
+00:01:21,695 --> 00:01:24,237
+It keeps the old value, with an error of 1.
+
+26
+00:01:24,557 --> 00:01:29,371
+The delta step reads back exactly 0, 0, 1, with an error of zero.
+
+27
+00:01:29,667 --> 00:01:34,039
+This view suggests the next moves: a richer model, a better optimizer,
+
+28
+00:01:34,039 --> 00:01:35,101
+or a better loss.
+
+29
+00:01:36,400 --> 00:01:42,842
+TTT layers, from 2024, make the state a model, f, either linear or a small MLP,
+
+30
+00:01:42,842 --> 00:01:46,756
+and train it on each token with a gradient step.
+
+31
+00:01:47,076 --> 00:01:52,690
+The key, the value and the query are learned projections of the input: theta K x,
+
+32
+00:01:52,690 --> 00:01:54,422
+theta V x, and theta Q x.
+
+33
+00:01:55,533 --> 00:02:01,322
+Updating after every token is slow, so TTT updates in mini batches of b tokens.
+
+34
+00:02:01,642 --> 00:02:05,952
+All the gradients in a batch use the weights from the start of the batch,
+
+35
+00:02:05,952 --> 00:02:08,373
+so b gradients run as one matrix product.
+
+36
+00:02:08,667 --> 00:02:12,758
+With b equal to 1, this is online learning, close to the delta rule.
+
+37
+00:02:13,078 --> 00:02:17,593
+With b equal to the whole sequence, a linear f, a step size of one half,
+
+38
+00:02:17,593 --> 00:02:21,042
+and zero start weights, it is exactly linear attention.
+
+39
+00:02:21,362 --> 00:02:24,019
+TTT uses b equal to 16.
+
+40
+00:02:24,333 --> 00:02:28,729
+In the reported 125 million parameter ablation,
+
+41
+00:02:28,729 --> 00:02:34,154
+perplexity falls from 15.91 for linear attention to 11.09.
+
+42
+00:02:34,474 --> 00:02:39,167
+The mini batch step alone is the largest single gain, minus 1.70.
+
+43
+00:02:40,867 --> 00:02:46,855
+Titans, from 2024, adds two optimizer ideas to the memory update: momentum,
+
+44
+00:02:46,855 --> 00:02:48,053
+and forgetting.
+
+45
+00:02:49,167 --> 00:02:50,252
+First, surprise.
+
+46
+00:02:50,572 --> 00:02:54,000
+The gradient is large when the memory's prediction is wrong,
+
+47
+00:02:54,000 --> 00:02:56,400
+so surprising tokens get written strongly.
+
+48
+00:02:56,720 --> 00:03:01,419
+Second, momentum. m t keeps writing for a few tokens after a surprise,
+
+49
+00:03:01,419 --> 00:03:05,111
+so the context around a surprising token is stored too.
+
+50
+00:03:05,400 --> 00:03:06,451
+Third, forgetting.
+
+51
+00:03:06,771 --> 00:03:08,588
+Alpha t acts as weight decay.
+
+52
+00:03:08,908 --> 00:03:13,700
+In the reported ablation, removing it costs the most,
+
+53
+00:03:13,700 --> 00:03:17,226
+raising perplexity from 27.01 to 29.04.
+
+54
+00:03:17,533 --> 00:03:19,473
+The memory is a deep MLP.
+
+55
+00:03:19,793 --> 00:03:23,748
+The price is that a deep memory loses the neat chunk algebra,
+
+56
+00:03:23,748 --> 00:03:27,054
+so it trains slower than Mamba-2 or Gated DeltaNet.
+
+57
+00:03:28,367 --> 00:03:30,661
+The delta rule fits only the newest pair.
+
+58
+00:03:30,981 --> 00:03:33,557
+Two 2025 methods fit more.
+
+59
+00:03:33,877 --> 00:03:39,655
+ATLAS optimizes the memory on a window of the last c pairs, with the Muon optimizer,
+
+60
+00:03:39,655 --> 00:03:44,745
+and with polynomial features that raise the capacity bound from order d k,
+
+61
+00:03:44,745 --> 00:03:46,671
+to order d k to the power p.
+
+62
+00:03:46,967 --> 00:03:52,019
+Mesa solves the least squares problem over all pairs, exactly, at read time.
+
+63
+00:03:52,339 --> 00:03:57,428
+The output is G t, times the inverse of H t plus lambda, times q t.
+
+64
+00:03:57,748 --> 00:04:01,902
+Here G sums v k transpose, and H sums k k transpose.
+
+65
+00:04:03,000 --> 00:04:11,152
+Take two correlated keys. k 1 equals 1, 0, and maps to plus 1. k 2 equals 0.6, 0.8,
+
+66
+00:04:11,152 --> 00:04:13,116
+and maps to minus 1.
+
+67
+00:04:13,436 --> 00:04:20,061
+Reading at k 1 gives 0.40 for linear attention, 0.04 for DeltaNet,
+
+68
+00:04:20,061 --> 00:04:21,867
+and 1.00 for Mesa.
+
+69
+00:04:22,187 --> 00:04:23,513
+The price is compute.
+
+70
+00:04:23,833 --> 00:04:28,394
+With k conjugate gradient steps, Mesa costs about k times GLA.
+
+71
+00:04:30,100 --> 00:04:32,935
+Small mini batches leave the GPU idle.
+
+72
+00:04:33,255 --> 00:04:36,681
+With b equal to 16 and a width of 64,
+
+73
+00:04:36,681 --> 00:04:41,309
+a TTT update reaches only about 11 FLOPs per byte,
+
+74
+00:04:41,309 --> 00:04:45,475
+far below the roughly 290 that an H100 needs.
+
+75
+00:04:45,767 --> 00:04:51,268
+LaCT, from 2025, updates only once per 2 thousand to 1 million tokens,
+
+76
+00:04:51,268 --> 00:04:54,333
+so each update is a big matrix product.
+
+77
+00:04:54,653 --> 00:05:00,598
+It reports up to 70 percent GPU use, against under 5 percent for earlier TTT,
+
+78
+00:05:00,598 --> 00:05:03,224
+and its state can grow far larger.
+
+79
+00:05:03,533 --> 00:05:05,999
+Because a chunk never sees its own update,
+
+80
+00:05:05,999 --> 00:05:10,520
+every LaCT layer is paired with sliding window attention, for the local part.
+
+81
+00:05:12,233 --> 00:05:13,873
+Here is the family at a glance.
+
+82
+00:05:14,193 --> 00:05:17,588
+Each layer picks a loss, an optimizer, and a kind of state.
+
+83
+00:05:18,900 --> 00:05:19,698
+To recap.
+
+84
+00:05:20,018 --> 00:05:22,991
+Every write is one gradient step on the newest pair.
+
+85
+00:05:23,311 --> 00:05:28,853
+TTT, Titans, ATLAS, Mesa and LaCT change the model, the optimizer, or the loss.
+
+86
+00:05:29,767 --> 00:05:31,907
+Left over: learning is not recall.
+
+87
+00:05:32,227 --> 00:05:34,756
+A better learner still writes into a fixed state.
+
+88
+00:05:35,076 --> 00:05:36,215
+Next: the limits.
