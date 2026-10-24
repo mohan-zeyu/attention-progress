@@ -186,7 +186,8 @@ class VoiceScene(Scene):
     def say(self, key, pause=0.0):
         seg = voice_segment(self.script[key])
         t0 = self.renderer.time
-        self.add_sound(str(seg['wav']))
+        # Scene.add_sound drops the sound when the previous play() came from manim's cache.
+        self.renderer.file_writer.add_sound(str(seg['wav']), t0)
         tr = Tracker(self, t0, seg['dur'])
         yield tr
         if tr.left() > 1 / 30:

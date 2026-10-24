@@ -1,0 +1,447 @@
+1
+00:00:00,000 --> 00:00:01,832
+Chapter one: linear attention.
+
+2
+00:00:02,152 --> 00:00:03,826
+Here is the problem it solves.
+
+3
+00:00:04,146 --> 00:00:08,834
+Softmax attention keeps a record for every past token, a key and a value.
+
+4
+00:00:09,154 --> 00:00:12,861
+To answer a new query, it scores the query against every key.
+
+5
+00:00:13,181 --> 00:00:16,293
+The weights have to be normalized over all past tokens,
+
+6
+00:00:16,293 --> 00:00:17,990
+so nothing can be thrown away.
+
+7
+00:00:18,310 --> 00:00:20,577
+The cache grows with every token you read.
+
+8
+00:00:21,897 --> 00:00:23,908
+Linear attention makes one change.
+
+9
+00:00:24,228 --> 00:00:25,536
+It drops the softmax.
+
+10
+00:00:25,856 --> 00:00:30,207
+Then the weight on value j is just the score, k j transpose q t.
+
+11
+00:00:30,497 --> 00:00:32,214
+Now the products can be regrouped.
+
+12
+00:00:32,534 --> 00:00:34,084
+Pull the query out of the sum.
+
+13
+00:00:34,404 --> 00:00:38,648
+What is left in the bracket, the sum of v j times k j transpose,
+
+14
+00:00:38,648 --> 00:00:41,035
+does not depend on the query at all.
+
+15
+00:00:41,355 --> 00:00:42,765
+Call it the state, S t.
+
+16
+00:00:43,085 --> 00:00:45,401
+The output is just S t times q t.
+
+17
+00:00:47,497 --> 00:00:50,659
+So the state can be kept up to date, one token at a time.
+
+18
+00:00:50,979 --> 00:00:52,286
+Step one is the write.
+
+19
+00:00:52,606 --> 00:00:57,464
+When token t arrives, take the outer product of its value and its key,
+
+20
+00:00:57,464 --> 00:00:59,129
+v t times k t transpose.
+
+21
+00:00:59,449 --> 00:01:02,545
+That is a whole matrix, and it is added onto the state.
+
+22
+00:01:02,865 --> 00:01:04,166
+Step two is the read.
+
+23
+00:01:04,486 --> 00:01:10,494
+Multiply the state by the query, and out comes the output. o t equals S t times q t.
+
+24
+00:01:10,814 --> 00:01:12,206
+Step three: discard.
+
+25
+00:01:12,526 --> 00:01:14,955
+The key and the value are not needed any more.
+
+26
+00:01:15,275 --> 00:01:16,885
+They live inside the state now.
+
+27
+00:01:17,205 --> 00:01:19,013
+The next token does the same thing.
+
+28
+00:01:19,333 --> 00:01:20,645
+Write, read, discard.
+
+29
+00:01:21,965 --> 00:01:23,253
+How big is this state?
+
+30
+00:01:23,573 --> 00:01:30,891
+With a head width of 128, it is 128 by 128, which is 16,384 numbers,
+
+31
+00:01:30,891 --> 00:01:33,043
+whatever the length.
+
+32
+00:01:33,363 --> 00:01:37,994
+A KV cache holds 2 times N times 128 numbers per head.
+
+33
+00:01:38,314 --> 00:01:41,973
+So the cache passes the state after only 64 tokens.
+
+34
+00:01:42,293 --> 00:01:47,750
+At 128 thousand tokens, the cache is 2,048 times larger.
+
+35
+00:01:48,070 --> 00:01:51,218
+And every decode step reads the same fixed matrix.
+
+36
+00:01:52,938 --> 00:01:54,631
+So what does the state remember?
+
+37
+00:01:54,951 --> 00:01:58,978
+It is a lookup table from keys to values, stored as one matrix.
+
+38
+00:01:59,298 --> 00:02:02,728
+To test the lookup, read it with one of the stored keys, k i.
+
+39
+00:02:03,048 --> 00:02:07,934
+The result is v i, the value we want, plus a sum over every other value,
+
+40
+00:02:07,934 --> 00:02:11,124
+weighted by how much its key overlaps with k i.
+
+41
+00:02:11,444 --> 00:02:13,159
+That second part is crosstalk.
+
+42
+00:02:14,972 --> 00:02:18,676
+If all the keys are orthogonal, every overlap is zero,
+
+43
+00:02:18,676 --> 00:02:20,940
+and the read returns exactly v i.
+
+44
+00:02:21,260 --> 00:02:23,125
+Picture two keys at right angles.
+
+45
+00:02:23,445 --> 00:02:26,637
+Read with the first one, and the second contributes nothing.
+
+46
+00:02:26,938 --> 00:02:32,279
+But a space with d k dimensions has room for only d k orthogonal directions.
+
+47
+00:02:32,599 --> 00:02:36,455
+Add a third key in two dimensions, and it has to overlap the others.
+
+48
+00:02:36,775 --> 00:02:40,689
+Now a read with the first key also picks up part of the third value.
+
+49
+00:02:41,009 --> 00:02:43,595
+Here is the same thing as a grid of overlaps.
+
+50
+00:02:43,915 --> 00:02:48,531
+With four orthogonal keys in four dimensions, only the diagonal is lit,
+
+51
+00:02:48,531 --> 00:02:50,026
+so every read is clean.
+
+52
+00:02:50,346 --> 00:02:54,439
+With eight keys in four dimensions, the off-diagonal cells light up,
+
+53
+00:02:54,439 --> 00:02:58,051
+and every read mixes in a little of every overlapping value.
+
+54
+00:02:58,371 --> 00:03:03,686
+So a d v by d k state can hold only about d k key value pairs exactly.
+
+55
+00:03:04,006 --> 00:03:06,025
+A KV cache holds all N of them.
+
+56
+00:03:06,345 --> 00:03:08,812
+This one fact drives everything that follows.
+
+57
+00:03:09,132 --> 00:03:13,571
+The later mechanisms try to keep the table clean, but none of them makes it larger.
+
+58
+00:03:15,291 --> 00:03:19,798
+Dropping the softmax looks like a small change, but the softmax did two jobs.
+
+59
+00:03:20,118 --> 00:03:21,821
+The first is sharp focus.
+
+60
+00:03:22,141 --> 00:03:24,279
+Take two keys with scores 5 and 3.
+
+61
+00:03:24,599 --> 00:03:28,567
+Softmax gives the first key e to the 5 over e to the 3,
+
+62
+00:03:28,567 --> 00:03:31,526
+about 7.4 times the weight of the second.
+
+63
+00:03:31,846 --> 00:03:36,411
+A plain linear score gives only 5 over 3, about 1.7 times.
+
+64
+00:03:36,731 --> 00:03:40,066
+So with linear scores, many slightly matching keys add up,
+
+65
+00:03:40,066 --> 00:03:42,424
+and they can drown out the one right key.
+
+66
+00:03:43,331 --> 00:03:45,751
+The second job: weights that sum to one.
+
+67
+00:03:46,071 --> 00:03:47,624
+Without the normalization,
+
+68
+00:03:47,624 --> 00:03:51,687
+the size of the output drifts as more tokens are added to the state,
+
+69
+00:03:51,687 --> 00:03:53,659
+and that makes training unstable.
+
+70
+00:03:54,565 --> 00:03:58,380
+The first version, the Linear Transformer from 2020,
+
+71
+00:03:58,380 --> 00:04:03,296
+replaced the exponential of q dot k with a dot product of features,
+
+72
+00:04:03,296 --> 00:04:04,910
+phi of q and phi of k.
+
+73
+00:04:05,230 --> 00:04:10,996
+It used a positive feature map, elu plus one, and kept a normalizer to divide by.
+
+74
+00:04:11,316 --> 00:04:15,489
+Later versions dropped the normalizer, because it made gradients unstable.
+
+75
+00:04:15,809 --> 00:04:18,773
+Instead, they normalize q and k to length one,
+
+76
+00:04:18,773 --> 00:04:21,607
+and add a normalization layer on the output.
+
+77
+00:04:22,527 --> 00:04:27,182
+Note that this is a different model, not a faster way to compute softmax attention.
+
+78
+00:04:27,502 --> 00:04:29,989
+A model trained with softmax cannot switch.
+
+79
+00:04:30,309 --> 00:04:33,381
+It has to be trained with linear attention from the start.
+
+80
+00:04:35,101 --> 00:04:37,776
+The same layer can be computed in three ways,
+
+81
+00:04:37,776 --> 00:04:40,391
+and all three give exactly the same outputs.
+
+82
+00:04:40,711 --> 00:04:44,992
+The parallel form builds the full score matrix, Q K transpose,
+
+83
+00:04:44,992 --> 00:04:47,961
+applies a causal mask, and multiplies by V.
+
+84
+00:04:48,281 --> 00:04:52,071
+It is fully parallel, but its cost grows as N squared times d,
+
+85
+00:04:52,071 --> 00:04:54,088
+which is what we wanted to avoid.
+
+86
+00:04:55,008 --> 00:04:58,964
+The recurrent form is the token by token loop: write, then read.
+
+87
+00:04:59,284 --> 00:05:04,390
+Its cost grows only as N times d squared, but every step waits for the one before.
+
+88
+00:05:04,710 --> 00:05:07,405
+That wastes a GPU during training and prefill.
+
+89
+00:05:07,725 --> 00:05:09,616
+The chunkwise form mixes the two,
+
+90
+00:05:09,616 --> 00:05:13,054
+and it is the one used in practice for training and prefill.
+
+91
+00:05:13,374 --> 00:05:18,743
+Cut the sequence into chunks of C tokens, usually 64 to 256.
+
+92
+00:05:19,063 --> 00:05:23,226
+Inside a chunk, compute the parallel form on the small C by C block.
+
+93
+00:05:23,546 --> 00:05:27,604
+For all earlier chunks, read the state passed in from the previous chunk,
+
+94
+00:05:27,604 --> 00:05:28,215
+and add it.
+
+95
+00:05:28,535 --> 00:05:30,528
+Then update the state, once per chunk.
+
+96
+00:05:30,848 --> 00:05:32,881
+All three steps are matrix products.
+
+97
+00:05:33,201 --> 00:05:37,559
+Here are eight outputs from a small random example, computed all three ways.
+
+98
+00:05:37,879 --> 00:05:39,040
+They match exactly.
+
+99
+00:05:39,360 --> 00:05:45,474
+For one head with d equal to 128, chunks of 64, and 32 thousand tokens,
+
+100
+00:05:45,474 --> 00:05:52,707
+the chunkwise form costs about 98 thousand FLOPs per token, in 512 sequential steps.
+
+101
+00:05:53,027 --> 00:05:57,792
+The recurrent loop costs 65 thousand FLOPs per token,
+
+102
+00:05:57,792 --> 00:06:00,579
+but in 32,768 sequential steps.
+
+103
+00:06:00,899 --> 00:06:04,720
+The quadratic form costs 8.4 million FLOPs per token.
+
+104
+00:06:05,040 --> 00:06:08,542
+Decode then uses the recurrent loop, one token at a time.
+
+105
+00:06:10,262 --> 00:06:11,060
+To recap.
+
+106
+00:06:11,380 --> 00:06:15,933
+Linear attention folds the whole history into one fixed matrix per head.
+
+107
+00:06:16,253 --> 00:06:18,902
+Write with an outer product, read with the query.
+
+108
+00:06:19,822 --> 00:06:21,888
+Left over: the state only adds.
+
+109
+00:06:22,208 --> 00:06:24,496
+Nothing is ever forgotten or overwritten.
+
+110
+00:06:24,816 --> 00:06:28,837
+So after many tokens, the table is full of overlapping entries,
+
+111
+00:06:28,837 --> 00:06:31,070
+and every read is mostly crosstalk.
+
+112
+00:06:31,390 --> 00:06:32,502
+Next: forgetting.
