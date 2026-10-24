@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img" aria-labelledby="title desc">
+<title id="title">kv-head-sharing</title><desc id="desc">Eight query heads read eight, two or one KV head. Per token and layer the cache stores 2·H_kv·d_h elements: 16, 4 or 2 head-vectors.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="380" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="22" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">cache / token / layer</tspan> = <tspan fill="#3f83b6">2</tspan> <tspan font-style="normal">·</tspan> <tspan fill="#3f83b6"><tspan font-style="italic">H</tspan><tspan dy="6.2" font-size="15.0"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-6.2" font-size="22.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">d</tspan><tspan dy="6.2" font-size="15.0"><tspan font-style="italic">h</tspan></tspan><tspan dy="-6.2" font-size="22.0"> </tspan> <tspan font-style="normal"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">(K and V)</tspan></text>
+<text x="155" y="76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#253340">MHA</text>
+<text x="155" y="98" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#687986"><tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">q</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 8 <tspan font-style="normal">→</tspan> <tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 8</text>
+<rect x="34" y="110" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="134" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="158" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="182" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="206" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="230" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="254" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="34" y="278" width="190" height="20" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<circle cx="52" cy="120" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="120" x2="168" y2="120" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="144" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="144" x2="168" y2="144" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="168" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="168" x2="168" y2="168" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="192" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="192" x2="168" y2="192" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="216" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="216" x2="168" y2="216" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="240" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="240" x2="168" y2="240" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="264" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="264" x2="168" y2="264" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="52" cy="288" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="62" y1="288" x2="168" y2="288" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<rect x="172" y="111" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="123.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="111" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="123.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="135" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="147.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="135" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="147.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="159" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="171.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="159" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="171.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="183" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="195.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="183" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="195.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="207" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="219.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="207" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="219.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="231" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="243.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="231" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="243.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="255" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="267.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="255" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="267.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="172" y="279" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="183.0" y="291.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="197" y="279" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="208.0" y="291.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<text x="155" y="336" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">one token, one layer</text>
+<rect x="38" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="114" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="47" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="123" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="56" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="132" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="65" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="141" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="74" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="150" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="83" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="159" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="92" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="168" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="101" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="177" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="292" y="314" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">16 vectors</text>
+<text x="155" y="358" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">2·8·128 = 2,048 elems</text>
+<line x1="305" y1="60" x2="305" y2="360" stroke="#cad5db" stroke-width="1.2"/>
+<text x="445" y="76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#253340">GQA</text>
+<text x="445" y="98" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#687986"><tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">q</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 8 <tspan font-style="normal">→</tspan> <tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 2</text>
+<rect x="324" y="110" width="190" height="92" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<rect x="324" y="206" width="190" height="92" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<circle cx="342" cy="120" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="120" x2="458" y2="156" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="144" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="144" x2="458" y2="156" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="168" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="168" x2="458" y2="156" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="192" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="192" x2="458" y2="156" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="216" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="216" x2="458" y2="252" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="240" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="240" x2="458" y2="252" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="264" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="264" x2="458" y2="252" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="342" cy="288" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="352" y1="288" x2="458" y2="252" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<rect x="462" y="147" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="473.0" y="159.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="487" y="147" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="498.0" y="159.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<rect x="462" y="243" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="473.0" y="255.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="487" y="243" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="498.0" y="255.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<text x="445" y="336" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">one token, one layer</text>
+<rect x="328" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="350" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="337" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="359" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="582" y="314" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">4 vectors</text>
+<text x="445" y="358" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">2·2·128 = 512 elems</text>
+<line x1="595" y1="60" x2="595" y2="360" stroke="#cad5db" stroke-width="1.2"/>
+<text x="735" y="76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#253340">MQA</text>
+<text x="735" y="98" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#687986"><tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">q</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 8 <tspan font-style="normal">→</tspan> <tspan font-style="italic">H</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan> = 1</text>
+<rect x="614" y="110" width="190" height="188" rx="8" fill="#f4f7f8" stroke="#cad5db"/>
+<circle cx="632" cy="120" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="120" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="144" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="144" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="168" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="168" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="192" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="192" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="216" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="216" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="240" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="240" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="264" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="264" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<circle cx="632" cy="288" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="642" y1="288" x2="748" y2="204" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<rect x="752" y="195" width="22" height="18" rx="3" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="763.0" y="207.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">K</text>
+<rect x="777" y="195" width="22" height="18" rx="3" fill="#8d6bb5" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="788.0" y="207.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">V</text>
+<text x="735" y="336" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">one token, one layer</text>
+<rect x="618" y="300" width="7" height="18" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="631" y="300" width="7" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="872" y="314" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">2 vectors</text>
+<text x="735" y="358" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">2·1·128 = 256 elems</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" role="img" aria-labelledby="title desc">
+<title id="title">10-write-control</title><desc id="desc">FG-squared-GDN uses tied key/value channel scaling; its plus variant separates the factors. The strips depict scaling factors rather than arbitrary rates for every state element.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="290" fill="white"/>
+<text x="225" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">FG²-GDN: tied factors</text>
+<text x="36" y="111" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Key</text>
+<rect x="125" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.25" stroke="#209f78" stroke-width="1.7"/>
+<rect x="191" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.9" stroke="#209f78" stroke-width="1.7"/>
+<rect x="257" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.45" stroke="#209f78" stroke-width="1.7"/>
+<rect x="323" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<text x="36" y="201" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Value</text>
+<rect x="125" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.25" stroke="#209f78" stroke-width="1.7"/>
+<rect x="191" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.9" stroke="#209f78" stroke-width="1.7"/>
+<rect x="257" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.45" stroke="#209f78" stroke-width="1.7"/>
+<rect x="323" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<line x1="147" y1="125" x2="147" y2="162" stroke="#9272b7" stroke-width="2" stroke-dasharray="5 5"/>
+<line x1="213" y1="125" x2="213" y2="162" stroke="#9272b7" stroke-width="2" stroke-dasharray="5 5"/>
+<line x1="279" y1="125" x2="279" y2="162" stroke="#9272b7" stroke-width="2" stroke-dasharray="5 5"/>
+<line x1="345" y1="125" x2="345" y2="162" stroke="#9272b7" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="225" y="274" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">One shared scaling vector</text>
+<text x="675" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">FG²-GDN+: separate factors</text>
+<line x1="450" y1="32" x2="450" y2="265" stroke="#cad5db" stroke-width="2"/>
+<text x="486" y="111" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Key</text>
+<rect x="575" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.25" stroke="#209f78" stroke-width="1.7"/>
+<rect x="641" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.9" stroke="#209f78" stroke-width="1.7"/>
+<rect x="707" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.45" stroke="#209f78" stroke-width="1.7"/>
+<rect x="773" y="76" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<text x="486" y="201" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Value</text>
+<rect x="575" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.85" stroke="#209f78" stroke-width="1.7"/>
+<rect x="641" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.3" stroke="#209f78" stroke-width="1.7"/>
+<rect x="707" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.75" stroke="#209f78" stroke-width="1.7"/>
+<rect x="773" y="166" width="45" height="47" rx="7" fill="#209f78" fill-opacity="0.4" stroke="#209f78" stroke-width="1.7"/>
+<text x="675" y="274" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">Different key / value vectors</text>
+</svg>

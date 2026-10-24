@@ -1,0 +1,159 @@
+{
+  "title": "Attention, one change at a time",
+  "entry": "index.html",
+  "checked_through": "2026-10-21",
+  "format": "mechanism cards: formula, diagram, numbers, tips",
+  "chapter_pages": 16,
+  "cards": 91,
+  "card_figures": 92,
+  "primary_sources": 189,
+  "words": 9381,
+  "chapters": [
+    {
+      "title": "00 · The map",
+      "page": "chapters/00-map.html"
+    },
+    {
+      "title": "01 · Positions",
+      "page": "chapters/01-positions.html"
+    },
+    {
+      "title": "02 · Stable softmax",
+      "page": "chapters/02-stable-softmax.html"
+    },
+    {
+      "title": "03 · Share KV heads",
+      "page": "chapters/03-kv-heads.html"
+    },
+    {
+      "title": "04 · Latent KV",
+      "page": "chapters/04-latent-kv.html"
+    },
+    {
+      "title": "05 · Fixed patterns",
+      "page": "chapters/05-fixed-patterns.html"
+    },
+    {
+      "title": "06 · Sparse reads",
+      "page": "chapters/06-sparse-reads.html"
+    },
+    {
+      "title": "07 · Evict from the cache",
+      "page": "chapters/07-kv-eviction.html"
+    },
+    {
+      "title": "08 · Compress the sequence",
+      "page": "chapters/08-fewer-records.html"
+    },
+    {
+      "title": "09 · Linear attention & SSMs",
+      "page": "chapters/09-linear-state.html"
+    },
+    {
+      "title": "10 · The delta rule",
+      "page": "chapters/10-delta-rule.html"
+    },
+    {
+      "title": "11 · Memory as test-time learning",
+      "page": "chapters/11-test-time-learning.html"
+    },
+    {
+      "title": "12 · Hybrid stacks",
+      "page": "chapters/12-hybrids.html"
+    },
+    {
+      "title": "13 · Kernels",
+      "page": "chapters/13-kernels.html"
+    },
+    {
+      "title": "14 · Serving the cache",
+      "page": "chapters/14-serving.html"
+    },
+    {
+      "title": "15 · Compare and choose",
+      "page": "chapters/15-choose.html"
+    }
+  ],
+  "lengths": [
+    {
+      "chapter": "00",
+      "cards": 4,
+      "words": 272
+    },
+    {
+      "chapter": "01",
+      "cards": 5,
+      "words": 615
+    },
+    {
+      "chapter": "02",
+      "cards": 5,
+      "words": 538
+    },
+    {
+      "chapter": "03",
+      "cards": 6,
+      "words": 607
+    },
+    {
+      "chapter": "04",
+      "cards": 5,
+      "words": 533
+    },
+    {
+      "chapter": "05",
+      "cards": 4,
+      "words": 441
+    },
+    {
+      "chapter": "06",
+      "cards": 7,
+      "words": 603
+    },
+    {
+      "chapter": "07",
+      "cards": 7,
+      "words": 835
+    },
+    {
+      "chapter": "08",
+      "cards": 6,
+      "words": 705
+    },
+    {
+      "chapter": "09",
+      "cards": 6,
+      "words": 624
+    },
+    {
+      "chapter": "10",
+      "cards": 7,
+      "words": 745
+    },
+    {
+      "chapter": "11",
+      "cards": 7,
+      "words": 747
+    },
+    {
+      "chapter": "12",
+      "cards": 6,
+      "words": 676
+    },
+    {
+      "chapter": "13",
+      "cards": 6,
+      "words": 535
+    },
+    {
+      "chapter": "14",
+      "cards": 7,
+      "words": 677
+    },
+    {
+      "chapter": "15",
+      "cards": 3,
+      "words": 228
+    }
+  ]
+}

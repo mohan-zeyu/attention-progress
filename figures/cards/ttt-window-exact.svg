@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 452" role="img" aria-labelledby="title desc">
+<title id="title">ttt-window-exact</title><desc id="desc">Which past pairs the memory is fit to. Delta rule: only token t, one gradient step. ATLAS: the last c tokens with gates gamma, Muon (Newton-Schulz) steps. Mesa: every past token with discount zeta, solved exactly by conjugate gradient. Toy with correlated keys k1 = [1, 0], k2 = [0.6, 0.8], values +1 and -1: reading at k1 gives 0.40 (linear attention), 0.04 (DeltaNet), 1.00 (Mesa). Mesa costs about k times GLA FLOPs for k CG steps; a stopping rule eps = 1e-4 matches 30 fixed steps with about 9 on average.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="452" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340">ℓ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan font-style="italic">M</tspan>) = <tspan font-style="normal">Σ</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan>=<tspan font-style="italic">t</tspan>-<tspan font-style="italic">c</tspan>+1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan> <tspan fill="#2a9aa6">γ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>  ‖<tspan font-style="italic">M</tspan>(φ(<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)) − <tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>‖<tspan dy="-8.8" font-size="14.3">2</tspan><tspan dy="8.8" font-size="21.0"> </tspan>  <tspan fill="#2a9aa6"><tspan font-style="italic">c</tspan></tspan> = 1: <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">delta</tspan> · <tspan fill="#2a9aa6"><tspan font-style="italic">c</tspan></tspan> = <tspan font-style="italic">t</tspan>: <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">least squares</tspan></text>
+<rect x="24" y="56" width="452" height="230" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="38" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">weight of each past pair in ℓ (12 toy tokens)</text>
+<text x="40" y="113" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">DeltaNet</text>
+<rect x="150" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="176" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="202" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="228" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="254" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="280" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="306" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="332" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="358" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="384" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="410" y="96" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="436" y="96" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="150" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">c = 1 · one GD step</text>
+<text x="40" y="175" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">ATLAS</text>
+<rect x="150" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="176" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="202" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="228" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="254" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="280" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="306" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="332" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="358" y="158" width="23" height="24" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<rect x="384" y="158" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.45"/>
+<rect x="410" y="158" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.7"/>
+<rect x="436" y="158" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.95"/>
+<text x="150" y="202" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">c = 4 · gates γ · Muon (Newton–Schulz)</text>
+<text x="40" y="237" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">Mesa</text>
+<rect x="150" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.17128742205933575"/>
+<rect x="176" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.1991714209992276"/>
+<rect x="202" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.23159467558049723"/>
+<rect x="228" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.26929613439592703"/>
+<rect x="254" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.313135039995264"/>
+<rect x="280" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.3641105116224"/>
+<rect x="306" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.42338431583999997"/>
+<rect x="332" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.492307344"/>
+<rect x="358" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.5724504"/>
+<rect x="384" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.6656399999999999"/>
+<rect x="410" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.774"/>
+<rect x="436" y="220" width="23" height="24" rx="3" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="150" y="264" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">c = t · discount ζ · exact solve (CG)</text>
+<text x="447" y="88" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">t</text>
+<rect x="490" y="56" width="386" height="230" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="504" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">correlated keys (toy, Λ = 0)</text>
+<line x1="508" y1="262" x2="600" y2="262" stroke="#cad5db" stroke-width="1"/>
+<line x1="512" y1="266" x2="512" y2="174" stroke="#cad5db" stroke-width="1"/>
+<line x1="512" y1="262" x2="590" y2="262" stroke="#3f83b6" stroke-width="2.2" marker-end="url(#a-blue)"/>
+<line x1="512" y1="262" x2="558.8" y2="199.6" stroke="#3f83b6" stroke-width="2.2" marker-end="url(#a-blue)"/>
+<text x="588" y="254" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">k₁ → +1</text>
+<text x="562.8" y="195.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">k₂ → −1</text>
+<text x="516" y="152" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">k₁ᵀk₂ = 0.6</text>
+<text x="516" y="104" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">k₁ = [1, 0], k₂ = [0.6, 0.8]</text>
+<text x="752" y="122" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">read at k₁</text>
+<text x="752" y="138" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">target 1</text>
+<text x="830" y="122" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">read at k₂</text>
+<text x="830" y="138" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">target −1</text>
+<text x="712" y="167" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">linear attn</text>
+<rect x="720" y="148" width="64" height="28" rx="5" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="752.0" y="167.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">+0.40</text>
+<rect x="798" y="148" width="64" height="28" rx="5" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="830.0" y="167.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">−0.40</text>
+<text x="712" y="203" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeltaNet</text>
+<rect x="720" y="184" width="64" height="28" rx="5" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="752.0" y="203.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">+0.04</text>
+<rect x="798" y="184" width="64" height="28" rx="5" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="830.0" y="203.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">−1.00</text>
+<text x="712" y="239" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Mesa (exact)</text>
+<rect x="720" y="220" width="64" height="28" rx="5" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="752.0" y="239.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">+1.00</text>
+<rect x="798" y="220" width="64" height="28" rx="5" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="830.0" y="239.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">−1.00</text>
+<text x="790" y="274" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#cf5f59">DeltaNet: 2nd write clobbers k₁</text>
+<line x1="20" y1="300" x2="880" y2="300" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="326" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Cost readouts (reported)</text>
+<text x="210" y="352.96" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Mesa · fixed CG steps</text>
+<rect x="220" y="340" width="200.0" height="18" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="427.0" y="352.96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">30 steps</text>
+<text x="210" y="378.96" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Mesa · stop at ε = 10⁻⁴</text>
+<rect x="220" y="366" width="60.0" height="18" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="287.0" y="378.96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">9 steps avg, same ppl</text>
+<text x="30" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">k CG steps ≈ k × GLA FLOPs; k = 0 is GLA.</text>
+<text x="30" y="434" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">extra state </tspan> <tspan font-style="italic">H</tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-5.9" font-size="9.5"><tspan fill="#3f83b6"><tspan font-style="italic">d</tspan><tspan dy="2.7" font-size="6.5"><tspan font-style="italic">k</tspan></tspan><tspan dy="-2.7" font-size="9.5"> </tspan></tspan> × <tspan fill="#3f83b6"><tspan font-style="italic">d</tspan><tspan dy="2.7" font-size="6.5"><tspan font-style="italic">k</tspan></tspan><tspan dy="-2.7" font-size="9.5"> </tspan></tspan></tspan><tspan dy="5.9" font-size="14.0"> </tspan><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">: &lt; 1 % of footprint</tspan></text>
+<text x="500" y="344" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">ATLAS capacity bound (Prop. 1–2):</text>
+<text x="500" y="370" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan font-style="italic">O</tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">d</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">k</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan>) <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> pairs</tspan> <tspan font-style="normal">→</tspan> <tspan font-style="italic">O</tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">d</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">k</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="italic">p</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan>) <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> with degree-</tspan><tspan font-style="italic">p</tspan>  φ</text>
+<text x="500" y="396.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Newton–Schulz steps: test-time compute knob.</text>
+<text x="500" y="416.3" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">BABILong at 10M tokens: &gt; 80 % acc; Titans drops.</text>
+</svg>

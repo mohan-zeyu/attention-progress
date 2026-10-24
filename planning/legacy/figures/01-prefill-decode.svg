@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="490" viewBox="0 0 1080 490" role="img" aria-labelledby="title desc"><title id="title">Prefill versus cached decode</title><desc id="desc">A six position causal interaction grid contrasts with one new query reading existing key value records and appending a record.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#203044"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,Helvetica,sans-serif;fill:#203044}.small{font-size:14px}.body{font-size:17px}.title{font-size:23px;font-weight:700}.label{font-size:16px;font-weight:600}</style>
+<text x="30" y="38" class="title" text-anchor="start">Prefill and decode do different amounts of work</text>
+<text x="60" y="80" class="label" text-anchor="start">Prefill: many known query positions</text>
+<text x="615" y="80" class="label" text-anchor="start">Decode: one new query position</text>
+<text x="244" y="108" class="small" text-anchor="middle">key positions</text>
+<text x="127" y="132" class="small" text-anchor="middle">1</text>
+<text x="170" y="132" class="small" text-anchor="middle">2</text>
+<text x="213" y="132" class="small" text-anchor="middle">3</text>
+<text x="256" y="132" class="small" text-anchor="middle">4</text>
+<text x="299" y="132" class="small" text-anchor="middle">5</text>
+<text x="342" y="132" class="small" text-anchor="middle">6</text>
+<text x="84" y="169" class="small" text-anchor="end">q1</text>
+<rect x="106" y="145" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="145" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="168" y="170" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="192" y="145" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="211" y="170" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="235" y="145" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="254" y="170" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="278" y="145" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="297" y="170" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="321" y="145" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="340" y="170" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<text x="84" y="212" class="small" text-anchor="end">q2</text>
+<rect x="106" y="188" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="188" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="192" y="188" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="211" y="213" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="235" y="188" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="254" y="213" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="278" y="188" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="297" y="213" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="321" y="188" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="340" y="213" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<text x="84" y="255" class="small" text-anchor="end">q3</text>
+<rect x="106" y="231" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="231" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="192" y="231" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="235" y="231" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="254" y="256" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="278" y="231" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="297" y="256" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="321" y="231" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="340" y="256" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<text x="84" y="298" class="small" text-anchor="end">q4</text>
+<rect x="106" y="274" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="274" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="192" y="274" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="235" y="274" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="278" y="274" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="297" y="299" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<rect x="321" y="274" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="340" y="299" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<text x="84" y="341" class="small" text-anchor="end">q5</text>
+<rect x="106" y="317" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="317" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="192" y="317" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="235" y="317" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="278" y="317" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="321" y="317" width="39" height="39" rx="3" fill="#f5f6f8" stroke="#cbd5e1"/>
+<text x="340" y="342" class="small" text-anchor="middle" style="fill:#667587">×</text>
+<text x="84" y="384" class="small" text-anchor="end">q6</text>
+<rect x="106" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="149" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="192" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="235" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="278" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<rect x="321" y="360" width="39" height="39" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="60" y="437" class="small" text-anchor="start">Each row reads its current/past positions.</text>
+<text x="60" y="458" class="small" text-anchor="start">21 permitted pairs here; ~N² across a long prompt.</text>
+<rect x="625" y="125" width="150" height="58" rx="10" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="700" y="159" class="body" text-anchor="middle">new query q7</text>
+<rect x="855" y="125" width="180" height="58" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="945" y="151" class="body" text-anchor="middle">new k7, v7</text>
+<text x="945" y="173" class="small" text-anchor="middle">computed at this layer</text>
+<line x1="700" y1="183" x2="700" y2="255" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="713" y="221" class="small" text-anchor="start">score / read</text>
+<path d="M 945 183 L 945 226 L 993 226 L 993 255" fill="none" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="930" y="216" class="small" text-anchor="start">append</text>
+<rect x="615" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="641" y="290" class="small" text-anchor="middle">K1</text>
+<text x="641" y="318" class="small" text-anchor="middle">V1</text>
+<text x="641" y="343" class="small" text-anchor="middle">1</text>
+<rect x="674" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="700" y="290" class="small" text-anchor="middle">K2</text>
+<text x="700" y="318" class="small" text-anchor="middle">V2</text>
+<text x="700" y="343" class="small" text-anchor="middle">2</text>
+<rect x="733" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="759" y="290" class="small" text-anchor="middle">K3</text>
+<text x="759" y="318" class="small" text-anchor="middle">V3</text>
+<text x="759" y="343" class="small" text-anchor="middle">3</text>
+<rect x="792" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="818" y="290" class="small" text-anchor="middle">K4</text>
+<text x="818" y="318" class="small" text-anchor="middle">V4</text>
+<text x="818" y="343" class="small" text-anchor="middle">4</text>
+<rect x="851" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="877" y="290" class="small" text-anchor="middle">K5</text>
+<text x="877" y="318" class="small" text-anchor="middle">V5</text>
+<text x="877" y="343" class="small" text-anchor="middle">5</text>
+<rect x="910" y="262" width="53" height="97" rx="6" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="936" y="290" class="small" text-anchor="middle">K6</text>
+<text x="936" y="318" class="small" text-anchor="middle">V6</text>
+<text x="936" y="343" class="small" text-anchor="middle">6</text>
+<rect x="969" y="262" width="53" height="97" rx="6" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="995" y="290" class="small" text-anchor="middle">K7</text>
+<text x="995" y="318" class="small" text-anchor="middle">V7</text>
+<text x="995" y="343" class="small" text-anchor="middle">7</text>
+<text x="816" y="388" class="small" text-anchor="middle">Cache preserves one record per position</text>
+<text x="615" y="437" class="small" text-anchor="start">One query reads 7 positions in this step.</text>
+<text x="615" y="458" class="small" text-anchor="start">Work and stored history grow with N.</text>
+</svg>

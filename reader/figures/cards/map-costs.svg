@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-labelledby="title desc">
+<title id="title">map-costs</title><desc id="desc">Prefill pays compute that grows with N squared; decode pays bytes that grow with N for every generated token. Llama-3-8B at 128K: attention prefill 4.5 PFLOP versus 2.1 PFLOP for everything else; each decode step reads 16 GiB of KV versus 15 GiB of weights.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="400" fill="white"/>
+<text x="225" y="30" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#253340">Prefill · compute-bound</text>
+<text x="675" y="30" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#253340">Decode · bandwidth-bound</text>
+<line x1="450" y1="16" x2="450" y2="306" stroke="#cad5db" stroke-width="1.2"/>
+<text x="225" y="62" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">FLOP</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">attn</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> <tspan font-style="normal">≈</tspan> <tspan fill="#3f83b6">2<tspan font-style="italic">N</tspan><tspan dy="-8.4" font-size="13.6">2</tspan><tspan dy="8.4" font-size="20.0"> </tspan></tspan> <tspan font-style="italic">d</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">L</tspan></text>
+<rect x="40" y="94" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="55" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="70" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="85" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="100" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="115" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="130" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="94" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="109" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="109" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="70" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="85" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="100" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="115" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="130" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="109" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="124" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="124" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="124" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="85" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="100" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="115" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="130" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="124" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="139" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="139" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="139" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="139" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="100" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="115" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="130" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="139" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="154" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="154" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="154" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="154" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="154" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="115" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="130" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="154" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="169" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="130" y="169" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="145" y="169" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="169" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="169" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="169" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="130" y="184" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="145" y="184" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="160" y="184" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="184" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="184" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="130" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="145" y="199" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="160" y="199" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="175" y="199" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="199" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="130" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="145" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="160" y="214" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="175" y="214" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="190" y="214" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="130" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="145" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="160" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="175" y="229" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="190" y="229" width="13.5" height="13.5" fill="#f4f7f8"/>
+<rect x="40" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="55" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="70" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="85" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="100" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="115" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="130" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="145" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="160" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="175" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="190" y="244" width="13.5" height="13.5" fill="#3f83b6" fill-opacity="0.85"/>
+<path d="M208 94L213 94L213 257.5L208 257.5" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="219" y="180.3" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">N</tspan></text>
+<text x="122" y="280" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">every query × every key</text>
+<text x="315" y="118.96000000000001" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">attention</text>
+<rect x="325" y="104" width="95.0" height="22" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="428.0" y="118.96000000000001" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">4.5 PF</text>
+<text x="315" y="150.96" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">rest of model</text>
+<rect x="325" y="136" width="44.333333333333336" height="22" rx="4" fill="#cad5db" fill-opacity="0.85"/>
+<text x="377.3333333333333" y="150.96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">2.1 PF</text>
+<text x="330" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Llama-3-8B, one 128K prompt</text>
+<text x="330" y="214" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">attention &gt; all other FLOPs</text>
+<text x="675" y="62" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bytes / step</tspan> <tspan font-style="normal">≈</tspan> <tspan fill="#3f83b6"><tspan font-style="italic">N</tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">L</tspan> <tspan font-style="normal">·</tspan> 2<tspan font-style="italic">H</tspan><tspan dy="5.3" font-size="12.9"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-5.3" font-size="19.0"> </tspan> <tspan font-style="italic">d</tspan><tspan dy="5.3" font-size="12.9"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.3" font-size="19.0"> </tspan> <tspan font-style="italic">s</tspan>   +   <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">weights</tspan></text>
+<circle cx="500" cy="140" r="14" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="500" y="144.68" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#ffffff"><tspan font-style="italic">q</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">t</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan></text>
+<rect x="530" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="535" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="547" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="552" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="564" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="569" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="581" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="586" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="598" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="603" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="615" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="620" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="632" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="637" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="649" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="654" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="666" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="671" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<rect x="683" y="125" width="14" height="30" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<line x1="514" y1="140" x2="688" y2="140" stroke="#d09124" stroke-width="0.8" stroke-opacity="0.5"/>
+<path d="M530 161L530 166L697 166L697 161" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="613.5" y="181" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">N</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> records, every step</tspan></text>
+<text x="580" y="228.96" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">KV cache</text>
+<rect x="590" y="214" width="170.0" height="22" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="768.0" y="228.96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">16 GiB</text>
+<text x="580" y="260.96" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">weights</text>
+<rect x="590" y="246" width="159.375" height="22" rx="4" fill="#cad5db" fill-opacity="0.85"/>
+<text x="757.375" y="260.96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">15 GiB</text>
+<text x="675" y="296" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">read per generated token at 128K (×batch for KV)</text>
+<line x1="30" y1="318" x2="870" y2="318" stroke="#cad5db" stroke-width="1.2"/>
+<text x="450" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">Most routes in this book shrink one factor of the decode bill:</text>
+<text x="450" y="376" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="18" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">N</tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (records kept or read)</tspan>  <tspan font-style="normal">·</tspan>  <tspan fill="#3f83b6">2<tspan font-style="italic">H</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan><tspan font-style="italic">d</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (record width)</tspan>  <tspan font-style="normal">·</tspan>  <tspan font-style="italic">L</tspan>  <tspan font-style="normal">·</tspan>  <tspan font-style="italic">s</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (bytes)</tspan></text>
+</svg>

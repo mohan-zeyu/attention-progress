@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" role="img" aria-labelledby="title desc">
+<title id="title">00-choices</title><desc id="desc">Three operations within addressable records: sharing heads, shrinking each record and pooling positions. These are operations, with named designs shown underneath.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="290" fill="white"/>
+<text x="150" y="36" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Share heads</text>
+<text x="150" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">MQA / GQA</text>
+<text x="450" y="36" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Shrink each record</text>
+<text x="450" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">MLA</text>
+<text x="750" y="36" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Pool positions</text>
+<text x="750" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">CSA / HCA</text>
+<circle cx="75" cy="92" r="13" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<line x1="75" y1="108" x2="150" y2="158" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="125" cy="92" r="13" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<line x1="125" y1="108" x2="150" y2="158" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="175" cy="92" r="13" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<line x1="175" y1="108" x2="150" y2="158" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="225" cy="92" r="13" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<line x1="225" y1="108" x2="150" y2="158" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="117" y="167" width="66" height="52" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="150.0" y="200.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">KV</text>
+<rect x="360" y="76" width="180" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="450" y1="126" x2="450" y2="161" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="414" y="172" width="72" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="450.0" y="200.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">c</text>
+<rect x="627" y="78" width="45" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="637" y1="93" x2="662" y2="93" stroke="#4287b9" stroke-width="2"/>
+<line x1="637" y1="104" x2="662" y2="104" stroke="#4287b9" stroke-width="2"/>
+<line x1="637" y1="115" x2="662" y2="115" stroke="#4287b9" stroke-width="2"/>
+<rect x="688" y="78" width="45" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="698" y1="93" x2="723" y2="93" stroke="#4287b9" stroke-width="2"/>
+<line x1="698" y1="104" x2="723" y2="104" stroke="#4287b9" stroke-width="2"/>
+<line x1="698" y1="115" x2="723" y2="115" stroke="#4287b9" stroke-width="2"/>
+<rect x="749" y="78" width="45" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="759" y1="93" x2="784" y2="93" stroke="#4287b9" stroke-width="2"/>
+<line x1="759" y1="104" x2="784" y2="104" stroke="#4287b9" stroke-width="2"/>
+<line x1="759" y1="115" x2="784" y2="115" stroke="#4287b9" stroke-width="2"/>
+<rect x="810" y="78" width="45" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="820" y1="93" x2="845" y2="93" stroke="#4287b9" stroke-width="2"/>
+<line x1="820" y1="104" x2="845" y2="104" stroke="#4287b9" stroke-width="2"/>
+<line x1="820" y1="115" x2="845" y2="115" stroke="#4287b9" stroke-width="2"/>
+<line x1="650" y1="123" x2="750" y2="164" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="711" y1="123" x2="750" y2="164" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="772" y1="123" x2="750" y2="164" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="833" y1="123" x2="750" y2="164" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="716" y="174" width="68" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="750.0" y="202.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+</svg>

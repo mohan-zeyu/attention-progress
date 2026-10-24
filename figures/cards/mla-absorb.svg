@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+<title id="title">mla-absorb</title><desc id="desc">Weight absorption. The score q_i^T W_UK,i c_j is re-bracketed as (W_UK,i^T q_i)^T c_j, so each of the 128 heads gets a 576-dimensional query (512 absorbed + 64 RoPE) and all heads read the same cached 576-element row: MQA with one KV head, d_k 576, d_v 512. W_UV folds into the output projection. Per cached token and layer in BF16: 1,152 bytes and 278,528 FLOPs, intensity about 242 FLOP/B (2·H_q), versus 1 for an expanded MHA cache; H100 ridge 295. Toy check: 7·(2·4+3·5) = 161 = 14·4 + 21·5.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="470" fill="white"/>
+<text x="218.70399999999995" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">q</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan>(<tspan font-style="italic">W</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">UK</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>) = (<tspan font-style="italic">W</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">UK</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan><tspan fill="#d09124"><tspan font-style="italic">q</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>)<tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan></text>
+<text x="519.52" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">o</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> = <tspan font-style="italic">W</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">UV</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> <tspan font-style="normal">Σ</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> <tspan font-style="italic">p</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">ij</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan></text>
+<rect x="20" y="56" width="420" height="238" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">MHA mode · train / prefill</text>
+<text x="36" y="102" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">cache row</text>
+<rect x="110" y="88" width="152.6" height="18" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="263.6" y="88" width="18.2" height="18" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<line x1="190" y1="110" x2="190" y2="136" stroke="#3f83b6" stroke-width="1.4" marker-end="url(#a-blue)"/>
+<text x="198" y="128" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#3f83b6">W_UK, W_UV per head: expand</text>
+<circle cx="48" cy="153" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="58" y1="153" x2="106" y2="153" stroke="#d09124" stroke-width="1.1" marker-end="url(#a-gold)"/>
+<rect x="110" y="144" width="37.4" height="16" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="148.4" y="144" width="18.2" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="172" y="144" width="37.4" height="16" rx="2" fill="#8d6bb5" fill-opacity="0.9"/>
+<circle cx="48" cy="177" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="58" y1="177" x2="106" y2="177" stroke="#d09124" stroke-width="1.1" marker-end="url(#a-gold)"/>
+<rect x="110" y="168" width="37.4" height="16" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="148.4" y="168" width="18.2" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="172" y="168" width="37.4" height="16" rx="2" fill="#8d6bb5" fill-opacity="0.9"/>
+<circle cx="48" cy="201" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="58" y1="201" x2="106" y2="201" stroke="#d09124" stroke-width="1.1" marker-end="url(#a-gold)"/>
+<rect x="110" y="192" width="37.4" height="16" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="148.4" y="192" width="18.2" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="172" y="192" width="37.4" height="16" rx="2" fill="#8d6bb5" fill-opacity="0.9"/>
+<circle cx="48" cy="225" r="7" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<line x1="58" y1="225" x2="106" y2="225" stroke="#d09124" stroke-width="1.1" marker-end="url(#a-gold)"/>
+<rect x="110" y="216" width="37.4" height="16" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="148.4" y="216" width="18.2" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="172" y="216" width="37.4" height="16" rx="2" fill="#8d6bb5" fill-opacity="0.9"/>
+<text x="250" y="170" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">× 128 heads</text>
+<text x="250" y="190" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">d_k 192, d_v 128</text>
+<text x="36" y="260" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">expanded per token: 128 × (192 + 128) = 40,960 elements</text>
+<text x="36" y="280" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">DeepSeek: training + prefill (V3.2 App. A)</text>
+<rect x="460" y="56" width="420" height="238" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="474" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">MQA mode · decode (absorbed)</text>
+<circle cx="488" cy="104" r="8" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="502" y="109" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">q</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan></tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-5.9" font-size="9.5">128</tspan><tspan dy="5.9" font-size="14.0"> </tspan></text>
+<line x1="580" y1="104" x2="610" y2="104" stroke="#d09124" stroke-width="1.4" marker-end="url(#a-gold)"/>
+<text x="614" y="109" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-style="italic">W</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">UK</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan><tspan dy="-6.3" font-size="10.2"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.3" font-size="15.0"> </tspan></text>
+<line x1="664" y1="104" x2="690" y2="104" stroke="#d09124" stroke-width="1.4" marker-end="url(#a-gold)"/>
+<rect x="694" y="95" width="152.6" height="18" rx="2" fill="#d09124" fill-opacity="0.9"/>
+<rect x="847.6" y="95" width="18.2" height="18" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<text x="870" y="132" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#d09124">query 576 = 512 + 64</text>
+<circle cx="490.0" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="150.0" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="157.4" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="164.8" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="172.2" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="179.6" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="187.0" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="194.4" r="2.6" fill="#d09124"/>
+<circle cx="490.0" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="497.4" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="504.8" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="512.2" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="519.6" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="527.0" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="534.4" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="541.8" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="549.2" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="556.6" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="564.0" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="571.4" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="578.8" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="586.2" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="593.6" cy="201.8" r="2.6" fill="#d09124"/>
+<circle cx="601.0" cy="201.8" r="2.6" fill="#d09124"/>
+<text x="490" y="230" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">128 query heads</text>
+<line x1="610" y1="150" x2="690" y2="194" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="610" y1="166" x2="690" y2="194" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="610" y1="182" x2="690" y2="194" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="610" y1="198" x2="690" y2="194" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="610" y1="214" x2="690" y2="194" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<rect x="694" y="186" width="152.6" height="18" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="847.6" y="186" width="18.2" height="18" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<text x="870" y="224" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">one shared row: K 576, V 512</text>
+<text x="612" y="262" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">o</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan></tspan> = (<tspan font-style="italic">W</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">O</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan><tspan font-style="italic">W</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">UV</tspan>,<tspan font-style="italic">i</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan>)  <tspan font-style="italic">z</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan></text>
+<text x="612" y="284" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">z</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> = <tspan font-style="normal">Σ</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">j</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="italic">p</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">ij</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">j</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan></tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-5.5" font-size="8.8">512</tspan><tspan dy="5.5" font-size="13.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> · </tspan> <tspan font-style="italic">W</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">UV</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> folds into </tspan> <tspan font-style="italic">W</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">O</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan></text>
+<text x="20" y="324" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Per cached token per layer, BF16 (DeepSeek-V3: H_q = 128)</text>
+<text x="180" y="352.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">expanded MHA cache</text>
+<rect x="190" y="340" width="2" height="18" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="200" y="352.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">1 FLOP/B</text>
+<text x="180" y="379.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">absorbed MQA mode</text>
+<rect x="190" y="367" width="204.8964218455744" height="18" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="402.8964218455744" y="379.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">242 FLOP/B</text>
+<text x="180" y="406.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">H100 ridge</text>
+<rect x="190" y="394" width="250.0" height="18" rx="4" fill="#687986" fill-opacity="0.85"/>
+<text x="448.0" y="406.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">295 FLOP/B</text>
+<text x="20" y="448" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">reads 576 × 2 B = 1,152 B · FLOPs 2·128·(576 + 512) = 278,528</text>
+<rect x="560" y="316" width="320" height="140" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="574" y="340" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">toy check: same score</text>
+<text x="576" y="362" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">toy: </tspan> <tspan font-style="italic">W</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">UK</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> = [2 3],  <tspan fill="#3f83b6"><tspan font-style="italic">c</tspan></tspan> = [4;5],  <tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan> = 7</text>
+<text x="576" y="392" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan>(<tspan font-style="italic">W</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">UK</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan></tspan>) = 7 <tspan font-style="normal">·</tspan> 23 = 161</text>
+<text x="576" y="420" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340">(<tspan font-style="italic">W</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">UK</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan><tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan>)<tspan dy="-6.7" font-size="10.9"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan></tspan> = 14<tspan font-style="normal">·</tspan>4 + 21<tspan font-style="normal">·</tspan>5 = 161</text>
+<text x="576" y="446" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">associativity: no approximation</text>
+</svg>

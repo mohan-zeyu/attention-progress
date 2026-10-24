@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">ttt-recall-gap</title><desc id="desc">Left: reported in-context recall average (MesaNet Table 3, 1B models, 50B tokens, 2K context): Mamba2 37.67, GLA 39.64, Gated DeltaNet 39.54, DeltaNet 40.46, Mesa 41.79, SWA-1024 40.84, Transformer 52.27. Right: reported pass-key retrieval (TTT-E2E Table 2, 3B models): full attention stays at 1.00 to 0.99 from 8K to 128K, while TTT-E2E falls 1.00, 0.46, 0.24, 0.13, 0.06, tracking 8K/N, the share of needles inside its 8K window.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">exactly recallable pairs</tspan> <tspan font-style="normal">≤</tspan> <tspan font-style="italic">O</tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">k</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>) <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> per </tspan> <tspan fill="#8d6bb5"><tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">v</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> × <tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">k</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> state</tspan>  <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">vs.</tspan>  <tspan font-style="italic">N</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> for a KV cache</tspan></text>
+<rect x="24" y="56" width="420" height="340" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="38" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">in-context recall, 1B / 50B tokens (reported)</text>
+<text x="220" y="113.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Mamba2 · Hebbian+decay</text>
+<rect x="230" y="98" width="52.15600000000001" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="289.156" y="113.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">37.67</text>
+<text x="220" y="147.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">GLA</text>
+<rect x="230" y="132" width="65.552" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="302.552" y="147.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">39.64</text>
+<text x="220" y="181.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Gated DeltaNet</text>
+<rect x="230" y="166" width="64.872" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="301.872" y="181.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">39.54</text>
+<text x="220" y="215.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeltaNet · 1 GD step</text>
+<rect x="230" y="200" width="71.128" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="308.128" y="215.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">40.46</text>
+<text x="220" y="249.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Mesa · exact solve</text>
+<rect x="230" y="234" width="80.172" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="317.172" y="249.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">41.79</text>
+<text x="220" y="283.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">SWA-1024</text>
+<rect x="230" y="268" width="73.71200000000003" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="310.71200000000005" y="283.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">40.84</text>
+<text x="220" y="317.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Transformer · full KV</text>
+<rect x="230" y="302" width="151.43600000000004" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="388.43600000000004" y="317.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">52.27</text>
+<line x1="230.0" y1="94" x2="230.0" y2="328" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="230.0" y="342" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">30</text>
+<line x1="298.0" y1="94" x2="298.0" y2="328" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="298.0" y="342" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">40</text>
+<line x1="366.0" y1="94" x2="366.0" y2="328" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="366.0" y="342" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">50</text>
+<text x="234" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Hebbian → exact solve: +4.1 · full KV: +10.5 more</text>
+<text x="234" y="380" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">axis starts at 30</text>
+<rect x="458" y="56" width="418" height="340" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="472" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">pass-key retrieval vs context, 3B (reported)</text>
+<line x1="512.0" y1="112" x2="512.0" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="512.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">8K</text>
+<line x1="592.0" y1="112" x2="592.0" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="592.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">16K</text>
+<line x1="672.0" y1="112" x2="672.0" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="672.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">32K</text>
+<line x1="752.0" y1="112" x2="752.0" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="752.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">64K</text>
+<line x1="832.0" y1="112" x2="832.0" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="832.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">128K</text>
+<line x1="512" y1="312" x2="832" y2="312" stroke="#cad5db" stroke-width="0.8"/>
+<text x="504" y="316" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">0</text>
+<line x1="512" y1="212.0" x2="832" y2="212.0" stroke="#cad5db" stroke-width="0.8"/>
+<text x="504" y="216.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">0.5</text>
+<line x1="512" y1="112" x2="832" y2="112" stroke="#cad5db" stroke-width="0.8"/>
+<text x="504" y="116" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1</text>
+<path d="M512.0 112L592.0 212.0L672.0 262.0L752.0 287.0L832.0 299.5" fill="none" stroke="#687986" stroke-width="1.2" stroke-dasharray="5 4"/>
+<path d="M512.0 112.0L592.0 112.0L672.0 112.0L752.0 112.0L832.0 114.0" fill="none" stroke="#1f9a74" stroke-width="2.4"/>
+<circle cx="512.0" cy="112.0" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<circle cx="592.0" cy="112.0" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<circle cx="672.0" cy="112.0" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<circle cx="752.0" cy="112.0" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<circle cx="832.0" cy="114.0" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<path d="M512.0 112.0L592.0 220.0L672.0 264.0L752.0 286.0L832.0 300.0" fill="none" stroke="#cf5f59" stroke-width="2.4"/>
+<circle cx="512.0" cy="112.0" r="3.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<circle cx="592.0" cy="220.0" r="3.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<circle cx="672.0" cy="264.0" r="3.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<circle cx="752.0" cy="286.0" r="3.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<circle cx="832.0" cy="300.0" r="3.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<path d="M512.0 112.0L592.0 212.0L672.0 260.0L752.0 286.0L832.0 298.0" fill="none" stroke="#8d6bb5" stroke-width="2.4"/>
+<circle cx="512.0" cy="112.0" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<circle cx="592.0" cy="212.0" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<circle cx="672.0" cy="260.0" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<circle cx="752.0" cy="286.0" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<circle cx="832.0" cy="298.0" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="828.0" y="134.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">full attention: 0.99 at 128K</text>
+<text x="602.0" y="212.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">TTT-E2E</text>
+<text x="602.0" y="186.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">GDN + SWA</text>
+<text x="828.0" y="238.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">dashed: 8K / N</text>
+<text x="828.0" y="254.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">(needle inside the window)</text>
+<text x="672.0" y="352" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">context length · every model except full attention has an 8K window</text>
+</svg>

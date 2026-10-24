@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 553" role="img" aria-labelledby="title desc">
+<title id="title">choose-kv-bytes</title><desc id="desc">Growing KV bytes per token, all layers, for 17 frontier designs on a log scale, from 516,096 B (Llama 3.1-405B, all GQA) down to 6,144 B (Nemotron 3 Nano) and a reported 890 B (DeepSeek-V4.1-Flash, FP4). Right column: the same cache at one million tokens.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="553" fill="white"/>
+<text x="450" y="30" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="18" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">growing KV / token</tspan> = <tspan font-style="normal">Σ</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">ℓ</tspan> <tspan font-style="normal">∈</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">full layers</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan> <tspan fill="#3f83b6"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">record</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">ℓ</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">s</tspan> <tspan font-style="normal">  </tspan> (<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bounded windows and states excluded</tspan>)</text>
+<line x1="372.03808993110175" y1="52" x2="372.03808993110175" y2="507" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="372.03808993110175" y="523" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1 KB</text>
+<line x1="511.68560192863004" y1="52" x2="511.68560192863004" y2="507" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="511.68560192863004" y="523" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10 KB</text>
+<line x1="651.3331139261584" y1="52" x2="651.3331139261584" y2="507" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="651.3331139261584" y="523" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">100 KB</text>
+<text x="830" y="62" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#687986">at 1M tokens</text>
+<text x="24" y="83" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Llama 3.1-405B</text>
+<text x="178" y="83" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">all GQA 128/8</text>
+<rect x="330" y="72" width="420.8641540102974" height="15" rx="3" fill="#cf5f59" fill-opacity="0.8"/>
+<text x="756.8641540102974" y="84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">516,096</text>
+<text x="880" y="84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">504.0 GiB</text>
+<text x="24" y="108" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">GLM-4.6</text>
+<text x="178" y="108" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">all GQA 96/8</text>
+<rect x="330" y="97" width="401.7907172915759" height="15" rx="3" fill="#cf5f59" fill-opacity="0.8"/>
+<text x="737.7907172915759" y="109" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">376,832</text>
+<text x="880" y="109" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">368.0 GiB</text>
+<text x="24" y="133" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">MiniMax-M2</text>
+<text x="178" y="133" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">all GQA 48/8</text>
+<rect x="330" y="122" width="377.8556730752148" height="15" rx="3" fill="#cf5f59" fill-opacity="0.8"/>
+<text x="713.8556730752148" y="134" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">253,952</text>
+<text x="880" y="134" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">248.0 GiB</text>
+<text x="24" y="158" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Gemma 2 27B</text>
+<text x="178" y="158" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">SWA 1:1, W 4096</text>
+<rect x="330" y="147" width="359.7526273604742" height="15" rx="3" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="695.7526273604742" y="159" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">188,416</text>
+<text x="880" y="159" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">184.0 GiB</text>
+<text x="24" y="183" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Gemma 3 27B</text>
+<text x="178" y="183" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">SWA 5:1, W 1024</text>
+<rect x="330" y="172" width="309.2382350403674" height="15" rx="3" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="645.2382350403674" y="184" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">81,920</text>
+<text x="880" y="184" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">80.0 GiB</text>
+<text x="24" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Kimi K2</text>
+<text x="178" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">all MLA (576)</text>
+<rect x="330" y="197" width="299.9366452959198" height="15" rx="3" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="635.9366452959198" y="209" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">70,272</text>
+<text x="880" y="209" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">68.6 GiB</text>
+<text x="24" y="233" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Llama 4 Scout</text>
+<text x="178" y="233" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">chunked 3:1</text>
+<rect x="330" y="222" width="278.25760911668067" height="15" rx="3" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="614.2576091166807" y="234" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">49,152</text>
+<text x="880" y="234" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">48.0 GiB</text>
+<text x="24" y="258" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">MiniMax-01</text>
+<text x="178" y="258" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">lightning 7:1</text>
+<rect x="330" y="247" width="267.2001451092656" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="603.2001451092656" y="259" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">40,960</text>
+<text x="880" y="259" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">40.0 GiB</text>
+<text x="24" y="283" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Nemotron-H-56B</text>
+<text x="178" y="283" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">Mamba-2, 10 attn</text>
+<rect x="330" y="272" width="267.2001451092656" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="603.2001451092656" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">40,960</text>
+<text x="880" y="284" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">40.0 GiB</text>
+<text x="24" y="308" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">DeepSeek-V3.2</text>
+<text x="178" y="308" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">MLA + DSA, in FP8</text>
+<rect x="330" y="297" width="265.7860361978243" height="15" rx="3" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="601.7860361978243" y="309" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">40,016</text>
+<text x="880" y="309" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">39.1 GiB</text>
+<text x="24" y="333" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">gpt-oss-120b</text>
+<text x="178" y="333" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">SWA 1:1, W 128</text>
+<rect x="330" y="322" width="260.810225397217" height="15" rx="3" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="596.810225397217" y="334" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">36,864</text>
+<text x="880" y="334" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">36.0 GiB</text>
+<text x="24" y="358" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Qwen3-Next-80B</text>
+<text x="178" y="358" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">GDN 3:1</text>
+<rect x="330" y="347" width="236.21951918557886" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="572.2195191855789" y="359" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">24,576</text>
+<text x="880" y="359" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">24.0 GiB</text>
+<text x="24" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">MiMo-V2-Flash</text>
+<text x="178" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">SWA 39:9, W 128</text>
+<rect x="330" y="372" width="232.30537767033843" height="15" rx="3" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="568.3053776703384" y="384" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">23,040</text>
+<text x="880" y="384" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">22.5 GiB</text>
+<text x="24" y="408" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Jamba v0.1</text>
+<text x="178" y="408" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">Mamba 7:1</text>
+<rect x="330" y="397" width="211.62881297394074" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="547.6288129739407" y="409" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">16,384</text>
+<text x="880" y="409" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">16.0 GiB</text>
+<text x="24" y="433" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Kimi Linear 48B</text>
+<text x="178" y="433" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">KDA 20 + MLA 7</text>
+<rect x="330" y="422" width="168.635614423687" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="504.635614423687" y="434" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">8,064</text>
+<text x="880" y="434" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">7.9 GiB</text>
+<text x="24" y="458" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">Nemotron 3 Nano</text>
+<text x="178" y="458" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">Mamba-2, 6 attn</text>
+<rect x="330" y="447" width="152.14333932337547" height="15" rx="3" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="488.14333932337547" y="459" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">6,144</text>
+<text x="880" y="459" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">6.0 GiB</text>
+<text x="24" y="483" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#253340">DeepSeek-V4.1-Flash</text>
+<text x="178" y="483" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#687986">FP4 + index keys, reported</text>
+<rect x="330" y="472" width="34.970530276852344" height="15" rx="3" fill="#d09124" fill-opacity="0.8"/>
+<text x="370.97053027685234" y="484" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">890</text>
+<text x="880" y="484" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">890 MiB</text>
+<rect x="24" y="531" width="12" height="12" rx="2" fill="#cf5f59" fill-opacity="0.8"/>
+<text x="42" y="541" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">dense full attention</text>
+<rect x="186.0" y="531" width="12" height="12" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="204.0" y="541" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">MLA records</text>
+<rect x="288.6" y="531" width="12" height="12" rx="2" fill="#1f9a74" fill-opacity="0.8"/>
+<text x="306.6" y="541" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">windows / chunks</text>
+<rect x="424.20000000000005" y="531" width="12" height="12" rx="2" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="442.20000000000005" y="541" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">recurrent hybrids</text>
+<rect x="566.4000000000001" y="531" width="12" height="12" rx="2" fill="#d09124" fill-opacity="0.8"/>
+<text x="584.4000000000001" y="541" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">compressed</text>
+</svg>

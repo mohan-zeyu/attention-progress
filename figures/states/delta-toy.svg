@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" role="img" aria-labelledby="title desc">
+<title id="title">delta-toy</title><desc id="desc">The order-status toy. The state maps two order keys to a shipping day: order 7314 → 2 (Tuesday) and order 2208 → 4. The new fact is order 7314 → 5 (Friday). Adding gives 7, a mix. The delta rule with beta 1 gives exactly 5 and keeps 4. Gated DeltaNet (alpha 0.8, beta 0.5) gives 3.3 and fades 2208 to 3.2. KDA with alpha (0.8, 1) keeps 2208 at 4. The sum form gives 3.1 and 3.2.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="600" height="300" fill="white"/>
+<text x="375.0" y="30" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">order 7314</text>
+<text x="485.0" y="30" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">order 2208</text>
+<text x="375.0" y="46" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">should become 5</text>
+<text x="485.0" y="46" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">should stay 4</text>
+<text x="310" y="78" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">before</text>
+<rect x="330" y="60" width="90" height="26" rx="4" fill="#cad5db" fill-opacity="0.25" stroke="#cad5db" stroke-width="1"/>
+<text x="375.0" y="78" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">2</text>
+<rect x="440" y="60" width="90" height="26" rx="4" fill="#cad5db" fill-opacity="0.25" stroke="#cad5db" stroke-width="1"/>
+<text x="485.0" y="78" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4</text>
+<text x="310" y="114" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">add</text>
+<rect x="330" y="96" width="90" height="26" rx="4" fill="#cf5f59" fill-opacity="0.3" stroke="#cf5f59" stroke-width="1"/>
+<text x="375.0" y="114" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">7</text>
+<rect x="440" y="96" width="90" height="26" rx="4" fill="#1f9a74" fill-opacity="0.3" stroke="#1f9a74" stroke-width="1"/>
+<text x="485.0" y="114" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4</text>
+<text x="310" y="150" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">delta, β = 1</text>
+<rect x="330" y="132" width="90" height="26" rx="4" fill="#1f9a74" fill-opacity="0.3" stroke="#1f9a74" stroke-width="1"/>
+<text x="375.0" y="150" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">5</text>
+<rect x="440" y="132" width="90" height="26" rx="4" fill="#1f9a74" fill-opacity="0.3" stroke="#1f9a74" stroke-width="1"/>
+<text x="485.0" y="150" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4</text>
+<text x="310" y="186" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">gated delta, α = 0.8, β = 0.5</text>
+<rect x="330" y="168" width="90" height="26" rx="4" fill="#d09124" fill-opacity="0.3" stroke="#d09124" stroke-width="1"/>
+<text x="375.0" y="186" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.3</text>
+<rect x="440" y="168" width="90" height="26" rx="4" fill="#cf5f59" fill-opacity="0.3" stroke="#cf5f59" stroke-width="1"/>
+<text x="485.0" y="186" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.2</text>
+<text x="310" y="222" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">KDA, α = (0.8, 1), β = 0.5</text>
+<rect x="330" y="204" width="90" height="26" rx="4" fill="#d09124" fill-opacity="0.3" stroke="#d09124" stroke-width="1"/>
+<text x="375.0" y="222" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.3</text>
+<rect x="440" y="204" width="90" height="26" rx="4" fill="#1f9a74" fill-opacity="0.3" stroke="#1f9a74" stroke-width="1"/>
+<text x="485.0" y="222" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4</text>
+<text x="310" y="258" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">sum form, α = 0.8, β = 0.5</text>
+<rect x="330" y="240" width="90" height="26" rx="4" fill="#d09124" fill-opacity="0.3" stroke="#d09124" stroke-width="1"/>
+<text x="375.0" y="258" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.1</text>
+<rect x="440" y="240" width="90" height="26" rx="4" fill="#cf5f59" fill-opacity="0.3" stroke="#cf5f59" stroke-width="1"/>
+<text x="485.0" y="258" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.2</text>
+<rect x="40" y="274" width="12" height="12" rx="2" fill="#1f9a74" fill-opacity="0.3" stroke="#1f9a74" stroke-width="1"/>
+<text x="58" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">right</text>
+<rect x="150" y="274" width="12" height="12" rx="2" fill="#d09124" fill-opacity="0.3" stroke="#d09124" stroke-width="1"/>
+<text x="168" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">partly fixed</text>
+<rect x="260" y="274" width="12" height="12" rx="2" fill="#cf5f59" fill-opacity="0.3" stroke="#cf5f59" stroke-width="1"/>
+<text x="278" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">wrong or damaged</text>
+</svg>

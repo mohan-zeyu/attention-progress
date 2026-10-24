@@ -1,0 +1,112 @@
+[
+  {
+    "id": "flash2022",
+    "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "url": "https://arxiv.org/abs/2205.14135",
+    "year": 2022,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected sections 2–3: HBM versus on-chip memory, tiled online softmax, recomputation and unchanged dense arithmetic."
+  },
+  {
+    "id": "flash22023",
+    "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+    "url": "https://arxiv.org/abs/2307.08691",
+    "year": 2023,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract-screened description of work partitioning and non-matrix overhead. No speed ratio reproduced."
+  },
+  {
+    "id": "flash32024",
+    "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+    "url": "https://arxiv.org/abs/2407.08608",
+    "year": 2024,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract-screened Hopper asynchronous execution and separate low-precision path. No speed or accuracy ratio reproduced."
+  },
+  {
+    "id": "flash42026",
+    "title": "FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling",
+    "url": "https://arxiv.org/abs/2603.05451",
+    "year": 2026,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected introduction, architecture bottlenecks and pipelining sections. Only mechanism-level claims used; benchmark maxima omitted."
+  },
+  {
+    "id": "ring2023",
+    "title": "Ring Attention with Blockwise Transformers for Near-Infinite Context",
+    "url": "https://arxiv.org/abs/2310.01889",
+    "year": 2023,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected blockwise/ring computation and communication-overlap explanation; no unlimited-context guarantee inferred from title."
+  },
+  {
+    "id": "cla2024",
+    "title": "Reducing Transformer Key-Value Cache Size with Cross-Layer Attention",
+    "url": "https://arxiv.org/abs/2405.12981",
+    "year": 2024,
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected cross-layer sharing architecture and cache-count distinction. Numerical example of four sharing layers is original and illustrative."
+  },
+  {
+    "id": "kivi2024",
+    "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+    "url": "https://arxiv.org/abs/2402.02750",
+    "year": 2024,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected quantization motivation and key/value distribution/granularity sections. No end-to-end throughput ratio reproduced."
+  },
+  {
+    "id": "v41flash2026",
+    "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+    "url": "https://arxiv.org/abs/2609.19969",
+    "year": 2026,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected abstract, introduction, CSA2 cross-layer reuse, FP4 cache and persistent KV management. 890 bytes/token is attributed specifically to the report's global HBM cache."
+  },
+  {
+    "id": "paged2023",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "year": 2023,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract-screened physical block allocation, fragmentation and cache sharing. No serving speed claim reproduced."
+  },
+  {
+    "id": "fla-project",
+    "title": "Flash Linear Attention: efficient implementations for emerging model architectures",
+    "url": "https://github.com/fla-org/flash-linear-attention",
+    "year": null,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Inspected current official repository README as implementation-library evidence. Living project; year is not a publication date."
+  }
+]

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 315" role="img" aria-labelledby="title desc">
+<title id="title">01-qkv</title><desc id="desc">A query matches keys. Softmax supplies weights, shown illustratively as 0.1, 0.2, 0.6 and 0.1. The output combines the corresponding values.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="315" fill="white"/>
+<circle cx="70" cy="152" r="32" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="70" y="159.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Q</text>
+<line x1="104" y1="152" x2="227" y2="53" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="235" y="33" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="268.0" y="60.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">K1</text>
+<rect x="345" y="40" width="21.0" height="26" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="590" y="61" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">0.1</text>
+<rect x="650" y="33" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="683.0" y="60.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">V1</text>
+<line x1="721" y1="53" x2="807" y2="152" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<line x1="104" y1="152" x2="227" y2="121" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="235" y="101" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="268.0" y="128.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">K2</text>
+<rect x="345" y="108" width="42.0" height="26" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="590" y="129" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">0.2</text>
+<rect x="650" y="101" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="683.0" y="128.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">V2</text>
+<line x1="721" y1="121" x2="807" y2="152" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<line x1="104" y1="152" x2="227" y2="189" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="235" y="169" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="268.0" y="196.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">K3</text>
+<rect x="345" y="176" width="126.0" height="26" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="590" y="197" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">0.6</text>
+<rect x="650" y="169" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="683.0" y="196.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">V3</text>
+<line x1="721" y1="189" x2="807" y2="152" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<line x1="104" y1="152" x2="227" y2="257" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="235" y="237" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="268.0" y="264.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">K4</text>
+<rect x="345" y="244" width="21.0" height="26" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="590" y="265" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">0.1</text>
+<rect x="650" y="237" width="66" height="40" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="683.0" y="264.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">V4</text>
+<line x1="721" y1="257" x2="807" y2="152" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<circle cx="837" cy="152" r="29" fill="#ffffff" stroke="#209f78" stroke-width="2"/>
+<text x="837" y="159.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Σ</text>
+<text x="70" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Query</text>
+<text x="268" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#4287b9">Match keys</text>
+<text x="465" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Weights</text>
+<text x="705" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#9272b7">Combine values</text>
+</svg>

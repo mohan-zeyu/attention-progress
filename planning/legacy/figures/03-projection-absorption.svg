@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="685" viewBox="0 0 1080 685" role="img" aria-labelledby="title desc"><title id="title">MLA projection absorption</title><desc id="desc">Content key expansion can move to the query transformation and value expansion to the output transformation. A separate positional lane contributes scores before softmax.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#203044"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,Helvetica,sans-serif;fill:#203044}.small{font-size:14px}.body{font-size:17px}.title{font-size:23px;font-weight:700}.label{font-size:16px;font-weight:600}</style>
+<text x="30" y="39" class="title" text-anchor="start">Content projection absorption, with a positional lane</text>
+<text x="30" y="83" class="label" text-anchor="start">1  Move content-key projection to the query</text>
+<rect x="40" y="106" width="210" height="65" rx="10" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="145" y="133" class="body" text-anchor="middle">qC ∈ Rᵈᵏ</text>
+<text x="145" y="156" class="small" text-anchor="middle">content query</text>
+<line x1="253" y1="138" x2="361" y2="138" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="307" y="122" class="small" text-anchor="middle">Aᵀ: dc × dk</text>
+<rect x="370" y="106" width="253" height="65" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="496" y="133" class="body" text-anchor="middle">q̃ = Aᵀ qC ∈ Rᵈᶜ</text>
+<text x="496" y="156" class="small" text-anchor="middle">query in latent coordinates</text>
+<rect x="40" y="219" width="210" height="65" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="145" y="246" class="body" text-anchor="middle">cj ∈ Rᵈᶜ</text>
+<text x="145" y="269" class="small" text-anchor="middle">cached content latent</text>
+<rect x="750" y="162" width="285" height="84" rx="10" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="892" y="194" class="body" text-anchor="middle">content score: q̃ᵀ cj</text>
+<text x="892" y="223" class="small" text-anchor="middle">same as (qC)ᵀ A cj</text>
+<line x1="625" y1="138" x2="749" y2="189" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="688" y="145" class="small" text-anchor="middle">dot with cj</text>
+<line x1="252" y1="252" x2="749" y2="222" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="453" y="227" class="small" text-anchor="middle">use cached latent directly</text>
+<text x="30" y="323" class="label" text-anchor="start">2  Keep position-dependent matching separate</text>
+<rect x="40" y="345" width="253" height="64" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="166" y="372" class="body" text-anchor="middle">qR at position t ∈ Rᵈʳ</text>
+<text x="166" y="397" class="small" text-anchor="middle">head-specific positional query</text>
+<rect x="350" y="345" width="253" height="64" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="476" y="372" class="body" text-anchor="middle">kRj at position j ∈ Rᵈʳ</text>
+<text x="476" y="397" class="small" text-anchor="middle">shared positional key</text>
+<rect x="750" y="345" width="285" height="64" rx="10" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="892" y="372" class="body" text-anchor="middle">positional score: (qR)ᵀ kRj</text>
+<text x="892" y="397" class="small" text-anchor="middle">depends on relative position</text>
+<path d="M 293 377 L 319 377 L 319 329 L 724 329 L 724 360 L 749 360" fill="none" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="510" y="320" class="small" text-anchor="middle">dot product</text>
+<line x1="605" y1="377" x2="749" y2="387" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="674" y="371" class="small" text-anchor="middle">match</text>
+<text x="30" y="448" class="body" text-anchor="start">Add both scores, scale by √(dk + dr), then softmax over permitted positions j.</text>
+<text x="30" y="501" class="label" text-anchor="start">3  Move content-value projection to the output</text>
+<rect x="40" y="525" width="210" height="75" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="145" y="556" class="body" text-anchor="middle">cached latents cj</text>
+<text x="145" y="581" class="small" text-anchor="middle">each in Rᵈᶜ</text>
+<line x1="253" y1="562" x2="361" y2="562" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="307" y="543" class="small" text-anchor="middle">sum with αi,j</text>
+<rect x="370" y="525" width="253" height="75" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="496" y="556" class="body" text-anchor="middle">zi = Σj αi,j cj ∈ Rᵈᶜ</text>
+<text x="496" y="581" class="small" text-anchor="middle">a distinct read for head i</text>
+<line x1="625" y1="562" x2="749" y2="562" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="688" y="543" class="small" text-anchor="middle">Oi Ui: dm × dc</text>
+<rect x="750" y="525" width="285" height="75" rx="10" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="892" y="555" class="body" text-anchor="middle">head contribution: Oi Ui zi</text>
+<text x="892" y="581" class="small" text-anchor="middle">sum heads in Rᵈᵐ</text>
+<text x="30" y="652" class="small" text-anchor="start">Exact rearrangement for the parameterized content projections; no full content K/V cache is required.</text>
+</svg>

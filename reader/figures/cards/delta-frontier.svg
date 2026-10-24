@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 478" role="img" aria-labelledby="title desc">
+<title id="title">delta-frontier</title><desc id="desc">Four 2026 refinements of the delta rule, each shown as a toy 5×5 state with the part it gates. FG²-GDN: per-channel write strength β on key and value (tied; separate in FG²-GDN+). Gated DeltaNet-2: an erase gate b per key channel and a write gate w per value channel, both at address k. Kalman DeltaNet: step size from an uncertainty state p per key channel. Erase-then-Delta: a separate erase address e before the write at k. Timeline: RWKV-7 already had per-channel write strength in March 2025.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="478" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Diag</tspan>(<tspan fill="#2a9aa6">α<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)(<tspan font-style="italic">I</tspan> - (<tspan fill="#2a9aa6"><tspan font-style="italic">b</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan font-style="normal">⊙</tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>) + (<tspan fill="#2a9aa6"><tspan font-style="italic">w</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan font-style="normal">⊙</tspan><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan></text>
+<text x="870" y="36" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">GDN-2 form</text>
+<rect x="20" y="60" width="210" height="312" rx="10" fill="#eef3f5" stroke="#cad5db"/>
+<text x="125" y="84" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">FG²-GDN (+)</text>
+<text x="125" y="102" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Apr 2026</text>
+<rect x="82" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="102" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="122" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="142" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="162" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="82" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="102" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="122" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="142" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="162" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="82" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="102" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="122" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="142" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="162" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="82" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="102" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="122" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="142" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="162" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="82" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="102" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="122" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="142" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="162" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="82" y="139.0" width="16" height="27.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="102" y="157.0" width="16" height="9.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="122" y="145.0" width="16" height="21.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="142" y="160.0" width="16" height="6.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="162" y="151.0" width="16" height="15.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="49.0" y="172" width="27.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="67.0" y="192" width="9.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="55.0" y="212" width="21.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="70.0" y="232" width="6.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="61.0" y="252" width="15.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<text x="40" y="290" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β per channel (key = value)</text>
+<text x="125" y="312" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan> <tspan font-style="normal">→</tspan> √<tspan fill="#2a9aa6">β</tspan><tspan font-style="normal">⊙</tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan>,   <tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan></tspan> <tspan font-style="normal">→</tspan> √<tspan fill="#2a9aa6">β</tspan><tspan font-style="normal">⊙</tspan><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan></tspan></text>
+<text x="125" y="340" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">strength: vector β</text>
+<text x="125" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">tested: 340M/15B, 1.3B/100B</text>
+<rect x="238" y="60" width="210" height="312" rx="10" fill="#eef3f5" stroke="#cad5db"/>
+<text x="343" y="84" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Gated DeltaNet-2</text>
+<text x="343" y="102" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">May 2026</text>
+<rect x="300" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="320" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="340" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="360" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="380" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="300" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="320" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="340" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="360" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="380" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="300" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="320" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="340" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="360" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="380" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="300" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="320" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="340" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="360" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="380" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="300" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="320" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="340" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="360" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="380" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="300" y="142.0" width="16" height="24.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="320" y="160.0" width="16" height="6.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="340" y="148.0" width="16" height="18.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="360" y="139.0" width="16" height="27.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="380" y="157.0" width="16" height="9.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="282.0" y="172" width="12.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="267.0" y="192" width="27.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="288.0" y="212" width="6.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="273.0" y="232" width="21.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="279.0" y="252" width="15.0" height="16" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<text x="348" y="130" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">b: erase, per key</text>
+<text x="258" y="290" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">w: write, per value</text>
+<text x="343" y="312" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#253340"><tspan fill="#2a9aa6"><tspan font-style="italic">b</tspan></tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-5.5" font-size="8.8"><tspan font-style="italic">d</tspan><tspan dy="2.5" font-size="6.0"><tspan font-style="italic">k</tspan></tspan><tspan dy="-2.5" font-size="8.8"> </tspan></tspan><tspan dy="5.5" font-size="13.0"> </tspan>,   <tspan fill="#2a9aa6"><tspan font-style="italic">w</tspan></tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-5.5" font-size="8.8"><tspan font-style="italic">d</tspan><tspan dy="2.5" font-size="6.0"><tspan font-style="italic">v</tspan></tspan><tspan dy="-2.5" font-size="8.8"> </tspan></tspan><tspan dy="5.5" font-size="13.0"> </tspan></text>
+<text x="343" y="340" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">erase b ≠ write w</text>
+<text x="343" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">tested: 1.3B/100B</text>
+<rect x="456" y="60" width="210" height="312" rx="10" fill="#eef3f5" stroke="#cad5db"/>
+<text x="561" y="84" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Kalman Delta Networks</text>
+<text x="561" y="102" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Sep 2026</text>
+<rect x="518" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="538" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="558" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="578" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="598" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="518" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="538" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="558" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="578" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="598" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="518" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="538" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="558" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="578" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="598" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="518" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="538" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="558" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="578" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="598" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="518" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="538" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="558" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="578" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="598" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="518" y="137.5" width="16" height="28.5" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="538" y="161.5" width="16" height="4.5" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="558" y="151.0" width="16" height="15.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="578" y="157.0" width="16" height="9.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<rect x="598" y="142.0" width="16" height="24.0" rx="2" fill="#2a9aa6" fill-opacity="0.8"/>
+<text x="566" y="130" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">p: uncertainty per key</text>
+<text x="561" y="312" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="12.5" fill="#253340"><tspan fill="#2a9aa6">κ</tspan> = <tspan fill="#2a9aa6"><tspan font-style="italic">p</tspan></tspan><tspan font-style="normal">⊙</tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan> / (<tspan font-style="italic">r</tspan> + <tspan font-style="normal">Σ</tspan><tspan dy="3.5" font-size="8.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.5" font-size="12.5"> </tspan> <tspan fill="#2a9aa6"><tspan font-style="italic">p</tspan><tspan dy="3.5" font-size="8.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.5" font-size="12.5"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="3.5" font-size="8.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.5" font-size="12.5"> </tspan></tspan><tspan dy="-5.2" font-size="8.5">2</tspan><tspan dy="5.2" font-size="12.5"> </tspan>)</text>
+<text x="561" y="340" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">step from uncertainty p</text>
+<text x="561" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">tested: 750M/50B, 1.3B/100B</text>
+<rect x="674" y="60" width="210" height="312" rx="10" fill="#eef3f5" stroke="#cad5db"/>
+<text x="779" y="84" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Erase-then-Delta</text>
+<text x="779" y="102" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Jun 2026</text>
+<rect x="736" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="756" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="776" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="796" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="816" y="172" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="736" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="756" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="776" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="796" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="816" y="192" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="736" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="756" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="776" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="796" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="816" y="212" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="736" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="756" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="776" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.34"/>
+<rect x="796" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.62"/>
+<rect x="816" y="232" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="736" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="756" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.53"/>
+<rect x="776" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.80"/>
+<rect x="796" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.43"/>
+<rect x="816" y="252" width="18" height="18" rx="2" fill="#8d6bb5" fill-opacity="0.71"/>
+<rect x="754" y="168" width="20" height="104" rx="3" fill="#cf5f59" fill-opacity="0.0" stroke="#cf5f59" stroke-width="1"/>
+<rect x="794" y="168" width="20" height="104" rx="3" fill="#1f9a74" fill-opacity="0.0" stroke="#1f9a74" stroke-width="1"/>
+<text x="764" y="162" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">e</text>
+<text x="804" y="162" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">k</text>
+<text x="784" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">erase stale at e, write at k</text>
+<text x="779" y="312" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#253340">(<tspan font-style="italic">I</tspan> - <tspan fill="#2a9aa6">γ</tspan><tspan fill="#cf5f59"><tspan font-style="italic">e</tspan></tspan><tspan fill="#cf5f59"><tspan font-style="italic">e</tspan></tspan><tspan dy="-5.5" font-size="8.8"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="5.5" font-size="13.0"> </tspan>)(<tspan font-style="italic">I</tspan> - <tspan fill="#2a9aa6">β</tspan><tspan fill="#3f83b6"><tspan font-style="italic">kk</tspan></tspan><tspan dy="-5.5" font-size="8.8"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="5.5" font-size="13.0"> </tspan>)</text>
+<text x="779" y="340" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">address: e ≠ k</text>
+<text x="779" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">tested: 2.5B dense, 25B-A2.8B MoE</text>
+<line x1="60" y1="412" x2="840" y2="412" stroke="#cad5db" stroke-width="2"/>
+<circle cx="60" cy="412" r="6" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="60" y="398" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">RWKV-7</text>
+<text x="60" y="434" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Mar 2025</text>
+<circle cx="255" cy="412" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="255" y="398" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">FG²-GDN</text>
+<text x="255" y="434" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Apr 2026</text>
+<circle cx="450" cy="412" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="450" y="398" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">GDN-2</text>
+<text x="450" y="434" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">May 2026</text>
+<circle cx="645" cy="412" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="645" y="398" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">EDA</text>
+<text x="645" y="434" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Jun 2026</text>
+<circle cx="840" cy="412" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="840" y="398" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">KDN</text>
+<text x="840" y="434" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Sep 2026</text>
+<text x="60" y="454" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#1f9a74">per-channel write strength first shipped in RWKV-7 (vector a), a year before FG²-GDN</text>
+</svg>

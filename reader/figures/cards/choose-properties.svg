@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">choose-properties</title><desc id="desc">What each lever guarantees by construction. Full attention: exact recall, nothing discarded, cost grows. Windows alone: flat cost, no recall beyond W. Sparse reads: cache intact, recall only if the selector finds it. Eviction: flat cost, irreversible. Compression: blurred detail, still N/r growth. Recurrent state: flat cost, recall limited by capacity. Hybrids: exact recall through a few full layers.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="450" y="30" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">choose by what you cannot afford to lose:</tspan> <tspan font-style="normal"> </tspan> <tspan fill="#1f9a74"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">recall</tspan></tspan>   <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">vs</tspan>   <tspan fill="#cf5f59"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bytes per token</tspan></tspan></text>
+<text x="330" y="64" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">exact recall</text>
+<text x="330" y="80" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">far back</text>
+<text x="450" y="64" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">decode cost</text>
+<text x="450" y="80" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">flat in N</text>
+<text x="570" y="64" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">nothing</text>
+<text x="570" y="80" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">discarded</text>
+<text x="735" y="64" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">exposed by</text>
+<rect x="20" y="100" width="860" height="38" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="34" y="117" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Full attention (GQA, MLA)</text>
+<text x="34" y="133" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 03 04</text>
+<rect x="282" y="107" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="330.0" y="123.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<rect x="402" y="107" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="450.0" y="123.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<rect x="522" y="107" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="570.0" y="123.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<text x="735" y="124" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">cost at 128K+</text>
+<rect x="20" y="144" width="860" height="38" rx="6" fill="#ffffff" fill-opacity="1"/>
+<text x="34" y="161" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Window / chunk layers alone</text>
+<text x="34" y="177" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 05</text>
+<rect x="282" y="151" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="330.0" y="167.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<rect x="402" y="151" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="450.0" y="167.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<rect x="522" y="151" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="570.0" y="167.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<text x="735" y="168" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">needle beyond W</text>
+<rect x="20" y="188" width="860" height="38" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="34" y="205" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Sparse reads (top-k)</text>
+<text x="34" y="221" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 06</text>
+<rect x="282" y="195" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="330.0" y="211.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">if found</text>
+<rect x="402" y="195" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="450.0" y="211.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">reads only</text>
+<rect x="522" y="195" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="570.0" y="211.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<text x="735" y="212" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">multi-needle, aggregation</text>
+<rect x="20" y="232" width="860" height="38" rx="6" fill="#ffffff" fill-opacity="1"/>
+<text x="34" y="249" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Eviction</text>
+<text x="34" y="265" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 07</text>
+<rect x="282" y="239" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="330.0" y="255.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">if kept</text>
+<rect x="402" y="239" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="450.0" y="255.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<rect x="522" y="239" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="570.0" y="255.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<text x="735" y="256" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">question after the context</text>
+<rect x="20" y="276" width="860" height="38" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="34" y="293" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Sequence compression</text>
+<text x="34" y="309" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 08</text>
+<rect x="282" y="283" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="330.0" y="299.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">blurred</text>
+<rect x="402" y="283" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="450.0" y="299.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">N / r</text>
+<rect x="522" y="283" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="570.0" y="299.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<text x="735" y="300" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">verbatim copy</text>
+<rect x="20" y="320" width="860" height="38" rx="6" fill="#ffffff" fill-opacity="1"/>
+<text x="34" y="337" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Recurrent state</text>
+<text x="34" y="353" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 09–11</text>
+<rect x="282" y="327" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="330.0" y="343.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">capacity</text>
+<rect x="402" y="327" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="450.0" y="343.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<rect x="522" y="327" width="96" height="24" rx="12" fill="#cf5f59" fill-opacity="0.85" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="570.0" y="343.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">no</text>
+<text x="735" y="344" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">associative recall, copy</text>
+<rect x="20" y="364" width="860" height="38" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="34" y="381" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#253340">Hybrid (few full layers)</text>
+<text x="34" y="397" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">ch. 12</text>
+<rect x="282" y="371" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="330.0" y="387.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<rect x="402" y="371" width="96" height="24" rx="12" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="450.0" y="387.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#d09124">mostly</text>
+<rect x="522" y="371" width="96" height="24" rx="12" fill="#1f9a74" fill-opacity="0.85" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="570.0" y="387.5" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#ffffff">yes</text>
+<text x="735" y="388" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">cost of the full layers</text>
+<text x="450" y="428" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Design-level properties only. How often &quot;if found / if kept / capacity&quot; fails depends on training and budget; measure it.</text>
+</svg>

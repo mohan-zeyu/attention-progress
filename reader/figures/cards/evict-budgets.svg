@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">evict-budgets</title><desc id="desc">Same scorer, different budget split. PyramidKV gives Llama-3-8B layers a linear budget from 250 entries per head at layer 0 to 6.4 at layer 31 (mean 128, beta 20). Ada-KV pools one layer&#x27;s budget across heads: a toy layer budget of 12 over 4 heads becomes 6, 3, 2 and 1.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="italic">ℓ</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan></tspan> = <tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6">0</tspan><tspan dy="8.4" font-size="20.0"> </tspan> - <tspan font-style="italic">ℓ</tspan> (<tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6">0</tspan><tspan dy="8.4" font-size="20.0"> </tspan> - <tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="italic">L</tspan>-1</tspan><tspan dy="8.4" font-size="20.0"> </tspan>) / (<tspan font-style="italic">L</tspan>-1)</text>
+<text x="344.73600000000005" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="italic">L</tspan>-1</tspan><tspan dy="8.4" font-size="20.0"> </tspan> = <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">tot</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> / (<tspan fill="#2a9aa6"><tspan font-style="italic">β</tspan></tspan> <tspan font-style="italic">L</tspan>)</text>
+<text x="543.4560000000001" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6">0</tspan><tspan dy="8.4" font-size="20.0"> </tspan> = 2<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">tot</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> / <tspan font-style="italic">L</tspan> - <tspan font-style="italic">k</tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="italic">L</tspan>-1</tspan><tspan dy="8.4" font-size="20.0"> </tspan></text>
+<text x="30" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">PyramidKV · Llama-3-8B, L = 32, mean 128 per head, β = 20</text>
+<rect x="60" y="110.0" width="11" height="190.0" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="74" y="115.9718775847808" width="11" height="184.0281224152192" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="88" y="121.94375516956163" width="11" height="178.05624483043837" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="102" y="127.91563275434243" width="11" height="172.08436724565757" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="116" y="133.88751033912322" width="11" height="166.11248966087678" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="130" y="139.85938792390405" width="11" height="160.14061207609595" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="144" y="145.83126550868485" width="11" height="154.16873449131515" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="158" y="151.80314309346565" width="11" height="148.19685690653435" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="172" y="157.77502067824648" width="11" height="142.22497932175352" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="186" y="163.7468982630273" width="11" height="136.2531017369727" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="200" y="169.71877584780813" width="11" height="130.28122415219187" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="214" y="175.69065343258893" width="11" height="124.30934656741108" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="228" y="181.6625310173697" width="11" height="118.33746898263028" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="242" y="187.63440860215053" width="11" height="112.36559139784947" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="256" y="193.60628618693136" width="11" height="106.39371381306864" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="270" y="199.57816377171213" width="11" height="100.42183622828786" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="284" y="205.55004135649295" width="11" height="94.44995864350703" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="298" y="211.52191894127378" width="11" height="88.47808105872623" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="312" y="217.49379652605458" width="11" height="82.50620347394542" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="326" y="223.4656741108354" width="11" height="76.53432588916459" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="340" y="229.4375516956162" width="11" height="70.56244830438379" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="354" y="235.40942928039703" width="11" height="64.59057071960298" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="368" y="241.38130686517783" width="11" height="58.618693134822166" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="382" y="247.35318444995863" width="11" height="52.646815550041374" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="396" y="253.32506203473943" width="11" height="46.67493796526057" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="410" y="259.29693961952023" width="11" height="40.70306038047974" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="424" y="265.26881720430106" width="11" height="34.73118279569892" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="438" y="271.2406947890819" width="11" height="28.759305210918114" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="452" y="277.2125723738627" width="11" height="22.787427626137305" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="466" y="283.1844499586435" width="11" height="16.81555004135652" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="480" y="289.1563275434243" width="11" height="10.843672456575685" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="494" y="295.12820512820514" width="11" height="4.871794871794877" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<line x1="56" y1="202.56410256410254" x2="508" y2="202.56410256410254" stroke="#3f83b6" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="514" y="207.56410256410254" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">uniform 128</text>
+<text x="66" y="102" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">k⁰ = 250</text>
+<text x="500" y="269.12820512820514" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">k³¹ = 6.4</text>
+<line x1="56" y1="300" x2="508" y2="300" stroke="#cad5db" stroke-width="1"/>
+<text x="65.5" y="318" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">0</text>
+<text x="177.5" y="318" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">8</text>
+<text x="289.5" y="318" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">16</text>
+<text x="401.5" y="318" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">24</text>
+<text x="499.5" y="318" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">31</text>
+<text x="284.0" y="338" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">layer ℓ (lower layers attend broadly, upper layers focus)</text>
+<text x="60" y="366" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">both splits spend 32 × 128 = 4,096 entries per head across layers</text>
+<line x1="560" y1="62" x2="560" y2="400" stroke="#cad5db" stroke-width="1.2"/>
+<text x="580" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Ada-KV · one layer, toy</text>
+<text x="690" y="96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">scores, 12 cached tokens</text>
+<text x="592" y="117" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">h1</text>
+<rect x="600" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="615" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="630" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="645" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="660" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="675" y="104" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="690" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.24"/>
+<rect x="705" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.18"/>
+<rect x="720" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="735" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="750" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="765" y="104" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<text x="810" y="117" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">6</text>
+<text x="860" y="117" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">3</text>
+<text x="592" y="138" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">h2</text>
+<rect x="600" y="125" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="615" y="125" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="630" y="125" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="645" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.3"/>
+<rect x="660" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.24"/>
+<rect x="675" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.18"/>
+<rect x="690" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.18"/>
+<rect x="705" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="720" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="735" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.13799999999999998"/>
+<rect x="750" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<rect x="765" y="125" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<text x="810" y="138" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">3</text>
+<text x="860" y="138" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">3</text>
+<text x="592" y="159" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">h3</text>
+<rect x="600" y="146" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="615" y="146" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="630" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.36"/>
+<rect x="645" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.3"/>
+<rect x="660" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.24"/>
+<rect x="675" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.21"/>
+<rect x="690" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.18"/>
+<rect x="705" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="720" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.13799999999999998"/>
+<rect x="735" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<rect x="750" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<rect x="765" y="146" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.126"/>
+<text x="810" y="159" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">2</text>
+<text x="860" y="159" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">3</text>
+<text x="592" y="180" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">h4</text>
+<rect x="600" y="167" width="13" height="15" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="615" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.32999999999999996"/>
+<rect x="630" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.27"/>
+<rect x="645" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.24"/>
+<rect x="660" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.21"/>
+<rect x="675" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.18"/>
+<rect x="690" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.16799999999999998"/>
+<rect x="705" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.15"/>
+<rect x="720" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.13799999999999998"/>
+<rect x="735" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.132"/>
+<rect x="750" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.126"/>
+<rect x="765" y="167" width="13" height="15" rx="2" fill="#3f83b6" fill-opacity="0.126"/>
+<text x="810" y="180" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">1</text>
+<text x="860" y="180" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">3</text>
+<text x="810" y="96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">Ada</text>
+<text x="860" y="96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">uniform</text>
+<text x="580" y="232" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">layer budget B = 12: take the global</text>
+<text x="580" y="252" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">top-12 over all heads, then count</text>
+<text x="580" y="272" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">per head → 6, 3, 2, 1</text>
+<line x1="580" y1="300" x2="880" y2="300" stroke="#cad5db" stroke-width="1.2"/>
+<text x="580" y="326" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">reported:</text>
+<text x="580" y="348" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">PyramidKV ≈ full KV on LongBench at 12%</text>
+<text x="580" y="370" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Ada-SnapKV / Ada-Pyramid: plug-in,</text>
+<text x="580" y="390" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">tested on 13 RULER + 16 LongBench sets</text>
+</svg>

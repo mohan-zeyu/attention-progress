@@ -1,0 +1,123 @@
+[
+  {
+    "id": "longformer-2020",
+    "title": "Longformer: The Long-Document Transformer",
+    "url": "https://arxiv.org/abs/2004.05150",
+    "year": 2020,
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read attention-pattern sections, including symmetric task-designated global positions and bounded-window scaling; distinguished bidirectional document processing from causal decoder use."
+  },
+  {
+    "id": "bigbird-2020",
+    "title": "Big Bird: Transformers for Longer Sequences",
+    "url": "https://arxiv.org/abs/2007.14062",
+    "year": 2020,
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read graph construction and local/random/global connection descriptions; theoretical expressivity is not a guarantee of practical exact recall."
+  },
+  {
+    "id": "moba-2025",
+    "title": "MoBA: Mixture of Block Attention for Long-Context LLMs",
+    "url": "https://arxiv.org/abs/2502.13189",
+    "year": 2025,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §2 routing equations and causality handling: query dot mean-key block scores, original token-level KV read in selected blocks, mandatory current block with causal masking, and sparse/full-attention mixtures."
+  },
+  {
+    "id": "minference-2024",
+    "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
+    "url": "https://arxiv.org/abs/2407.02490",
+    "year": 2024,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §§2–3 and evaluation methodology: offline head-pattern assignment, static A-shape and dynamic Vertical-Slash/Block-Sparse indices, training-free approximate prefill attention."
+  },
+  {
+    "id": "nsa-2025",
+    "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "url": "https://arxiv.org/abs/2502.11089",
+    "year": 2025,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §3: learned overlapping block summaries; compression-score-derived block selection aggregated across shared KV query groups; independent KV representations and gated combination of compression, selection and local branches."
+  },
+  {
+    "id": "deepseek-v32-dsa-2025",
+    "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+    "url": "https://arxiv.org/abs/2512.02556",
+    "year": 2025,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §§2.1–2.3: learned lightning indexer, top-k MLA entry selection, dense indexer warm-up and sparse continued training; main attention O(Nk) while full-sequence indexer remains O(N²)."
+  },
+  {
+    "id": "deepseek-v2-mla-2024",
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "url": "https://arxiv.org/abs/2405.04434",
+    "year": 2024,
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §2.1 joint latent KV compression and decoupled positional component; MLA reduces entry dimensions but still retains a learned record per historical position."
+  },
+  {
+    "id": "deepseek-v4-csa-hca-2026",
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "url": "https://arxiv.org/abs/2606.19348",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §2.3 and §4.2: overlapping 2r-source-position CSA windows emitted every r positions, HCA non-overlapping dense compressed-history access, shared-KV MQA with the same entry as key and value, and local uncompressed entries."
+  },
+  {
+    "id": "deepseek-v4-reference-model-2026",
+    "title": "DeepSeek-V4-Pro official inference/model.py",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/model.py",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected Compressor, Indexer and Attention implementations: overlap transform, per-channel softmax pooling, incomplete-block state, causal compressed-entry indices, and concatenation of local and compressed entries for the core attention."
+  },
+  {
+    "id": "deepseek-v4-reference-config-2026",
+    "title": "DeepSeek-V4-Pro official inference/config.json",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/config.json",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Checked compression ratios 4 and 128, local window 128, and per-layer ratio list with two initial HCA layers and subsequent interleaving; avoid interpreting pooled-record counts as full memory footprints."
+  },
+  {
+    "id": "deepseek-v4-modelcard-2026",
+    "title": "DeepSeek-V4-Pro official model card",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Read model introduction and long-context evaluation tables, including MRCR and CorpusQA; whole-model results do not isolate a compressor's contribution."
+  }
+]

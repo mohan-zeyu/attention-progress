@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">compress-hca</title><desc id="desc">HCA in DeepSeek-V4: every 128 tokens become one entry with no overlap, and queries read all entries densely plus a 128-token raw window. Entries read per query: at 8K, MLA 8,192, CSA 1,152, HCA 192; at 128K, 131,072, 1,152 and 1,152; at 1M, 1,048,576, 1,152 and 8,320. CSA also pays an indexer pass over N/4 entries.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> = <tspan font-style="normal">Σ</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan> ∈ <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">blk</tspan><tspan dy="3.8" font-size="9.2"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.8" font-size="13.6"> </tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">softmax</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>(<tspan fill="#2a9aa6"><tspan font-style="italic">z</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> + B<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>) <tspan font-style="normal">⊙</tspan> <tspan font-style="italic">x</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>,   |<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">blk</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>| = 128</text>
+<text x="529.97696" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-style="italic">A</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> = { <tspan font-style="italic">c</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">s</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> : <tspan font-style="italic">s</tspan> &lt; ⌊<tspan font-style="italic">t</tspan>/128⌋ } ∪ <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">win</tspan><tspan dy="5.6" font-size="13.6">128</tspan><tspan dy="-5.6" font-size="20.0"> </tspan></text>
+<text x="30" y="78" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">one layer at 1M tokens</text>
+<text x="148" y="110" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">MLA</text>
+<rect x="160" y="94" width="480" height="22" rx="2" fill="#3f83b6" fill-opacity="0.75"/>
+<text x="652" y="110" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">1,048,576 records, all read</text>
+<text x="148" y="150" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">CSA (m = 4)</text>
+<rect x="160" y="134" width="480" height="22" rx="2" fill="#3f83b6" fill-opacity="0.2"/>
+<rect x="160.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="337.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="515.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="212.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="390.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="568.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="265.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="443.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="620.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="318.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="496.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="193.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="371.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="548.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="246.39999999999998" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="424.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="601.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="299.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="476.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="174.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="352.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="529.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="227.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="404.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="582.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="280.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="457.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="635.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="332.79999999999995" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="510.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="208.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="385.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="563.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="260.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="438.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="616.0" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="313.6" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="491.2" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="188.8" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="366.4" y="134" width="2" height="22" rx="0" fill="#1f9a74" fill-opacity="0.95"/>
+<text x="652" y="150" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">262,144 entries, 1,024 read</text>
+<text x="148" y="190" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">HCA (m′ = 128)</text>
+<rect x="160.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="167.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="175.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="182.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="190.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="197.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="205.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="212.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="220.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="227.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="235.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="242.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="250.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="257.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="265.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="272.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="280.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="287.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="295.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="302.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="310.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="317.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="325.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="332.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="340.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="347.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="355.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="362.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="370.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="377.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="385.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="392.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="400.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="407.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="415.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="422.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="430.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="437.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="445.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="452.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="460.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="467.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="475.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="482.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="490.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="497.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="505.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="512.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="520.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="527.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="535.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="542.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="550.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="557.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="565.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="572.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="580.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="587.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="595.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="602.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="610.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="617.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="625.0" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="632.5" y="174" width="5.5" height="22" rx="1" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="652" y="190" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">8,192 entries, all read</text>
+<text x="160" y="222" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">HCA = Compressive-Transformer-style dense read, with learned pooling and m′ = 128; no indexer</text>
+<line x1="30" y1="238" x2="870" y2="238" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="264" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">entries read per query (log scale) · V4-Pro settings, 128-token window included</text>
+<text x="68" y="328" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">8K</text>
+<rect x="80" y="282" width="62.18517316803205" height="20" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="148.18517316803207" y="297" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">MLA 8,192</text>
+<rect x="80" y="308" width="34.497205570333776" height="20" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="120.49720557033378" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">CSA 1,152</text>
+<rect x="80" y="334" width="9.207289932865365" height="20" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="95.20728993286536" y="349" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">HCA 192</text>
+<text x="348" y="328" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">128K</text>
+<rect x="360" y="282" width="101.31907260434961" height="20" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="467.3190726043496" y="297" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">MLA 131,072</text>
+<rect x="360" y="308" width="34.497205570333776" height="20" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="400.4972055703338" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">CSA 1,152</text>
+<rect x="360" y="334" width="34.497205570333776" height="20" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="400.4972055703338" y="349" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">HCA 1,152</text>
+<text x="628" y="328" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">1M</text>
+<rect x="640" y="282" width="130.6694971815878" height="20" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="776.6694971815878" y="297" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">MLA 1,048,576</text>
+<rect x="640" y="308" width="34.497205570333776" height="20" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="680.4972055703338" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">CSA 1,152</text>
+<rect x="640" y="334" width="62.40400810444853" height="20" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="708.4040081044485" y="349" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">HCA 8,320</text>
+<text x="30" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">CSA also scores N/4 entries with its FP4 indexer: 2,048 · 32,768 · 262,144. HCA has no scorer.</text>
+<text x="30" y="404" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">At 1M, HCA reads 7× more entries than CSA but each entry spans 128 tokens; CSA entries span 8 with overlap.</text>
+</svg>

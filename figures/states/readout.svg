@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 262" role="img" aria-labelledby="title desc">
+<title id="title">readout</title><desc id="desc">Key similarity k_i·k_j for unit keys. With 4 orthogonal keys in 4 dimensions only the diagonal is non-zero, so reading with key i returns exactly v_i. With 8 keys in 4 dimensions the off-diagonal entries are non-zero, so every read mixes in other values (crosstalk).</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="560" height="262" fill="white"/>
+<text x="96.0" y="36" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4 keys, d = 4</text>
+<rect x="60" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="78" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="96" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="114" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="60" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="78" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="96" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="114" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="60" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="78" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="96" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="114" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="60" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="78" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="96" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.06"/>
+<rect x="114" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<text x="96.0" y="144" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">exact</text>
+<text x="372.0" y="36" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">8 keys, d = 4</text>
+<rect x="300" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999997"/>
+<rect x="318" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.2729908101792131"/>
+<rect x="336" y="50" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.18557081817893448"/>
+<rect x="354" y="50" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5304035435371788"/>
+<rect x="372" y="50" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.17498405578828202"/>
+<rect x="390" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.4225415599861086"/>
+<rect x="408" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.07330830953416168"/>
+<rect x="426" y="50" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.18532609929601176"/>
+<rect x="300" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.2729908101792131"/>
+<rect x="318" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="336" y="68" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.32928967822534433"/>
+<rect x="354" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.110167968904853"/>
+<rect x="372" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.6139104247974236"/>
+<rect x="390" y="68" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.6359796017665116"/>
+<rect x="408" y="68" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.1282665994153021"/>
+<rect x="426" y="68" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.11810739106459522"/>
+<rect x="300" y="86" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.18557081817893448"/>
+<rect x="318" y="86" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.32928967822534433"/>
+<rect x="336" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999997"/>
+<rect x="354" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.6030227230582652"/>
+<rect x="372" y="86" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5551741107505896"/>
+<rect x="390" y="86" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.14515438552044585"/>
+<rect x="408" y="86" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5088723308507468"/>
+<rect x="426" y="86" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.8162364412669687"/>
+<rect x="300" y="104" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5304035435371788"/>
+<rect x="318" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.110167968904853"/>
+<rect x="336" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.6030227230582652"/>
+<rect x="354" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="372" y="104" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.21972175009320463"/>
+<rect x="390" y="104" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5894150750825315"/>
+<rect x="408" y="104" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.7168932113440263"/>
+<rect x="426" y="104" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.4959879885199465"/>
+<rect x="300" y="122" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.17498405578828202"/>
+<rect x="318" y="122" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.6139104247974236"/>
+<rect x="336" y="122" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5551741107505896"/>
+<rect x="354" y="122" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.21972175009320463"/>
+<rect x="372" y="122" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="390" y="122" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.7404445389393977"/>
+<rect x="408" y="122" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.2655923628835213"/>
+<rect x="426" y="122" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.5526467183028284"/>
+<rect x="300" y="140" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.4225415599861086"/>
+<rect x="318" y="140" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.6359796017665116"/>
+<rect x="336" y="140" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.14515438552044585"/>
+<rect x="354" y="140" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5894150750825315"/>
+<rect x="372" y="140" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.7404445389393977"/>
+<rect x="390" y="140" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="408" y="140" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.41030135509840243"/>
+<rect x="426" y="140" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.0780487832813396"/>
+<rect x="300" y="158" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.07330830953416168"/>
+<rect x="318" y="158" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.1282665994153021"/>
+<rect x="336" y="158" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.5088723308507468"/>
+<rect x="354" y="158" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.7168932113440263"/>
+<rect x="372" y="158" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.2655923628835213"/>
+<rect x="390" y="158" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.41030135509840243"/>
+<rect x="408" y="158" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="426" y="158" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.2715168859779893"/>
+<rect x="300" y="176" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.18532609929601176"/>
+<rect x="318" y="176" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.11810739106459522"/>
+<rect x="336" y="176" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.8162364412669687"/>
+<rect x="354" y="176" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.4959879885199465"/>
+<rect x="372" y="176" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.5526467183028284"/>
+<rect x="390" y="176" width="16.5" height="16.5" fill="#cf5f59" fill-opacity="0.0780487832813396"/>
+<rect x="408" y="176" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.2715168859779893"/>
+<rect x="426" y="176" width="16.5" height="16.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<text x="372.0" y="216" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">crosstalk</text>
+<text x="60" y="248" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">row = read with key i, column = stored key j</text>
+</svg>

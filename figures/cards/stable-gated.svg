@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+<title id="title">stable-gated</title><desc id="desc">Qwen3-Next attention layer shapes: x has 2,048 dims; q_proj outputs 16 heads x 256 for queries plus another 4,096 for the gate; SDPA output Y (4,096) is multiplied elementwise by sigmoid of the gate, then o_proj maps 4,096 to 2,048. Toy head with 12 channels: most gate values are near 0. Reported for a 15B MoE: first-token attention 46.7 percent to 4.8, max activation 1,053 to 94, perplexity 6.026 to 5.761, RULER at 128K 31.65 to 58.82. An output gate rescales one token read; a state gate changes every later read.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="460" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">Y</tspan>&#x27;</tspan> = <tspan fill="#1f9a74"><tspan font-style="italic">Y</tspan></tspan> <tspan font-style="normal">⊙</tspan> σ(<tspan fill="#2a9aa6"><tspan font-style="italic">X</tspan> <tspan font-style="italic">W</tspan><tspan dy="5.9" font-size="14.3">θ</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)</text>
+<text x="222.04" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">Y</tspan></tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">softmax</tspan>(<tspan fill="#d09124"><tspan font-style="italic">Q</tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">K</tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>/<tspan font-style="normal">√</tspan> <tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>) <tspan fill="#8d6bb5"><tspan font-style="italic">V</tspan></tspan></text>
+<text x="499.65919999999994" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">out</tspan> = <tspan font-style="italic">W</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">O</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#1f9a74"><tspan font-style="italic">Y</tspan>&#x27;</tspan></text>
+<text x="30" y="72" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Qwen3-Next attention layer (config dims)</text>
+<rect x="30" y="86" width="70" height="34" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#253340" stroke-width="1.6"/>
+<text x="65.0" y="108.76" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></text>
+<text x="65" y="136" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2,048</text>
+<line x1="102" y1="103" x2="128" y2="103" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<rect x="130" y="86" width="92" height="34" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="176.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#d09124">q_proj ×2</text>
+<line x1="224" y1="96" x2="250" y2="92" stroke="#d09124" stroke-width="1.8" marker-end="url(#a-gold)"/>
+<line x1="224" y1="110" x2="250" y2="128" stroke="#2a9aa6" stroke-width="1.8" marker-end="url(#a-teal)"/>
+<rect x="252" y="78" width="86" height="26" rx="6" fill="#d09124" fill-opacity="1" stroke="#d09124" stroke-width="1.6"/>
+<text x="295.0" y="95.68" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#ffffff"><tspan font-style="italic">Q</tspan> · 16×256</text>
+<rect x="252" y="116" width="86" height="26" rx="6" fill="#2a9aa6" fill-opacity="1" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="295.0" y="133.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">gate 4,096</text>
+<line x1="340" y1="91" x2="366" y2="91" stroke="#d09124" stroke-width="1.8" marker-end="url(#a-gold)"/>
+<rect x="368" y="76" width="66" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="401.0" y="96.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#1f9a74">SDPA</text>
+<text x="401" y="70" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">K,V: 2 × 256</text>
+<line x1="436" y1="91" x2="462" y2="104" stroke="#1f9a74" stroke-width="1.8" marker-end="url(#a-green)"/>
+<line x1="340" y1="129" x2="462" y2="112" stroke="#2a9aa6" stroke-width="1.8" marker-end="url(#a-teal)"/>
+<circle cx="476" cy="108" r="13" fill="#ffffff" stroke="#1f9a74" stroke-width="2"/>
+<text x="476" y="114.48" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#1f9a74">⊙</text>
+<line x1="490" y1="108" x2="514" y2="108" stroke="#1f9a74" stroke-width="1.8" marker-end="url(#a-green)"/>
+<rect x="516" y="92" width="86" height="32" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="559.0" y="113.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#1f9a74">o_proj</text>
+<text x="559" y="140" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">→ 2,048</text>
+<text x="476" y="86" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">4,096</text>
+<text x="30" y="178" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">One head, 12 of 256 channels (toy)</text>
+<text x="130" y="212" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#1f9a74" font-weight="700"><tspan font-style="italic">Y</tspan></text>
+<rect x="142" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.72"/>
+<text x="158" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">+0.80</text>
+<rect x="178" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.54"/>
+<text x="194" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">-0.60</text>
+<rect x="214" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.45"/>
+<text x="230" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.50</text>
+<rect x="250" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.81"/>
+<text x="266" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">+0.90</text>
+<rect x="286" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.27"/>
+<text x="302" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">-0.30</text>
+<rect x="322" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.63"/>
+<text x="338" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">+0.70</text>
+<rect x="358" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.72"/>
+<text x="374" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">-0.80</text>
+<rect x="394" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.36"/>
+<text x="410" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.40</text>
+<rect x="430" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.54"/>
+<text x="446" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">+0.60</text>
+<rect x="466" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.45"/>
+<text x="482" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">-0.50</text>
+<rect x="502" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.27"/>
+<text x="518" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.30</text>
+<rect x="538" y="192" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.81"/>
+<text x="554" y="211" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">+0.90</text>
+<text x="130" y="250" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#2a9aa6" font-weight="700">σ(<tspan font-style="italic">XW</tspan><tspan dy="4.2" font-size="10.2">θ</tspan><tspan dy="-4.2" font-size="15.0"> </tspan>)</text>
+<rect x="142" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="158" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.03</text>
+<rect x="178" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.83"/>
+<text x="194" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">0.92</text>
+<rect x="214" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="230" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.05</text>
+<rect x="250" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="266" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.01</text>
+<rect x="286" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.07"/>
+<text x="302" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.08</text>
+<rect x="322" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.64"/>
+<text x="338" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">0.71</text>
+<rect x="358" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="374" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.02</text>
+<rect x="394" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="410" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.04</text>
+<rect x="430" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.79"/>
+<text x="446" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">0.88</text>
+<rect x="466" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="482" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.02</text>
+<rect x="502" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="518" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.06</text>
+<rect x="538" y="230" width="32" height="28" rx="3" fill="#2a9aa6" fill-opacity="0.06"/>
+<text x="554" y="249" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">0.03</text>
+<text x="130" y="288" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#1f9a74" font-weight="700"><tspan font-style="italic">Y</tspan>&#x27; = <tspan font-style="italic">Y</tspan> <tspan font-style="normal">⊙</tspan> σ</text>
+<rect x="142" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="158" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.02</text>
+<rect x="178" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.5"/>
+<text x="194" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#ffffff">-0.55</text>
+<rect x="214" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="230" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.03</text>
+<rect x="250" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="266" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.01</text>
+<rect x="286" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="302" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">-0.02</text>
+<rect x="322" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.45"/>
+<text x="338" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.50</text>
+<rect x="358" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="374" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">-0.02</text>
+<rect x="394" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="410" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.02</text>
+<rect x="430" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.48"/>
+<text x="446" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.53</text>
+<rect x="466" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="482" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">-0.01</text>
+<rect x="502" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="518" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.02</text>
+<rect x="538" y="268" width="32" height="28" rx="3" fill="#1f9a74" fill-opacity="0.06"/>
+<text x="554" y="287" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#253340">+0.03</text>
+<text x="142" y="326" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">mean gate 0.116 (reported): most channels shut per query</text>
+<line x1="588" y1="60" x2="588" y2="336" stroke="#cad5db" stroke-width="1.2"/>
+<text x="606" y="72" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Reported · 15B MoE, 400B tokens</text>
+<text x="606" y="104" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">first-token attention</text>
+<rect x="606" y="110" width="170.0" height="12" rx="2" fill="#cf5f59" fill-opacity="0.7"/>
+<text x="782.0" y="121" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">46.7%</text>
+<rect x="606" y="125" width="17.47323340471092" height="12" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="629.4732334047109" y="136" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">4.8% gated</text>
+<text x="606" y="164" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">max activation</text>
+<rect x="606" y="170" width="170.0" height="12" rx="2" fill="#cf5f59" fill-opacity="0.7"/>
+<text x="782.0" y="181" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">1053</text>
+<rect x="606" y="185" width="15.175688509021843" height="12" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="627.1756885090218" y="196" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">94 gated</text>
+<text x="606" y="224" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">perplexity</text>
+<rect x="606" y="230" width="170.00000000000003" height="12" rx="2" fill="#cf5f59" fill-opacity="0.7"/>
+<text x="782.0" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">6.026</text>
+<rect x="606" y="245" width="162.52406239628277" height="12" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="774.5240623962827" y="256" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">5.761 gated</text>
+<text x="606" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">RULER 128K (YaRN)</text>
+<rect x="606" y="290" width="91.47398843930635" height="12" rx="2" fill="#cf5f59" fill-opacity="0.7"/>
+<text x="703.4739884393064" y="301" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">31.65</text>
+<rect x="606" y="305" width="170.0" height="12" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="782.0" y="316" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">58.82 gated</text>
+<line x1="20" y1="346" x2="880" y2="346" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="372" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Gate location</text>
+<text x="30" y="400" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">output gate: </tspan> <tspan fill="#1f9a74"><tspan font-style="italic">y</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan> = <tspan fill="#2a9aa6"><tspan font-style="italic">g</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan> <tspan font-style="normal">⊙</tspan> <tspan fill="#1f9a74"><tspan font-style="italic">o</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan></text>
+<text x="30" y="432" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">state gate: </tspan> <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan> = <tspan fill="#2a9aa6">α<tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan> <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan> + <tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan></text>
+<rect x="360" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="360" y="416" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="394" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="394" y="416" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="428" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="428" y="416" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="462" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="462" y="416" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="496" y="384" width="28" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="496" y="416" width="28" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="530" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="530" y="416" width="28" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="564" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="564" y="416" width="28" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="598" y="384" width="28" height="22" rx="3" fill="#cad5db" fill-opacity="0.5"/>
+<rect x="598" y="416" width="28" height="22" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="510" y="380" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">t</text>
+<text x="640" y="400" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">changes this token’s read only</text>
+<text x="640" y="432" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">changes every later read</text>
+</svg>

@@ -1,0 +1,2142 @@
+[
+  {
+    "id": "bahdanau2014",
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "url": "https://arxiv.org/abs/1409.0473",
+    "year": 2014,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.1 and 3.1–3.2: fixed-vector encoder–decoder interface, learned alignment, weighted annotations, and dynamic context."
+  },
+  {
+    "id": "luong2015",
+    "title": "Effective Approaches to Attention-based Neural Machine Translation",
+    "url": "https://arxiv.org/abs/1508.04025",
+    "year": 2015,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Read abstract for global/local attention and opened fulltext; chapter uses only concise historical characterization, with score-function types also supported by Transformer section 3.2.1."
+  },
+  {
+    "id": "transformer2017",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "year": 2017,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2–4: previous self-attention work, scaled dot-product/multi-head attention, encoder–decoder/self attention, masks, positions, and sequence complexity."
+  },
+  {
+    "id": "relative2018",
+    "title": "Self-Attention with Relative Position Representations",
+    "url": "https://arxiv.org/abs/1803.02155",
+    "year": 2018,
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 3.1–3.2: relation-aware attention and learned clipped relative offsets; no quality numbers reproduced."
+  },
+  {
+    "title": "Compressive Transformers for Long-Range Sequence Modelling",
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1911.05507",
+    "venue": "ICLR 2020 · DeepMind",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "PDF §3, §5.1–5.3: range l(n_m+c·n_cm); Enwik8 c=3, 768/1152; WikiText 17.1; PG-19 33.6 vs 36.3."
+  },
+  {
+    "id": "mqa2019",
+    "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+    "url": "https://arxiv.org/abs/1911.02150",
+    "year": 2019,
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.4, 3, and 4: incremental cache, bandwidth analysis, shared KV projections, and experiment scope. Worked byte counts are original illustrative calculations. §2.4, §3: one shared K/V head for all query heads; incremental-decoding memory-bandwidth argument."
+  },
+  {
+    "title": "Generating Long Sequences with Sparse Transformers",
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1904.10509",
+    "venue": "arXiv · OpenAI",
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§4.3 strided and fixed pattern definitions, l ≈ √n; abstract O(n√n); strided fails on text."
+  },
+  {
+    "id": "bigbird-2020",
+    "title": "Big Bird: Transformers for Longer Sequences",
+    "url": "https://arxiv.org/abs/2007.14062",
+    "year": 2020,
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read graph construction and local/random/global connection descriptions; theoretical expressivity is not a guarantee of practical exact recall. Table 8 ITC: block 64, g 2b, w 3b, r 3b, length 4096."
+  },
+  {
+    "title": "Language Models are Few-Shot Learners (GPT-3)",
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2005.14165",
+    "venue": "NeurIPS 2020 · OpenAI",
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.1: alternating dense and locally banded sparse layers; n_ctx 2048."
+  },
+  {
+    "id": "longformer-2020",
+    "title": "Longformer: The Long-Document Transformer",
+    "url": "https://arxiv.org/abs/2004.05150",
+    "year": 2020,
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read attention-pattern sections, including symmetric task-designated global positions and bounded-window scaling; distinguished bidirectional document processing from causal decoder use. Pretraining section: sliding window 512, positions extended to 4,096."
+  },
+  {
+    "id": "linear-transformers-2020",
+    "title": "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention",
+    "url": "https://proceedings.mlr.press/v119/katharopoulos20a.html",
+    "year": 2020,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Primary proceedings paper Sections 3.2–3.4 inspected; feature-map kernel reassociation and normalized recurrent numerator/denominator. Worked customer-service interpretation is original. §3.2–3.4: reassociation (QKᵀ)V = Q(KᵀV), recurrent state S_t and normalizer z_t."
+  },
+  {
+    "id": "fast-weight-programmers-2021",
+    "title": "Linear Transformers Are Secretly Fast Weight Programmers",
+    "url": "https://arxiv.org/abs/2102.11174",
+    "year": 2021,
+    "chapters": [
+      "10",
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Fast-weight memory discussion and replacement/delta interpretation inspected. Early HTML version bears the title 'Linear Transformers Are Secretly Fast Weight Memory Systems'; latest abstract/proceedings title is listed here. Numerical example and gradient derivation are original exposition. §2–3: delta update rule, retrieve–remove–write; toy arithmetic is ours."
+  },
+  {
+    "id": "rope2021",
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+    "url": "https://arxiv.org/abs/2104.09864",
+    "year": 2021,
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 3.1–3.2: coordinate rotations and relative-position dependence of query/key inner products. No unrestricted extrapolation claim made. §3.2–3.4: theta_i = 10000^(-2i/d), relative form (R_t q)^T(R_j k) = q^T R_(j-t) k."
+  },
+  {
+    "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation (ALiBi)",
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2108.12409",
+    "venue": "ICLR 2022 · UW, Meta AI",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 slopes 2^(-8h/H); abstract: 1.3B trained on 1024 matches sinusoidal trained on 2048."
+  },
+  {
+    "id": "flash2022",
+    "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "url": "https://arxiv.org/abs/2205.14135",
+    "year": 2022,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected sections 2–3: HBM versus on-chip memory, tiled online softmax, recomputation and unchanged dense arithmetic. Alg. 1 (m, ℓ update, block sizes); Thm 2 HBM accesses; §2.1 A100 SRAM/HBM; Fig. 2 40.3 vs 4.4 GB."
+  },
+  {
+    "title": "GPT-NeoX-20B: An Open-Source Autoregressive Language Model",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2204.06745",
+    "venue": "BigScience Workshop @ ACL 2022 · EleutherAI",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "HF config EleutherAI/gpt-neox-20b: rotary_pct 0.25, 64 heads, hidden 6144 → 24 of 96 dims rotated."
+  },
+  {
+    "title": "The Devil in Linear Transformer",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2210.10340",
+    "venue": "EMNLP 2022 · Shanghai AI Lab et al.",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Normalizer causes unbounded gradients; replaced by output normalization (TransNormer, later Lightning)."
+  },
+  {
+    "title": "DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.14509",
+    "venue": "arXiv 2023 · Microsoft",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 all-to-all, 4Nh/P per link vs Megatron-SP 4Nh; 2.5× faster at 4× longer sequences; >1M tokens."
+  },
+  {
+    "title": "Effective Long-Context Scaling of Foundation Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.16039",
+    "venue": "arXiv 2023 · Meta GenAI",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2 and §4.1: RoPE ABF, base frequency raised from 10,000 to 500,000 to reduce long-distance decay."
+  },
+  {
+    "id": "paged2023",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "year": 2023,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract-screened physical block allocation, fragmentation and cache sharing. No serving speed claim reproduced. Fig. 2 breakdown (20.4/13.3/57.3/8.9, 26.8/17.9/13.6/41.6, 96.3); block 16; OPT-13B 800 KB; CoW; 2–4×."
+  },
+  {
+    "title": "Efficient Streaming Language Models with Attention Sinks (StreamingLLM)",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.17453",
+    "venue": "ICLR 2024 · MIT, Meta AI, CMU",
+    "chapters": [
+      "02",
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract + §3: 4 initial tokens suffice as sinks; up to 4M tokens; 22.2× faster than sliding-window recompute. Table 1 PPL 5158.07 vs 5.40; §3.2 cache positions; §4.4 four sinks; App. C; 22.2×."
+  },
+  {
+    "title": "Extending Context Window of Large Language Models via Positional Interpolation",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2306.15595",
+    "venue": "arXiv 2023 · Meta",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: linearly down-scale positions (all frequencies divided by s) to fit the trained range."
+  },
+  {
+    "title": "Flash-Decoding for long-context inference",
+    "year": 2023,
+    "url": "https://crfm.stanford.edu/2023/10/12/flashdecoding.html",
+    "venue": "Stanford CRFM blog · Dao, Haziza, Massa, Sizov",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Split-KV with log-sum-exp reduction; <1% GPU at batch 1; up to 8× decode, 50× attention, CodeLlama-34B, A100."
+  },
+  {
+    "id": "flash22023",
+    "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+    "url": "https://arxiv.org/abs/2307.08691",
+    "year": 2023,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract-screened description of work partitioning and non-matrix overhead. No speed ratio reproduced. Abstract 25–40%, 50–73%, 225 TFLOP/s; §3.1 312 vs 19.5 TFLOP/s, deferred 1/ℓ; §3.2–3.3 split-Q."
+  },
+  {
+    "id": "gqa2023",
+    "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+    "url": "https://arxiv.org/abs/2305.13245",
+    "year": 2023,
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.1–2.2 and 3.2–3.3: grouping, endpoints, pooled projections plus uptraining, and measured tradeoff with stated scope. §2.1 mean-pooled K/V projections plus uptraining (5% of steps); §2.2 grouping between MHA and MQA."
+  },
+  {
+    "id": "gla-2023",
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "url": "https://arxiv.org/abs/2312.06635",
+    "year": 2023,
+    "chapters": [
+      "09",
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–3 and related work distinguish data-dependent state decay, key/value gating, output gating, and hardware-efficient chunkwise forms. No reported throughput maxima are reproduced. Eq. 3 key-channel decay; α = σ(xW₁W₂+b)^(1/16), rank 16; footnote: αᵀβ gate marginal; §2 O(LCd+Ld²). §2.2 chunkwise form, O(LCd + Ld²); §3.3 materialized vs not, +10–20% memory; chunk 64; faster than FA-2 at 1K."
+  },
+  {
+    "title": "H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2306.14048",
+    "venue": "NeurIPS 2023 · UT Austin / Stanford / Meta / CMU",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "PDF Alg. 1, §5 baselines: budget split evenly, 20% cache; abstract 29×/29×/3× throughput, 1.9× latency."
+  },
+  {
+    "title": "Learning to Compress Prompts with Gist Tokens",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2304.08467",
+    "venue": "NeurIPS 2023 · Stanford",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: attention-mask training, up to 26× prompt compression, up to 40% FLOPs reduction (LLaMA-7B, FLAN-T5-XXL)."
+  },
+  {
+    "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2307.09288",
+    "venue": "Meta",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "7B uses MHA with 32 heads; GQA is used only for 34B/70B (§2.2)."
+  },
+  {
+    "id": "mamba-2023",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "url": "https://arxiv.org/abs/2312.00752",
+    "year": 2023,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract supports input-dependent selective state-space parameters and the adjacent SSM lineage. Detailed architecture claims are not made. Selective SSM; per-entry (channel × state) decay contrasted with SSD's scalar."
+  },
+  {
+    "title": "Mistral 7B",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2310.06825",
+    "venue": "arXiv · Mistral AI",
+    "chapters": [
+      "05"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Table 1: W 4096, 32 layers; §2 rolling buffer i mod W, 8× less cache at 32K."
+  },
+  {
+    "title": "NVIDIA H100 Tensor Core GPU datasheet",
+    "year": 2023,
+    "url": "https://www.nvidia.com/en-us/data-center/h100",
+    "venue": "NVIDIA",
+    "chapters": [
+      "03",
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "H100 SXM: 989 TFLOP/s dense BF16, 3.35 TB/s HBM3, so the ridge is about 295 FLOP/B. H100 SXM: 80 GB, 3.35 TB/s HBM, 900 GB/s NVLink, 128 GB/s PCIe Gen5; BF16 1,979 TFLOPS with sparsity."
+  },
+  {
+    "id": "retnet-2023",
+    "title": "Retentive Network: A Successor to Transformer for Large Language Models",
+    "url": "https://arxiv.org/abs/2307.08621",
+    "year": 2023,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Section 2.1 parallel, recurrent, and chunkwise retention; Section 2.2 fixed multi-scale per-head decay and distinct output gating. Book core recurrence explicitly suppresses positional and surrounding layer operations. Eq. 5 parallel D mask, Eq. 7 chunkwise, Eq. 8 γ; §3.1 1−γ log-spaced 1/32…1/512."
+  },
+  {
+    "id": "ring2023",
+    "title": "Ring Attention with Blockwise Transformers for Near-Infinite Context",
+    "url": "https://arxiv.org/abs/2310.01889",
+    "year": 2023,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected blockwise/ring computation and communication-overlap explanation; no unlimited-context guarantee inferred from title. §3 overlap condition c ≥ F/B; Table 2 A100 NVLink 1.0K, A100 IB 24.5K, TPU v4 1.0K."
+  },
+  {
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.07104",
+    "venue": "NeurIPS 2024 · Stanford, UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "RadixAttention: page = 1 token, LRU leaf eviction, DFS order; hit 50–99%, 52.4%, 74.1%; up to 6.4×."
+  },
+  {
+    "title": "Small-scale proxies for large-scale Transformer training instabilities",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.14322",
+    "venue": "ICLR 2024 · Google DeepMind",
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3.1.1: attention logit growth → one-hot attention; qk-layernorm (Dehghani et al. 2023) fixes it at small scale."
+  },
+  {
+    "title": "Splitwise: Efficient Generative LLM Inference Using Phase Splitting",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2311.18677",
+    "venue": "ISCA 2024 · UW, Microsoft",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Prompt and token phases on separate machines; 1.4× throughput at 20% lower cost, or 2.35× at equal cost and power."
+  },
+  {
+    "title": "The Falcon Series of Open Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2311.16867",
+    "venue": "TII",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Falcon-7B: multiquery attention, 71 heads, head dim 64, 32 layers."
+  },
+  {
+    "title": "The Impact of Positional Encoding on Length Generalization in Transformers (NoPE)",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.19466",
+    "venue": "NeurIPS 2023 · Mila, ServiceNow",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: decoder-only Transformers without positional encoding (causal mask only) generalise in length."
+  },
+  {
+    "title": "YaRN: Efficient Context Window Extension of Large Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.00071",
+    "venue": "ICLR 2024 · Nous Research, EleutherAI, U. Geneva",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3.2 ramp gamma(L/lambda), alpha 1, beta 32; §3.3 sqrt(1/t) = 0.1 ln s + 1; App. A NTK base."
+  },
+  {
+    "title": "Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.11550",
+    "venue": "NeurIPS 2025 · USTC",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Alg. 1 top-B across heads, L1 output-loss bound, Ada-SnapKV/Ada-Pyramid; 13 RULER + 16 LongBench sets."
+  },
+  {
+    "id": "mla2024",
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "url": "https://arxiv.org/abs/2405.04434",
+    "year": 2024,
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected abstract and HTML sections 2.1.1–2.1.4: latent KV compression, key/value projection absorption, decoupled RoPE, cache dimensions, and baseline-specific 93.3% comparison. Chapter's small arithmetic examples and cache scenario are original. Read §2.1 joint latent KV compression and decoupled positional component; MLA reduces entry dimensions but still retains a learned record per historical position. §2.1 Eqs 9–19 (latent, absorption, decoupled RoPE, √(d_h+d_h^R)); Table 1: 576 ≈ GQA 2.25 groups; §3.1.2 hyper-parameters."
+  },
+  {
+    "title": "DeepSeek-V3 Technical Report",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.19437",
+    "venue": "DeepSeek",
+    "chapters": [
+      "03",
+      "04",
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "61 layers; MLA with KV compression dim 512 and decoupled RoPE dim 64, giving 576 cached elements per token per layer. 671B total, 37B activated per token (used for the recompute estimate)."
+  },
+  {
+    "title": "DeepSeek-V3 config.json and inference/model.py",
+    "year": 2024,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py",
+    "venue": "Hugging Face · DeepSeek",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "yarn factor 40, original 4096, theta 10000; softmax_scale × mscale² = (0.1 ln 40 + 1)² = 1.874."
+  },
+  {
+    "title": "Differential Transformer",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.05258",
+    "venue": "ICLR 2025 (oral) · Microsoft Research, Tsinghua",
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.1 difference of two softmax maps, lambda_init = 0.8 − 0.6 exp(−0.3(l−1)); §3.2 6.8B ≈ 11B loss."
+  },
+  {
+    "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.09670",
+    "venue": "OSDI 2024 · PKU, UCSD",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Separate prefill/decode GPUs; TTFT/TPOT; 7.4× more requests or 12.6× tighter SLO."
+  },
+  {
+    "title": "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.10819",
+    "venue": "ICLR 2025 · MIT / NVIDIA",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 gate mix, λ 0.05, 2,000 passkey steps; 64 sink + 256 recent; 25%/50% heads; 2.55×/1.67× memory."
+  },
+  {
+    "title": "Dynamic Memory Compression: Retrofitting LLMs for Accelerated Inference",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.09636",
+    "venue": "ICML 2024 (PMLR 235) · NVIDIA / University of Edinburgh",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Alg. 1, Eq. 10 weighted merge with z; α from k[0], ω from q[0]; up to 4× without loss."
+  },
+  {
+    "id": "flash32024",
+    "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+    "url": "https://arxiv.org/abs/2407.08608",
+    "year": 2024,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract-screened Hopper asynchronous execution and separate low-precision path. No speed or accuracy ratio reproduced. Abstract 35%, 740 TFLOP/s (75%), 1.2 PFLOP/s FP8; 989 vs 3.9 TFLOPS exp; ping-pong 570→620–640; Table 3 RMSE."
+  },
+  {
+    "id": "gated-deltanet-2024",
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "url": "https://arxiv.org/abs/2412.06464",
+    "year": 2024,
+    "chapters": [
+      "10",
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–3 verify scalar decay followed by residual correction, complementary memory clearance and association editing, and chunkwise parallelization. Formula transposed to S in R^(dv×dk); the correction reads the faded state. First submitted December 2024, ICLR 2025. Eq. 10 α_t S(I − βkkᵀ) + βvkᵀ in d_v×d_k orientation; Table 1 objectives. §3 Table 1 online-learning objectives for LA, Mamba2, Longhorn, DeltaNet, GDN; SGD reading of the delta rule."
+  },
+  {
+    "title": "Gemma 2: Improving Open Language Models at a Practical Size",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2408.00118",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "02",
+      "05",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "27B: 46 layers alternating local/global, 16 KV heads × 128. §2: logits ← soft_cap·tanh(logits/soft_cap); 50.0 self-attention, 30.0 final layer; config agrees. 1:1 local/global, window 4096, restated in Gemma 3 report §5.2; 46 layers per config."
+  },
+  {
+    "title": "HGRN2: Gated Linear RNNs with State Expansion",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.07904",
+    "venue": "COLM 2024",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Per-key-channel forget gate with key tied to 1−f (Eq. 2–3 via research brief B)."
+  },
+  {
+    "title": "Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.02265",
+    "venue": "arXiv 2024 · Tencent",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.2.2 GQA + CLA saves ≈95% vs MHA; Table 2 caption: shares every 2 layers; cfg cla_share_factor 2, 64 layers."
+  },
+  {
+    "title": "Hymba: A Hybrid-head Architecture for Small Language Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.13676",
+    "venue": "arXiv 2024 · NVIDIA",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 1–3 parallel fusion with beta-scaled norms; Table 1 78.6 MB, 664 tok/s; 11.67× cache, 3.49× vs Llama-3.2-3B; config."
+  },
+  {
+    "title": "Jamba: A Hybrid Transformer-Mamba Language Model",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.19887",
+    "venue": "AI21 Labs",
+    "chapters": [
+      "12",
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "32 layers with 1 attention : 7 Mamba; GQA 32/8/128; 4 GB KV at 256K. a:m = 1:7; no explicit positions; Table 1 KV at 256K: 4 GB vs 32/128 GB; config attn_layer_period 8."
+  },
+  {
+    "id": "kivi2024",
+    "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+    "url": "https://arxiv.org/abs/2402.02750",
+    "year": 2024,
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected quantization motivation and key/value distribution/granularity sections. No end-to-end throughput ratio reproduced. Per-channel K, per-token V; G = 32, R = 128; outlier channels in K only; 2.6× memory, 4× batch, 2.35–3.47×."
+  },
+  {
+    "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.18079",
+    "venue": "NeurIPS 2024 · UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Pre-RoPE per-channel keys, nuq, 1% outliers; Table 1 LLaMA-7B 5.68 / 5.75 / int3 10.87; 1M on one A100."
+  },
+  {
+    "title": "Learning to (Learn at Test Time): RNNs with Expressive Hidden States",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.04620",
+    "venue": "ICML 2025 (PMLR 267) · Stanford, UC San Diego, UC Berkeley",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 2–5; b = 16; eta_base 1/0.1; Thm 1–2; Table 1 ablation 15.91 → 11.09; Table 3 configs."
+  },
+  {
+    "title": "Llama 3.1 8B config.json",
+    "year": 2024,
+    "url": "https://huggingface.co/unsloth/Llama-3.1-8B-Instruct/blob/main/config.json",
+    "venue": "Hugging Face config · Meta (mirror)",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "rope_theta 500000; llama3 scaling factor 8, low 1, high 4, original 8192; head_dim 128."
+  },
+  {
+    "title": "Long Context Compression with Activation Beacon",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.03462",
+    "venue": "ICLR 2025 · BAAI / Renmin University",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML §3: chunk 1024 (Llama-2), α ∈ {2,4,8,16,32}, raw KV dropped; 8× KV, 2× speed; <20K training."
+  },
+  {
+    "title": "LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.13753",
+    "venue": "ICML 2024 · Microsoft",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: searched per-dimension rescale factors; Phi-4-mini config long_factor 1.0 → 47.77 checked."
+  },
+  {
+    "id": "minference-2024",
+    "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
+    "url": "https://arxiv.org/abs/2407.02490",
+    "year": 2024,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §§2–3 and evaluation methodology: offline head-pattern assignment, static A-shape and dynamic Vertical-Slash/Block-Sparse indices, training-free approximate prefill attention. Three patterns; A-shape 1k+4k; Vertical-Slash from last 64 queries; 64-blocks top-100; 30 → 3 min at 1M."
+  },
+  {
+    "title": "Multi-matrix Factorization Attention",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.19255",
+    "venue": "arXiv 2024 · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "More and wider heads via low-rank QK factorisation; MFA-KR reuses key cache as value."
+  },
+  {
+    "id": "parallel-deltanet-2024",
+    "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+    "url": "https://arxiv.org/abs/2406.06484",
+    "year": 2024,
+    "chapters": [
+      "10",
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Core delta recurrence and Section 3 WY/chunkwise composition inspected. Book explains structured composition without reproducing a kernel or benchmark claim. Eq. 4–11 delta recurrence; §3 WY/UT chunkwise form for products of I − βkkᵀ. Abstract: memory-efficient Householder-product (WY) representation enables chunkwise DeltaNet training; 1.3B on 100B tokens."
+  },
+  {
+    "title": "PyramidKV: Dynamic KV Cache Compression based on Pyramidal Information Funneling",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.02069",
+    "venue": "arXiv 2024 · UW–Madison / PKU / Microsoft",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§4.2 Eq. 1 arithmetic budget, β = 20, α = 8; abstract: 12% matches full KV, 128 entries Needle."
+  },
+  {
+    "title": "Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.10774",
+    "venue": "ICML 2024 · MIT Han Lab",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3.4 min/max bound; page 16; layers 1–2 dense; 7.03× at 32K, budget 2048; passkey results."
+  },
+  {
+    "title": "RazorAttention: Efficient KV Cache Compression Through Retrieval Heads",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.15891",
+    "venue": "ICLR 2025 · Huawei",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML v1 abstract and §3: retrieval (echo, induction) heads keep full KV; compensation token; >70% reduction."
+  },
+  {
+    "id": "cla2024",
+    "title": "Reducing Transformer Key-Value Cache Size with Cross-Layer Attention",
+    "url": "https://arxiv.org/abs/2405.12981",
+    "year": 2024,
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected cross-layer sharing architecture and cache-count distinction. Numerical example of four sharing layers is original and illustrative. K/V heads shared between adjacent layers: another 2× beyond MQA at nearly MQA accuracy (1B/3B models)."
+  },
+  {
+    "title": "Round and Round We Go! What Makes Rotary Positional Encodings Useful?",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.06205",
+    "venue": "ICLR 2025 · Oxford, Google DeepMind",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "p-RoPE removes lowest frequencies; Table 2 Gemma 2B 8K Wiki ppl: NoPE 4.859, RoPE 4.463, 0.25 4.530, 0.75 4.441."
+  },
+  {
+    "title": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.10319",
+    "venue": "ICLR 2025 · Microsoft / University of Surrey",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract and poster: shared-context multi-turn benchmark; sub-O(n) memory methods degrade across turns."
+  },
+  {
+    "title": "SageAttention2: Efficient Attention with Thorough Outlier Smoothing and Per-thread INT4 Quantization",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.10958",
+    "venue": "ICML 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "INT4 Q,K thread-level, FP8 P̃V, smooth Q; ≈3×/4.5× over FA-2/xformers on RTX 4090; matches FA-3 FP8 on Hopper."
+  },
+  {
+    "title": "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.02367",
+    "venue": "ICLR 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 K smoothing γ(K)=K−mean(K); INT8 QK, FP16 PV with FP16 accumulator (2× on RTX 4090); abstract 2.1×/2.7×."
+  },
+  {
+    "title": "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.07522",
+    "venue": "ICLR 2025 · Microsoft",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Layer-wise Mamba-MLP-SWA-MLP; SWA window 2048; up to 3.8B."
+  },
+  {
+    "title": "SnapKV: LLM Knows What You are Looking for Before Generation",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.14469",
+    "venue": "NeurIPS 2024 · UIUC / Cohere",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML v2 §4–5: window 32, max-pool kernel 7, budgets 1024–4096; 3.6×/8.2× at 16K; 380K on A100."
+  },
+  {
+    "title": "The Llama 3 Herd of Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.21783",
+    "venue": "Meta",
+    "chapters": [
+      "00",
+      "03",
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Table 3: 8B has 32 layers, 32 Q / 8 KV heads, width 4096; 70B has 80 layers, 64 Q / 8 KV heads; 405B has 126 layers. §3.3.2 all-gather K/V CP, 2×CP chunks, GQA K/V small; Table 4 CP = 16 at 131,072."
+  },
+  {
+    "title": "Titans: Learning to Memorize at Test Time",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2501.00663",
+    "venue": "NeurIPS 2025 · Google Research",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 8–18 surprise, momentum, decay; §4 MAC/MAG/MAL; Table 2 S-NIAH; Table 5 ablation; §5.8 throughput."
+  },
+  {
+    "title": "Training-Free Long-Context Scaling of Large Language Models (Dual Chunk Attention)",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.17463",
+    "venue": "ICML 2024 (PMLR 235) · HKU, Alibaba",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: intra/inter-chunk relative positions, Llama2 70B beyond 100K tokens without training."
+  },
+  {
+    "id": "mamba2-ssd-2024",
+    "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+    "url": "https://arxiv.org/abs/2405.21060",
+    "year": 2024,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3 and 5 inspected: semiseparable sequence operators, structured masked attention, and restricted state-space duality. Book does not equate all SSMs with softmax attention. Scalar×identity A; Y=(L∘QKᵀ)V; Fig. 4 C↔Q, B↔K, X↔V; Thm 6.1 costs; 2–8× faster than scan."
+  },
+  {
+    "title": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.12537",
+    "venue": "ICLR 2025",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Positive-eigenvalue finite-precision LRNNs cannot solve parity; eigenvalues in [−1, 1] reach regular languages."
+  },
+  {
+    "title": "You Only Cache Once: Decoder-Decoder Architectures for Language Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.05254",
+    "venue": "NeurIPS 2024 · Microsoft Research / Tsinghua",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Self-decoder (SWA or gRet) + cross-decoder on one global KV; ≈80× less KV at 65B; 2.87× prefill at 32K."
+  },
+  {
+    "title": "3FS: Fire-Flyer File System (README)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/3FS",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "≈6.6 TiB/s aggregate reads, 180 storage nodes × 16 NVMe SSDs; KVCache use case."
+  },
+  {
+    "title": "ATLAS: Learning to Optimally Memorize the Context at Test Time",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.23735",
+    "venue": "arXiv 2025 · Google Research",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Prop. 1–2 capacity; Eq. 9 Omega rule; Eq. 32–33 Muon update; §6.3 BABILong above 80% at 10M."
+  },
+  {
+    "title": "Comba: Improving Bilinear RNNs with Closed-loop Control",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.02475",
+    "venue": "arXiv 2025 · Hu et al.",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 5 αI − β̃kkᵀ sum form; output correction q − dk (via research brief B)."
+  },
+  {
+    "title": "Command A: An Enterprise-Ready Large Language Model",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.00698",
+    "venue": "arXiv 2025 · Cohere",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Architecture: SWA and full attention interleaved 3:1; RoPE on SWA layers, NoPE on full layers (via search excerpt)."
+  },
+  {
+    "title": "DeepSeek-V2 / V3 / V3.2 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/config.json",
+    "venue": "Hugging Face · DeepSeek-AI",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "kv_lora_rank 512, qk_rope_head_dim 64, qk_nope/v 128, 128 heads, q_lora_rank 1536, hidden 7168, layers 60 (V2) / 61 (V3, V3.2)."
+  },
+  {
+    "title": "DeepSeek-V3.2 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/config.json",
+    "venue": "DeepSeek-AI model card",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "index_n_heads 64, index_head_dim 128, index_topk 2048, 128 heads, kv_lora_rank 512, rope 64."
+  },
+  {
+    "title": "DeepSeek-V3.2-Exp in vLLM (blog)",
+    "year": 2025,
+    "url": "https://vllm.ai/blog/2025-09-29-deepseek-v3-2",
+    "venue": "vLLM blog",
+    "chapters": [
+      "06",
+      "08",
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "FP8 MLA cache 656 B per token: 512 e4m3, 4 fp32 scales, 64 BF16 RoPE; top-2048 indices. MLA FP8 cache 656 B/token/layer: 512 e4m3 + 4 fp32 scales + 64 BF16 RoPE values. 656 B/token MLA FP8 layout: 512 e4m3 + 4 fp32 scales per 128 + 64 BF16 RoPE; block size 64."
+  },
+  {
+    "id": "deepseek-v32-dsa-2025",
+    "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+    "url": "https://arxiv.org/abs/2512.02556",
+    "year": 2025,
+    "chapters": [
+      "04",
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §§2.1–2.3: learned lightning indexer, top-k MLA entry selection, dense indexer warm-up and sparse continued training; main attention O(Nk) while full-sequence indexer remains O(N²). §2.1: latent shared across all query heads (MQA mode); App. A Fig. 7: MHA mode trains/prefills, MQA mode decodes. §2.1 Eq. 1 ReLU then weights, FP8, top-2048, MQA mode; training 2.1B then 943.7B tokens."
+  },
+  {
+    "title": "DeepSeek-V3/R1 Inference System Overview (Open Source Week day 6)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "PD disaggregation; prefill 4 nodes EP32, decode 18 nodes EP144; 342B/608B (56.3%) disk-cache hits; 73.7k/14.8k tok/s."
+  },
+  {
+    "title": "DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.10297",
+    "venue": "NeurIPS 2025",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "n_h steps per token: identity plus rank-n_h transition from n_h generalized Householders."
+  },
+  {
+    "title": "End-to-End Test-Time Training for Long Context (TTT-E2E)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.23675",
+    "venue": "arXiv 2025 · Astera, Stanford, UC Berkeley, UC San Diego, NVIDIA",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.3 window 8K, b = 1K, last 1/4 blocks; 2.7× prefill at 128K; §3.7 training 3.4×/1.2×; Table 2 S-NIAH."
+  },
+  {
+    "title": "Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.22448",
+    "venue": "Technical report 2025 · TII",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Parallel attention + Mamba-2 mixer; SA_M block, channels ≈ 2:1:5; 34B config: 72 layers, 4 KV heads."
+  },
+  {
+    "title": "FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.01005",
+    "venue": "MLSys 2025 · UW, NVIDIA, CMU et al.",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.2 LSE merge operator; §3.1 page table as BSR (Fig. 2); §3.3.1 split-KV scheduler; abstract 29–69%."
+  },
+  {
+    "title": "FlashMLA README (commit ba89a34, pre-2026-09 format)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/FlashMLA/blob/ba89a3466e9470ad08ab39738d4e7bb66989e1e7/README.md",
+    "venue": "GitHub · DeepSeek-AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "V3.2 FP8 row: 512 FP8 values, fp32 scales, 64 BF16 RoPE = 656 B; MQA mode K 576, V 512."
+  },
+  {
+    "title": "FlashMLA: efficient MLA decoding kernels (README)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/FlashMLA",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "13",
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Commits 480405a/1408756 and current: block 64; 3000 GB/s, 580/660 TFLOPS H800; 656 B V3.2; 528/288 B V4.1 layouts."
+  },
+  {
+    "title": "FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.20766",
+    "venue": "ICLR 2025 oral",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "JS-divergence pattern switch; cumulative-attention index selection to a threshold."
+  },
+  {
+    "title": "Forgetting Transformer: Softmax Attention with a Forget Gate",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.02130",
+    "venue": "ICLR 2025 · Mila",
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3: e + sum ln f_l = c_t − c_j bias; FlashAttention-compatible; no positional embedding needed."
+  },
+  {
+    "title": "GLM-4.6 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/zai-org/GLM-4.6/blob/main/config.json",
+    "venue": "Zhipu AI",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "92 layers, 96 Q / 8 KV heads, head dim 128."
+  },
+  {
+    "id": "gated-softmax-attention-2025",
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "url": "https://arxiv.org/abs/2505.06708",
+    "year": 2025,
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–4 inspected: SDPA output gate, elementwise versus headwise and head-specific versus shared granularity, sparse output modulation, and nonlinearity. Output activation sparsity is explicitly distinguished from skipping attention computation. Y' = Y ⊙ σ(XW); first-token 46.7% → 4.8%; max act 1053 → 94; PPL 6.026 → 5.761."
+  },
+  {
+    "title": "Gemma 3 Technical Report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.19786",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "01",
+      "02",
+      "05",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "27B: 62 layers, 5 local : 1 global, W 1024, 16 KV heads × 128. §2: soft-cap replaced by QK-norm; RoPE 1M global / 10K local; 5:1 pattern; §5.3 PI factor 8; window 1,024. §2: 5 local per global, span 1024, 128K; §5.2: KV overhead 60% global-only, under 15% windowed."
+  },
+  {
+    "title": "Hardware-Efficient Attention for Fast Decoding",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.21487",
+    "venue": "arXiv 2025 · Princeton (Zadouri, Strauss, Dao)",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Table 1 intensities (MHA 1, GQA g, MQA h_q, MLA 2h_q, GTA 2g); §3.3 GTA/GLA; Table 5 GLA-2 per-device bytes."
+  },
+  {
+    "title": "InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2509.24663",
+    "venue": "arXiv · Tsinghua, OpenBMB",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "No extra parameters; block 64; 1 + 32 local + 63 top-k blocks ≈ 6K tokens; MiniCPM4.1."
+  },
+  {
+    "title": "Inference-Time Hyper-Scaling with KV Cache Compression (DMS)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.05345",
+    "venue": "NeurIPS 2025 · NVIDIA / University of Edinburgh",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 delayed eviction at t+w, w = 256 default; ≈1K steps to 8×; DMC needed 44K steps."
+  },
+  {
+    "title": "Introducing Gemma 3n: The developer guide",
+    "year": 2025,
+    "url": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide",
+    "venue": "Google Developers Blog, 2025-06-26",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Middle-layer local/global KV shared with all top layers; 2× prefill vs Gemma 3 4B; cfg 15 of 35 shared."
+  },
+  {
+    "title": "It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization (Miras)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.13173",
+    "venue": "arXiv 2025 · Google Research",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Fig. 1 four design choices: memory architecture, attentional bias, retention gate, learning algorithm; Table 1."
+  },
+  {
+    "title": "Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.15884",
+    "venue": "arXiv 2025 · NVIDIA",
+    "chapters": [
+      "10",
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "JetBlock = Gated DeltaNet + dynamic convolution on V (via research brief B). PostNAS: frozen MLPs, supernet, beam search; full 15, 20; SWA 21, 22; Table 3 at 64K."
+  },
+  {
+    "title": "KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.23416",
+    "venue": "NeurIPS 2025 (oral) · Seoul National University / NAVER AI Lab",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 repeat prompt, max over grouped heads and positions, 2K chunks; abstract 3–4×, ≈2× decode, 170K."
+  },
+  {
+    "title": "Kimi K2: Open Agentic Intelligence",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.20534",
+    "venue": "Moonshot AI",
+    "chapters": [
+      "02",
+      "04",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 MLA layers, 64 heads, d_c 512 + d_r 64. §2.1 QK-Clip: gamma = min(1, tau/S_max), tau 100, per head; QK-Norm infeasible for MLA. §2.3: 64 vs 128 heads, +83% inference FLOPs at 128K, 0.5–1.2% val-loss gain; §2.1 QK-Norm unusable with MLA."
+  },
+  {
+    "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2510.26692",
+    "venue": "Moonshot AI",
+    "chapters": [
+      "10",
+      "12",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Released 48B-A3B: 27 layers = 20 KDA + 7 MLA. Sections 2–4 and 7.2 inspected: KDA per-key-channel decay, exact gate/correction order, output sigmoid gate after RMSNorm and before output projection, 3:1 KDA/Full-MLA layerwise mixture, and finite-state retrieval limits. No maximum cache/throughput ratios quoted. Eq. 1 KDA; §3.2 second-level chunk matrices four→two; §6.2 ≈2× DPLR to 64K; abstract 75% KV, 6× decode at 1M. Table 1 ratio ablation; NoPE MLA; TPOT 1.84 vs 11.48 ms at 1M; config full_attn_layers 4…24, 27."
+  },
+  {
+    "title": "Kimi-Linear-48B-A3B-Instruct config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct/blob/main/config.json",
+    "venue": "Hugging Face · Moonshot AI",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "27 layers; full_attn_layers 4,8,…,24,27; KDA 32 heads × 128; conv 4; kv_lora 512 + rope 64."
+  },
+  {
+    "title": "LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2510.09665",
+    "venue": "arXiv 2025 · Liu et al.",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "KV across GPU, CPU, storage, network; up to 15× throughput with vLLM; truncation can halve prefix hit ratio."
+  },
+  {
+    "title": "Llama 4 Scout config.json and HF modeling_llama4.py",
+    "year": 2025,
+    "url": "https://huggingface.co/unsloth/Llama-4-Scout-17B-16E-Instruct/blob/main/config.json",
+    "venue": "Hugging Face config · Meta (mirror)",
+    "chapters": [
+      "01",
+      "02"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "no_rope_layers [1,1,1,0]×12; chunk 8192; attn_scale 0.1, floor_scale 8192; llama3 rope ×16; L2 qk-norm on RoPE layers."
+  },
+  {
+    "title": "Llama 4 multimodal intelligence (blog) and Scout config",
+    "year": 2025,
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence",
+    "venue": "Meta",
+    "chapters": [
+      "01",
+      "05",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers, 3 chunked : 1 global NoPE, 8 KV heads × 128. iRoPE: interleaved layers without positional embeddings; inference-time attention temperature scaling; Scout 10M context. iRoPE quote; config attention_chunk_size 8192, no_rope_layers 1,1,1,0 over 48 layers; RoPE layers chunked."
+  },
+  {
+    "title": "Log-Linear Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.04761",
+    "venue": "ICLR 2026 · MIT, CMU, Princeton",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3.1 Fenwick buckets, L ≤ ⌈log2 t+1⌉+1; §3.2 decoding; §4.2 setup and params; Table 3 ppl; §5 limitations."
+  },
+  {
+    "title": "MesaNet: Sequence Modeling by Locally Optimal Test-Time Training",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.05233",
+    "venue": "ICLR 2026 · Google Paradigms of Intelligence",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 3, 7–10; CG ≈ k× GLA FLOPs; H < 1% footprint; ε=1e-4 ≈ 9 steps; Table 3 recall."
+  },
+  {
+    "title": "MiniMax-01: Scaling Foundation Models with Lightning Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.08313",
+    "venue": "MiniMax",
+    "chapters": [
+      "09",
+      "12",
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "80 layers = 10 × (7 lightning + 1 softmax), GQA 64/8/128. §2: lightning attention, one softmax block after every 7 lightning blocks, 80 layers. Softmax block after every 7 lightning blocks, 80 layers; pure linear attention fails retrieval (§2 conclusion); config."
+  },
+  {
+    "title": "MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.13585",
+    "venue": "Technical report 2025 · MiniMax",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Same hybrid design; ~25% of DeepSeek-R1 FLOPs at 100K generation; FP32 LM head fix."
+  },
+  {
+    "title": "MiniMax-M2 config.json and blog post on returning to full attention",
+    "year": 2025,
+    "url": "https://www.minimax.io/news/why-did-m2-end-up-as-a-full-attention-model",
+    "venue": "MiniMax",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "62 full-attention layers, 48 Q / 8 KV heads × 128."
+  },
+  {
+    "title": "MiniMax-Text-01 config.json and modeling_minimax_text_01.py",
+    "year": 2025,
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-Text-01/blob/main/modeling_minimax_text_01.py",
+    "venue": "Hugging Face · MiniMax",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "ALiBi slopes 2^(−h/8), slope·(1−ℓ/(L−1)), BLOCK=256, sigmoid output gate; config: 80 layers, 64×128 heads, 8 KV heads."
+  },
+  {
+    "title": "Mistral Large 3 params.json",
+    "year": 2025,
+    "url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512-BF16/blob/main/params.json",
+    "venue": "Hugging Face · Mistral AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 layers, 128 heads, kv_lora_rank 512, qk_rope_head_dim 64, qk_nope 128, v 128, q_lora_rank 1536."
+  },
+  {
+    "id": "moba-2025",
+    "title": "MoBA: Mixture of Block Attention for Long-Context LLMs",
+    "url": "https://arxiv.org/abs/2502.13189",
+    "year": 2025,
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §2 routing equations and causality handling: query dot mean-key block scores, original token-level KV read in selected blocks, mandatory current block with causal masking, and sparse/full-attention mixtures. Eq. 6 mean-key gate; 512/top-3 and 4096/top-12 sparsity; last 3 layers full; Kimi; 6.5×."
+  },
+  {
+    "title": "Model configs used for layout strips (Gemma 3 27B, gpt-oss-120b, Granite 4.0-H-Small, MiniMax-M2, Llama-3.1-70B)",
+    "year": 2025,
+    "url": "https://huggingface.co/openai/gpt-oss-120b/blob/main/config.json",
+    "venue": "config.json files · Google, OpenAI, IBM, MiniMax, Meta",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Gemma 3 sliding_window_pattern 6, W 1024; gpt-oss alternating SWA-128; Granite 4/40 attention; M2 62 full; Llama 80×8 KV."
+  },
+  {
+    "title": "Mooncake (GitHub README)",
+    "year": 2025,
+    "url": "https://github.com/kvcache-ai/Mooncake",
+    "venue": "GitHub · Moonshot AI",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Transfer Engine 87 / 190 GB/s on 4×200 / 8×400 Gbps RoCE; Mooncake Store over DRAM and SSD."
+  },
+  {
+    "title": "Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot",
+    "year": 2025,
+    "url": "https://www.usenix.org/conference/fast25/presentation/qin",
+    "venue": "FAST 2025 (best paper) · Moonshot AI, Tsinghua",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "+59–498% effective capacity; Kimi +115% (A800) / +107% (H800); KV pool on CPU/DRAM/SSD/NIC."
+  },
+  {
+    "title": "NVIDIA DMC/DMS checkpoints on Hugging Face",
+    "year": 2025,
+    "url": "https://huggingface.co/nvidia/Qwen3-8B-DMS-8x",
+    "venue": "NVIDIA (Hugging Face)",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "HF API confirms nvidia/Qwen3-8B-DMS-8x and Llama-2-7B/13B-DMC-4x/8x repos."
+  },
+  {
+    "title": "NVIDIA Nemotron 3 Nano technical report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.20848",
+    "venue": "NVIDIA",
+    "chapters": [
+      "12",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "52 layers: 23 Mamba-2 + 23 MoE + 6 attention with GQA 32/2/128. 3.3× vs Qwen3-30B-A3B at 8K/16K on H200; config: 23 Mamba-2 + 6 GQA (2 KV heads), fp32 SSM cache."
+  },
+  {
+    "title": "NVIDIA Nemotron Nano 2: An Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.14444",
+    "venue": "arXiv 2025 · NVIDIA",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Up to 6× throughput vs Qwen3-8B at 8K in/16K out; config hybrid_override_pattern (4 attention layers)."
+  },
+  {
+    "title": "NVIDIA-Nemotron-3-Nano-30B-A3B config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/blob/main/config.json",
+    "venue": "Hugging Face · NVIDIA",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "52 layers (23 M, 23 E, 6 *); 64 heads × 64 head dim × 128 state; n_groups 8; chunk 128; conv 4."
+  },
+  {
+    "id": "nsa-2025",
+    "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "url": "https://arxiv.org/abs/2502.11089",
+    "year": 2025,
+    "chapters": [
+      "06",
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Read §3: learned overlapping block summaries; compression-score-derived block selection aggregated across shared KV query groups; independent KV representations and gated combination of compression, selection and local branches. Eq. 5 gates; l 32, d 16, l′ 64, n 16 incl. 1+2 forced, w 512; GQA 4×16; 9.0×/6.0×. HTML §3.3.1 Eqs. 7–10, §4.1: l 32, d 16, l′ 64, n 16, w 512; independent KV per branch."
+  },
+  {
+    "title": "Nemotron-H: A Family of Accurate and Efficient Hybrid Mamba-Transformer Models",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.03624",
+    "venue": "NVIDIA",
+    "chapters": [
+      "12",
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "56B: 118 layers, 10 attention layers with GQA 64/8/128. §2: ≈8% attention evenly dispersed, first layer Mamba-2, no position embeddings; 2.4× at 64K in/1K out; 56B config."
+  },
+  {
+    "title": "OLMo 3 7B config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/allenai/Olmo-3-1025-7B/blob/main/config.json",
+    "venue": "Hugging Face config · Ai2",
+    "chapters": [
+      "01",
+      "05"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "yarn factor 8, original 8192, attention_factor 1.2079 = 0.1 ln 8 + 1 → logits × 1.459. 32 layers, layer_types three sliding then one full, sliding_window 4096."
+  },
+  {
+    "title": "Optimizing Inference for Long Context and Large Batch Sizes with NVFP4 KV Cache",
+    "year": 2025,
+    "url": "https://developer.nvidia.com/blog/optimizing-inference-for-long-context-and-large-batch-sizes-with-nvfp4-kv-cache",
+    "venue": "NVIDIA Technical Blog",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "≈50% of FP8 memory, <1% accuracy loss, dequantized to FP8 before attention math; Blackwell."
+  },
+  {
+    "title": "PaTH Attention: Position Encoding via Accumulating Householder Transformations",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.16381",
+    "venue": "NeurIPS 2025",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 Eq. 1: softmax logit with products of I − βwwᵀ, β ∈ (0, 2) (via research brief B)."
+  },
+  {
+    "title": "Phi-4-mini-flash-reasoning modeling_phi4flash.py",
+    "year": 2025,
+    "url": "https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning/blob/main/modeling_phi4flash.py",
+    "venue": "Hugging Face · Microsoft",
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "SambaYAttention uses FlashDiffCustomAttention; lambda_init_fn 0.8 − 0.6 exp(−0.3 depth); subln × (1 − lambda_init)."
+  },
+  {
+    "title": "Phi-4-mini-instruct config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct/blob/main/config.json",
+    "venue": "Hugging Face config · Microsoft",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "partial_rotary_factor 0.75 (96/128); rope_scaling longrope with 48 long factors 1 → 47.77."
+  },
+  {
+    "title": "Qwen2.5-1M Technical Report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.15383",
+    "venue": "arXiv · Qwen",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§5: MInference Vertical-Slash in deployment; 3–7× prefill speedup at 1M on H20/A100."
+  },
+  {
+    "title": "Qwen3 Technical Report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.09388",
+    "venue": "arXiv 2025 · Qwen, Alibaba",
+    "chapters": [
+      "01",
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2: QKV-bias removed, QK-Norm added; §3.2: ABF 10,000 → 1,000,000; YaRN + DCA for 4× length at inference."
+  },
+  {
+    "title": "Qwen3-Next HF modeling_qwen3_next.py and Qwen3.5 config",
+    "year": 2025,
+    "url": "https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3_next/modeling_qwen3_next.py",
+    "venue": "Hugging Face Transformers · Qwen",
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "q_proj outputs 2× (query + gate); attn_output × sigmoid(gate); per-head q/k RMSNorm. Qwen3.5 config attn_output_gate true."
+  },
+  {
+    "title": "Qwen3-Next-80B-A3B config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/blob/main/config.json",
+    "venue": "Qwen",
+    "chapters": [
+      "01",
+      "02",
+      "10",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers = 12 × (3 GDN + 1 gated attention), attention 16 Q / 2 KV × 256. GLM-4.5 0.5 of 128; MiniMax-M2 rotary_dim 64/128; MiMo 0.334 of 192; Qwen3-Next 0.25 of 256, theta 1e7. 48 layers, full_attention_interval 4; 32 value / 16 key heads, dims 128; conv 4."
+  },
+  {
+    "id": "qwen3-next-model-card-2025",
+    "title": "Qwen3-Next-80B-A3B-Instruct: Official Model Card",
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "year": 2025,
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Model Overview verifies 48 layers and 12 repetitions of three Gated DeltaNet/MoE blocks followed by one Gated Attention/MoE block; explicit attention uses 16 Q and 2 KV heads. Layout 12 × (3 GDN + 1 gated attention); config: 32 V/16 QK heads, GQA 16/2/256."
+  },
+  {
+    "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.14456",
+    "venue": "arXiv 2025 · RWKV Project, EleutherAI",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 16–17 diag(w) − κ̂(a⊙κ̂)ᵀ; vector a; head size 64; 0.1B–2.9B on 1.6–5.6T tokens."
+  },
+  {
+    "title": "Rope to Nope and Back Again: A New Hybrid Attention Strategy (RNoPE)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.18795",
+    "venue": "arXiv 2025 · Cohere",
+    "chapters": [
+      "01",
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2–3: 3 SWA RoPE (W 4,096) : 1 full NoPE; QK-norm removed; needle attention 0.0765 → 0.0369 when theta raised."
+  },
+  {
+    "title": "SageAttention3: Microscaling FP4 Attention for Inference and An Exploration of 8-Bit Training",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.11594",
+    "venue": "NeurIPS 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "NVFP4 (E2M1, 1×16, E4M3 scales) for QKᵀ and PV; 1038 TOPS RTX 5090, ≈5× FA-2; 8-bit training slower in pretraining."
+  },
+  {
+    "title": "Scalable-Softmax Is Superior for Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.19399",
+    "venue": "arXiv 2025 · Nakanishi",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 2 logits × s ln n; s per layer and head (144 params); §2.2 max weight → 0."
+  },
+  {
+    "title": "Seed-OSS-36B-Instruct config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct/blob/main/config.json",
+    "venue": "Hugging Face config · ByteDance Seed",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "rope_theta 10,000,000 with head_dim 128 (used for the 10M curve)."
+  },
+  {
+    "title": "SmolLM3-3B config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B/blob/main/config.json",
+    "venue": "Hugging Face config · Hugging Face",
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "36 layers, no_rope_layer_interval 4 (27 RoPE + 9 NoPE), all full attention, 16 Q / 4 KV heads."
+  },
+  {
+    "title": "Step-3 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/stepfun-ai/step3/blob/main/config.json",
+    "venue": "Hugging Face · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 layers, num_attention_heads 64, num_attention_groups 1, head_dim 256, share_q_dim 2048."
+  },
+  {
+    "title": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.19427",
+    "venue": "arXiv 2025 · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2 MFA: 64 heads × 256, one K and one V head, query rank 2048; §5.1 intensities; Table 4 ridges."
+  },
+  {
+    "title": "Test-Time Training Done Right (LaCT)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.23884",
+    "venue": "ICLR 2026 · MIT, Adobe Research",
+    "chapters": [
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 3 intensity; Eq. 4–7 SwiGLU, dot loss, Muon; <5% vs 70% utilization; Tables 1, 3."
+  },
+  {
+    "title": "Towards Economical Inference: Enabling DeepSeek's Multi-Head Latent Attention in Any Transformer-based LLMs (MHA2MLA)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.14837",
+    "venue": "ACL 2025 · Ji et al.",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Partial-RoPE (2-norm) + joint SVD; 0.3–0.6% data; Table 2 Llama-2-7B −68.75% BF16, −92.19% with Int4, LongBench 27.4→26.4."
+  },
+  {
+    "title": "TransMLA: Multi-Head Latent Attention Is All You Need",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.07864",
+    "venue": "arXiv 2025 · Meng et al.",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "GQA→MLA: RoRoPE/FreqFold, balanced KV PCA; Table 1 LLaMA-2-7B −92.97% with 6B tokens; 10.6× at 8K (abstract)."
+  },
+  {
+    "title": "Why did MiniMax M2 end up as a full attention model?",
+    "year": 2025,
+    "url": "https://huggingface.co/blog/MiniMax-AI/why-did-m2-end-up-as-a-full-attention-model",
+    "venue": "Hugging Face blog · MiniMax",
+    "chapters": [
+      "09",
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "M2 returned to full attention (via research brief B). Evaluation, cost, infrastructure (precision, prefix cache, speculative decoding) and failed SWA retrofit; crossover at a few thousand tokens."
+  },
+  {
+    "title": "XAttention: Block Sparse Attention with Antidiagonal Scoring",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.16428",
+    "venue": "ICML 2025 · MIT Han Lab",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2 antidiagonal block scores, minimal set over threshold; Table 5: 6.89% density at 128K, S 8."
+  },
+  {
+    "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.10925",
+    "venue": "OpenAI",
+    "chapters": [
+      "01",
+      "02",
+      "05",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "120b: 36 layers alternating banded W 128 and dense; 64 Q / 8 KV heads × 64. §2.2: per-head softmax-denominator bias; band 128 alternating dense; 64 heads, 8 KV; YaRN to 131,072. §2.2: banded 128 alternating with dense, following GPT-3; 64 Q / 8 KV × 64; 36 layers."
+  },
+  {
+    "title": "granite-4.0-h-small config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/ibm-granite/granite-4.0-h-small/blob/main/config.json",
+    "venue": "Hugging Face · IBM",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "40 layers: 36 mamba + 4 attention; 128 heads × 64 × 128 state; chunk 256."
+  },
+  {
+    "title": "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.13427",
+    "venue": "arXiv 2025 · NXAI, JKU Linz",
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "mLSTM keeps normalizer max(|nᵀq|, e^(−m)); config: 8 heads, qk 256, v 512 per head."
+  },
+  {
+    "title": "DeepSeek-V4-Flash config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/blob/main/config.json",
+    "venue": "DeepSeek-AI (Hugging Face)",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "compress_ratios: 2 zeros then 4/128 alternating (21 CSA, 20 HCA); index_topk 512; sliding_window 128; 43 layers."
+  },
+  {
+    "title": "DeepSeek-V4-Pro config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/config.json",
+    "venue": "DeepSeek-AI (Hugging Face)",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "compress_ratios: 128,128 then 4/128 alternating (30 CSA, 31 HCA); index_topk 1024; head_dim 512; 61 layers."
+  },
+  {
+    "id": "deepseek-v4-reference-config-2026",
+    "title": "DeepSeek-V4-Pro official inference/config.json",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/config.json",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Checked compression ratios 4 and 128, local window 128, and per-layer ratio list with two initial HCA layers and subsequent interleaving; avoid interpreting pooled-record counts as full memory footprints."
+  },
+  {
+    "id": "deepseek-v4-reference-model-2026",
+    "title": "DeepSeek-V4-Pro official inference/model.py",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/model.py",
+    "year": 2026,
+    "chapters": [
+      "01",
+      "02",
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected Compressor, Indexer and Attention implementations: overlap transform, per-channel softmax pooling, incomplete-block state, causal compressed-entry indices, and concatenation of local and compressed entries for the core attention. attn_sink per head; q RMS, kv_norm; 64/512 rotated, output de-rotated; W 128; o_groups 16."
+  },
+  {
+    "id": "deepseek-v4-modelcard-2026",
+    "title": "DeepSeek-V4-Pro official model card",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+    "year": 2026,
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Read model introduction and long-context evaluation tables, including MRCR and CorpusQA; whole-model results do not isolate a compressor's contribution."
+  },
+  {
+    "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.19969",
+    "venue": "DeepSeek",
+    "chapters": [
+      "14",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Abstract: global KV (main KV + indexer K, always in HBM) is 890 bytes per token, about 1/4 of V4-Flash; §2.4.4 FP4 E2M1 with an E4M3 scale per 16 channels. Inspected abstract, introduction, CSA2 cross-layer reuse, FP4 cache and persistent KV management. 890 bytes/token is attributed specifically to the report's global HBM cache."
+  },
+  {
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.19348",
+    "venue": "DeepSeek",
+    "chapters": [
+      "03",
+      "04",
+      "05",
+      "06",
+      "08",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Flash: 43 layers, 2 SWA-only then CSA/HCA alternating, W 128, one K=V head of 512, top-k 512. Read §2.3 and §4.2: overlapping 2r-source-position CSA windows emitted every r positions, HCA non-overlapping dense compressed-history access, shared-KV MQA with the same entry as key and value, and local uncompressed entries. §2.3.1/2.3.3: each KV entry is key and value; last 64 dims rotated, output re-rotated; cfg 1 KV head × 512. §4.2.1 Flash: 43 layers, first two pure SWA, n_win 128; CSA m 4, 64×128 indexer, top-k 512. §2.3 CSA/HCA, sinks, FP8+BF16 RoPE, FP4 indexer; §4.2.1 configs; §1 27%/10%, 10%/7%; §2.3.4 ≈2%."
+  },
+  {
+    "title": "Do Transformers Need Three Projections? Systematic Study of QKV Variants",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.04032",
+    "venue": "ICML 2026 · Kayyam, Madan Gopal, Lewis",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Q-K=V: −50% KV at +3.1% perplexity (300M/1.2B, 10B tokens); +GQA-4 −87.5%; +MQA −96.9%."
+  },
+  {
+    "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.26560",
+    "venue": "arXiv 2026",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Eq. 8: extra (I − γeeᵀ) erase before delta write; 2.5B dense and 25B-A2.8B MoE."
+  },
+  {
+    "id": "fg2-gdn-2026",
+    "title": "FG²-GDN: Enhancing Long-Context Gated Delta Networks with Doubly Fine-Grained Control",
+    "url": "https://arxiv.org/abs/2604.19021",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3.2–3.4 distinguish tied square-root key/value scaling in base FG²-GDN from independent key/value vectors in '+'. Setup specifies 340M/15B and 1.3B/100B SlimPajama tokens, common 3:1 MLA hybrid, one run per configuration; limitations inspected. First submitted April 21, revised August 31, 2026. Eq. 10–13: √β on k and v (tied; separate in +); 340M/15B and 1.3B/100B."
+  },
+  {
+    "id": "flash42026",
+    "title": "FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling",
+    "url": "https://arxiv.org/abs/2603.05451",
+    "year": 2026,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected introduction, architecture bottlenecks and pipelining sections. Only mechanism-level claims used; benchmark maxima omitted. Abstract 1613 TFLOP/s (71%), 1.3× cuDNN, 2.7× Triton; 8192 vs 16 ops/clk/SM; τ = log2 256; 10–25% emulated exp."
+  },
+  {
+    "title": "GLM-5 config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/zai-org/GLM-5/blob/main/config.json",
+    "venue": "Hugging Face · Zhipu AI (zai-org)",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "78 layers, 64 heads, kv_lora_rank 512, qk_rope_head_dim 64, qk_nope 192, v_head_dim 256, q_lora_rank 2048."
+  },
+  {
+    "title": "GLM-5.2 model card",
+    "year": 2026,
+    "url": "https://huggingface.co/zai-org/GLM-5.2",
+    "venue": "Z.ai model card",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "IndexShare: one indexer per four sparse layers; 2.9× fewer per-token FLOPs at 1M."
+  },
+  {
+    "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.15763",
+    "venue": "arXiv · Z.ai",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: GLM-5 adopts DSA to cut training and inference cost."
+  },
+  {
+    "id": "gated-deltanet2-2026",
+    "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+    "url": "https://arxiv.org/abs/2605.22791",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Section 3 equations 8–10 verify independent key-channel erase read and value-channel write target with original key write direction. Section 4/setup and appendix specify 1.3B/100B FineWeb-Edu, recurrent-only and SWA hybrids. Submitted May 21, 2026; labeled research rather than established deployment. Eq. 8–12 erase gate b (key), write gate w (value); b=w=β1 recovers KDA; 1.3B/100B."
+  },
+  {
+    "title": "Gemma 4 31B config.json and HF modeling_gemma4.py",
+    "year": 2026,
+    "url": "https://huggingface.co/google/gemma-4-31b-it/blob/main/config.json",
+    "venue": "Hugging Face config · Google DeepMind",
+    "chapters": [
+      "01",
+      "02"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Global: proportional RoPE 0.25, theta 1e6, 512 dims, 4 KV, K=V; local theta 1e4, W 1024; scaling 1."
+  },
+  {
+    "title": "Gemma 4 31B model card",
+    "year": 2026,
+    "url": "https://huggingface.co/google/gemma-4-31B-it",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "60 layers, 5 SWA (W 1024) : 1 global; global 4 KV heads × 512 with K=V (reported −37.5% KV); p-RoPE 25%."
+  },
+  {
+    "title": "Gemma 4 Technical Report",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2607.02770",
+    "venue": "arXiv 2026 · Google (Gemma Team)",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2: keys reused as values in global layers except E2B/E4B, global KV −37.5%; KV sharing 20/35 (E2B), 18/42 (E4B)."
+  },
+  {
+    "title": "Gemma 4 config.json (31B, 26B-A4B, E2B, E4B) and Hugging Face modeling_gemma4.py",
+    "year": 2026,
+    "url": "https://huggingface.co/google/gemma-4-31B-it/blob/main/config.json",
+    "venue": "Hugging Face · Google",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "attention_k_eq_v, 4/2 global KV heads × 512, num_kv_shared_layers 20/18; code: v_proj None, v_norm, shared layers lack k_proj."
+  },
+  {
+    "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.12201",
+    "venue": "arXiv · Tsinghua, Z.ai",
+    "chapters": [
+      "06"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Shared layers reuse top-k indices; 75% indexer compute removed on 30B DSA; 1.82×/1.48×."
+  },
+  {
+    "id": "kalman-delta-networks-2026",
+    "title": "Kalman Delta Networks: Uncertainty-aware Associative Memory",
+    "url": "https://arxiv.org/abs/2609.07816",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3–5 and Appendix A.1 explain Kalman residual/gain, predictive covariance, diagonal/isotropic retained projections, recurrent-only 750M/50B and 1.3B/100B experiments, and 1.3B hybrids with nine recurrent plus nine 2K-window layers. Internal association uncertainty is not calibrated final-answer confidence. Submitted September 7, revised September 29, 2026. Eq. 10–22: gain κ = p̂⊙k/(r + Σp̂k²), isotropic variant; 750M/50B and 1.3B/100B."
+  },
+  {
+    "title": "Kimi K2, Kimi Linear and Kimi K3 config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/config.json",
+    "venue": "Hugging Face · Moonshot AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "K2: 64 heads, 61 layers, kv_lora_rank 512, rope 64. Kimi Linear (32 heads) and K3 (96 heads): mla_use_nope true."
+  },
+  {
+    "title": "Kimi K3 model card and config",
+    "year": 2026,
+    "url": "https://huggingface.co/moonshotai/Kimi-K3",
+    "venue": "Model card · Moonshot AI",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "69 KDA + 24 gated MLA, 93 layers, 96 heads, 2.8T/104B; config full_attn_layers ends 92, 93; mla_use_nope."
+  },
+  {
+    "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.15569",
+    "venue": "ICLR 2026",
+    "chapters": [
+      "09",
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Trapezoid α, β, γ with λ; complex state ≡ data-dependent RoPE; MIMO; 1.5B/100B table; N=64 MIMO ≈ Mamba-2 N=128."
+  },
+  {
+    "title": "MiMo-V2-Flash Technical Report",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2601.02780",
+    "venue": "Xiaomi",
+    "chapters": [
+      "02",
+      "05",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers: 39 SWA (W 128) + 9 global with 4 KV heads, d_qk 192, d_v 128. §2.2 sink in denominator; Table 2 W=128: MMLU 54.9 → 58.3, BBH 52.4 → 56.1; config SWA-only. §2.1: 39 SWA + 9 GA, W 128, KV heads 8/4, dims 192/128; §2.2.1: RULER-32K 89.4 vs 84.7."
+  },
+  {
+    "title": "MiniMax Sparse Attention",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.13392",
+    "venue": "arXiv · MiniMax",
+    "chapters": [
+      "06",
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "One index head per GQA group plus shared key head; block 128, top-16, max-pooled; 28.4× at 1M. M3 card: 9× prefill, 15× decode vs M2 at 1M; config: 57/60 sparse layers, top-16 × 128."
+  },
+  {
+    "title": "NVIDIA kvpress README",
+    "year": 2026,
+    "url": "https://github.com/NVIDIA/kvpress",
+    "venue": "NVIDIA (GitHub)",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Lists SnapKV, ObservedAttention (H2O), PyramidKV, AdaKV, KVzip, DuoAttention, DMS presses; question-in-prompt bias note."
+  },
+  {
+    "title": "Olmo-Hybrid-7B config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/allenai/Olmo-Hybrid-7B/blob/main/config.json",
+    "venue": "Hugging Face · Ai2",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "linear_allow_neg_eigval true; 32 layers, 3 linear : 1 full; 30 heads, key 96, value 192."
+  },
+  {
+    "title": "Qwen3.5-397B-A17B config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/blob/main/config.json",
+    "venue": "Hugging Face · Qwen",
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Gated DeltaNet layers, 64 value / 16 key heads (via research brief B)."
+  },
+  {
+    "title": "Qwen3.5-397B-A17B model card and config",
+    "year": 2026,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+    "venue": "Model card · Qwen team, Alibaba",
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Hidden layout 15 × (3 GDN + 1 gated attention); config: 64 V heads, GQA 32/2/256, mamba_ssm_dtype float32."
+  },
+  {
+    "title": "Qwen3.8-Next architecture report (QSA)",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.30320",
+    "venue": "Qwen",
+    "chapters": [
+      "06",
+      "12",
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Flash-Next: 48 layers = 12 × (3 GDN + 1 attention to QSA), 24 Q / 2 KV × 256, budget 2048. Section 2.1 confirms GDN/global mixture and continued-pretraining replacement of explicit layers by QSA; indexer averages nonoverlapping micro-block keys and expands selected blocks into token indices for core attention. Submitted August 31, 2026. §2.1.2 QSA: 4 Q + 1 K heads × 128, 4-token pooled keys, budget 2048, 1-in-4 layers. §2.1: 25B-A3B ablation avg 49.87 / 51.15 / 53.81; NoPE variant endless generation; sigmoid output gate."
+  },
+  {
+    "title": "The Pitfalls of KV Cache Compression",
+    "year": 2026,
+    "url": "https://aclanthology.org/2026.acl-long.1926",
+    "venue": "ACL 2026",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Anthology abstract: some instructions degrade faster under compression; system-prompt leakage factors; five methods on IFEval."
+  },
+  {
+    "id": "fla-project",
+    "title": "Flash Linear Attention: efficient implementations for emerging model architectures",
+    "url": "https://github.com/fla-org/flash-linear-attention",
+    "year": null,
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Inspected current official repository README as implementation-library evidence. Living project; year is not a publication date. Library of Triton chunkwise kernels (GLA, DeltaNet, Gated DeltaNet); living project, no publication date."
+  }
+]

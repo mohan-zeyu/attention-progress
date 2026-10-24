@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+<title id="title">07-overlap</title><desc id="desc">CSA ratio four emits every four positions. Interior source windows overlap eight positions, but output count remains about N divided by four, not N divided by eight.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="320" fill="white"/>
+<text x="35" y="31" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">Source positions</text>
+<rect x="148" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="165.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">1</text>
+<rect x="191" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="208.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">2</text>
+<rect x="234" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="251.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">3</text>
+<rect x="277" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="294.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">4</text>
+<rect x="320" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="337.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">5</text>
+<rect x="363" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="380.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">6</text>
+<rect x="406" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="423.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">7</text>
+<rect x="449" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="466.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">8</text>
+<rect x="492" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="509.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">9</text>
+<rect x="535" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="552.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">10</text>
+<rect x="578" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="595.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">11</text>
+<rect x="621" y="48" width="34" height="35" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="638.0" y="71.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#4287b9">12</text>
+<text x="90" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#209f78">c₁</text>
+<rect x="148" y="111" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="191" y="111" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="234" y="111" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="277" y="111" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<line x1="707" y1="128" x2="766" y2="128" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="775" y="109" width="59" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="804.5" y="135.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c₁</text>
+<text x="90" y="197" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#209f78">c₂</text>
+<rect x="148" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="191" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="234" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="277" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="320" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="363" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="406" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="449" y="173" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<line x1="707" y1="190" x2="766" y2="190" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="775" y="171" width="59" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="804.5" y="197.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c₂</text>
+<text x="90" y="259" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#209f78">c₃</text>
+<rect x="320" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="363" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="406" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="449" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="492" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="535" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="578" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<rect x="621" y="235" width="34" height="34" rx="7" fill="#209f78" fill-opacity="0.7" stroke="#209f78" stroke-width="1.7"/>
+<line x1="707" y1="252" x2="766" y2="252" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="775" y="233" width="59" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="804.5" y="259.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c₃</text>
+<text x="450" y="306" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">Stride 4 → 3 entries from 12 positions.</text>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 305" role="img" aria-labelledby="title desc">
+<title id="title">09-tiles</title><desc id="desc">Naive attention stores full score and probability intermediates in HBM. FlashAttention maintains tiled scores and running softmax/output on chip; dense pairwise arithmetic stays quadratic.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="305" fill="white"/>
+<text x="225" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Write full intermediates</text>
+<text x="675" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Compute in tiles</text>
+<line x1="450" y1="32" x2="450" y2="280" stroke="#cad5db" stroke-width="2"/>
+<rect x="50" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="73" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="96" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="119" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="142" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="165" y="75" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="50" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="73" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="96" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="119" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="142" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="165" y="98" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="50" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="73" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="96" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="119" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="142" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="165" y="121" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="50" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="73" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="96" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="119" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="142" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="165" y="144" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="50" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="73" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="96" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="119" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="142" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="165" y="167" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="50" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="73" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="96" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="119" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="142" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="165" y="190" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="253" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="276" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="299" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="322" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="345" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="368" y="75" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="253" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="276" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="299" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="322" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="345" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="368" y="98" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="253" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="276" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="299" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="322" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="345" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="368" y="121" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="253" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="276" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="299" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="322" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="345" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="368" y="144" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="253" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="276" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="299" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="322" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="345" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="368" y="167" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="253" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="276" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="299" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="322" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="345" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="368" y="190" width="21" height="21" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<line x1="196" y1="142" x2="244" y2="142" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<text x="119" y="254" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Scores</text>
+<text x="322" y="254" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">Probabilities</text>
+<rect x="512" y="65" width="327" height="162" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="675" y="91" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">On-chip memory</text>
+<rect x="544" y="117" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="567" y="117" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="590" y="117" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="544" y="140" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="567" y="140" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="590" y="140" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="544" y="163" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="567" y="163" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="590" y="163" width="21" height="21" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<line x1="621" y1="149" x2="672" y2="149" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="684" y="122" width="119" height="47" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="743.5" y="152.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Running O</text>
+<text x="675" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">FlashAttention</text>
+</svg>

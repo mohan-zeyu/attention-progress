@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">linear-mamba3</title><desc id="desc">Mamba-3 changes three things. (a) Trapezoid write: with toy Δ = 0.5, α = 0.8, Mamba-2 (λ = 1) writes 0.5 of x_t only, the trapezoid rule (λ = ½) writes 0.2 of x_(t−1) and 0.25 of x_t. (b) A complex state turns the decay into a rotation: eigenvalues move from the real point α to α·e^(±iθ), equivalent to data-dependent RoPE on B and C. (c) MIMO: rank-R writes (P×R)(R×N) with R = 4 do about 4× the decode FLOPs on the same 64×128 state.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#2a9aa6">α<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> + <tspan fill="#2a9aa6">β<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">x</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6">B<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan> + <tspan fill="#2a9aa6">γ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">x</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6">B<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan></text>
+<text x="870" y="36" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="18" fill="#253340"><tspan fill="#2a9aa6">β<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan> = (1-λ<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan>)Δ<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan><tspan fill="#2a9aa6">α<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan>,   <tspan fill="#2a9aa6">γ<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan> = λ<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan>Δ<tspan dy="5.0" font-size="12.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></text>
+<rect x="20" y="58" width="280" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">(a) write taps (toy Δ = .5, α = .8)</text>
+<line x1="46" y1="300" x2="146" y2="300" stroke="#cad5db" stroke-width="1.4"/>
+<text x="73" y="294" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">0</text>
+<text x="73" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">t−1</text>
+<rect x="100" y="150.0" width="34" height="150.0" rx="3" fill="#687986" fill-opacity="0.8"/>
+<text x="117" y="144.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">0.5</text>
+<text x="117" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">t</text>
+<text x="94" y="112" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">Mamba-2 · λ = 1</text>
+<line x1="172" y1="300" x2="272" y2="300" stroke="#cad5db" stroke-width="1.4"/>
+<rect x="182" y="240.0" width="34" height="60.0" rx="3" fill="#2a9aa6" fill-opacity="0.8"/>
+<text x="199" y="234.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">0.2</text>
+<text x="199" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">t−1</text>
+<rect x="226" y="225.0" width="34" height="75.0" rx="3" fill="#2a9aa6" fill-opacity="0.8"/>
+<text x="243" y="219.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">0.25</text>
+<text x="243" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">t</text>
+<text x="220" y="112" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">trapezoid · λ = ½</text>
+<text x="160" y="340" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ = 1 recovers Mamba-2</text>
+<rect x="316" y="58" width="266" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="330" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">(b) complex state = rotation</text>
+<circle cx="448" cy="208" r="84" fill="none" stroke="#cad5db" stroke-width="1.2"/>
+<circle cx="448" cy="208" r="67.2" fill="none" stroke="#2a9aa6" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="350" y1="208" x2="546" y2="208" stroke="#cad5db" stroke-width="1"/>
+<line x1="448" y1="114" x2="448" y2="302" stroke="#cad5db" stroke-width="1"/>
+<circle cx="515.2" cy="208" r="5" fill="#687986" stroke="#687986" stroke-width="2"/>
+<circle cx="499.47818657759535" cy="164.80467262906456" r="5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="499.47818657759535" cy="251.19532737093544" r="5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="521.2" y="228" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">α (Mamba-2)</text>
+<text x="507.47818657759535" y="156.80467262906456" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#2a9aa6">α <tspan font-style="italic">e</tspan><tspan dy="-6.3" font-size="10.2"><tspan font-style="italic">i</tspan>θ</tspan><tspan dy="6.3" font-size="15.0"> </tspan></tspan></text>
+<text x="507.47818657759535" y="269.19532737093544" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#2a9aa6">α <tspan font-style="italic">e</tspan><tspan dy="-6.3" font-size="10.2">-<tspan font-style="italic">i</tspan>θ</tspan><tspan dy="6.3" font-size="15.0"> </tspan></tspan></text>
+<text x="360" y="128" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">|z| = 1</text>
+<text x="449" y="316.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">≡ data-dependent RoPE on B, C</text>
+<text x="449" y="333.55" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">cumulative angle Σ Δθ; enables parity</text>
+<rect x="598" y="58" width="282" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="612" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">(c) MIMO: rank-R write</text>
+<text x="620" y="106" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">SISO</text>
+<rect x="672" y="92" width="8" height="40" rx="1" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="690" y="117" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#687986">×</text>
+<rect x="700" y="106" width="64" height="8" rx="1" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="772" y="117" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">P×1 · 1×N</text>
+<text x="620" y="172" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">MIMO</text>
+<rect x="672" y="150" width="26" height="40" rx="1" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="706" y="175" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#687986">×</text>
+<rect x="716" y="158" width="64" height="26" rx="1" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="786" y="175" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">P×R · R×N</text>
+<text x="686" y="204" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">R = 4</text>
+<text x="739" y="228" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">state stays P × N (e.g. 64 × 128)</text>
+<text x="612" y="252" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">decode FLOPs per state byte</text>
+<text x="676" y="269.52" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">SISO</text>
+<rect x="686" y="260" width="25.0" height="14" rx="4" fill="#687986" fill-opacity="0.85"/>
+<text x="719.0" y="269.52" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">≈1×</text>
+<text x="676" y="289.52" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MIMO R=4</text>
+<rect x="686" y="280" width="100.0" height="14" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="794.0" y="289.52" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">≈4×</text>
+<text x="739" y="318.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">decode is memory-bound:</text>
+<text x="739" y="335.55" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">reported latency ≈ unchanged</text>
+<text x="450" y="392" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Same state bytes as Mamba-2; reported: MIMO with N = 64 matches Mamba-2 perplexity at N = 128.</text>
+</svg>

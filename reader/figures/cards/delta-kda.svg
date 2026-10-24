@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+<title id="title">delta-kda</title><desc id="desc">KDA on the toy with per-channel decay α = (0.8, 1) and β = 0.5: [2, 4] fades to [1.6, 4], the residual 3.4 is written at half strength, giving [3.3, 4]; scalar-decay Gated DeltaNet gives [3.3, 3.2]. The transition is diagonal plus a rank-1 term tied to k, which halves the chunk matrices of general DPLR. Kimi-Linear-48B-A3B: 27 layers, 20 KDA and 7 MLA, 32 heads × 128 × 128 = 524,288 state numbers per KDA layer.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="460" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Diag</tspan>(<tspan fill="#2a9aa6">α<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)(<tspan font-style="italic">I</tspan> - <tspan fill="#2a9aa6">β<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>) + <tspan fill="#2a9aa6">β<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan></text>
+<text x="870" y="36" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">toy: α = (0.8, 1), β = 0.5</text>
+<text x="53.5" y="82" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">7314</text>
+<text x="103.5" y="82" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#687986">2208</text>
+<rect x="30" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.28"/>
+<text x="53.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">2</text>
+<rect x="80" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="103.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<line x1="134" y1="109" x2="196" y2="109" stroke="#2a9aa6" stroke-width="1.8" marker-end="url(#a-teal)"/>
+<text x="165" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">× Diag(α)</text>
+<rect x="200" y="62" width="47" height="14.4" rx="2" fill="#2a9aa6" fill-opacity="0.75"/>
+<text x="223" y="56" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#2a9aa6">α = 0.8</text>
+<rect x="250" y="62" width="47" height="18" rx="2" fill="#2a9aa6" fill-opacity="0.75"/>
+<text x="273" y="56" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#2a9aa6">α = 1</text>
+<rect x="200" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.24"/>
+<text x="223.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">1.6</text>
+<rect x="250" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="273.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<line x1="304" y1="109" x2="340" y2="109" stroke="#cf5f59" stroke-width="1.8" marker-end="url(#a-red)"/>
+<rect x="344" y="92" width="124" height="34" rx="17" fill="#f4f7f8" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="406.0" y="114.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cf5f59">5 − 1.6 = 3.4</text>
+<line x1="472" y1="109" x2="508" y2="109" stroke="#1f9a74" stroke-width="1.8" marker-end="url(#a-green)"/>
+<text x="490" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">× β</text>
+<text x="530" y="115" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#253340">→</text>
+<rect x="552" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.41"/>
+<rect x="550.5" y="90.5" width="50" height="37" rx="5" fill="none" stroke="#1f9a74" stroke-width="2"/>
+<text x="575.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">3.3</text>
+<rect x="602" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<rect x="600.5" y="90.5" width="50" height="37" rx="5" fill="none" stroke="#1f9a74" stroke-width="2"/>
+<text x="625.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<text x="602" y="146" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">KDA</text>
+<rect x="714" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.41"/>
+<text x="737.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">3.3</text>
+<rect x="764" y="92" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.4"/>
+<rect x="762.5" y="90.5" width="50" height="37" rx="5" fill="none" stroke="#cf5f59" stroke-width="2"/>
+<text x="787.5" y="114.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">3.2</text>
+<text x="764" y="146" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">GDN (scalar 0.8)</text>
+<text x="681" y="115" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">vs</text>
+<line x1="20" y1="170" x2="880" y2="170" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="20" y="184" width="400" height="196" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Transition = diagonal + rank 1, tied to k</text>
+<text x="220" y="230" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#253340"><tspan fill="#2a9aa6"><tspan font-style="italic">A</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Diag</tspan>(<tspan fill="#2a9aa6">α<tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan>) - <tspan fill="#2a9aa6">β<tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan>(<tspan fill="#2a9aa6">α<tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan><tspan font-style="normal">⊙</tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan>)<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></tspan><tspan dy="-7.1" font-size="11.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="7.1" font-size="17.0"> </tspan></text>
+<rect x="40" y="248" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.72"/>
+<rect x="58" y="248" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.46"/>
+<rect x="76" y="248" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.37"/>
+<rect x="94" y="248" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.30"/>
+<rect x="112" y="248" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.26"/>
+<rect x="130" y="248" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.22"/>
+<rect x="40" y="266" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.35"/>
+<rect x="58" y="266" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.64"/>
+<rect x="76" y="266" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.23"/>
+<rect x="94" y="266" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.19"/>
+<rect x="112" y="266" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.16"/>
+<rect x="130" y="266" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<rect x="40" y="284" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.36"/>
+<rect x="58" y="284" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.29"/>
+<rect x="76" y="284" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.88"/>
+<rect x="94" y="284" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.19"/>
+<rect x="112" y="284" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.17"/>
+<rect x="130" y="284" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<rect x="40" y="302" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.18"/>
+<rect x="58" y="302" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.15"/>
+<rect x="76" y="302" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.12"/>
+<rect x="94" y="302" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.56"/>
+<rect x="112" y="302" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.05"/>
+<rect x="130" y="302" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.05"/>
+<rect x="40" y="320" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.24"/>
+<rect x="58" y="320" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.19"/>
+<rect x="76" y="320" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.16"/>
+<rect x="94" y="320" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.13"/>
+<rect x="112" y="320" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.86"/>
+<rect x="130" y="320" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.05"/>
+<rect x="40" y="338" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.18"/>
+<rect x="58" y="338" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.15"/>
+<rect x="76" y="338" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.12"/>
+<rect x="94" y="338" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.10"/>
+<rect x="112" y="338" width="16.5" height="16.5" rx="2" fill="#cf5f59" fill-opacity="0.05"/>
+<rect x="130" y="338" width="16.5" height="16.5" rx="2" fill="#2a9aa6" fill-opacity="0.80"/>
+<text x="93" y="370" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">toy A, 6 key channels</text>
+<text x="170" y="266" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#687986">second-level chunk matrix computations</text>
+<text x="250" y="288.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">general DPLR</text>
+<rect x="260" y="276" width="110.0" height="18" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="378.0" y="288.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">4</text>
+<text x="250" y="316.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">KDA</text>
+<rect x="260" y="304" width="55.0" height="18" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="323.0" y="316.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">2</text>
+<text x="170" y="344.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">reported: ≈2× faster kernel than general</text>
+<text x="170" y="360.2" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">DPLR (RWKV-7 class), up to 64K tokens</text>
+<rect x="436" y="184" width="444" height="196" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="450" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Kimi-Linear-48B-A3B (config)</text>
+<rect x="452.0" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="467.1" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="482.2" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="497.3" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="512.4" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="527.5" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="542.6" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="557.7" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="572.8" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="587.9" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="603.0" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="618.1" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="633.2" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="648.3" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="663.4" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="678.5" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="693.6" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="708.7" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="723.8" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="738.9" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="754.0" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="769.0999999999999" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="784.2" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="799.3" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="814.4" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="829.5" y="222" width="13.5" height="24" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="844.5999999999999" y="222" width="13.5" height="24" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="452" y="262" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MLA at layers 4, 8, …, 24 and 27: 20 KDA + 7 MLA</text>
+<text x="452" y="290.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">KDA: 32 heads × 128 × 128 = 524,288 state numbers / layer</text>
+<text x="452" y="307.55" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MLA (NoPE): 512 + 64 = 576 cached numbers / token / layer</text>
+<text x="452" y="325.1" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">reported at 1M context: up to 75% less KV cache,</text>
+<text x="452" y="342.65" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">up to 6× decoding throughput</text>
+<text x="450" y="418" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Per-channel α keeps order 2208 at 4 while 7314 is overwritten. Same state size as GDN.</text>
+<text x="450" y="442" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Order matters: Diag(α)(I − βkkᵀ) ≠ (I − βkkᵀ)Diag(α) when k spans channels with different α.</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" role="img" aria-labelledby="title desc">
+<title id="title">03-absorption</title><desc id="desc">Content projection absorption moves key expansion to the query side and value projection after the weighted latent sum. It is algebraically equivalent for the chosen parameterization.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="310" fill="white"/>
+<text x="35" y="40" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Keys</text>
+<text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="400" fill="#9272b7">qᵀ(Ac) = (Aᵀq)ᵀc</text>
+<rect x="23" y="77" width="134" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#d49a30" stroke-width="1.7"/>
+<text x="90.0" y="108.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#d49a30">Query q</text>
+<rect x="238" y="77" width="134" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="305.0" y="108.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#9272b7">Transform q</text>
+<rect x="493" y="77" width="170" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="578.0" y="108.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#4287b9">Match latent c</text>
+<rect x="728" y="77" width="134" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="795.0" y="108.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#209f78">Score</text>
+<line x1="160" y1="102" x2="234" y2="102" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="375" y1="102" x2="489" y2="102" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="667" y1="102" x2="724" y2="102" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<text x="35" y="184" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Values</text>
+<text x="450" y="186" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="400" fill="#9272b7">Σ w(Uc) = U(Σ wc)</text>
+<rect x="30" y="221" width="163" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="111.5" y="252.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#9272b7">Stored latents</text>
+<rect x="273" y="221" width="176" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="361.0" y="252.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#4287b9">Weighted sum</text>
+<rect x="531" y="221" width="172" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="617.0" y="252.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#9272b7">Project result</text>
+<rect x="784" y="221" width="89" height="49" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="828.5" y="252.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Out</text>
+<line x1="195" y1="246" x2="269" y2="246" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="452" y1="246" x2="527" y2="246" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="706" y1="246" x2="780" y2="246" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+</svg>

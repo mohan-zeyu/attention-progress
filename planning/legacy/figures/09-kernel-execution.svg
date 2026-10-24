@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<title id="title">Naive versus tiled attention execution</title><desc id="desc">Naive dense attention writes full score and probability matrices to HBM. Tiled execution loads blocks, maintains online softmax and accumulates output on chip without storing a full N by N intermediate in HBM.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7d8da4" stroke-width="1.5"/></marker></defs>
+<rect width="1000" height="520" rx="12" fill="white"/>
+<text x="500" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="650" fill="#203044">Same permitted query–key pairs; different execution and storage</text>
+<text x="25" y="82" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="650" fill="#203044">NAIVE: full intermediate matrices in HBM</text>
+<rect x="25" y="103" width="210" height="84" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="130.0" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">Q / K / V</text>
+<text x="130.0" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">input matrices</text>
+<rect x="280" y="103" width="210" height="84" rx="12" fill="#fbf1e5" stroke="#c8d3e2"/>
+<text x="385.0" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">Scores</text>
+<text x="385.0" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">N × N</text>
+<rect x="535" y="103" width="210" height="84" rx="12" fill="#fbf1e5" stroke="#c8d3e2"/>
+<text x="640.0" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">Probabilities</text>
+<text x="640.0" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">N × N</text>
+<rect x="790" y="103" width="185" height="84" rx="12" fill="#eaf5f0" stroke="#c8d3e2"/>
+<text x="882.5" y="135" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">Output</text>
+<text x="882.5" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#203044">N × dv</text>
+<path d="M235 145L276 145" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M490 145L531 145" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M745 145L786 145" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="25" y="252" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="650" fill="#203044">TILED: only a block of scores is needed on chip at a time</text>
+<rect x="25" y="285" width="215" height="92" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="132" y="320" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Q / K / V in HBM</text>
+<text x="132" y="346" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">load the next tile</text>
+<rect x="315" y="274" width="380" height="151" rx="12" fill="#f1edfa" stroke="#c8d3e2"/>
+<text x="505" y="307" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="650" fill="#203044">FAST ON-CHIP MEMORY</text>
+<text x="505" y="340" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#203044">Block scores + online softmax</text>
+<text x="505" y="365" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#203044">Rescale running output / normalizer</text>
+<text x="505" y="390" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#203044">Accumulate values; then repeat</text>
+<rect x="775" y="285" width="200" height="92" rx="12" fill="#eaf5f0" stroke="#c8d3e2"/>
+<text x="875" y="320" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Final output</text>
+<text x="875" y="346" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">written to HBM</text>
+<path d="M240 330L311 330" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M695 330L771 330" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="500" y="477" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#52647b">Dense pairwise arithmetic stays quadratic; large intermediate HBM writes disappear</text>
+</svg>

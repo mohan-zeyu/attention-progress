@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+<title id="title">delta-eigen</title><desc id="desc">The delta transition I − βkkᵀ has eigenvalues 1 (d_k − 1 times) and 1 − β. With β in [0, 1] they stay in [0, 1]; allowing β up to 2 reaches −1, a reflection. Parity toy: with β = 2 for every 1-bit, the 1-D state flips sign and after bits 1 0 1 1 0 1 ends at +1 (even); with β ≤ 1 the sign can never flip. Two reflections with mirrors 30° apart make a 60° rotation, as in DeltaProduct with n_h = 2. Olmo Hybrid 7B ships linear_allow_neg_eigval = true.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="470" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">eig</tspan>(<tspan font-style="italic">I</tspan> - <tspan fill="#2a9aa6">β</tspan><tspan fill="#3f83b6"><tspan font-style="italic">kk</tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>) = {1, <tspan font-style="normal">…</tspan>, 1,   1 - <tspan fill="#2a9aa6">β</tspan>}, <tspan font-style="normal"> </tspan> <tspan fill="#2a9aa6">β</tspan> <tspan font-style="normal">∈</tspan> (0, 2) ⇒ 1 - <tspan fill="#2a9aa6">β</tspan> <tspan font-style="normal">∈</tspan> (-1, 1)</text>
+<text x="30" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Where the eigenvalue 1 − β can sit</text>
+<rect x="242.0" y="136" width="178.0" height="28" rx="4" fill="#1f9a74" fill-opacity="0.18"/>
+<rect x="64.0" y="136" width="178.0" height="28" rx="4" fill="#2a9aa6" fill-opacity="0.18"/>
+<line x1="54" y1="150" x2="430" y2="150" stroke="#687986" stroke-width="1.4"/>
+<circle cx="420.0" cy="150" r="6" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="420.0" y="182" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">1</text>
+<text x="420.0" y="128" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#1f9a74">β = 0: keep</text>
+<circle cx="242.0" cy="150" r="6" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="242.0" y="182" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">0</text>
+<text x="242.0" y="128" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#1f9a74">β = 1: erase</text>
+<circle cx="64.0" cy="150" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="64.0" y="182" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">-1</text>
+<text x="64.0" y="128" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#2a9aa6">β = 2: flip</text>
+<text x="331.0" y="202" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">β ∈ [0, 1]: DeltaNet, GDN, KDA</text>
+<text x="153.0" y="202" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">β ∈ (1, 2): reflections</text>
+<text x="153.0" y="218" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">(Grazzi 2025; Olmo Hybrid 7B)</text>
+<rect x="500" y="64" width="380" height="182" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="514" y="88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Parity toy: β = 2·bit, k = e₁, d = 1</text>
+<text x="530" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">bit</text>
+<text x="530" y="162" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">β ≤ 2</text>
+<text x="530" y="204" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">β ≤ 1</text>
+<rect x="588" y="142" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="605.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#2a9aa6">+1</text>
+<rect x="588" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="605.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#cf5f59">+1</text>
+<text x="649" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">1</text>
+<rect x="632" y="142" width="34" height="30" rx="6" fill="#cf5f59" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="649.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">-1</text>
+<rect x="632" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="649.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="689" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">0</text>
+<rect x="672" y="142" width="34" height="30" rx="6" fill="#cf5f59" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="689.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">-1</text>
+<rect x="672" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="689.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="729" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">1</text>
+<rect x="712" y="142" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="729.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#2a9aa6">+1</text>
+<rect x="712" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="729.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="769" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">1</text>
+<rect x="752" y="142" width="34" height="30" rx="6" fill="#cf5f59" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="769.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">-1</text>
+<rect x="752" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="769.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="809" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">0</text>
+<rect x="792" y="142" width="34" height="30" rx="6" fill="#cf5f59" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="809.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#ffffff">-1</text>
+<rect x="792" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="809.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="849" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">1</text>
+<rect x="832" y="142" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="849.0" y="162.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#2a9aa6">+1</text>
+<rect x="832" y="184" width="34" height="30" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="849.0" y="204.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">+</text>
+<text x="690" y="236" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#2a9aa6">ends at +1: four 1-bits, even</text>
+<rect x="20" y="262" width="470" height="192" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="286" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Two reflections = one rotation (DeltaProduct, 2 steps/token)</text>
+<line x1="69.5" y1="380.0" x2="230.5" y2="380.0" stroke="#3f83b6" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="80.28495499535268" y1="420.25" x2="219.71504500464732" y2="339.75" stroke="#3f83b6" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="150" y1="380" x2="218.93654271085455" y2="367.8446275633149" stroke="#8d6bb5" stroke-width="2.2" marker-end="url(#a-purple)"/>
+<text x="230.93654271085455" y="371.8446275633149" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">x</text>
+<line x1="150" y1="380" x2="218.93654271085455" y2="392.1553724366851" stroke="#687986" stroke-width="2.2" marker-end="url(#a-muted)"/>
+<line x1="150" y1="380" x2="173.94141003279682" y2="314.2215165449864" stroke="#1f9a74" stroke-width="2.2" marker-end="url(#a-green)"/>
+<text x="215.0" y="424" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">after mirror 1</text>
+<text x="181.94141003279682" y="308.2215165449864" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">after mirror 2</text>
+<text x="360" y="318" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340">(<tspan font-style="italic">I</tspan> - 2<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="4.5" font-size="10.9">2</tspan><tspan dy="-4.5" font-size="16.0"> </tspan><tspan font-style="italic">k</tspan><tspan dy="4.5" font-size="10.9">2</tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan>)(<tspan font-style="italic">I</tspan> - 2<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="4.5" font-size="10.9">1</tspan><tspan dy="-4.5" font-size="16.0"> </tspan><tspan font-style="italic">k</tspan><tspan dy="4.5" font-size="10.9">1</tspan><tspan dy="-4.5" font-size="16.0"> </tspan></tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan>)</text>
+<text x="360" y="346.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">mirrors 30° apart</text>
+<text x="360" y="363.55" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">→ rotation by 60° (2θ)</text>
+<text x="360" y="381.1" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">x at 10° → 70°</text>
+<text x="360" y="420" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#2a9aa6">Mamba-3 gets rotations directly</text>
+<text x="360" y="438" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="400" fill="#2a9aa6">from a complex state</text>
+<rect x="500" y="262" width="380" height="192" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="514" y="286" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Shipped: Olmo Hybrid 7B (config)</text>
+<rect x="516" y="298" width="348" height="30" rx="5" fill="#ffffff" stroke="#cad5db"/>
+<text x="530" y="318" text-anchor="start" font-family="Menlo,Consolas,monospace" font-size="14" font-weight="700" fill="#2a9aa6">linear_allow_neg_eigval: true</text>
+<text x="516" y="352.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">32 layers: 24 GDN + 8 full attention (3:1)</text>
+<text x="516" y="369.55" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">GDN: 30 heads, key dim 96, value dim 192</text>
+<text x="516" y="387.1" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">state / layer: 30 × 192 × 96 = 552,960</text>
+<text x="516" y="404.65" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">β = 2·sigmoid(·): one-line change, ‖A‖ ≤ 1</text>
+</svg>

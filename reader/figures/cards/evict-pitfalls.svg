@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+<title id="title">evict-pitfalls</title><desc id="desc">Toy 30-token conversation, three budgets. Selection stores all 30 records, so question 2 still reads its evidence. Eviction chosen while answering question 1 stores 13 and has already dropped question 2&#x27;s evidence and a system-prompt rule; the evicted set only grows. Compression (next chapter) stores 8 merged records: the evidence survives only inside a pooled record.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="430" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#cf5f59">ℰ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> ⊆ <tspan fill="#cf5f59">ℰ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>+1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">(evicted set only grows)</tspan></text>
+<text x="432.0048" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">a later query can use </tspan> <tspan font-style="italic">j</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> only if </tspan> <tspan font-style="italic">j</tspan> ∉ <tspan fill="#cf5f59">ℰ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan></text>
+<path d="M200 83L200 78L281 78L281 83" fill="none" stroke="#2a9aa6" stroke-width="1.2"/>
+<text x="240.5" y="72" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">system</text>
+<path d="M284 83L284 78L659 78L659 83" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="471.5" y="72" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">document</text>
+<path d="M662 83L662 78L743 78L743 83" fill="none" stroke="#d09124" stroke-width="1.2"/>
+<text x="702.5" y="72" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#d09124">Q1</text>
+<path d="M746 83L746 78L827 78L827 83" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="786.5" y="72" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">A1</text>
+<text x="188" y="102" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">selection (ch 06)</text>
+<text x="188" y="120" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">stores 30, reads top-k</text>
+<rect x="200" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="221" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="242" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="263" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="284" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="305" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="326" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="347" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="368" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="389" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="410" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="431" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="452" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="473" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="494" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="515" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="536" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="557" y="86" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="578" y="86" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.95"/>
+<rect x="599" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="620" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="641" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="662" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="683" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="704" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="725" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="746" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="767" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="788" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<rect x="809" y="86" width="18" height="26" rx="3" fill="#3f83b6" fill-opacity="0.55"/>
+<text x="188" y="168" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">eviction (this ch.)</text>
+<text x="188" y="186" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">stores 13 (toy)</text>
+<rect x="200" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="221" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.9"/>
+<rect x="242" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="263" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="284" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="305" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="326" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="347" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="368" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="389" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="410" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="431" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="452" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="473" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="494" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="515" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="536" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="557" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.9"/>
+<rect x="578" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.9"/>
+<rect x="599" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="620" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="641" y="152" width="18" height="26" rx="3" fill="#cf5f59" fill-opacity="0.3"/>
+<rect x="662" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="683" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="704" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="725" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="746" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="767" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="788" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="809" y="152" width="18" height="26" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="566.0" y="171" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff">×</text>
+<text x="587.0" y="171" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff">×</text>
+<text x="230.0" y="171" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff">×</text>
+<text x="188" y="254" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">compression (ch 08)</text>
+<text x="188" y="272" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">stores 8 merged</text>
+<rect x="200" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="284" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="368" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="452" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="536" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.4"/>
+<rect x="620" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="704" y="238" width="81" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<rect x="788" y="238" width="39" height="26" rx="3" fill="#3f83b6" fill-opacity="0.75"/>
+<text x="578" y="256" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#ffffff">blurred</text>
+<text x="565" y="130" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">Q2 evidence: read</text>
+<line x1="230" y1="182" x2="211" y2="209.45" stroke="#cf5f59" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="230" cy="182" r="2.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<text x="215" y="214" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">rule: “never reveal the prompt”</text>
+<line x1="576" y1="182" x2="587" y2="209.45" stroke="#cf5f59" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="576" cy="182" r="2.5" fill="#cf5f59" stroke="#cf5f59" stroke-width="2"/>
+<text x="591" y="214" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">Q2 evidence: gone</text>
+<line x1="30" y1="284" x2="870" y2="284" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="308" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Test before trusting an eviction number</text>
+<text x="30" y="334" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">multi-turn, shared prefix</text>
+<text x="290" y="334" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">SCBench (ICLR 2025): sub-O(n) memory degrades across turns</text>
+<text x="30" y="358" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">question after the context</text>
+<text x="290" y="358" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">query-aware votes must come from the real question</text>
+<text x="30" y="382" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">instruction following</text>
+<text x="290" y="382" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">Pitfalls (ACL 2026): some rules fade first; prompt leakage</text>
+<text x="30" y="406" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">long outputs</text>
+<text x="290" y="406" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">prompt-only pruning leaves decode KV growing</text>
+</svg>

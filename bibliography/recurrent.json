@@ -1,0 +1,169 @@
+[
+  {
+    "id": "linear-transformers-2020",
+    "title": "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention",
+    "url": "https://proceedings.mlr.press/v119/katharopoulos20a.html",
+    "year": 2020,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Primary proceedings paper Sections 3.2–3.4 inspected; feature-map kernel reassociation and normalized recurrent numerator/denominator. Worked customer-service interpretation is original."
+  },
+  {
+    "id": "retnet-2023",
+    "title": "Retentive Network: A Successor to Transformer for Large Language Models",
+    "url": "https://arxiv.org/html/2307.08621v4",
+    "year": 2023,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Section 2.1 parallel, recurrent, and chunkwise retention; Section 2.2 fixed multi-scale per-head decay and distinct output gating. Book core recurrence explicitly suppresses positional and surrounding layer operations."
+  },
+  {
+    "id": "gla-2023",
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "url": "https://arxiv.org/html/2312.06635v3",
+    "year": 2023,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–3 and related work distinguish data-dependent state decay, key/value gating, output gating, and hardware-efficient chunkwise forms. No reported throughput maxima are reproduced."
+  },
+  {
+    "id": "mamba-2023",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "url": "https://arxiv.org/abs/2312.00752",
+    "year": 2023,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract supports input-dependent selective state-space parameters and the adjacent SSM lineage. Detailed architecture claims are not made."
+  },
+  {
+    "id": "mamba2-ssd-2024",
+    "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+    "url": "https://arxiv.org/html/2405.21060v1",
+    "year": 2024,
+    "chapters": [
+      "09"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3 and 5 inspected: semiseparable sequence operators, structured masked attention, and restricted state-space duality. Book does not equate all SSMs with softmax attention."
+  },
+  {
+    "id": "fast-weight-programmers-2021",
+    "title": "Linear Transformers Are Secretly Fast Weight Programmers",
+    "url": "https://arxiv.org/html/2102.11174v1",
+    "year": 2021,
+    "chapters": [
+      "10",
+      "11"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Fast-weight memory discussion and replacement/delta interpretation inspected. Early HTML version bears the title 'Linear Transformers Are Secretly Fast Weight Memory Systems'; latest abstract/proceedings title is listed here. Numerical example and gradient derivation are original exposition."
+  },
+  {
+    "id": "parallel-deltanet-2024",
+    "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+    "url": "https://arxiv.org/html/2406.06484v1",
+    "year": 2024,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Core delta recurrence and Section 3 WY/chunkwise composition inspected. Book explains structured composition without reproducing a kernel or benchmark claim."
+  },
+  {
+    "id": "gated-deltanet-2024",
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "url": "https://arxiv.org/html/2412.06464v3",
+    "year": 2024,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–3 verify scalar decay followed by residual correction, complementary memory clearance and association editing, and chunkwise parallelization. Formula transposed to S in R^(dv×dk); the correction reads the faded state. First submitted December 2024, ICLR 2025."
+  },
+  {
+    "id": "kimi-linear-2025",
+    "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
+    "url": "https://arxiv.org/html/2510.26692v1",
+    "year": 2025,
+    "chapters": [
+      "10",
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–4 and 7.2 inspected: KDA per-key-channel decay, exact gate/correction order, output sigmoid gate after RMSNorm and before output projection, 3:1 KDA/Full-MLA layerwise mixture, and finite-state retrieval limits. No maximum cache/throughput ratios quoted."
+  },
+  {
+    "id": "qwen3-next-model-card-2025",
+    "title": "Qwen3-Next-80B-A3B-Instruct: Official Model Card",
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "year": 2025,
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Model Overview verifies 48 layers and 12 repetitions of three Gated DeltaNet/MoE blocks followed by one Gated Attention/MoE block; explicit attention uses 16 Q and 2 KV heads."
+  },
+  {
+    "id": "gated-softmax-attention-2025",
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "url": "https://arxiv.org/html/2505.06708v1",
+    "year": 2025,
+    "chapters": [
+      "02"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 2–4 inspected: SDPA output gate, elementwise versus headwise and head-specific versus shared granularity, sparse output modulation, and nonlinearity. Output activation sparsity is explicitly distinguished from skipping attention computation."
+  },
+  {
+    "id": "qwen38-next-2026",
+    "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+    "url": "https://arxiv.org/html/2608.30320v1",
+    "year": 2026,
+    "chapters": [
+      "12"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Section 2.1 confirms GDN/global mixture and continued-pretraining replacement of explicit layers by QSA; indexer averages nonoverlapping micro-block keys and expands selected blocks into token indices for core attention. Submitted August 31, 2026."
+  },
+  {
+    "id": "fg2-gdn-2026",
+    "title": "FG²-GDN: Enhancing Long-Context Gated Delta Networks with Doubly Fine-Grained Control",
+    "url": "https://arxiv.org/html/2604.19021v3",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3.2–3.4 distinguish tied square-root key/value scaling in base FG²-GDN from independent key/value vectors in '+'. Setup specifies 340M/15B and 1.3B/100B SlimPajama tokens, common 3:1 MLA hybrid, one run per configuration; limitations inspected. First submitted April 21, revised August 31, 2026."
+  },
+  {
+    "id": "gated-deltanet2-2026",
+    "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+    "url": "https://arxiv.org/html/2605.22791v1",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Section 3 equations 8–10 verify independent key-channel erase read and value-channel write target with original key write direction. Section 4/setup and appendix specify 1.3B/100B FineWeb-Edu, recurrent-only and SWA hybrids. Submitted May 21, 2026; labeled research rather than established deployment."
+  },
+  {
+    "id": "kalman-delta-networks-2026",
+    "title": "Kalman Delta Networks: Uncertainty-aware Associative Memory",
+    "url": "https://arxiv.org/html/2609.07816v2",
+    "year": 2026,
+    "chapters": [
+      "10"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Sections 3–5 and Appendix A.1 explain Kalman residual/gain, predictive covariance, diagonal/isotropic retained projections, recurrent-only 750M/50B and 1.3B/100B experiments, and 1.3B hybrids with nine recurrent plus nine 2K-window layers. Internal association uncertainty is not calibrated final-answer confidence. Submitted September 7, revised September 29, 2026."
+  }
+]

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="img" aria-labelledby="title desc">
+<title id="title">serve-cp</title><desc id="desc">Context parallelism over P GPUs. Ring Attention keeps each GPU’s query block and passes K/V blocks around a ring; communication hides behind compute when the block has at least F/B tokens: 1.0K on A100 NVLink, 24.5K on A100 InfiniBand (reported). DeepSpeed-Ulysses all-to-alls from a token split to a head split, moving 4Nh/P per link but needing P ≤ heads. Computed bytes received per GPU per layer at N = 128K, P = 8, BF16: MHA 64 heads, ring 4 GiB vs Ulysses 1 GiB; GQA 64/8, ring 512 MiB vs Ulysses 576 MiB.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="456" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Ring: hidden if block </tspan> <tspan font-style="italic">c</tspan> <tspan font-style="normal">≥</tspan> <tspan font-style="italic">F</tspan> / B</text>
+<text x="400" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Ulysses: </tspan> 4<tspan font-style="italic">Nh</tspan>/<tspan font-style="italic">P</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> per link</tspan>, <tspan font-style="normal"> </tspan> <tspan font-style="italic">P</tspan> <tspan font-style="normal">≤</tspan> <tspan font-style="italic">H</tspan></text>
+<rect x="30" y="56" width="400" height="230" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="44" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Ring Attention · pass K, V around</text>
+<rect x="48" y="94" width="76" height="74" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#253340" stroke-width="1"/>
+<text x="86" y="110" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">GPU 0</text>
+<rect x="54" y="118" width="30" height="40" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="69" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#ffffff"><tspan font-style="italic">Q</tspan><tspan dy="3.9" font-size="9.5">0</tspan><tspan dy="-3.9" font-size="14.0"> </tspan></text>
+<rect x="88" y="118" width="30" height="40" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="103" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="12" fill="#ffffff">KV<tspan dy="3.4" font-size="8.2">3</tspan><tspan dy="-3.4" font-size="12.0"> </tspan></text>
+<line x1="124" y1="131" x2="140" y2="131" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<rect x="142" y="94" width="76" height="74" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#253340" stroke-width="1"/>
+<text x="180" y="110" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">GPU 1</text>
+<rect x="148" y="118" width="30" height="40" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="163" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#ffffff"><tspan font-style="italic">Q</tspan><tspan dy="3.9" font-size="9.5">1</tspan><tspan dy="-3.9" font-size="14.0"> </tspan></text>
+<rect x="182" y="118" width="30" height="40" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="197" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="12" fill="#ffffff">KV<tspan dy="3.4" font-size="8.2">0</tspan><tspan dy="-3.4" font-size="12.0"> </tspan></text>
+<line x1="218" y1="131" x2="234" y2="131" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<rect x="236" y="94" width="76" height="74" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#253340" stroke-width="1"/>
+<text x="274" y="110" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">GPU 2</text>
+<rect x="242" y="118" width="30" height="40" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="257" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#ffffff"><tspan font-style="italic">Q</tspan><tspan dy="3.9" font-size="9.5">2</tspan><tspan dy="-3.9" font-size="14.0"> </tspan></text>
+<rect x="276" y="118" width="30" height="40" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="291" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="12" fill="#ffffff">KV<tspan dy="3.4" font-size="8.2">1</tspan><tspan dy="-3.4" font-size="12.0"> </tspan></text>
+<line x1="312" y1="131" x2="328" y2="131" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<rect x="330" y="94" width="76" height="74" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#253340" stroke-width="1"/>
+<text x="368" y="110" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">GPU 3</text>
+<rect x="336" y="118" width="30" height="40" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="351" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#ffffff"><tspan font-style="italic">Q</tspan><tspan dy="3.9" font-size="9.5">3</tspan><tspan dy="-3.9" font-size="14.0"> </tspan></text>
+<rect x="370" y="118" width="30" height="40" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="385" y="143" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="12" fill="#ffffff">KV<tspan dy="3.4" font-size="8.2">2</tspan><tspan dy="-3.4" font-size="12.0"> </tspan></text>
+<path d="M376 168L376 180L86 180L86 171" fill="none" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<text x="230" y="204" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">step t: GPU i uses block (i − t) mod P, then sends it on</text>
+<text x="48" y="228" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">min block c = F/B (reported, Table 2):</text>
+<text x="48" y="250" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">A100 NVLink</text>
+<text x="166" y="250" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">1.0K</text>
+<text x="178" y="250" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">A100 IB</text>
+<text x="296" y="250" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">24.5K</text>
+<text x="308" y="250" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">TPU v4</text>
+<text x="426" y="250" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">1.0K</text>
+<text x="48" y="274" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">causal mask unbalances work: stripe or use 2×P chunks</text>
+<rect x="450" y="56" width="420" height="230" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="464" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Ulysses · all-to-all, tokens → heads</text>
+<text x="480" y="96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">before: N/P tokens, all H</text>
+<rect x="480" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<text x="493" y="123" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">0</text>
+<rect x="510" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="540" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="570" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="480" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<text x="493" y="153" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">1</text>
+<rect x="510" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="540" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="570" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="480" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<text x="493" y="183" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">2</text>
+<rect x="510" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="540" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="570" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="480" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<text x="493" y="213" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">3</text>
+<rect x="510" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<rect x="540" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<rect x="570" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<text x="540" y="240" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">heads →</text>
+<text x="690" y="96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">after: all N, H/P heads</text>
+<rect x="690" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<text x="703" y="123" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">0</text>
+<rect x="720" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<text x="733" y="123" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">1</text>
+<rect x="750" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<text x="763" y="123" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">2</text>
+<rect x="780" y="104" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<text x="793" y="123" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">3</text>
+<rect x="690" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="720" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="750" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="780" y="134" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<rect x="690" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="720" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="750" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="780" y="164" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<rect x="690" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.25"/>
+<rect x="720" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.45"/>
+<rect x="750" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.65"/>
+<rect x="780" y="194" width="27" height="27" rx="3" fill="#3f83b6" fill-opacity="0.8500000000000001"/>
+<text x="750" y="240" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">heads →</text>
+<line x1="608" y1="164" x2="680" y2="164" stroke="#d09124" stroke-width="2.2" marker-end="url(#a-gold)"/>
+<text x="644" y="156" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#d09124">all-to-all</text>
+<text x="470" y="268" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#cf5f59"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">each GPU holds </tspan> <tspan font-style="italic">H</tspan>/<tspan font-style="italic">P</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> heads</tspan> <tspan font-style="normal">→</tspan> <tspan font-style="italic">P</tspan> <tspan font-style="normal">≤</tspan> <tspan font-style="italic">H</tspan>  (<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">K/V: </tspan> <tspan font-style="italic">P</tspan> <tspan font-style="normal">≤</tspan> <tspan font-style="italic">H</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan>)</text>
+<line x1="20" y1="300" x2="880" y2="300" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="322" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Bytes received per GPU per layer: </tspan> <tspan font-style="italic">N</tspan> = 128<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">K</tspan>, <tspan font-style="italic">P</tspan> = 8, <tspan font-style="italic">d</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">h</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> = 128, <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> BF16 (computed)</tspan></text>
+<text x="190" y="346.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MHA 64/64 · ring</text>
+<rect x="200" y="334" width="260.0" height="18" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="468.0" y="346.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">4 GiB</text>
+<text x="190" y="370.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MHA 64/64 · Ulysses</text>
+<rect x="200" y="358" width="65.0" height="18" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="273.0" y="370.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">1 GiB</text>
+<text x="190" y="394.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">GQA 64/8 · ring</text>
+<rect x="200" y="382" width="32.5" height="18" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="240.5" y="394.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">512 MiB</text>
+<text x="190" y="418.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">GQA 64/8 · Ulysses</text>
+<rect x="200" y="406" width="36.5625" height="18" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="244.5625" y="418.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">576 MiB</text>
+<text x="30" y="446" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#687986"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">ring</tspan> <tspan font-style="normal">≈</tspan> 2<tspan font-style="italic">N</tspan> <tspan font-style="italic">H</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> <tspan font-style="italic">d</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">h</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> <tspan font-style="italic">s</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (flat in </tspan> <tspan font-style="italic">P</tspan>), <tspan font-style="normal"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Ulysses</tspan> <tspan font-style="normal">≈</tspan> <tspan font-style="italic">N</tspan>(2<tspan font-style="italic">H</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">q</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> + 2<tspan font-style="italic">H</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan>) <tspan font-style="italic">d</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">h</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> <tspan font-style="italic">s</tspan> / <tspan font-style="italic">P</tspan></text>
+<text x="870" y="340" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">Ulysses: 2.5× faster at 4× longer</text>
+<text x="870" y="358" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">sequences (reported)</text>
+<text x="870" y="388" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Llama 3: all-gather K/V instead;</text>
+<text x="870" y="406" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">GQA K/V ≪ Q · CP = 16 at 131K</text>
+</svg>

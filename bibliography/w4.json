@@ -1,0 +1,233 @@
+[
+  {
+    "title": "H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2306.14048",
+    "venue": "NeurIPS 2023 · UT Austin / Stanford / Meta / CMU",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "PDF Alg. 1, §5 baselines: budget split evenly, 20% cache; abstract 29×/29×/3× throughput, 1.9× latency."
+  },
+  {
+    "title": "SnapKV: LLM Knows What You are Looking for Before Generation",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.14469",
+    "venue": "NeurIPS 2024 · UIUC / Cohere",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML v2 §4–5: window 32, max-pool kernel 7, budgets 1024–4096; 3.6×/8.2× at 16K; 380K on A100."
+  },
+  {
+    "title": "PyramidKV: Dynamic KV Cache Compression based on Pyramidal Information Funneling",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.02069",
+    "venue": "arXiv 2024 · UW–Madison / PKU / Microsoft",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§4.2 Eq. 1 arithmetic budget, β = 20, α = 8; abstract: 12% matches full KV, 128 entries Needle."
+  },
+  {
+    "title": "Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.11550",
+    "venue": "NeurIPS 2025 · USTC",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Alg. 1 top-B across heads, L1 output-loss bound, Ada-SnapKV/Ada-Pyramid; 13 RULER + 16 LongBench sets."
+  },
+  {
+    "title": "KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.23416",
+    "venue": "NeurIPS 2025 (oral) · Seoul National University / NAVER AI Lab",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 repeat prompt, max over grouped heads and positions, 2K chunks; abstract 3–4×, ≈2× decode, 170K."
+  },
+  {
+    "title": "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.10819",
+    "venue": "ICLR 2025 · MIT / NVIDIA",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 gate mix, λ 0.05, 2,000 passkey steps; 64 sink + 256 recent; 25%/50% heads; 2.55×/1.67× memory."
+  },
+  {
+    "title": "RazorAttention: Efficient KV Cache Compression Through Retrieval Heads",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.15891",
+    "venue": "ICLR 2025 · Huawei",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML v1 abstract and §3: retrieval (echo, induction) heads keep full KV; compensation token; >70% reduction."
+  },
+  {
+    "title": "Dynamic Memory Compression: Retrofitting LLMs for Accelerated Inference",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.09636",
+    "venue": "ICML 2024 (PMLR 235) · NVIDIA / University of Edinburgh",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Alg. 1, Eq. 10 weighted merge with z; α from k[0], ω from q[0]; up to 4× without loss."
+  },
+  {
+    "title": "Inference-Time Hyper-Scaling with KV Cache Compression (DMS)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2506.05345",
+    "venue": "NeurIPS 2025 · NVIDIA / University of Edinburgh",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 delayed eviction at t+w, w = 256 default; ≈1K steps to 8×; DMC needed 44K steps."
+  },
+  {
+    "title": "The Pitfalls of KV Cache Compression",
+    "year": 2026,
+    "url": "https://aclanthology.org/2026.acl-long.1926/",
+    "venue": "ACL 2026",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Anthology abstract: some instructions degrade faster under compression; system-prompt leakage factors; five methods on IFEval."
+  },
+  {
+    "title": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.10319",
+    "venue": "ICLR 2025 · Microsoft / University of Surrey",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract and poster: shared-context multi-turn benchmark; sub-O(n) memory methods degrade across turns."
+  },
+  {
+    "title": "NVIDIA kvpress README",
+    "year": 2026,
+    "url": "https://github.com/NVIDIA/kvpress",
+    "venue": "NVIDIA (GitHub)",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Lists SnapKV, ObservedAttention (H2O), PyramidKV, AdaKV, KVzip, DuoAttention, DMS presses; question-in-prompt bias note."
+  },
+  {
+    "title": "NVIDIA DMC/DMS checkpoints on Hugging Face",
+    "year": 2025,
+    "url": "https://huggingface.co/nvidia/Qwen3-8B-DMS-8x",
+    "venue": "NVIDIA (Hugging Face)",
+    "chapters": [
+      "07"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "HF API confirms nvidia/Qwen3-8B-DMS-8x and Llama-2-7B/13B-DMC-4x/8x repos."
+  },
+  {
+    "title": "Compressive Transformers for Long-Range Sequence Modelling",
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1911.05507",
+    "venue": "ICLR 2020 · DeepMind",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "PDF §3, §5.1–5.3: range l(n_m+c·n_cm); Enwik8 c=3, 768/1152; WikiText 17.1; PG-19 33.6 vs 36.3."
+  },
+  {
+    "title": "Learning to Compress Prompts with Gist Tokens",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2304.08467",
+    "venue": "NeurIPS 2023 · Stanford",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: attention-mask training, up to 26× prompt compression, up to 40% FLOPs reduction (LLaMA-7B, FLAN-T5-XXL)."
+  },
+  {
+    "title": "Long Context Compression with Activation Beacon",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.03462",
+    "venue": "ICLR 2025 · BAAI / Renmin University",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML §3: chunk 1024 (Llama-2), α ∈ {2,4,8,16,32}, raw KV dropped; 8× KV, 2× speed; <20K training."
+  },
+  {
+    "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.11089",
+    "venue": "ACL 2025 · DeepSeek / Peking University",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "HTML §3.3.1 Eqs. 7–10, §4.1: l 32, d 16, l′ 64, n 16, w 512; independent KV per branch."
+  },
+  {
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.19348",
+    "venue": "DeepSeek-AI technical report",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.3 CSA/HCA, sinks, FP8+BF16 RoPE, FP4 indexer; §4.2.1 configs; §1 27%/10%, 10%/7%; §2.3.4 ≈2%."
+  },
+  {
+    "title": "DeepSeek-V4-Flash config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/blob/main/config.json",
+    "venue": "DeepSeek-AI (Hugging Face)",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "compress_ratios: 2 zeros then 4/128 alternating (21 CSA, 20 HCA); index_topk 512; sliding_window 128; 43 layers."
+  },
+  {
+    "title": "DeepSeek-V4-Pro config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/config.json",
+    "venue": "DeepSeek-AI (Hugging Face)",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "compress_ratios: 128,128 then 4/128 alternating (30 CSA, 31 HCA); index_topk 1024; head_dim 512; 61 layers."
+  },
+  {
+    "title": "DeepSeek-V3.2 on vLLM (blog)",
+    "year": 2025,
+    "url": "https://vllm.ai/blog/2025-09-29-deepseek-v3-2",
+    "venue": "vLLM project blog",
+    "chapters": [
+      "08"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "MLA FP8 cache 656 B/token/layer: 512 e4m3 + 4 fp32 scales + 64 BF16 RoPE values."
+  }
+]

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+<title id="title">serve-kv-bytes</title><desc id="desc">Bytes per token per layer of DeepSeek KV caches, from the FlashMLA formats. V3.2 BF16: 512 latent + 64 RoPE values × 2 B = 1,152 B. V3.2 FP8: 512 e4m3 + 4 fp32 scales (one per 128) + 64 BF16 RoPE values = 656 B, 57%. V4.1 (512 dims) FP8: 512 e4m3 including RoPE + 16 e8m0 scales (one per 32) = 528 B, 52% of BF16. V4.1 FP4: 512 e2m1 values in 256 B + 32 e4m3 scales (one per 16) = 288 B, 28%. Over V3.2’s 61 layers a 128K sequence drops from 8.58 GiB to 4.88 GiB.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="430" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bytes / token / layer</tspan> = <tspan fill="#3f83b6"><tspan font-style="italic">n</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">b</tspan> / 8</tspan>   +   <tspan fill="#cf5f59"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">scales</tspan></tspan>   +   <tspan fill="#2a9aa6"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">unquantized (RoPE)</tspan></tspan></text>
+<text x="186" y="106" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">V3.2 · BF16</text>
+<rect x="200" y="84" width="497.77777777777777" height="30" rx="2" fill="#3f83b6" fill-opacity="0.45"/>
+<text x="448.8888888888889" y="104" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">512 latent × BF16 = 1024</text>
+<rect x="697.7777777777778" y="84" width="62.22222222222222" height="30" rx="2" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="728.8888888888889" y="104" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">64 RoPE</text>
+<text x="770.0" y="105" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#3f83b6">1,152 B</text>
+<text x="842.5" y="105" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986"></text>
+<text x="186" y="166" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">V3.2 · FP8</text>
+<rect x="200" y="144" width="248.88888888888889" height="30" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="324.44444444444446" y="164" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">512 × e4m3 = 512</text>
+<rect x="448.8888888888889" y="144" width="7.777777777777778" height="30" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<rect x="456.6666666666667" y="144" width="62.22222222222222" height="30" rx="2" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="487.77777777777777" y="164" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">64 RoPE</text>
+<text x="528.8888888888889" y="165" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#3f83b6">656 B</text>
+<text x="582.3888888888889" y="165" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">57% of its BF16</text>
+<text x="448.8888888888889" y="192" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">↑ 4 × fp32 scale, 1 per 128 = 16 B</text>
+<text x="186" y="226" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">V4.1 · FP8</text>
+<rect x="200" y="204" width="248.88888888888889" height="30" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="324.44444444444446" y="224" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">512 × e4m3, RoPE incl.</text>
+<rect x="448.8888888888889" y="204" width="7.777777777777778" height="30" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="466.6666666666667" y="225" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#3f83b6">528 B</text>
+<text x="520.1666666666667" y="225" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">52% of 1,024 B BF16</text>
+<text x="448.8888888888889" y="252" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">↑ 16 × e8m0, 1 per 32 = 16 B</text>
+<text x="186" y="286" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">V4.1 · FP4</text>
+<rect x="200" y="264" width="124.44444444444444" height="30" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="262.22222222222223" y="284" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">512 × e2m1</text>
+<rect x="324.44444444444446" y="264" width="15.555555555555555" height="30" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="350.0" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#3f83b6">288 B</text>
+<text x="403.5" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">28% of BF16</text>
+<text x="324.44444444444446" y="312" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">↑ 32 × e4m3, 1 per 16 = 32 B</text>
+<path d="M200 83L200 78L760.0 78L760.0 83" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="480.0" y="72" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">V3.2: 576 dims</tspan> = <tspan font-style="italic">d</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">c</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> + <tspan font-style="italic">d</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">r</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> = 512 + 64 <tspan font-style="normal"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">(V4.1: 512 dims)</tspan></text>
+<line x1="20" y1="354" x2="880" y2="354" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">V3.2, all 61 layers (computed)</text>
+<text x="30" y="404" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">BF16 70,272 B/token → 8.58 GiB at 128K</text>
+<text x="30" y="424" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">FP8 40,016 B/token → 4.88 GiB at 128K</text>
+<text x="470" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">NVFP4 KV (NVIDIA, reported, Blackwell)</text>
+<text x="470" y="404" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">≈50% of FP8 · &lt;1% accuracy loss</text>
+<text x="470" y="424" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#cf5f59">dequantized to FP8 before the attention matmuls</text>
+</svg>

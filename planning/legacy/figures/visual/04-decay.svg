@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" role="img" aria-labelledby="title desc">
+<title id="title">04-decay</title><desc id="desc">RetNet uses fixed retention factors per head. GLA makes state forgetting input dependent; the illustrated variant decays key channels separately.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="310" fill="white"/>
+<text x="225" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">RetNet: fixed time scales</text>
+<text x="675" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">GLA: input-dependent decay</text>
+<line x1="450" y1="32" x2="450" y2="285" stroke="#cad5db" stroke-width="2"/>
+<rect x="50" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="0.16806999999999994" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="108" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="0.24009999999999995" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="166" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="0.3429999999999999" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="224" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="0.48999999999999994" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="282" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="0.7" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="340" y="85" width="45" height="57" rx="7" fill="#4287b9" fill-opacity="1.0" stroke="#4287b9" stroke-width="1.7"/>
+<text x="72" y="177" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#687986">Old</text>
+<text x="363" y="177" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#687986">New</text>
+<text x="225" y="254" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">One fixed factor per head</text>
+<rect x="530" y="65" width="109" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#d49a30" stroke-width="1.7"/>
+<text x="584.5" y="93.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#d49a30">Input</text>
+<line x1="643" y1="86" x2="689" y2="86" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<text x="752" y="93" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#d49a30">Gates</text>
+<rect x="598" y="143" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.15"/>
+<rect x="630" y="143" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.9"/>
+<rect x="662" y="143" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.4"/>
+<rect x="694" y="143" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.85"/>
+<rect x="726" y="143" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<rect x="598" y="175" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.15"/>
+<rect x="630" y="175" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.9"/>
+<rect x="662" y="175" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.4"/>
+<rect x="694" y="175" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.85"/>
+<rect x="726" y="175" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<rect x="598" y="207" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.15"/>
+<rect x="630" y="207" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.9"/>
+<rect x="662" y="207" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.4"/>
+<rect x="694" y="207" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.85"/>
+<rect x="726" y="207" width="30" height="30" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<text x="675" y="287" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">Different channels can persist.</text>
+</svg>

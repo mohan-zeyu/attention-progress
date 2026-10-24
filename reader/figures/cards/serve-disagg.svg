@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="img" aria-labelledby="title desc">
+<title id="title">serve-disagg</title><desc id="desc">Prefill/decode disaggregation. On one GPU a new long prefill stalls every running decode; split pools let prefill GPUs run prompts and ship the KV to decode GPUs. Computed transfer for a 32K-token prompt: DeepSeek-V3.2 FP8 (61 × 656 B = 40,016 B per token) is 1.22 GiB, 26 ms over one 400 Gb/s NIC or 6.9 ms at Mooncake’s reported 190 GB/s; Llama-3-70B BF16 (320 KiB per token) is 10 GiB, 215 ms over one NIC. Reported: DistServe 7.4× more requests, Splitwise 1.4× throughput at 20% lower cost, Mooncake 59–498% more capacity; DeepSeek uses 4 prefill nodes against 18 decode nodes per unit.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="456" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-style="italic">T</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">xfer</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> = <tspan font-style="italic">N</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">prompt</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="normal">·</tspan> <tspan font-style="normal">Σ</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">ℓ</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">c</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">ℓ</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>  /  <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">BW</tspan></text>
+<text x="870" y="36" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#687986"><tspan font-style="italic">c</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">ℓ</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">KV bytes per token in layer </tspan> <tspan font-style="italic">ℓ</tspan></text>
+<text x="870" y="76" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">time →</text>
+<text x="30" y="76" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">co-located</text>
+<rect x="140" y="86" width="730" height="28" rx="4" fill="#cad5db" fill-opacity="0.25"/>
+<rect x="146" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="168" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="190" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="212" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="234" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="256" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="278" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="300" y="89" width="300" height="22" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="450" y="105" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">prefill of a new 32K prompt</text>
+<path d="M300 113L300 118L600 118L600 113" fill="none" stroke="#cf5f59" stroke-width="1.2"/>
+<text x="450.0" y="133" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">decodes stall: TPOT spike</text>
+<rect x="608" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="630" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="652" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="674" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="696" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="718" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="740" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="762" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="784" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="806" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="828" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="850" y="92" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="30" y="168" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">disaggregated</text>
+<text x="132" y="197" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">prefill pool</text>
+<rect x="140" y="178" width="730" height="28" rx="4" fill="#cad5db" fill-opacity="0.25"/>
+<rect x="146" y="181" width="150" height="22" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<rect x="306" y="181" width="300" height="22" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<rect x="616" y="181" width="120" height="22" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="132" y="267" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">decode pool</text>
+<rect x="140" y="248" width="730" height="28" rx="4" fill="#cad5db" fill-opacity="0.25"/>
+<rect x="146.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="168.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="191.2" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="213.8" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="236.4" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="259.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="281.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="304.20000000000005" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="326.8" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="349.4" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="372.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="394.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="417.20000000000005" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="439.8" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="462.40000000000003" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="485.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="507.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="530.2" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="552.8" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="575.4000000000001" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="598.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="620.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="643.2" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="665.8000000000001" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="688.4000000000001" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="711.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="733.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="756.2" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="778.8000000000001" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="801.4000000000001" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="824.0" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<rect x="846.6" y="254" width="14" height="16" rx="2" fill="#1f9a74" fill-opacity="0.85"/>
+<line x1="450" y1="206" x2="470" y2="246" stroke="#3f83b6" stroke-width="2.6" marker-end="url(#a-blue)"/>
+<text x="480" y="228" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">KV over RDMA: 1.22 GiB</text>
+<line x1="20" y1="296" x2="880" y2="296" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="320" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">32K-token prompt, KV to ship (computed)</text>
+<text x="250" y="345.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">V3.2 · FP8 · 40,016 B/tok</text>
+<rect x="260" y="332" width="13.43310546875" height="20" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="281.43310546875" y="345.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">1.22 GiB → 26 ms</text>
+<text x="250" y="375.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Llama-3-70B · BF16 · 320 KiB/tok</text>
+<rect x="260" y="362" width="110.0" height="20" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="378.0" y="375.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">10 GiB → 215 ms</text>
+<text x="30" y="410" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">50 GB/s = one 400 Gb/s NIC · Mooncake transfer engine,</text>
+<text x="30" y="428" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">reported 190 GB/s on 8 × 400 Gb/s → 6.9 ms for V3.2</text>
+<text x="520" y="320" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Reported</text>
+<text x="520" y="344" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">DistServe (OSDI 24)</text>
+<text x="520" y="345" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340"></text>
+<text x="870" y="344" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">7.4× requests or 12.6× tighter SLO</text>
+<text x="520" y="370" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Splitwise (ISCA 24)</text>
+<text x="520" y="371" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340"></text>
+<text x="870" y="370" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">1.4× throughput at 20% lower cost</text>
+<text x="520" y="396" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Mooncake (FAST 25)</text>
+<text x="520" y="397" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340"></text>
+<text x="870" y="396" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">+59–498% effective capacity</text>
+<text x="520" y="422" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">DeepSeek, Feb 2025</text>
+<text x="520" y="423" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340"></text>
+<text x="870" y="422" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">prefill 4 nodes · decode 18 nodes</text>
+</svg>

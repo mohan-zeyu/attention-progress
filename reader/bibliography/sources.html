@@ -1,0 +1,2247 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Primary sources · Attention, one change at a time</title><style>:root { color-scheme: light; --ink: #253340; --muted: #687986; --border: #dbe5e2; --link: #188366; --soft: #f5f8f8; --tint: #eef7f3;
+  --gold: #d09124; --blue: #3f83b6; --purple: #8d6bb5; --green: #1f9a74; --red: #cf5f59;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color: var(--ink); background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 16.5px; line-height: 1.6; background: #fbfcfc; }
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { color: #173b69; }
+a:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #779ccb; outline-offset: 3px; }
+.skip { position: fixed; top: -80px; left: 12px; z-index: 20; padding: 10px 16px; background: white; }
+.skip:focus { top: 12px; }
+
+/* navigation */
+.book-nav { position: fixed; inset: 0 auto 0 0; width: 240px; overflow-y: auto; padding: 26px 16px 32px; background: #f5f8f7; border-right: 1px solid var(--border); font-size: 13.5px; line-height: 1.45; }
+.book-nav summary { list-style: none; cursor: pointer; font-size: 18px; line-height: 1.3; font-weight: 700; margin-bottom: 12px; }
+.book-nav summary::-webkit-details-marker { display: none; }
+.book-nav input { width: 100%; border: 1px solid var(--border); border-radius: 7px; padding: 8px 10px; margin-bottom: 14px; font: inherit; background: white; color: var(--ink); }
+.book-nav ul { list-style: none; padding: 0; margin: 0; }
+.book-nav li { margin: 2px 0; }
+.book-nav a { display: block; padding: 6px 9px; border-radius: 6px; text-decoration: none; }
+.book-nav a[aria-current="page"] { background: #e3f3eb; color: #16694f; font-weight: 650; }
+.book-nav .nav-label { display: block; margin: 16px 8px 6px; color: var(--muted); font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+#book-text { max-width: 1080px; margin-left: 240px; padding: 40px clamp(20px,4vw,56px) 64px; }
+
+/* type */
+h1 { font-size: clamp(1.9rem,3vw,2.5rem); line-height: 1.2; letter-spacing: -.02em; margin: 0 0 14px; }
+h2 { font-size: 1.28rem; line-height: 1.35; margin: 0 0 6px; }
+h3 { font-size: 1.05rem; margin: 18px 0 8px; }
+p { margin: 12px 0; }
+strong { font-weight: 650; }
+code { font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: .86em; background: #edf1f4; padding: 1px 5px; border-radius: 4px; }
+pre { overflow-x: auto; background: #edf1f4; padding: 14px; border-radius: 8px; line-height: 1.5; }
+pre code { padding: 0; }
+math { font-size: 1.05em; }
+math[display="block"] { font-size: 1.12em; margin: 0; }
+p:has(> math[display="block"]) { overflow-x: auto; overflow-y: hidden; margin: 14px 0 6px; padding: 12px 8px; background: var(--soft); border-radius: 10px; text-align: center; }
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; font-size: .88rem; line-height: 1.5; background: white; }
+th { background: #eaf0f3; text-align: left; font-weight: 650; }
+th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+tbody tr:nth-child(even) { background: #f8fafb; }
+blockquote { margin: 16px 0; padding: 4px 18px; border-left: 3px solid var(--green); background: var(--tint); }
+
+/* chapter + cards */
+.card-chapter > h1 { margin-bottom: 6px; }
+.lede { font-size: 1.12rem; color: #3d5160; max-width: 62ch; margin: 0 0 18px; }
+.lede p { margin: 0; }
+.page-toc nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 8px; }
+.page-toc nav li a { display: inline-block; padding: 4px 11px; border: 1px solid var(--border); border-radius: 999px; background: white; font-size: 13px; text-decoration: none; color: var(--ink); }
+.page-toc nav li a:hover { border-color: var(--link); color: var(--link); }
+.page-toc nav ul ul { display: none; }
+.card-chapter { counter-reset: card; }
+.card-chapter section.level2 { counter-increment: card; background: white; border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px 18px; margin: 22px 0; box-shadow: 0 1px 2px rgba(37,51,64,.04); scroll-margin-top: 16px; }
+.card-chapter section.level2 > h2::before { content: counter(card, decimal-leading-zero); display: inline-block; margin-right: 10px; padding: 1px 7px; border-radius: 6px; background: var(--tint); color: var(--link); font-size: .72em; vertical-align: 3px; font-variant-numeric: tabular-nums; }
+.meta { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin: 2px 0 6px; }
+.meta p { margin: 0; }
+.meta strong { color: var(--ink); }
+figure.card-figure { margin: 12px 0 6px; }
+.diagram-link { display: block; }
+.diagram-link img { display: block; width: 100%; height: auto; border-radius: 8px; }
+figure { margin: 12px 0; }
+figcaption { display: none; }
+.tips ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 10px; padding: 0; margin: 12px 0 4px; }
+.tips li { background: var(--soft); border-radius: 10px; padding: 10px 13px; font-size: 14.5px; line-height: 1.5; border-top: 3px solid #b9dccd; }
+.tips li strong:first-child { display: block; color: var(--ink); margin-bottom: 2px; }
+.tips li p { margin: 0; }
+details.more { margin: 10px 0 2px; border-top: 1px dashed var(--border); padding-top: 8px; }
+details.more > summary { cursor: pointer; color: var(--link); font-size: 14px; font-weight: 600; list-style: none; }
+details.more > summary::before { content: '▸ '; }
+details.more[open] > summary::before { content: '▾ '; }
+details.more > summary::-webkit-details-marker { display: none; }
+.more-body { font-size: 14.5px; padding: 6px 2px 2px; }
+.more-body p { margin: 8px 0; }
+.card-chapter section.level2 > p { max-width: 75ch; }
+.compare .table-wrap { margin-top: 8px; }
+
+/* delta demo */
+.delta-demo { display: grid; grid-template-columns: 1fr auto; gap: 8px 18px; align-items: center; margin: 12px 0; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--soft); font-size: 15px; }
+.delta-demo label { display: flex; justify-content: space-between; gap: 18px; }
+.delta-demo input { grid-column: 1 / -1; width: 100%; accent-color: var(--green); }
+.demo-track { grid-column: 1 / -1; position: relative; height: 12px; border-radius: 99px; background: #e2ebe7; overflow: hidden; }
+#edit-fill { display: block; height: 100%; background: var(--green); }
+.old-marker { position: absolute; left: 40%; top: -3px; width: 2px; height: 18px; background: var(--ink); }
+#edit-result { grid-column: 1 / -1; font-weight: 650; color: var(--link); }
+
+/* landing */
+.book-cover { padding: 4px 0 18px; }
+.book-cover h1 { font-size: clamp(2.3rem,4vw,3.3rem); margin-bottom: 16px; }
+.eyebrow { text-transform: uppercase; font-size: 12px; letter-spacing: .12em; color: var(--link); font-weight: 650; }
+.start-reading { display: inline-block; background: #188366; color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; margin-top: 6px; font-size: 16px; }
+.start-reading:hover { color: white; background: #126a51; }
+.pdf-link { display: inline-block; margin: 14px 0 0 18px; font-size: 15px; }
+.cover-diagram { margin: 24px 0 28px; background: white; border: 1px solid var(--border); border-radius: 14px; padding: 8px; }
+.chapter-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 12px; }
+.chapter-card { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-items: baseline; padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; background: white; color: var(--ink); }
+.chapter-card:hover { border-color: #9fcfbb; background: #f8fcfa; }
+.chapter-card span { grid-row: 1 / 4; font-size: 13px; font-weight: 700; color: var(--link); font-variant-numeric: tabular-nums; }
+.chapter-card strong { font-size: 16px; }
+.chapter-card small { color: var(--muted); font-size: 13px; line-height: 1.45; }
+.chapter-card em { font-style: normal; font-size: 12px; color: var(--link); }
+
+.chapter-footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border); margin-top: 36px; padding-top: 18px; font-size: 14px; }
+.chapter-footer a { text-decoration: none; max-width: 48%; }
+.chapter-footer .next { text-align: right; margin-left: auto; }
+
+@media (max-width: 900px) {
+  .book-nav { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 14px 16px; }
+  #book-text { margin-left: 0; padding: 24px 16px 48px; }
+  .card-chapter section.level2 { padding: 16px 14px 12px; margin: 16px -4px; }
+  .tips ul { grid-template-columns: 1fr; }
+  math[display="block"] { font-size: .98em; }
+}
+
+/* print / PDF */
+body.print { background: white; font-size: 11.5px; line-height: 1.45; }
+body.print #book-text { margin: 0; max-width: none; padding: 0; }
+body.print .print-cover { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; }
+body.print .print-chapter { break-before: page; }
+body.print .print-chapter > h1 { font-size: 22px; margin-bottom: 4px; }
+body.print .lede { font-size: 12.5px; margin-bottom: 8px; }
+body.print section.level2 { break-inside: auto; box-shadow: none; padding: 10px 14px 6px; margin: 8px 0; border-radius: 10px; }
+body.print section.level2 > h2 { font-size: 14px; break-after: avoid; }
+body.print .meta { font-size: 9.5px; }
+body.print p:has(> math[display="block"]) { padding: 6px; margin: 6px 0 4px; break-after: avoid; }
+body.print math[display="block"] { font-size: 1em; }
+body.print figure.card-figure { break-inside: avoid; margin: 6px 0 4px; }
+body.print .tips ul { grid-template-columns: repeat(3, 1fr); gap: 6px; break-inside: avoid; }
+body.print .tips li { font-size: 9.5px; padding: 6px 8px; line-height: 1.4; }
+body.print details.more, body.print .delta-demo { display: none; }
+@page { size: A4; margin: 12mm 12mm; }
+</style></head><body><a class="skip" href="#book-text">Skip to chapter</a><nav class="book-nav" aria-label="Book navigation"><details open id="book-navigation"><summary>Attention<br>by pictures</summary><input id="chapter-search" type="search" placeholder="Find a mechanism" aria-label="Find a chapter or mechanism"><span class="nav-label">Chapters</span><ul id="chapter-list"><li data-search="book contents"><a href="../index.html">Book contents</a></li><li data-search="a about against all always and any appeared approx are arrived at attacks attention b bahdanau bandwidth batch batches because becomes behave below bf16 bibliography big bill blue book both box by bytes cache capacity card cards cares causal cdot change click colour colours combine come compressed compression compute config convergence cost csa d decode deepseek-v4 derivation different dot dsa each erased every evicted eviction factor few fewer figure figures first five fixed flop for formula fp8 from frontier full full-attention gates gdn generated generations gib gold gqa green grey grow growing grows h h2o hbm hca here hit how hybrids in inactive insight is it itself json jump k kda keep kept key kib kv l lanes layer layers lede legend less lever levers line llama-3-8b local long make mamba map map-costs map-legend map-routes map-timeline marked md meaning mechanism mechanisms meta mha mix mla model models more most move multiplies n name never not notation nsa numbers of one open optional or output outweighs pagedattention papers parameters pays per pflop positions prefill primary production prompts purple q qquad query question read reads real record records recurrent red replace rest retnet s search see serving seven shrink sidebar size sliding sources sparse squared stability stacks state step stops storage stretched strip svg systems teal text than that the then thinner this timeline times times10 tips title to token top-k touch toy turn twelve two underbrace unless use value vs w walls was weight weights when where why width window windows with year years"><a href="../chapters/00-map.html">00 · The map</a></li><li data-search="a abf above abs absorbed act adds al alibi all alone alpha already always and angle apart applies are arxiv as at attention attn b barbero barely base bases be beta beta- beyond bf16 big black blends blurs by cache can card cards causal channels chen chunk chunked clip clock clocks cohere command compare config configs constant content context cos d decay decides decoupled deepmind deepseek-v3 deepseek-v4 degrees delta dimensions dims distances distant divides divisor dual e e-6 each eleutherai equal et every exactly extension extrapolation factor fades fall falls far fastest fell figures fixed fixed-patterns flatten floor folded for frac free freezes frequency from full full-attention gamma gap gemma gib glm-4 global google gotcha gpt-neox-20b gpt-oss grow grows h has head history how https hurt hybrid i iclr if in inference interpolates into irope is it its j j-t k kazemnejad keep keeps key keys kv l lambda lane large larger latent-kv layer layers leaks learns lede length length-dependent less lfloor link llama llama3 ln local logit logits long long-distance longrope look m makes mask masks matched md meta mimo-v2-flash minimax-m2 mla models multiplier multiplies n nakanishi near need needle needs neox-style neurips never next no none nope not nous ntk-aware numbers of olmo on once one ones only operatorname optional or order org over own oxford p p-rope pair pairs parameters partial past peng per per-pair perplexity phi-4-mini pi plain pos-extension pos-nope pos-partial pos-rope-spectrum pos-temperature position position-free positions pre-training q qquad queries qwen3 qwen3-next r r- raise raising ramps recency remaps repeats reported rescaled research rest retrieval retrieve rfloor rises rnope rope rope-base rot rotate rotated rotation s scale scaling scout searches see set shared sin sinusoidal skip sliding-window slopes slow slowest slows smollm3 smollm3-3b smoothly so softmax solved some span spectrum speed sqrt squeezes ssmax still su subtract supply svg swa t t-j tau temperature text than that the them these theta they three times tips tj to tokens top toy trained training-free tuning turn turns two type under unrotated use used uses v variants versus w wavelength wavelengths weakens weight were while whole why window with within works xiong yang yarn"><a href="../chapters/01-positions.html">01 · Positions</a></li><li data-search="a about abs absorbed absorbs activation add adds after al alibaba alibi alibi-like aligned almost alpha already also alternating an anatomy and appear are arxiv as at attend attention attn b bbh before begin best between bias big block both bound bounds bridges by c can cancels cap card cards causal ch changes changing checklist code cohere column command compare compressed configs constant cost cup d de-rotated decay decays deepmind deepseek-v4 deepseek-v4-pro dehghani delta-rule deltanet denominator design diff difference differential dim dims does dropped e each early eight elementwise elsewhere embedding end entries entry equal equiv equiv1 et every everything everywhere exit exp extra f figures final first-token fix fixed-patterns fixes flashattention-compatible flattened for forget forward four fourfold fox frac free from full g gains gamma gate gated gates gating gemma gets give gives gla glm-4 global google gotcha gpt-oss gpt-oss-120b group grow grown h halved has hat head heads headwise https hurt iclr in infty init initialisation input insight instead is it its j joins k k2 keep keeps kernel key keys kimi knobs kv kv-cache kv-heads kv-norm kv-tie l lambda latency later layer layers le learned lede leftarrow let lin linear-state llama ln local location logit logit-growth logits long-context loss low-rank m mapping maps mass matches materialises max md mean meta microsoft mila mimo-v2-flash min minimax-m2 mit mla mmlu models modern moe most mqa multiplied must near needed needs neurips never next no none nonlinearity nope not nothing numbers o odot of olmo on one one-hot ones only openai operatorname optimizer or oral org out output outputs outside over p p-rope paper parameters parks partial pass past per per-head perplexity phi-4-mini-flash-reasoning plus positional positions proj projection put puts q qiu qk qk-clip qk-norm qquad quad queries query query-dependent qwen qwen3 qwen3-next qwen3-next-80b r read reads recurrence released removes reported reports rescales research rest retrieval rightarrow rms rms-norm rmsnorm rnope root rope rotated rotates row rows ruler run s same saving scalar scale scales scout sdpa sequence shapes shared shrinks sigma sigmoid sink sinks sits six skip slack slice so soft-cap soft-caps softmax sparsity spread sqrt square stable stable-anatomy stable-gated stable-knobs stable-qk-norm stable-sinks stages state step streaming streamingllm study sum suppressed svg swa swa-global t t-c takes tanh tau text the their them then these theta this tile times tips tj to token tokens top toy tr trained transformer trick tsinghua turns two under unit until used uses v v-norm value values vanilla variants vector vit-22b w way weight weights what where which whose why window wipe with without work works wortsman x xiao xw y yarn ye z"><a href="../chapters/02-stable-softmax.html">02 · Stable softmax</a></li><li data-search="a a800 about abs across ainslie al all and another approx are arithmetic arxiv at attention axis b b-a4b back batch begin below benefits beyond beyond-gqa bf16 big bit both brandon but by byte bytes cache cached caches can card cards cases cdot cla cla2 close code combines comes concurrent config consumer conversion cost cross-decoder cross-layer d dao decode deepseek-ai deepseek-v3 deepseek-v4 deepseek-v4-pro degree designs device dim dims does doubles duplicates e2b e4b each early eight element elements ell emnlp end entry et every exit extra falcon-7b far feed feeds fewer figures first flash flop flops for frac from g gemma gemma-2b get gib gives gla gla-2 global gnd google gotcha gpus gqa gqa-4 gqa-8 group grows gta gta-8 h h100 half have hbm head heads hf hidden https hu hunyuan-large i ibm icml if in insight instead intensity is it its j json k kayyam keep keeps key keys kib knob kv kv-bytes-models kv-cross-layer kv-decode-intensity kv-designs kv-head-sharing kv-tie l lands last latent layer layers le lede left leftarrow length lens less lever lfloor llama llama-2-7b llama-3-70b llama-3-8b local log m mean mean-pool meta mfa mha mib microsoft mistral mit mla models more moved mqa multiplies n nd near-mqa need neighbour neq neurips never new next no norm normed not nothing num number numbers o of off on once one only operatorname or org output over own owner owners p palm past patterns per perplexity placed plus point points poor pre-training prefill princeton produce proj projection projections prompt q qquad quality query qwen2 rank-2048 re-reads read reads real record records removed replicated reported reports requests research reuse reused reuses rfloor ridge rope rotated rotates s same saves saving scores second self-decoder separate serve seven shape share shared shares sharing shazeer showing shrinks sits size so softmax speed split sqrt src stacks state step-3 stepfun steps still stop storage store stores strauss strips study subspace sum sun svg sxm t t5-xxl table tb team tensor-parallel text tflop the then tied time tips title to token tokens top toy tp train tsinghua two tying u under uptrain uptrained used v v4 value values vector vs w weighted what where which whole why width window wins with works yoco zadouri"><a href="../chapters/03-kv-heads.html">03 · Share KV heads</a></li><li data-search="a about abs absorb absorbable absorbed absorption acl across after against al all an and any app apply approx are arxiv at attention away b base be become between beyond-gqa bf16 big both bottom bracketing breaks by bytes c cache cached caches cannot cards changes cheap check checkpoints clips commute compare config content conversion convert converting converts cost costs count d data decode decoupled deepseek-ai deepseek-v2 deepseek-v3 deepseek-v4 depends dim dims divides dkv do dq e each element elements entry et every exact exist expanded expands factorisation feed few figure figures fine-tune fine-tuning first fix flashmla flop flops fold folded folds for fp8 frac frequency from function gives giving gla glm-5 go gotcha gqa gqa-8 groups h h100 head heads holds https i identical in infer inference insight instead int4 intensity into invisible is it its j j-t ji joint json k k2 k3 keep keeps kept key keys kib kimi kr kv kv-heads kv-tie l lane large latent layer layers layout lede linear llama-2-7b longbench loss lossless low-rank lower mathbb matrix md mean-pools meng meta mha mha2mla mistral mla mla-absorb mla-convert mla-heads mla-record mla-rope mode model mqa near never no nope not number numbers o of on once one only operatorname or org over own p pairs part parts pca per per-head plus position positions pre-training prefill products projected projections q qk-norm qquad quad queries query r ranks re-factors read rebuild record recovers reported reports research rest ridge rope rotated rotates rotation row rows run rv s same scaling score separate serves serving shapes shared sharing short sigma sits smollm so softmax solved split sqrt stable stable-softmax stacked stated steps store sum sums svd svg t table tensor-parallel terminus text the their these they three throws tips to token tokens too top top-norm toy trading train training transmla u uk uptraining use used uv v v2 v3 validation value values versus views vs w weight weights why with would x yet"><a href="../chapters/04-latent-kv.html">04 · Latent KV</a></li><li data-search="a ablation about abs advance ai ai2 al all all-global alternate alternated alternation an and answer any app are arxiv as at attention b back band banded beat before beltagy beyond bf16 big bigbird bigbird-itc bill blind block-diagonal blocks blog bmod boundary buffer but by c cache cap cards causal child chosen chunk chunked chunks columns com compare config connects content content-chosen cost cup d deepseek-v4 deepseek-v4-flash dense depends depth do does dots drops each eight ell elsewhere empties et every evict eviction evicts exists failed farther faster figures first fix fixed fixed-chunked fixed-lineage fixed-streaming fixed-swa-layouts following for four frac gemma gib gives global global-only google gotcha gpt-3 gpt-oss gpt-oss-120b grid grow growing h half head heads history holds https iclr in information inside instead into irope is it itself j k keep keys kv kv-eviction l lands layer layers layouts le learned lede less lfloor lineage links llama llama-2-13b llama-2-7b llama-4-multimodal-intelligence local locally logit longformer m mask masks mass may md mean memory meta mib mimo mimo-v2-flash min mistral mit model models most must n nearly need neurips never no nope not numbers o of olmo on once one only openai operatorname ordinary org overhead pair pairs paper park path patterns per periodic perplexity pg19 plus pos position positions production q qquad query random rank ratio re-numbered reads recall recent recomputation records replaces report retrieve rfloor ring rope routes routing ruler-32k s same scout see sees set sink sinks size sliding slot slots small smarter so softmax solved spare sparse sparse-reads sqrt stability stable-softmax start stays stop streamed streaming streamingllm stride strided structure successor suffice sum summary svg swa swa-global t t-w text th than that the them then they those three tips to token tokens top toy training-free transformer two two-hop under up used uses v variant version versus vs w which whole why window windows with works writes xiao zaheer zero"><a href="../chapters/05-fixed-patterns.html">05 · Fixed patterns</a></li><li data-search="a a-shape a100 about abs acl across adapts adds against ai al all alone an and antidiagonal any approx are arxiv at attention attn averages b backward bandwidth beats below best bf16 big block block-sparse blocks bound bounds branch branches bridge budget but by bytes c cache can card cards causal causally cdot cells channel cheap cheaper choose chosen cmp columns compare compress compressed compression computations compute continued copy cost csa cup current cut d decode deepseek-ai deepseek-v3 deepseek-v4-flash dense density derived despite diagonals dilutes dim dims dominates dot drops dsa each end entries estimated et every eviction exact exp faster few fewer fewer-records figures fills first fixed fixed-patterns fixes flash-next flashattention-2 flexprefill for forced forward four fp8 frac free from full full-attention g gate gathers gdn ge gib glm-5 go gotcha gqa gradient grid group group-shared grows h han hbm head heads hence hides holds https hybrid hybrids i i-j iclr icml iff ij in in-4 index indexcache indexer indexer-only indexers indexshare indices infllm-v2 input insight instead interval irreversibly is it its j jiang joint js-divergence k keep keeping keeps key keys kimi kl kv kv-eviction lab last latent later layer layers leave lede less let lightning lineage llama-3-8b loaded local long-context loosen lor loss lu m m-token main map masked masks mass max max-pooling max-pools mb md mean mean-pooled memory meta metadata mha mib microsoft min minference minicpm4 minimax-m3 minutes mit mla mlp moba model moe moonshot moves mqa-mode msa multiply-accumulates n neurips never new nk no not nsa numbers o of offline offload on once one only operatorname or org outweighs over own p page pages parameters past pattern patterns peak peaks per per-channel picks pku plus pooled pooling prefill product products projections prompt property q qquad qsa queries query quest qwen2 qwen3 r reach reaches read reading reads real rebuilt rec recipe record records relu report reported research return reuse reused reuses reversible route router ruler runs s same scale score scored scorer scores search select selected selection self-attention separate serves service serving set settings sft share shared sharp shrink shrinks sigma slc slide sliding-window smaller so softmax sparse sparse-dsa sparse-indexers sparse-moba sparse-nsa sparse-prefill sparse-quest sparse-what-shrinks speedup starts starved static stay stays step steps still stored stores stride sum summed sums svg t tang tau test text that the their them then three threshold throughput tips to token token-level tokens too top top-12 top-16 top-2 top-3 top-k touches toy training training-free trains true u underestimates uniform until untouched used v versus vertical-slash vs w warm-up was weight weights what what-shrinks where why wide win window with works written x xattention y yuan"><a href="../chapters/06-sparse-reads.html">06 · Sparse reads</a></li><li data-search="a a100-80gb about abs absorb accelerate accumulated acl across ada-kv adakvpress adds after again ai aime al aligned all allocation alpha already also always amount and answering append appended appends are arrive arrives arxiv as at attention attn austin authors b b-dmc-4x baseline be because been before begin behind beta better bf16 biased big both bounds budget budgets but buy by bytes c cache cai can cannot cards causal changes checkpoints choice choose chosen chunks cmu cohere collect come comes compare compensation compressed compression concentrated context contexts conversation cost cucki cup cuts d decided decode deepspeed degrades delay deletes distillation dmc dms dots dropped drops duo duoattention duoattentionpress during e each early edinburgh efficiency either ell end entries entry error et even every evict evict-budgets evict-dms evict-duo evict-h2o evict-kvzip evict-pitfalls evict-snapkv evicted eviction evidence extra fade falls faster feng few fewer figures fit fixed-patterns flashattention flexgen folds for frac from full fused future g gates generated generation gets gib gives global goes good gotcha gpqa gqa grid grow grows guess h h2o half has have head heads heavy high higher highest hit hitters hold holds https huawei hyper-scaling i iclr icml if in inside insight instead instructions into is it its j k k-step k-token keep keeps kernel kernels keys kim kv kvpress kvzip kvzippress l l-1 lab lambda last later layer layers le leakage learn learned least leaves lede leftarrow li livecodebench llama-2-7b llama-3-70b llama-3-8b logit long longbench longer look lower lvert madison many marked mass matches mathcal max max-pooled max-pooling maxpool md mean mechanism memory merge merged merges meta mha microsoft misses mit model more most multi-query multi-token must n national naver nawrot need needle needs neighbours neurips neuron neurons never new no none not notin numbers nvidia o obs observation observedattentionpress of offline omega on once one only operatorname opt-6 or oral order org original other out output outputs over own pair paper parameters pass per per-head pitfalls pku placement plus pool pooled positions prefill previous probabilities prompt pruned pyramid pyramidkv pyramidkvpress q qquad quad quantization queries query query-agnostic query-aware question questions qwen-r1 qwen3-8b-dms-8x r ratio razorattention reach read readable readme reads real reasoning recent reconstruction record records reduction refund removed removes repeat report reported reports repurposed retrieval retrofit reuse reused rightarrow rises roughly rule runs runtime rvert s same score scored scorer scorers scores scoring selection seoul serves serving setting share shared sink sinks slot slots smaller snapkv snapkv-style snapkvpress so softmax solved sparse-reads split spread sqrt stable-softmax stacks standard stands stanford start static stay stays step steps still store stores streaming streamingllm string subseteq such sum summed survives svg system-prompt t tail takes tang text tfrac than that the their them they three throughput times tips to token tokens top top-b tot toward toy traces trained training training-free turns uiuc under undone unevenly unit university unlike up upper use used using ustc ut uw v values vote voted votes vs w way weight what where which while whole why wide will window with works worth write wrong x xiao z zhang"><a href="../chapters/07-kv-eviction.html">07 · Evict from the cache</a></li><li data-search="a about abs absorb acl activation added adds after against al all alpha also alternates alternating among an ancestor and approx are arxiv as at attend attends attention b baai baseline beacon beacons because being below bf16 big blk block blocks both bounded bpc branch branches bridge budget budgets build but by bytes c cache cached cannot capped card cards cdot choose chunk cm cmp coarsely compare compress compress-beacon compress-compressive compress-csa compress-hca compress-nsa compress-v4 compressed compresses compression compressive config context converts cost cover csa cup d deepmind deepseek deepseek-ai deepseek-v3 deepseek-v4 deepseek-v4-flash deepseek-v4-pro deletes densely derived differ dim dims does dominates don double drop dropped dropping drops dsa-style each ell emits emitted entries entry enwik8 et every everything eviction f falls few fewer fifo figures finer finished fixed flagembedding flash flops for fp4 fp8 frac from frozen full g gib gist gives goodman gqa gqa8 group grow grows h2o has hca head heads heavily history hold https i i-1 iclr id idea ij in indexer infer ingredients input insight instead into introduced is it its j jobs json k keeps kept key keys kv kv-eviction kvs l layer layers layout layouts le learned leaves leaving lede leftarrow lets lfloor li like lists llama-2 llama-2-7b llm logit long m main-kv mask mathbb md mechanism memories memory merges meta miss mla mlp model moe more most-attended most-used mu multiplied must n needs neighbouring neurips new no not nsa nsa-cmp numbers odot of old oldest on once one only operatorname or org overlap overlapping own p pair paper past peking per per-channel per-token pg-19 pick picks plus pool pooled pooler pooling pools position positions ppl pretraining pro projections prompt qk qquad quad queries query r rae random range rate ratios raw reaches read reads real record records release renmin reported research rest rfloor rope run s scorer scores sees select selected selection separate sequence serve serves setting several shrink sink sinks slide sliding-window-only slot slots so softmax solved span sparse sparse-reads special squeezes stable-softmax stanford starts stay stays still storage stored stores stride style sum summary summed svg t t-l text that the their them then there this those through tilde times tips to token tokens top top-1 top-k toy train trained trains transformer transformer-xl true turns two university unlike used v v3 v4 v4-bytes v4-flash v4-pro varphi versus vs w which while why wikitext-103 win window windows with works x yes yet yuan z zhang"><a href="../chapters/08-fewer-records.html">08 · Compress the sequence</a></li><li data-search="a about abs accuracy add adding addition adds after against ai al alibi all alpha also an and any are arxiv as at attention averages avg b back base be become below beta between bick big block blocks both bottom break-even buys by byte c c-1 cache can card cards cb ch changes channel channels chapters chen chunk chunks chunkwise circ cleared cmu coarser column columns compare complex computed config content convolution cost costs count crosses cumulative cumulative-product cuts d dao data-dependent decay decays decode delta delta-rule deltanet depends depth diag diagonal dictionary different disappears drives drop dropped duality e each earlier eigenvalues encoding ends entry epfl equal equivalent et euler every everything exp experiments factors fade fades faster feature figures fineweb-edu fixed flat fleuret flops folds for forgets form forms found from full gain gamma gate gated gates gave gdn gets give gives gla gotcha gradients granite greeting groups grows gu h h-small has head heads hgrn2 history horizon horizons how hs https hybrids i ibm iclr icml identical idiap ignores improvements in infer inside insight instead into is it its j jk k katharopoulos kda keeps kept kernels key key-channel kim kimi kolter kv l l2-normalized lab lahoti lambda latency later layer layers le leave lede left leftrightarrow li lightning line linear linear-attention linear-chunkwise linear-fixed-decay linear-gla linear-mamba3 linear-reassociate linear-ssd llm log m made mamba mamba-1 mamba-2 mamba-3 mamba3 map maps marginal mask masked masks mathbb matmul matmuls matrix matrix-vector md memory-bound meta microsoft middle mimo minimax minimax-01 minimax-m1 minimax-m2 minimax-text-01 mit mit-ibm mlstm model modeling models modern moe more n nano ncd nd nearly needs nemotron nemotron-h never no normalizer not number numbers nvidia o oct odot of on one one-token only operatorname or order org otherwise our output outputs overwrites own p panda pappas parallel parity passed path per per-channel perplexity phi positional practice prefill princeton prod products pure py q qk qquad quad quadratic r rank- rate rates read real reassociates record recurrence recurrent released removed replaces reported research retnet right rmsnorm rnn rope rotation rotations rule run s same scalar scales scan score sequential sets seven shen short sigma siso sixteen slopes small so softmax solved space splits ssd ssms state state-space state-tracking stays step steps still strength strong sum sums sun svg switch t t-1 t-j ta taxonomy tb tc temperature text tfrac12 than that the them this three times tips tj tk to token tokens top topic toy train training transform transformer trapezoid ts tsinghua turns underbrace unstable updated use used uses ut v value-side vd version vs vyas w wang was watson weakens well went which whole why wiped with without works write writes wy x y yang z"><a href="../chapters/09-linear-state.html">09 · Linear attention &amp; SSMs</a></li><li data-search="a about abs additive address adds after ai al algorithm aligned allow along alpha already also an and any apart are arxiv as association associations at attention axis b b-a2 b-a3b base before begin below beta between beyond big bit bits both brings bui buys by can cannot capacity card cards cdot ch channel channels choi chunk chunked class classes clears comba comes commute compare complex computations correct correction cost costs count covariance cumulative cuts d decay decayed decays decides decouple delta delta-deltanet delta-demo delta-eigen delta-frontier delta-gated delta-kda delta-sum-form delta-taxonomy deltanet deltanet-2 deltaproduct diag diagonal different differs direction directions do does dots dplr e each eda edit editing edits eig eigenvalue eigenvalues eigval encoding end ends entries erase erase-then-delta erased erases error et every evidence exact expressivity faded fades faster fg²-gdn figures finite-precision first fixed flip flips for form forms four franke friday from frontier gain gamma gate gated gated-attention gdn gdn-2 general gets give gives gla goose gotcha gradient grazzi grid group grow h had halfway has hat hatamizadeh head heads heat hgrn2 holds householder how https hu huang hutter hybrid hybrids i i- iclr icml identity idsia in infer inside insight into irie is isotropic it its j jet-nemotron jk k kalman kappa kautz kda kdn keeps kernels key keys kim kimi kimi-linear-48b-a3b kk l2-normalized layer layers layouts learning lede left li lies lightning linear linear-state lms log low-rank lvert m make makes mamba-2 mamba-3 mamba3 maps march mathbf mathcal matrices matrix md meta mirrors mit mla mlstm model models moe moonshot more moves much n need needs neg negative networks neurips never new no nominally not numbers nvidia oct odot of old olmo on once one only operatorname or order org orthogonal other output over overlaps overwrite overwrites overwritten p pairs parallel parity path peng per per-channel pile plus pontil position positive predicts prod product products project provably puts q qquad quad query qwen3 qwen3-next qwen3-next-80b-a3b r range rank rank-1 rate reaches read reads recall red refinements reflection reflections released removal removes replacement reported research residual result retnet richer rnns rotation rotations rule rvert rwkv rwkv-7 s same scalar scalar-decay scales schlag schmidhuber second second-level separate september set sets shen shifts siems sigma sign size sk so softmax solve solved space speed state state-tracking states step steps strength sub-step sum sum-form sun svg t t-1 t-d t-s t-v taxonomy teal team ten term test-time-learning tested text tfrac12 than that the them then this ti ti- tied tilde timeline times tips tk to token too top toy tracking train trained training transform transition trick true tuesday turns tv two tying uncertainty underbrace unfaded unrelated up update used uses ut v value variant variants vector vectors vs w wang was what whether which while whole why with work works world would write writes written wy yang ying zela zhang"><a href="../chapters/10-delta-rule.html">10 · The delta rule</a></li><li data-search="a a100 ablation about above abs accuracy across acts additive adds adobe after against al algebra aligned all alone alpha also an and any are arithmetic arxiv as astera at atlas atlas-mesa attention authors autoregressive averages b babilong back base batch batch-start before begin behrouz below benchmark berkeley beta bi big block bmod bound branch bucket buckets by byte c cache capacity cards causal cell cg changing check choices chunk chunk-friendly chunks chunkwise closed-form cmu collapses coloured compare compression conjugate-gradient continues correlated cost costs d dalal dao decay decode deep degree- delta delta-like delta-rule deltanet depth details diego differ discount discounted dual during e-4 e1 e2 e3 each earlier editing ell end epsilon equal equals error et eta every exact exactly f fading falls far fast fast-weight faster features feeds fenwick few figures fine-tuned fit five fix fixed flop flops for forgetting form framework free from full full-attention g gain gamma gap gated gates gd gdn ge gelu gives gla goel google gotcha gradient gradients grow guo h h100 happens has head hebbian hidden holds hong https huge hybrid hybrids i iclr icml in in-context inference inner inside insight instead intelligence intensity into irrelevant is it its itself k k-transpose k1 k2 keep keeps keys kim knob kv kx l l-1 l2norm la lact lambda langle largest last last- latest layer layers lceil le learner learning least leaves lede left leftarrow lets level levels li like limits linear linear-attention lists ln locally log log-linear long-context loop loses loss lr lvert m mac mag make makes mal mamba-2 mamba2 mask matches mathcal matmul matmul-bound md memory mesa mesanet meta min mini-batch mini-batches minus miras mirrokni mit mlp mlps model models momentary momentum more most muon n nabla needles needs neurips never new newest next-token no norm not numbers nvidia o objectives odot of old omega on one online online-step only operatorname optimizer or org oswald out outer over own p pair pairs paper paradigms parameters pass-key past per per-segment perplexity phi placements points power-of-two practice prediction prefill prefix primal princeton product projections prop q qquad quad query qx r rangle rceil reaches read read-outs reading reads recall records recurrent regressor removing report reported res research retention retnet retrieval ridge right row rule run rvert rwkv-7 s san scalar scan scherrer seemingly sees sequence sequential setup share shares sigma significant silu single size sk sliding-window slower small so solve solved solves spikes splits squares stacks stanford state states stay stays step steps still stopping stored stores sum sun surprise surprising svg swa swa-1024 swa-8k swiglu t t- t-1 t-c t-v table takes tandon test-time text textstyle tfrac12 tg th than the there these theta this thm three throughout time times tips titans tk to token tokens top toy tq trace tracking trained training trains transformer transformers ts ttt ttt-e2e ttt-fenwick ttt-large-chunk ttt-linear ttt-minibatch ttt-mlp ttt-one-step ttt-recall-gap ttt-titans ttt-window-exact tv uc undecayed under up update updated use used uses utilization v value versus video von vs vx w w- wan weight weights which while why widths wiki window wins with without works wraps write writes writing x xing y yang z zhang zhong"><a href="../chapters/11-test-time-learning.html">11 · Memory as test-time learning</a></li><li data-search="a ablation abs add against ai ai21 al alibaba all alternate among and are arxiv as at attention attn b b-a17b b-a3b be beam-searches before beside beta bf16 big blocks blog bounded bounds but by byte c cache can cannot card cards carry cdot cdot128 cdot2 cdot4 cdot8 channels cheap clusters co compare compresses computed config configs context converts crossover d decode deepseek-r1 deficits degraded delta delta-3-1 delta-rule deltanet dense differ different dominate dong doubles each elements ell embeddings endlessly ends equal equals et evaluation evenly every evidence exact examples expects expensive f face falcon-h1 falcon-h1-34b falls family faster few fewer figures first fixed flash-next flops for found four fp32 frac freezes from frontier fu full full-attention fusion g gated gates gdn gemma generated give global global-layer gotcha gpt-oss gpt-oss-120b gqa granite group growing grows gu h h-small h100 has heads hence high-resolution hold https hu hugging huggingface hybrid hybrid-delta31 hybrid-layouts hybrid-minimax hybrid-nvidia hybrid-seq-par hybrid-why hybrids hymba hymba-1 iclr immature important in infrastructure insight interleaved interleaves is it its jamba jet-nemotron jet-nemotron-2b jetblocks json k k3 kda keep keeps kib kimi kv l labs larger last late layer layers layouts lean leaving lede length letting lightning lightning-attention limits linear list lists llama-3 local log look lookup m m-element m1 m2 m3 make makes mamba mamba-2 mathcal mb md mean meta minimax minimax-01 minimax-ai minimax-m2 minimax-m3 minimax-text-01 mixers mla mlp mlps mmlu model models moe moonshot more ms msa n nano nemotron nemotron-h nemotron-h-56b neurips no nominal nope norm norms not numbers nvidia odot of off often on once-for-all only operatorname or org other out output outputs over override overtakes own p parallel part partial past pattern per period perplexity placement plus position positions postnas precision prefill problems production proof pure qquad qsa quad quadratic query qwen qwen2 qwen3 qwen3-30b-a3b qwen3-8b qwen3-next qwen3-next-80b qwen3-next-80b-a3b qwen3-next-80b-a3b-instruct r ratio reach read reads reasoning reasons recall recurrent reference replaces reported rescale rest retained retrieval retrieve retrofit retrofits right rises rope rule run s samba same savings scale scaled second seq-par sequence sequential share side sliding-window smaller so softmax solvable solved sparse sparse-reads splits spread ssm stable-softmax stack stacks state stays still stores strips study sum summarize summary supernet svg swa task-specific team test-time-learning text text-01 th than that the their them then things throughput tii tilde times tips to token token-mixer tokens trains trend two type types unable up used uses validation variant versus visible vs w way went where which while whole why why-did-m2-end-up-as-a-full-attention-model width with works would x y"><a href="../chapters/12-hybrids.html">12 · Hybrid stacks</a></li><li data-search="a a100 about abs absorb absorbed absorption accesses across adds after against al all an and approx are arithmetic arxiv as async at attention b b200 backends backward bandwidth batch become becomes before bert-large between bf16 big bit bits blackwell block-sparse blocks blog both bsr busy but by byte bytes c c-1 cached caches card cards cdot channel chunk chunks chunkwise codellama-34b cogvideox com compare compiler compiles compute-bound constant converges cores cost costs crfm cross cudnn cute-dsl d dao decays decide decode decoding deepseek deepseek-ai deepseek-v3 delta delta-rule deltanet dequantizes derivation diag different diffusion e each edu ell emulates ermon et every exact exactly exp fa-2 fa-3 fa-4 fa-versions factors fall faster figures fill fills fine-tuning fla fla-org flash flash-decoding flash-linear-attention flashattention flashattention-2 flashattention-3 flashattention-4 flashdecoding flashinfer flashlinearattention flashmla flop flops for form fp16 fp4 fp8 frac from fu full g gb gflop github gives gla go gotcha gpt-2 gpu gqa-8 grows h h100 h800 half-precision hardware has haziza hbm head heads hides hopper householder-like how html https hunyuanvideo i iclr icml in infer inference inside int4 int8 intensity inter-token is it j j- j-m jit k kb keep kern-chunkwise kern-fa-generations kern-flash-tiles kern-flashmla kern-online-softmax kern-sage kern-split-kv kernels key keys kib kim kv kv-cache kv-heads kv-quant large last latency latent latent-kv layers lede level lifts linear linear-state lives log log-space log-sum-exp lossless low-bit lower lse m m-m many masked massa math matmul matmul-shaped matmuls matrix max md mean medium megatron-lm memory-bound merge meta mib mla mlc-engine mlsys mqa ms mu n nd near need needs neurips never no non-matmul not num numbers o odot of old on once one one-token online only operand operatorname or org outputs over overlaps page paged panda parallel partial pass passes past per per-channel per-token prefill prefixes pretraining product pulls pv pytorch q qk qquad quantization quantizes query r ragged rank-1 re-partitions re-tiled reached read real recomputes recovers recurrence reduction removes removing reported rescale rescales rescaling returns rewritten ridge row rows rudra rule run runtime s s- sage sageattention sageattention2 sageattention3 same schedule scheduler scores sdpa second sequence serving sglang shah share shared shen shows shrinks six sizov skips slower sm small sms so softmax solved speed speedups split split-kv splits splitting sram stanford state states statistics stay stays step storage stores stream sub-chunk subtracting sum svg tables targets tau tb templates tensor text tflop than the them then theta this thm through throughput tied tilde tile tiles times tips tma to token tokens top toy traffic train training triton tsinghua two unchanged unless up updates used uses utilization v v3 v4 variants version versus video vllm vs wang weight where while why wide with work works written wy yang ye zadouri zhang"><a href="../chapters/13-kernels.html">13 · Kernels</a></li><li data-search="a a100 a100-80gb abbeel about abs accuracy across active aggregate ai al all all-gather all-gathers all-to-alls allocated along an and api applies approx are arena arithmetic around arxiv as at attention b b-1 bandwidth bandwidth-bound bandwidths batch be beam beat before benchmarks berkeley between beyond bf16 big bit bits blackwell block blocks blog bmod both branch but bw by bytes c cache cached caches caching calibrates can cannot capacity caps cards cdot channel channels chat chatbot chats cheaper chunks com comm compare compute-bound computed context converts copy-on-write cost costs count cp d daily decode deepseek deepseek-ai deepseek-v3 deepseek-v3-2 deepseek-v4 deepspeed deepspeed-ulysses default delta demand dequantized dequantizes developer direction directly disagg disaggregation disk distserve dram e2m1 e4m3 e8m0 each ell empty et even every evicted evicts exact exceed external f falls fast fastertransformer few few-shot fewer figures first fixed flashinfer flashmla flops for formats four fp16 fp32 fp4 fp8 frac fragmentation from fs g gather gb ge gib github gotcha gpu gpu-seconds gpus gqa group groups h h100-class h800 halve hat have hbm hbm3 head heads hidden hit holding holds hooper hs https iclr icml if in infiniband input inside instead int3 interference is isca it its jacobs k k-token kb keeping keeps kept kernel kernels key keys kimi kivi kv kv-quant kvcache-ai kvquant kwon lane last layer layers le leaves lede levels lfloor link liu llama llama-3-70b llama-7b lmcache load-balanced logical long longest loss low-bit lower lru m make map matches matmuls max max- mb md megatron-sp memory meta mha mib microsoft min minimum mixes model mooncake moonshot more most ms must n n-n needs neurips new nh nic no node nodes non-uniform not numbers nvfp4 nvidia nvlink nvme o of offline on on-disk one only operatorname opt-13b optimizing-inference-for-long-context-and-large-batch-sizes-with-nvfp4-kv-cache orca org osdi outlier outliers output over own p page paged pagedattention pages paging pairs paper parallel parallelism params passes patel path pattern pcie peak per perplexity phase physical place pools position positions pre-rope precision prefill prefills prefix prefixes production prompt qin qquad quad quantize quantized quantizes query r r1 radix radixattention rates ratio rdma read reads recompute record records reference-counted reload reloading reloads replicated reported reports request requests reservation reserving reuse rfloor ring rope round running runs s sage sageattention sampling save saves scale scales scattered search semantic separate sequence serve-cp serve-disagg serve-kivi serve-kv-bytes serve-paged serve-radix serve-tiers server serving sglang shared sharing ship ships show shrink sit size slot slots small smears so solved sosp spill split splits splitwise spreads ssd stalls stanford states stay stop storage store sum survive svg system t table takes tb text than the them then thin those thousands through throughput tib tied tier tiered tiers tips to tok token tokens too toy tpot traffic training-free transfer tree truncation tsinghua ttft turn two typical uc ulysses under underbrace uniform units up used uw v v3 v4 values variant versus vllm vs waste wastes whatever why wikitext-2 with works x x-z xfer z zaharia zheng zhong"><a href="../chapters/14-serving.html">14 · Serving the cache</a></li><li data-search="a across adds afford after aggregation all-global alone and any are arithmetic as asked asks at attention average b bases beyond bill blurred book bounded branch budget by bytes cache can capacity capacity-limited cards cdot cells chapter chapters check choose choose-kv-bytes choose-properties choose-recipes column combines compare compression config construction context converging cost csa dead deepseek-v3 deepseek-v4 deepseek-v4-flash defaults delta-rule deltanet dense depend different discarded dual each easy ell evaluate every eviction excluded exposes failure few fewer figures flash flash-next flat for forgetting formula found fp4 fp8 full gate gated gemma glm-4 global goes gpt-oss gpt-oss-120b gqa growing grows guarantees hca head heads how hybrid hybrids if in including indexer insight irreversible is jamba json k k2 kept keys kimi kv kv-eviction last layers learned lede leftrightarrow length lever levers linear llama local log lose lost m main matters md measure measuring mib mimo-v2-flash minimax-01 minimax-m2 ministral most mrope multi-key multi-turn n nano need needle-in-a-haystack nemotron nemotron-h-56b no nobody not notes nothing of on one open or output over partial parts pattern per pick pitfalls place positions prompt-only properties pulls purpose qk-norm qquad qsa quad questions qwen3 qwen3-next r reader reads real recall recipes record records recurrent reported research rest rope rows ruler s scale scout sequence seven shipped sink sinks small source sparse spread stability stack stacks state storage sum svg tags tasks test text that the then thin this three through times tips to token tokens top- top-512 tracking trades training turn v v4 very w what where whether why window windows with x yellow yes you"><a href="../chapters/15-choose.html">15 · Compare and choose</a></li></ul><p id="no-chapters" hidden>No matching chapters.</p><span class="nav-label">Reference</span><ul><li data-search="mechanism matrix"><a href="../appendices/mechanism-matrix.html">Mechanism matrix</a></li><li data-search="notation and glossary"><a href="../appendices/glossary.html">Notation and glossary</a></li><li data-search="reference article and coverage"><a href="reference-note.html">Reference article and coverage</a></li><li data-search="primary sources"><a href="sources.html" aria-current="page">Primary sources</a></li></ul></details></nav><main id="book-text"><section id="primary-sources" class="level1">
+<h1>Primary sources</h1>
+<p><strong>189 papers, technical reports, model cards and official
+implementations</strong> support the cards. “sections” = the relevant
+full-text sections or config files were checked; “abstract” =
+abstract-level characterization; “official report” = official project,
+model card or code. Worked numbers are teaching constructions; no
+experiments were reproduced.</p>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Year</th>
+<th>Source</th>
+<th>Venue / org</th>
+<th>Chapters</th>
+<th>Checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2014</td>
+<td><a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation
+by Jointly Learning to Align and Translate</a></td>
+<td></td>
+<td><a href="../chapters/00-map.html">00</a></td>
+<td><strong>sections</strong> Inspected HTML sections 2.1 and 3.1–3.2:
+fixed-vector encoder–decoder interface, learned alignment, weighted
+annotations, and dynamic context.</td>
+</tr>
+<tr>
+<td>2015</td>
+<td><a href="https://arxiv.org/abs/1508.04025">Effective Approaches to
+Attention-based Neural Machine Translation</a></td>
+<td></td>
+<td><a href="../chapters/00-map.html">00</a></td>
+<td><strong>abstract</strong> Read abstract for global/local attention
+and opened fulltext; chapter uses only concise historical
+characterization, with score-function types also supported by
+Transformer section 3.2.1.</td>
+</tr>
+<tr>
+<td>2017</td>
+<td><a href="https://arxiv.org/abs/1706.03762">Attention Is All You
+Need</a></td>
+<td></td>
+<td><a href="../chapters/00-map.html">00</a></td>
+<td><strong>sections</strong> Inspected HTML sections 2–4: previous
+self-attention work, scaled dot-product/multi-head attention,
+encoder–decoder/self attention, masks, positions, and sequence
+complexity.</td>
+</tr>
+<tr>
+<td>2018</td>
+<td><a href="https://arxiv.org/abs/1803.02155">Self-Attention with
+Relative Position Representations</a></td>
+<td></td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> Inspected HTML sections 3.1–3.2:
+relation-aware attention and learned clipped relative offsets; no
+quality numbers reproduced.</td>
+</tr>
+<tr>
+<td>2019</td>
+<td><a href="https://arxiv.org/abs/1911.05507">Compressive Transformers
+for Long-Range Sequence Modelling</a></td>
+<td>ICLR 2020 · DeepMind</td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>sections</strong> PDF §3, §5.1–5.3: range l(n_m+c·n_cm);
+Enwik8 c=3, 768/1152; WikiText 17.1; PG-19 33.6 vs 36.3.</td>
+</tr>
+<tr>
+<td>2019</td>
+<td><a href="https://arxiv.org/abs/1911.02150">Fast Transformer
+Decoding: One Write-Head is All You Need</a></td>
+<td></td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> Inspected HTML sections 2.4, 3, and 4:
+incremental cache, bandwidth analysis, shared KV projections, and
+experiment scope. Worked byte counts are original illustrative
+calculations. §2.4, §3: one shared K/V head for all query heads;
+incremental-decoding memory-bandwidth argument.</td>
+</tr>
+<tr>
+<td>2019</td>
+<td><a href="https://arxiv.org/abs/1904.10509">Generating Long Sequences
+with Sparse Transformers</a></td>
+<td>arXiv · OpenAI</td>
+<td><a href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> §4.3 strided and fixed pattern
+definitions, l ≈ √n; abstract O(n√n); strided fails on text.</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><a href="https://arxiv.org/abs/2007.14062">Big Bird: Transformers
+for Longer Sequences</a></td>
+<td></td>
+<td><a href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> Read graph construction and
+local/random/global connection descriptions; theoretical expressivity is
+not a guarantee of practical exact recall. Table 8 ITC: block 64, g 2b,
+w 3b, r 3b, length 4096.</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><a href="https://arxiv.org/abs/2005.14165">Language Models are
+Few-Shot Learners (GPT-3)</a></td>
+<td>NeurIPS 2020 · OpenAI</td>
+<td><a href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> §2.1: alternating dense and locally banded
+sparse layers; n_ctx 2048.</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><a href="https://arxiv.org/abs/2004.05150">Longformer: The
+Long-Document Transformer</a></td>
+<td></td>
+<td><a href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> Read attention-pattern sections, including
+symmetric task-designated global positions and bounded-window scaling;
+distinguished bidirectional document processing from causal decoder use.
+Pretraining section: sliding window 512, positions extended to
+4,096.</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><a
+href="https://proceedings.mlr.press/v119/katharopoulos20a.html">Transformers
+are RNNs: Fast Autoregressive Transformers with Linear
+Attention</a></td>
+<td></td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>sections</strong> Primary proceedings paper Sections 3.2–3.4
+inspected; feature-map kernel reassociation and normalized recurrent
+numerator/denominator. Worked customer-service interpretation is
+original. §3.2–3.4: reassociation (QKᵀ)V = Q(KᵀV), recurrent state S_t
+and normalizer z_t.</td>
+</tr>
+<tr>
+<td>2021</td>
+<td><a href="https://arxiv.org/abs/2102.11174">Linear Transformers Are
+Secretly Fast Weight Programmers</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Fast-weight memory discussion and
+replacement/delta interpretation inspected. Early HTML version bears the
+title ‘Linear Transformers Are Secretly Fast Weight Memory Systems’;
+latest abstract/proceedings title is listed here. Numerical example and
+gradient derivation are original exposition. §2–3: delta update rule,
+retrieve–remove–write; toy arithmetic is ours.</td>
+</tr>
+<tr>
+<td>2021</td>
+<td><a href="https://arxiv.org/abs/2104.09864">RoFormer: Enhanced
+Transformer with Rotary Position Embedding</a></td>
+<td></td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> Inspected HTML sections 3.1–3.2:
+coordinate rotations and relative-position dependence of query/key inner
+products. No unrestricted extrapolation claim made. §3.2–3.4: theta_i =
+10000^(-2i/d), relative form (R_t q)^T(R_j k) = q^T R_(j-t) k.</td>
+</tr>
+<tr>
+<td>2021</td>
+<td><a href="https://arxiv.org/abs/2108.12409">Train Short, Test Long:
+Attention with Linear Biases Enables Input Length Extrapolation
+(ALiBi)</a></td>
+<td>ICLR 2022 · UW, Meta AI</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> §3 slopes 2^(-8h/H); abstract: 1.3B
+trained on 1024 matches sinusoidal trained on 2048.</td>
+</tr>
+<tr>
+<td>2022</td>
+<td><a href="https://arxiv.org/abs/2205.14135">FlashAttention: Fast and
+Memory-Efficient Exact Attention with IO-Awareness</a></td>
+<td></td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Inspected sections 2–3: HBM versus on-chip
+memory, tiled online softmax, recomputation and unchanged dense
+arithmetic. Alg. 1 (m, ℓ update, block sizes); Thm 2 HBM accesses; §2.1
+A100 SRAM/HBM; Fig. 2 40.3 vs 4.4 GB.</td>
+</tr>
+<tr>
+<td>2022</td>
+<td><a href="https://arxiv.org/abs/2204.06745">GPT-NeoX-20B: An
+Open-Source Autoregressive Language Model</a></td>
+<td>BigScience Workshop @ ACL 2022 · EleutherAI</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> HF config EleutherAI/gpt-neox-20b:
+rotary_pct 0.25, 64 heads, hidden 6144 → 24 of 96 dims rotated.</td>
+</tr>
+<tr>
+<td>2022</td>
+<td><a href="https://arxiv.org/abs/2210.10340">The Devil in Linear
+Transformer</a></td>
+<td>EMNLP 2022 · Shanghai AI Lab et al.</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>abstract</strong> Normalizer causes unbounded gradients;
+replaced by output normalization (TransNormer, later Lightning).</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.14509">DeepSpeed Ulysses: System
+Optimizations for Enabling Training of Extreme Long Sequence Transformer
+Models</a></td>
+<td>arXiv 2023 · Microsoft</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> §3 all-to-all, 4Nh/P per link vs
+Megatron-SP 4Nh; 2.5× faster at 4× longer sequences; &gt;1M tokens.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.16039">Effective Long-Context
+Scaling of Foundation Models</a></td>
+<td>arXiv 2023 · Meta GenAI</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> §2 and §4.1: RoPE ABF, base frequency
+raised from 10,000 to 500,000 to reduce long-distance decay.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.06180">Efficient Memory
+Management for Large Language Model Serving with PagedAttention</a></td>
+<td></td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> Abstract-screened physical block
+allocation, fragmentation and cache sharing. No serving speed claim
+reproduced. Fig. 2 breakdown (20.4/13.3/57.3/8.9, 26.8/17.9/13.6/41.6,
+96.3); block 16; OPT-13B 800 KB; CoW; 2–4×.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.17453">Efficient Streaming
+Language Models with Attention Sinks (StreamingLLM)</a></td>
+<td>ICLR 2024 · MIT, Meta AI, CMU</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> Abstract + §3: 4 initial tokens suffice as
+sinks; up to 4M tokens; 22.2× faster than sliding-window recompute.
+Table 1 PPL 5158.07 vs 5.40; §3.2 cache positions; §4.4 four sinks; App.
+C; 22.2×.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2306.15595">Extending Context Window
+of Large Language Models via Positional Interpolation</a></td>
+<td>arXiv 2023 · Meta</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>abstract</strong> Abstract: linearly down-scale positions
+(all frequencies divided by s) to fit the trained range.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a
+href="https://crfm.stanford.edu/2023/10/12/flashdecoding.html">Flash-Decoding
+for long-context inference</a></td>
+<td>Stanford CRFM blog · Dao, Haziza, Massa, Sizov</td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>official report</strong> Split-KV with log-sum-exp
+reduction; &lt;1% GPU at batch 1; up to 8× decode, 50× attention,
+CodeLlama-34B, A100.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2307.08691">FlashAttention-2: Faster
+Attention with Better Parallelism and Work Partitioning</a></td>
+<td></td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Abstract-screened description of work
+partitioning and non-matrix overhead. No speed ratio reproduced.
+Abstract 25–40%, 50–73%, 225 TFLOP/s; §3.1 312 vs 19.5 TFLOP/s, deferred
+1/ℓ; §3.2–3.3 split-Q.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2305.13245">GQA: Training Generalized
+Multi-Query Transformer Models from Multi-Head Checkpoints</a></td>
+<td></td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>sections</strong> Inspected HTML sections 2.1–2.2 and
+3.2–3.3: grouping, endpoints, pooled projections plus uptraining, and
+measured tradeoff with stated scope. §2.1 mean-pooled K/V projections
+plus uptraining (5% of steps); §2.2 grouping between MHA and MQA.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2312.06635">Gated Linear Attention
+Transformers with Hardware-Efficient Training</a></td>
+<td></td>
+<td><a href="../chapters/09-linear-state.html">09</a>, <a
+href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Sections 2–3 and related work distinguish
+data-dependent state decay, key/value gating, output gating, and
+hardware-efficient chunkwise forms. No reported throughput maxima are
+reproduced. Eq. 3 key-channel decay; α = σ(xW₁W₂+b)^(1/16), rank 16;
+footnote: αᵀβ gate marginal; §2 O(LCd+Ld²). §2.2 chunkwise form, O(LCd +
+Ld²); §3.3 materialized vs not, +10–20% memory; chunk 64; faster than
+FA-2 at 1K.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2306.14048">H2O: Heavy-Hitter Oracle
+for Efficient Generative Inference of Large Language Models</a></td>
+<td>NeurIPS 2023 · UT Austin / Stanford / Meta / CMU</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> PDF Alg. 1, §5 baselines: budget split
+evenly, 20% cache; abstract 29×/29×/3× throughput, 1.9× latency.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2304.08467">Learning to Compress
+Prompts with Gist Tokens</a></td>
+<td>NeurIPS 2023 · Stanford</td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>abstract</strong> Abstract: attention-mask training, up to
+26× prompt compression, up to 40% FLOPs reduction (LLaMA-7B,
+FLAN-T5-XXL).</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2307.09288">Llama 2: Open Foundation
+and Fine-Tuned Chat Models</a></td>
+<td>Meta</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> 7B uses MHA with 32 heads; GQA is used
+only for 34B/70B (§2.2).</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2312.00752">Mamba: Linear-Time
+Sequence Modeling with Selective State Spaces</a></td>
+<td></td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>abstract</strong> Abstract supports input-dependent
+selective state-space parameters and the adjacent SSM lineage. Detailed
+architecture claims are not made. Selective SSM; per-entry (channel ×
+state) decay contrasted with SSD’s scalar.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2310.06825">Mistral 7B</a></td>
+<td>arXiv · Mistral AI</td>
+<td><a href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>sections</strong> Table 1: W 4096, 32 layers; §2 rolling
+buffer i mod W, 8× less cache at 32K.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://www.nvidia.com/en-us/data-center/h100">NVIDIA H100
+Tensor Core GPU datasheet</a></td>
+<td>NVIDIA</td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> H100 SXM: 989 TFLOP/s dense BF16,
+3.35 TB/s HBM3, so the ridge is about 295 FLOP/B. H100 SXM: 80 GB, 3.35
+TB/s HBM, 900 GB/s NVLink, 128 GB/s PCIe Gen5; BF16 1,979 TFLOPS with
+sparsity.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2307.08621">Retentive Network: A
+Successor to Transformer for Large Language Models</a></td>
+<td></td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>sections</strong> Section 2.1 parallel, recurrent, and
+chunkwise retention; Section 2.2 fixed multi-scale per-head decay and
+distinct output gating. Book core recurrence explicitly suppresses
+positional and surrounding layer operations. Eq. 5 parallel D mask, Eq.
+7 chunkwise, Eq. 8 γ; §3.1 1−γ log-spaced 1/32…1/512.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2310.01889">Ring Attention with
+Blockwise Transformers for Near-Infinite Context</a></td>
+<td></td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> Inspected blockwise/ring computation and
+communication-overlap explanation; no unlimited-context guarantee
+inferred from title. §3 overlap condition c ≥ F/B; Table 2 A100 NVLink
+1.0K, A100 IB 24.5K, TPU v4 1.0K.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2312.07104">SGLang: Efficient
+Execution of Structured Language Model Programs</a></td>
+<td>NeurIPS 2024 · Stanford, UC Berkeley</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> RadixAttention: page = 1 token, LRU leaf
+eviction, DFS order; hit 50–99%, 52.4%, 74.1%; up to 6.4×.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.14322">Small-scale proxies for
+large-scale Transformer training instabilities</a></td>
+<td>ICLR 2024 · Google DeepMind</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> §3.1.1: attention logit growth → one-hot
+attention; qk-layernorm (Dehghani et al. 2023) fixes it at small
+scale.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2311.18677">Splitwise: Efficient
+Generative LLM Inference Using Phase Splitting</a></td>
+<td>ISCA 2024 · UW, Microsoft</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>abstract</strong> Prompt and token phases on separate
+machines; 1.4× throughput at 20% lower cost, or 2.35× at equal cost and
+power.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2311.16867">The Falcon Series of Open
+Language Models</a></td>
+<td>TII</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> Falcon-7B: multiquery attention, 71 heads,
+head dim 64, 32 layers.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2305.19466">The Impact of Positional
+Encoding on Length Generalization in Transformers (NoPE)</a></td>
+<td>NeurIPS 2023 · Mila, ServiceNow</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>abstract</strong> Abstract: decoder-only Transformers
+without positional encoding (causal mask only) generalise in
+length.</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2309.00071">YaRN: Efficient Context
+Window Extension of Large Language Models</a></td>
+<td>ICLR 2024 · Nous Research, EleutherAI, U. Geneva</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> §3.2 ramp gamma(L/lambda), alpha 1, beta
+32; §3.3 sqrt(1/t) = 0.1 ln s + 1; App. A NTK base.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.11550">Ada-KV: Optimizing KV
+Cache Eviction by Adaptive Budget Allocation for Efficient LLM
+Inference</a></td>
+<td>NeurIPS 2025 · USTC</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> Alg. 1 top-B across heads, L1 output-loss
+bound, Ada-SnapKV/Ada-Pyramid; 13 RULER + 16 LongBench sets.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2405.04434">DeepSeek-V2: A Strong,
+Economical, and Efficient Mixture-of-Experts Language Model</a></td>
+<td></td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>sections</strong> Inspected abstract and HTML sections
+2.1.1–2.1.4: latent KV compression, key/value projection absorption,
+decoupled RoPE, cache dimensions, and baseline-specific 93.3%
+comparison. Chapter’s small arithmetic examples and cache scenario are
+original. Read §2.1 joint latent KV compression and decoupled positional
+component; MLA reduces entry dimensions but still retains a learned
+record per historical position. §2.1 Eqs 9–19 (latent, absorption,
+decoupled RoPE, √(d_h+d_h^R)); Table 1: 576 ≈ GQA 2.25 groups; §3.1.2
+hyper-parameters.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 Technical
+Report</a></td>
+<td>DeepSeek</td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/04-latent-kv.html">04</a>, <a
+href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> 61 layers; MLA with KV compression dim 512
+and decoupled RoPE dim 64, giving 576 cached elements per token per
+layer. 671B total, 37B activated per token (used for the recompute
+estimate).</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py">DeepSeek-V3
+config.json and inference/model.py</a></td>
+<td>Hugging Face · DeepSeek</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> yarn factor 40, original 4096,
+theta 10000; softmax_scale × mscale² = (0.1 ln 40 + 1)² = 1.874.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2410.05258">Differential
+Transformer</a></td>
+<td>ICLR 2025 (oral) · Microsoft Research, Tsinghua</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> §2.1 difference of two softmax maps,
+lambda_init = 0.8 − 0.6 exp(−0.3(l−1)); §3.2 6.8B ≈ 11B loss.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2401.09670">DistServe: Disaggregating
+Prefill and Decoding for Goodput-optimized LLM Serving</a></td>
+<td>OSDI 2024 · PKU, UCSD</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>abstract</strong> Separate prefill/decode GPUs; TTFT/TPOT;
+7.4× more requests or 12.6× tighter SLO.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2410.10819">DuoAttention: Efficient
+Long-Context LLM Inference with Retrieval and Streaming Heads</a></td>
+<td>ICLR 2025 · MIT / NVIDIA</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> §3 gate mix, λ 0.05, 2,000 passkey steps;
+64 sink + 256 recent; 25%/50% heads; 2.55×/1.67× memory.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2403.09636">Dynamic Memory
+Compression: Retrofitting LLMs for Accelerated Inference</a></td>
+<td>ICML 2024 (PMLR 235) · NVIDIA / University of Edinburgh</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> Alg. 1, Eq. 10 weighted merge with z; α
+from k[0], ω from q[0]; up to 4× without loss.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.08608">FlashAttention-3: Fast
+and Accurate Attention with Asynchrony and Low-precision</a></td>
+<td></td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Abstract-screened Hopper asynchronous
+execution and separate low-precision path. No speed or accuracy ratio
+reproduced. Abstract 35%, 740 TFLOP/s (75%), 1.2 PFLOP/s FP8; 989 vs 3.9
+TFLOPS exp; ping-pong 570→620–640; Table 3 RMSE.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2412.06464">Gated Delta Networks:
+Improving Mamba2 with Delta Rule</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Sections 2–3 verify scalar decay followed
+by residual correction, complementary memory clearance and association
+editing, and chunkwise parallelization. Formula transposed to S in
+R^(dv×dk); the correction reads the faded state. First submitted
+December 2024, ICLR 2025. Eq. 10 α_t S(I − βkkᵀ) + βvkᵀ in d_v×d_k
+orientation; Table 1 objectives. §3 Table 1 online-learning objectives
+for LA, Mamba2, Longhorn, DeltaNet, GDN; SGD reading of the delta
+rule.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2408.00118">Gemma 2: Improving Open
+Language Models at a Practical Size</a></td>
+<td>Google DeepMind</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 27B: 46 layers alternating
+local/global, 16 KV heads × 128. §2: logits ←
+soft_cap·tanh(logits/soft_cap); 50.0 self-attention, 30.0 final layer;
+config agrees. 1:1 local/global, window 4096, restated in Gemma 3 report
+§5.2; 46 layers per config.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2404.07904">HGRN2: Gated Linear RNNs
+with State Expansion</a></td>
+<td>COLM 2024</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>abstract</strong> Per-key-channel forget gate with key tied
+to 1−f (Eq. 2–3 via research brief B).</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2411.02265">Hunyuan-Large: An
+Open-Source MoE Model with 52 Billion Activated Parameters by
+Tencent</a></td>
+<td>arXiv 2024 · Tencent</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> §2.2.2 GQA + CLA saves ≈95% vs MHA; Table
+2 caption: shares every 2 layers; cfg cla_share_factor 2, 64
+layers.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2411.13676">Hymba: A Hybrid-head
+Architecture for Small Language Models</a></td>
+<td>arXiv 2024 · NVIDIA</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> Eq. 1–3 parallel fusion with beta-scaled
+norms; Table 1 78.6 MB, 664 tok/s; 11.67× cache, 3.49× vs Llama-3.2-3B;
+config.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2403.19887">Jamba: A Hybrid
+Transformer-Mamba Language Model</a></td>
+<td>AI21 Labs</td>
+<td><a href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>sections</strong> 32 layers with 1 attention : 7 Mamba; GQA
+32/8/128; 4 GB KV at 256K. a:m = 1:7; no explicit positions; Table 1 KV
+at 256K: 4 GB vs 32/128 GB; config attn_layer_period 8.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2402.02750">KIVI: A Tuning-Free
+Asymmetric 2bit Quantization for KV Cache</a></td>
+<td></td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> Inspected quantization motivation and
+key/value distribution/granularity sections. No end-to-end throughput
+ratio reproduced. Per-channel K, per-token V; G = 32, R = 128; outlier
+channels in K only; 2.6× memory, 4× batch, 2.35–3.47×.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2401.18079">KVQuant: Towards 10
+Million Context Length LLM Inference with KV Cache Quantization</a></td>
+<td>NeurIPS 2024 · UC Berkeley</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> Pre-RoPE per-channel keys, nuq, 1%
+outliers; Table 1 LLaMA-7B 5.68 / 5.75 / int3 10.87; 1M on one
+A100.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.04620">Learning to (Learn at
+Test Time): RNNs with Expressive Hidden States</a></td>
+<td>ICML 2025 (PMLR 267) · Stanford, UC San Diego, UC Berkeley</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Eq. 2–5; b = 16; eta_base 1/0.1; Thm 1–2;
+Table 1 ablation 15.91 → 11.09; Table 3 configs.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a
+href="https://huggingface.co/unsloth/Llama-3.1-8B-Instruct/blob/main/config.json">Llama
+3.1 8B config.json</a></td>
+<td>Hugging Face config · Meta (mirror)</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> rope_theta 500000; llama3 scaling
+factor 8, low 1, high 4, original 8192; head_dim 128.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2401.03462">Long Context Compression
+with Activation Beacon</a></td>
+<td>ICLR 2025 · BAAI / Renmin University</td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>sections</strong> HTML §3: chunk 1024 (Llama-2), α ∈
+{2,4,8,16,32}, raw KV dropped; 8× KV, 2× speed; &lt;20K training.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2402.13753">LongRoPE: Extending LLM
+Context Window Beyond 2 Million Tokens</a></td>
+<td>ICML 2024 · Microsoft</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>abstract</strong> Abstract: searched per-dimension rescale
+factors; Phi-4-mini config long_factor 1.0 → 47.77 checked.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.02490">MInference 1.0:
+Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse
+Attention</a></td>
+<td></td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> Read §§2–3 and evaluation methodology:
+offline head-pattern assignment, static A-shape and dynamic
+Vertical-Slash/Block-Sparse indices, training-free approximate prefill
+attention. Three patterns; A-shape 1k+4k; Vertical-Slash from last 64
+queries; 64-blocks top-100; 30 → 3 min at 1M.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2412.19255">Multi-matrix
+Factorization Attention</a></td>
+<td>arXiv 2024 · StepFun</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>abstract</strong> More and wider heads via low-rank QK
+factorisation; MFA-KR reuses key cache as value.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2406.06484">Parallelizing Linear
+Transformers with the Delta Rule over Sequence Length</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Core delta recurrence and Section 3
+WY/chunkwise composition inspected. Book explains structured composition
+without reproducing a kernel or benchmark claim. Eq. 4–11 delta
+recurrence; §3 WY/UT chunkwise form for products of I − βkkᵀ. Abstract:
+memory-efficient Householder-product (WY) representation enables
+chunkwise DeltaNet training; 1.3B on 100B tokens.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2406.02069">PyramidKV: Dynamic KV
+Cache Compression based on Pyramidal Information Funneling</a></td>
+<td>arXiv 2024 · UW–Madison / PKU / Microsoft</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> §4.2 Eq. 1 arithmetic budget, β = 20, α =
+8; abstract: 12% matches full KV, 128 entries Needle.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2406.10774">Quest: Query-Aware
+Sparsity for Efficient Long-Context LLM Inference</a></td>
+<td>ICML 2024 · MIT Han Lab</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> §3.4 min/max bound; page 16; layers 1–2
+dense; 7.03× at 32K, budget 2048; passkey results.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.15891">RazorAttention: Efficient
+KV Cache Compression Through Retrieval Heads</a></td>
+<td>ICLR 2025 · Huawei</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> HTML v1 abstract and §3: retrieval (echo,
+induction) heads keep full KV; compensation token; &gt;70%
+reduction.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2405.12981">Reducing Transformer
+Key-Value Cache Size with Cross-Layer Attention</a></td>
+<td></td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> Inspected cross-layer sharing architecture
+and cache-count distinction. Numerical example of four sharing layers is
+original and illustrative. K/V heads shared between adjacent layers:
+another 2× beyond MQA at nearly MQA accuracy (1B/3B models).</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2410.06205">Round and Round We Go!
+What Makes Rotary Positional Encodings Useful?</a></td>
+<td>ICLR 2025 · Oxford, Google DeepMind</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> p-RoPE removes lowest frequencies; Table 2
+Gemma 2B 8K Wiki ppl: NoPE 4.859, RoPE 4.463, 0.25 4.530, 0.75
+4.441.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2412.10319">SCBench: A KV
+Cache-Centric Analysis of Long-Context Methods</a></td>
+<td>ICLR 2025 · Microsoft / University of Surrey</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>abstract</strong> Abstract and poster: shared-context
+multi-turn benchmark; sub-O(n) memory methods degrade across turns.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2411.10958">SageAttention2: Efficient
+Attention with Thorough Outlier Smoothing and Per-thread INT4
+Quantization</a></td>
+<td>ICML 2025 · Tsinghua</td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>abstract</strong> INT4 Q,K thread-level, FP8 P̃V, smooth Q;
+≈3×/4.5× over FA-2/xformers on RTX 4090; matches FA-3 FP8 on
+Hopper.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2410.02367">SageAttention: Accurate
+8-Bit Attention for Plug-and-play Inference Acceleration</a></td>
+<td>ICLR 2025 · Tsinghua</td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> §3 K smoothing γ(K)=K−mean(K); INT8 QK,
+FP16 PV with FP16 accumulator (2× on RTX 4090); abstract 2.1×/2.7×.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2406.07522">Samba: Simple Hybrid
+State Space Models for Efficient Unlimited Context Language
+Modeling</a></td>
+<td>ICLR 2025 · Microsoft</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> Layer-wise Mamba-MLP-SWA-MLP; SWA window
+2048; up to 3.8B.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2404.14469">SnapKV: LLM Knows What
+You are Looking for Before Generation</a></td>
+<td>NeurIPS 2024 · UIUC / Cohere</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> HTML v2 §4–5: window 32, max-pool kernel
+7, budgets 1024–4096; 3.6×/8.2× at 16K; 380K on A100.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2407.21783">The Llama 3 Herd of
+Models</a></td>
+<td>Meta</td>
+<td><a href="../chapters/00-map.html">00</a>, <a
+href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/14-serving.html">14</a></td>
+<td><strong>sections</strong> Table 3: 8B has 32 layers, 32 Q / 8 KV
+heads, width 4096; 70B has 80 layers, 64 Q / 8 KV heads; 405B has 126
+layers. §3.3.2 all-gather K/V CP, 2×CP chunks, GQA K/V small; Table 4 CP
+= 16 at 131,072.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2501.00663">Titans: Learning to
+Memorize at Test Time</a></td>
+<td>NeurIPS 2025 · Google Research</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Eq. 8–18 surprise, momentum, decay; §4
+MAC/MAG/MAL; Table 2 S-NIAH; Table 5 ablation; §5.8 throughput.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2402.17463">Training-Free
+Long-Context Scaling of Large Language Models (Dual Chunk
+Attention)</a></td>
+<td>ICML 2024 (PMLR 235) · HKU, Alibaba</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>abstract</strong> Abstract: intra/inter-chunk relative
+positions, Llama2 70B beyond 100K tokens without training.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2405.21060">Transformers are SSMs:
+Generalized Models and Efficient Algorithms Through Structured State
+Space Duality</a></td>
+<td></td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>sections</strong> Sections 3 and 5 inspected: semiseparable
+sequence operators, structured masked attention, and restricted
+state-space duality. Book does not equate all SSMs with softmax
+attention. Scalar×identity A; Y=(L∘QKᵀ)V; Fig. 4 C↔︎Q, B↔︎K, X↔︎V; Thm 6.1
+costs; 2–8× faster than scan.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2411.12537">Unlocking State-Tracking
+in Linear RNNs Through Negative Eigenvalues</a></td>
+<td>ICLR 2025</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>abstract</strong> Positive-eigenvalue finite-precision LRNNs
+cannot solve parity; eigenvalues in [−1, 1] reach regular
+languages.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2405.05254">You Only Cache Once:
+Decoder-Decoder Architectures for Language Models</a></td>
+<td>NeurIPS 2024 · Microsoft Research / Tsinghua</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> Self-decoder (SWA or gRet) + cross-decoder
+on one global KV; ≈80× less KV at 65B; 2.87× prefill at 32K.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://github.com/deepseek-ai/3FS">3FS: Fire-Flyer File
+System (README)</a></td>
+<td>GitHub · DeepSeek</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> ≈6.6 TiB/s aggregate reads, 180
+storage nodes × 16 NVMe SSDs; KVCache use case.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.23735">ATLAS: Learning to
+Optimally Memorize the Context at Test Time</a></td>
+<td>arXiv 2025 · Google Research</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Prop. 1–2 capacity; Eq. 9 Omega rule; Eq.
+32–33 Muon update; §6.3 BABILong above 80% at 10M.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.02475">Comba: Improving Bilinear
+RNNs with Closed-loop Control</a></td>
+<td>arXiv 2025 · Hu et al.</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Eq. 5 αI − β̃kkᵀ sum form; output
+correction q − dk (via research brief B).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2504.00698">Command A: An
+Enterprise-Ready Large Language Model</a></td>
+<td>arXiv 2025 · Cohere</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>abstract</strong> Architecture: SWA and full attention
+interleaved 3:1; RoPE on SWA layers, NoPE on full layers (via search
+excerpt).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/config.json">DeepSeek-V2
+/ V3 / V3.2 config.json</a></td>
+<td>Hugging Face · DeepSeek-AI</td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>official report</strong> kv_lora_rank 512, qk_rope_head_dim
+64, qk_nope/v 128, 128 heads, q_lora_rank 1536, hidden 7168, layers 60
+(V2) / 61 (V3, V3.2).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/config.json">DeepSeek-V3.2
+config.json</a></td>
+<td>DeepSeek-AI model card</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>official report</strong> index_n_heads 64, index_head_dim
+128, index_topk 2048, 128 heads, kv_lora_rank 512, rope 64.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://vllm.ai/blog/2025-09-29-deepseek-v3-2">DeepSeek-V3.2-Exp
+in vLLM (blog)</a></td>
+<td>vLLM blog</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a>, <a
+href="../chapters/08-fewer-records.html">08</a>, <a
+href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> FP8 MLA cache 656 B per token: 512
+e4m3, 4 fp32 scales, 64 BF16 RoPE; top-2048 indices. MLA FP8 cache 656
+B/token/layer: 512 e4m3 + 4 fp32 scales + 64 BF16 RoPE values. 656
+B/token MLA FP8 layout: 512 e4m3 + 4 fp32 scales per 128 + 64 BF16 RoPE;
+block size 64.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2512.02556">DeepSeek-V3.2: Pushing
+the Frontier of Open Large Language Models</a></td>
+<td></td>
+<td><a href="../chapters/04-latent-kv.html">04</a>, <a
+href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> Read §§2.1–2.3: learned lightning indexer,
+top-k MLA entry selection, dense indexer warm-up and sparse continued
+training; main attention O(Nk) while full-sequence indexer remains
+O(N²). §2.1: latent shared across all query heads (MQA mode); App. A
+Fig. 7: MHA mode trains/prefills, MQA mode decodes. §2.1 Eq. 1 ReLU then
+weights, FP8, top-2048, MQA mode; training 2.1B then 943.7B tokens.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md">DeepSeek-V3/R1
+Inference System Overview (Open Source Week day 6)</a></td>
+<td>GitHub · DeepSeek</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> PD disaggregation; prefill 4 nodes
+EP32, decode 18 nodes EP144; 342B/608B (56.3%) disk-cache hits;
+73.7k/14.8k tok/s.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.10297">DeltaProduct: Improving
+State-Tracking in Linear RNNs via Householder Products</a></td>
+<td>NeurIPS 2025</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>abstract</strong> n_h steps per token: identity plus
+rank-n_h transition from n_h generalized Householders.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2512.23675">End-to-End Test-Time
+Training for Long Context (TTT-E2E)</a></td>
+<td>arXiv 2025 · Astera, Stanford, UC Berkeley, UC San Diego,
+NVIDIA</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> §2.3 window 8K, b = 1K, last 1/4 blocks;
+2.7× prefill at 128K; §3.7 training 3.4×/1.2×; Table 2 S-NIAH.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2507.22448">Falcon-H1: A Family of
+Hybrid-Head Language Models Redefining Efficiency and
+Performance</a></td>
+<td>Technical report 2025 · TII</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> Parallel attention + Mamba-2 mixer; SA_M
+block, channels ≈ 2:1:5; 34B config: 72 layers, 4 KV heads.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2501.01005">FlashInfer: Efficient and
+Customizable Attention Engine for LLM Inference Serving</a></td>
+<td>MLSys 2025 · UW, NVIDIA, CMU et al.</td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> §2.2 LSE merge operator; §3.1 page table
+as BSR (Fig. 2); §3.3.1 split-KV scheduler; abstract 29–69%.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://github.com/deepseek-ai/FlashMLA/blob/ba89a3466e9470ad08ab39738d4e7bb66989e1e7/README.md">FlashMLA
+README (commit ba89a34, pre-2026-09 format)</a></td>
+<td>GitHub · DeepSeek-AI</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>official report</strong> V3.2 FP8 row: 512 FP8 values, fp32
+scales, 64 BF16 RoPE = 656 B; MQA mode K 576, V 512.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA:
+efficient MLA decoding kernels (README)</a></td>
+<td>GitHub · DeepSeek</td>
+<td><a href="../chapters/13-kernels.html">13</a>, <a
+href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> Commits 480405a/1408756 and
+current: block 64; 3000 GB/s, 580/660 TFLOPS H800; 656 B V3.2; 528/288 B
+V4.1 layouts.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.20766">FlexPrefill: A
+Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence
+Inference</a></td>
+<td>ICLR 2025 oral</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>abstract</strong> JS-divergence pattern switch;
+cumulative-attention index selection to a threshold.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2503.02130">Forgetting Transformer:
+Softmax Attention with a Forget Gate</a></td>
+<td>ICLR 2025 · Mila</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> §3: e + sum ln f_l = c_t − c_j bias;
+FlashAttention-compatible; no positional embedding needed.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/zai-org/GLM-4.6/blob/main/config.json">GLM-4.6
+config.json</a></td>
+<td>Zhipu AI</td>
+<td><a href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 92 layers, 96 Q / 8 KV heads, head
+dim 128.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.06708">Gated Attention for Large
+Language Models: Non-linearity, Sparsity, and
+Attention-Sink-Free</a></td>
+<td></td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> Sections 2–4 inspected: SDPA output gate,
+elementwise versus headwise and head-specific versus shared granularity,
+sparse output modulation, and nonlinearity. Output activation sparsity
+is explicitly distinguished from skipping attention computation. Y’ = Y
+⊙ σ(XW); first-token 46.7% → 4.8%; max act 1053 → 94; PPL 6.026 →
+5.761.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2503.19786">Gemma 3 Technical
+Report</a></td>
+<td>Google DeepMind</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 27B: 62 layers, 5 local : 1 global,
+W 1024, 16 KV heads × 128. §2: soft-cap replaced by QK-norm; RoPE 1M
+global / 10K local; 5:1 pattern; §5.3 PI factor 8; window 1,024. §2: 5
+local per global, span 1024, 128K; §5.2: KV overhead 60% global-only,
+under 15% windowed.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.21487">Hardware-Efficient
+Attention for Fast Decoding</a></td>
+<td>arXiv 2025 · Princeton (Zadouri, Strauss, Dao)</td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>sections</strong> Table 1 intensities (MHA 1, GQA g, MQA
+h_q, MLA 2h_q, GTA 2g); §3.3 GTA/GLA; Table 5 GLA-2 per-device
+bytes.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2509.24663">InfLLM-V2: Dense-Sparse
+Switchable Attention for Seamless Short-to-Long Adaptation</a></td>
+<td>arXiv · Tsinghua, OpenBMB</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> No extra parameters; block 64; 1 + 32
+local + 63 top-k blocks ≈ 6K tokens; MiniCPM4.1.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.05345">Inference-Time
+Hyper-Scaling with KV Cache Compression (DMS)</a></td>
+<td>NeurIPS 2025 · NVIDIA / University of Edinburgh</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> §3 delayed eviction at t+w, w = 256
+default; ≈1K steps to 8×; DMC needed 44K steps.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide">Introducing
+Gemma 3n: The developer guide</a></td>
+<td>Google Developers Blog, 2025-06-26</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>official report</strong> Middle-layer local/global KV shared
+with all top layers; 2× prefill vs Gemma 3 4B; cfg 15 of 35 shared.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2504.13173">It’s All Connected: A
+Journey Through Test-Time Memorization, Attentional Bias, Retention, and
+Online Optimization (Miras)</a></td>
+<td>arXiv 2025 · Google Research</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Fig. 1 four design choices: memory
+architecture, attentional bias, retention gate, learning algorithm;
+Table 1.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2508.15884">Jet-Nemotron: Efficient
+Language Model with Post Neural Architecture Search</a></td>
+<td>arXiv 2025 · NVIDIA</td>
+<td><a href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> JetBlock = Gated DeltaNet + dynamic
+convolution on V (via research brief B). PostNAS: frozen MLPs, supernet,
+beam search; full 15, 20; SWA 21, 22; Table 3 at 64K.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.23416">KVzip: Query-Agnostic KV
+Cache Compression with Context Reconstruction</a></td>
+<td>NeurIPS 2025 (oral) · Seoul National University / NAVER AI Lab</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>sections</strong> §3 repeat prompt, max over grouped heads
+and positions, 2K chunks; abstract 3–4×, ≈2× decode, 170K.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2507.20534">Kimi K2: Open Agentic
+Intelligence</a></td>
+<td>Moonshot AI</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/04-latent-kv.html">04</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 61 MLA layers, 64 heads, d_c 512 +
+d_r 64. §2.1 QK-Clip: gamma = min(1, tau/S_max), tau 100, per head;
+QK-Norm infeasible for MLA. §2.3: 64 vs 128 heads, +83% inference FLOPs
+at 128K, 0.5–1.2% val-loss gain; §2.1 QK-Norm unusable with MLA.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2510.26692">Kimi Linear: An
+Expressive, Efficient Attention Architecture</a></td>
+<td>Moonshot AI</td>
+<td><a href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> Released 48B-A3B: 27 layers = 20
+KDA + 7 MLA. Sections 2–4 and 7.2 inspected: KDA per-key-channel decay,
+exact gate/correction order, output sigmoid gate after RMSNorm and
+before output projection, 3:1 KDA/Full-MLA layerwise mixture, and
+finite-state retrieval limits. No maximum cache/throughput ratios
+quoted. Eq. 1 KDA; §3.2 second-level chunk matrices four→two; §6.2 ≈2×
+DPLR to 64K; abstract 75% KV, 6× decode at 1M. Table 1 ratio ablation;
+NoPE MLA; TPOT 1.84 vs 11.48 ms at 1M; config full_attn_layers 4…24,
+27.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct/blob/main/config.json">Kimi-Linear-48B-A3B-Instruct
+config.json</a></td>
+<td>Hugging Face · Moonshot AI</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>official report</strong> 27 layers; full_attn_layers
+4,8,…,24,27; KDA 32 heads × 128; conv 4; kv_lora 512 + rope 64.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2510.09665">LMCache: An Efficient KV
+Cache Layer for Enterprise-Scale LLM Inference</a></td>
+<td>arXiv 2025 · Liu et al.</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>abstract</strong> KV across GPU, CPU, storage, network; up
+to 15× throughput with vLLM; truncation can halve prefix hit ratio.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/unsloth/Llama-4-Scout-17B-16E-Instruct/blob/main/config.json">Llama
+4 Scout config.json and HF modeling_llama4.py</a></td>
+<td>Hugging Face config · Meta (mirror)</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>official report</strong> no_rope_layers [1,1,1,0]×12; chunk
+8192; attn_scale 0.1, floor_scale 8192; llama3 rope ×16; L2 qk-norm on
+RoPE layers.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://ai.meta.com/blog/llama-4-multimodal-intelligence">Llama 4
+multimodal intelligence (blog) and Scout config</a></td>
+<td>Meta</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 48 layers, 3 chunked : 1 global
+NoPE, 8 KV heads × 128. iRoPE: interleaved layers without positional
+embeddings; inference-time attention temperature scaling; Scout 10M
+context. iRoPE quote; config attention_chunk_size 8192, no_rope_layers
+1,1,1,0 over 48 layers; RoPE layers chunked.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.04761">Log-Linear
+Attention</a></td>
+<td>ICLR 2026 · MIT, CMU, Princeton</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> §3.1 Fenwick buckets, L ≤ ⌈log2 t+1⌉+1;
+§3.2 decoding; §4.2 setup and params; Table 3 ppl; §5 limitations.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.05233">MesaNet: Sequence
+Modeling by Locally Optimal Test-Time Training</a></td>
+<td>ICLR 2026 · Google Paradigms of Intelligence</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Eq. 3, 7–10; CG ≈ k× GLA FLOPs; H &lt; 1%
+footprint; ε=1e-4 ≈ 9 steps; Table 3 recall.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2501.08313">MiniMax-01: Scaling
+Foundation Models with Lightning Attention</a></td>
+<td>MiniMax</td>
+<td><a href="../chapters/09-linear-state.html">09</a>, <a
+href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>sections</strong> 80 layers = 10 × (7 lightning + 1
+softmax), GQA 64/8/128. §2: lightning attention, one softmax block after
+every 7 lightning blocks, 80 layers. Softmax block after every 7
+lightning blocks, 80 layers; pure linear attention fails retrieval (§2
+conclusion); config.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.13585">MiniMax-M1: Scaling
+Test-Time Compute Efficiently with Lightning Attention</a></td>
+<td>Technical report 2025 · MiniMax</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> Same hybrid design; ~25% of DeepSeek-R1
+FLOPs at 100K generation; FP32 LM head fix.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://www.minimax.io/news/why-did-m2-end-up-as-a-full-attention-model">MiniMax-M2
+config.json and blog post on returning to full attention</a></td>
+<td>MiniMax</td>
+<td><a href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 62 full-attention layers, 48 Q / 8
+KV heads × 128.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/MiniMaxAI/MiniMax-Text-01/blob/main/modeling_minimax_text_01.py">MiniMax-Text-01
+config.json and modeling_minimax_text_01.py</a></td>
+<td>Hugging Face · MiniMax</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>official report</strong> ALiBi slopes 2^(−h/8),
+slope·(1−ℓ/(L−1)), BLOCK=256, sigmoid output gate; config: 80 layers,
+64×128 heads, 8 KV heads.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512-BF16/blob/main/params.json">Mistral
+Large 3 params.json</a></td>
+<td>Hugging Face · Mistral AI</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>official report</strong> 61 layers, 128 heads, kv_lora_rank
+512, qk_rope_head_dim 64, qk_nope 128, v 128, q_lora_rank 1536.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.13189">MoBA: Mixture of Block
+Attention for Long-Context LLMs</a></td>
+<td></td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> Read §2 routing equations and causality
+handling: query dot mean-key block scores, original token-level KV read
+in selected blocks, mandatory current block with causal masking, and
+sparse/full-attention mixtures. Eq. 6 mean-key gate; 512/top-3 and
+4096/top-12 sparsity; last 3 layers full; Kimi; 6.5×.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/openai/gpt-oss-120b/blob/main/config.json">Model
+configs used for layout strips (Gemma 3 27B, gpt-oss-120b, Granite
+4.0-H-Small, MiniMax-M2, Llama-3.1-70B)</a></td>
+<td>config.json files · Google, OpenAI, IBM, MiniMax, Meta</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>official report</strong> Gemma 3 sliding_window_pattern 6, W
+1024; gpt-oss alternating SWA-128; Granite 4/40 attention; M2 62 full;
+Llama 80×8 KV.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://github.com/kvcache-ai/Mooncake">Mooncake (GitHub
+README)</a></td>
+<td>GitHub · Moonshot AI</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> Transfer Engine 87 / 190 GB/s on
+4×200 / 8×400 Gbps RoCE; Mooncake Store over DRAM and SSD.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://www.usenix.org/conference/fast25/presentation/qin">Mooncake:
+Trading More Storage for Less Computation — A KVCache-centric
+Architecture for Serving LLM Chatbot</a></td>
+<td>FAST 2025 (best paper) · Moonshot AI, Tsinghua</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>abstract</strong> +59–498% effective capacity; Kimi +115%
+(A800) / +107% (H800); KV pool on CPU/DRAM/SSD/NIC.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://huggingface.co/nvidia/Qwen3-8B-DMS-8x">NVIDIA
+DMC/DMS checkpoints on Hugging Face</a></td>
+<td>NVIDIA (Hugging Face)</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>official report</strong> HF API confirms
+nvidia/Qwen3-8B-DMS-8x and Llama-2-7B/13B-DMC-4x/8x repos.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2512.20848">NVIDIA Nemotron 3 Nano
+technical report</a></td>
+<td>NVIDIA</td>
+<td><a href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 52 layers: 23 Mamba-2 + 23 MoE + 6
+attention with GQA 32/2/128. 3.3× vs Qwen3-30B-A3B at 8K/16K on H200;
+config: 23 Mamba-2 + 6 GQA (2 KV heads), fp32 SSM cache.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2508.14444">NVIDIA Nemotron Nano 2:
+An Accurate and Efficient Hybrid Mamba-Transformer Reasoning
+Model</a></td>
+<td>arXiv 2025 · NVIDIA</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>abstract</strong> Up to 6× throughput vs Qwen3-8B at 8K
+in/16K out; config hybrid_override_pattern (4 attention layers).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/blob/main/config.json">NVIDIA-Nemotron-3-Nano-30B-A3B
+config.json</a></td>
+<td>Hugging Face · NVIDIA</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>official report</strong> 52 layers (23 M, 23 E, 6 *); 64
+heads × 64 head dim × 128 state; n_groups 8; chunk 128; conv 4.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.11089">Native Sparse Attention:
+Hardware-Aligned and Natively Trainable Sparse Attention</a></td>
+<td></td>
+<td><a href="../chapters/06-sparse-reads.html">06</a>, <a
+href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>sections</strong> Read §3: learned overlapping block
+summaries; compression-score-derived block selection aggregated across
+shared KV query groups; independent KV representations and gated
+combination of compression, selection and local branches. Eq. 5 gates; l
+32, d 16, l′ 64, n 16 incl. 1+2 forced, w 512; GQA 4×16; 9.0×/6.0×. HTML
+§3.3.1 Eqs. 7–10, §4.1: l 32, d 16, l′ 64, n 16, w 512; independent KV
+per branch.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2504.03624">Nemotron-H: A Family of
+Accurate and Efficient Hybrid Mamba-Transformer Models</a></td>
+<td>NVIDIA</td>
+<td><a href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>sections</strong> 56B: 118 layers, 10 attention layers with
+GQA 64/8/128. §2: ≈8% attention evenly dispersed, first layer Mamba-2,
+no position embeddings; 2.4× at 64K in/1K out; 56B config.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/allenai/Olmo-3-1025-7B/blob/main/config.json">OLMo
+3 7B config.json</a></td>
+<td>Hugging Face config · Ai2</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a></td>
+<td><strong>official report</strong> yarn factor 8, original 8192,
+attention_factor 1.2079 = 0.1 ln 8 + 1 → logits × 1.459. 32 layers,
+layer_types three sliding then one full, sliding_window 4096.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://developer.nvidia.com/blog/optimizing-inference-for-long-context-and-large-batch-sizes-with-nvfp4-kv-cache">Optimizing
+Inference for Long Context and Large Batch Sizes with NVFP4 KV
+Cache</a></td>
+<td>NVIDIA Technical Blog</td>
+<td><a href="../chapters/14-serving.html">14</a></td>
+<td><strong>official report</strong> ≈50% of FP8 memory, &lt;1% accuracy
+loss, dequantized to FP8 before attention math; Blackwell.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.16381">PaTH Attention: Position
+Encoding via Accumulating Householder Transformations</a></td>
+<td>NeurIPS 2025</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> §3 Eq. 1: softmax logit with products of I
+− βwwᵀ, β ∈ (0, 2) (via research brief B).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning/blob/main/modeling_phi4flash.py">Phi-4-mini-flash-reasoning
+modeling_phi4flash.py</a></td>
+<td>Hugging Face · Microsoft</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>official report</strong> SambaYAttention uses
+FlashDiffCustomAttention; lambda_init_fn 0.8 − 0.6 exp(−0.3 depth);
+subln × (1 − lambda_init).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/microsoft/Phi-4-mini-instruct/blob/main/config.json">Phi-4-mini-instruct
+config.json</a></td>
+<td>Hugging Face config · Microsoft</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> partial_rotary_factor 0.75
+(96/128); rope_scaling longrope with 48 long factors 1 → 47.77.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2501.15383">Qwen2.5-1M Technical
+Report</a></td>
+<td>arXiv · Qwen</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> §5: MInference Vertical-Slash in
+deployment; 3–7× prefill speedup at 1M on H20/A100.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.09388">Qwen3 Technical
+Report</a></td>
+<td>arXiv 2025 · Qwen, Alibaba</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> §2: QKV-bias removed, QK-Norm added; §3.2:
+ABF 10,000 → 1,000,000; YaRN + DCA for 4× length at inference.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3_next/modeling_qwen3_next.py">Qwen3-Next
+HF modeling_qwen3_next.py and Qwen3.5 config</a></td>
+<td>Hugging Face Transformers · Qwen</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>official report</strong> q_proj outputs 2× (query + gate);
+attn_output × sigmoid(gate); per-head q/k RMSNorm. Qwen3.5 config
+attn_output_gate true.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/blob/main/config.json">Qwen3-Next-80B-A3B
+config.json</a></td>
+<td>Qwen</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/10-delta-rule.html">10</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 48 layers = 12 × (3 GDN + 1 gated
+attention), attention 16 Q / 2 KV × 256. GLM-4.5 0.5 of 128; MiniMax-M2
+rotary_dim 64/128; MiMo 0.334 of 192; Qwen3-Next 0.25 of 256, theta 1e7.
+48 layers, full_attention_interval 4; 32 value / 16 key heads, dims 128;
+conv 4.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct">Qwen3-Next-80B-A3B-Instruct:
+Official Model Card</a></td>
+<td></td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>official report</strong> Model Overview verifies 48 layers
+and 12 repetitions of three Gated DeltaNet/MoE blocks followed by one
+Gated Attention/MoE block; explicit attention uses 16 Q and 2 KV heads.
+Layout 12 × (3 GDN + 1 gated attention); config: 32 V/16 QK heads, GQA
+16/2/256.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2503.14456">RWKV-7 “Goose” with
+Expressive Dynamic State Evolution</a></td>
+<td>arXiv 2025 · RWKV Project, EleutherAI</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Eq. 16–17 diag(w) − κ̂(a⊙κ̂)ᵀ; vector a;
+head size 64; 0.1B–2.9B on 1.6–5.6T tokens.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2501.18795">Rope to Nope and Back
+Again: A New Hybrid Attention Strategy (RNoPE)</a></td>
+<td>arXiv 2025 · Cohere</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>sections</strong> §2–3: 3 SWA RoPE (W 4,096) : 1 full NoPE;
+QK-norm removed; needle attention 0.0765 → 0.0369 when theta
+raised.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.11594">SageAttention3:
+Microscaling FP4 Attention for Inference and An Exploration of 8-Bit
+Training</a></td>
+<td>NeurIPS 2025 · Tsinghua</td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> NVFP4 (E2M1, 1×16, E4M3 scales) for QKᵀ
+and PV; 1038 TOPS RTX 5090, ≈5× FA-2; 8-bit training slower in
+pretraining.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2501.19399">Scalable-Softmax Is
+Superior for Attention</a></td>
+<td>arXiv 2025 · Nakanishi</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>sections</strong> Eq. 2 logits × s ln n; s per layer and
+head (144 params); §2.2 max weight → 0.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct/blob/main/config.json">Seed-OSS-36B-Instruct
+config.json</a></td>
+<td>Hugging Face config · ByteDance Seed</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> rope_theta 10,000,000 with head_dim
+128 (used for the 10M curve).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/HuggingFaceTB/SmolLM3-3B/blob/main/config.json">SmolLM3-3B
+config.json</a></td>
+<td>Hugging Face config · Hugging Face</td>
+<td><a href="../chapters/01-positions.html">01</a></td>
+<td><strong>official report</strong> 36 layers, no_rope_layer_interval 4
+(27 RoPE + 9 NoPE), all full attention, 16 Q / 4 KV heads.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/stepfun-ai/step3/blob/main/config.json">Step-3
+config.json</a></td>
+<td>Hugging Face · StepFun</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>official report</strong> 61 layers, num_attention_heads 64,
+num_attention_groups 1, head_dim 256, share_q_dim 2048.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2507.19427">Step-3 is Large yet
+Affordable: Model-system Co-design for Cost-effective Decoding</a></td>
+<td>arXiv 2025 · StepFun</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> §2 MFA: 64 heads × 256, one K and one V
+head, query rank 2048; §5.1 intensities; Table 4 ridges.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2505.23884">Test-Time Training Done
+Right (LaCT)</a></td>
+<td>ICLR 2026 · MIT, Adobe Research</td>
+<td><a href="../chapters/11-test-time-learning.html">11</a></td>
+<td><strong>sections</strong> Eq. 3 intensity; Eq. 4–7 SwiGLU, dot loss,
+Muon; &lt;5% vs 70% utilization; Tables 1, 3.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.14837">Towards Economical
+Inference: Enabling DeepSeek’s Multi-Head Latent Attention in Any
+Transformer-based LLMs (MHA2MLA)</a></td>
+<td>ACL 2025 · Ji et al.</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>sections</strong> Partial-RoPE (2-norm) + joint SVD;
+0.3–0.6% data; Table 2 Llama-2-7B −68.75% BF16, −92.19% with Int4,
+LongBench 27.4→26.4.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2502.07864">TransMLA: Multi-Head
+Latent Attention Is All You Need</a></td>
+<td>arXiv 2025 · Meng et al.</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>sections</strong> GQA→MLA: RoRoPE/FreqFold, balanced KV PCA;
+Table 1 LLaMA-2-7B −92.97% with 6B tokens; 10.6× at 8K (abstract).</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/blog/MiniMax-AI/why-did-m2-end-up-as-a-full-attention-model">Why
+did MiniMax M2 end up as a full attention model?</a></td>
+<td>Hugging Face blog · MiniMax</td>
+<td><a href="../chapters/09-linear-state.html">09</a>, <a
+href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>official report</strong> M2 returned to full attention (via
+research brief B). Evaluation, cost, infrastructure (precision, prefix
+cache, speculative decoding) and failed SWA retrofit; crossover at a few
+thousand tokens.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2503.16428">XAttention: Block Sparse
+Attention with Antidiagonal Scoring</a></td>
+<td>ICML 2025 · MIT Han Lab</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>sections</strong> §2 antidiagonal block scores, minimal set
+over threshold; Table 5: 6.89% density at 128K, S 8.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2508.10925">gpt-oss-120b &amp;
+gpt-oss-20b Model Card</a></td>
+<td>OpenAI</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 120b: 36 layers alternating banded
+W 128 and dense; 64 Q / 8 KV heads × 64. §2.2: per-head
+softmax-denominator bias; band 128 alternating dense; 64 heads, 8 KV;
+YaRN to 131,072. §2.2: banded 128 alternating with dense, following
+GPT-3; 64 Q / 8 KV × 64; 36 layers.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a
+href="https://huggingface.co/ibm-granite/granite-4.0-h-small/blob/main/config.json">granite-4.0-h-small
+config.json</a></td>
+<td>Hugging Face · IBM</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>official report</strong> 40 layers: 36 mamba + 4 attention;
+128 heads × 64 × 128 state; chunk 256.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2503.13427">xLSTM 7B: A Recurrent LLM
+for Fast and Efficient Inference</a></td>
+<td>arXiv 2025 · NXAI, JKU Linz</td>
+<td><a href="../chapters/09-linear-state.html">09</a></td>
+<td><strong>sections</strong> mLSTM keeps normalizer max(|nᵀq|, e^(−m));
+config: 8 heads, qk 256, v 512 per head.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/blob/main/config.json">DeepSeek-V4-Flash
+config.json</a></td>
+<td>DeepSeek-AI (Hugging Face)</td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>official report</strong> compress_ratios: 2 zeros then 4/128
+alternating (21 CSA, 20 HCA); index_topk 512; sliding_window 128; 43
+layers.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/config.json">DeepSeek-V4-Pro
+config.json</a></td>
+<td>DeepSeek-AI (Hugging Face)</td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>official report</strong> compress_ratios: 128,128 then 4/128
+alternating (30 CSA, 31 HCA); index_topk 1024; head_dim 512; 61
+layers.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/config.json">DeepSeek-V4-Pro
+official inference/config.json</a></td>
+<td></td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>sections</strong> Checked compression ratios 4 and 128,
+local window 128, and per-layer ratio list with two initial HCA layers
+and subsequent interleaving; avoid interpreting pooled-record counts as
+full memory footprints.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/inference/model.py">DeepSeek-V4-Pro
+official inference/model.py</a></td>
+<td></td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>sections</strong> Inspected Compressor, Indexer and
+Attention implementations: overlap transform, per-channel softmax
+pooling, incomplete-block state, causal compressed-entry indices, and
+concatenation of local and compressed entries for the core attention.
+attn_sink per head; q RMS, kv_norm; 64/512 rotated, output de-rotated; W
+128; o_groups 16.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro">DeepSeek-V4-Pro
+official model card</a></td>
+<td></td>
+<td><a href="../chapters/08-fewer-records.html">08</a></td>
+<td><strong>official report</strong> Read model introduction and
+long-context evaluation tables, including MRCR and CorpusQA; whole-model
+results do not isolate a compressor’s contribution.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2609.19969">DeepSeek-V4.1-Flash:
+Pushing the Limits of KV Cache Compression</a></td>
+<td>DeepSeek</td>
+<td><a href="../chapters/14-serving.html">14</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> Abstract: global KV (main KV +
+indexer K, always in HBM) is 890 bytes per token, about 1/4 of V4-Flash;
+§2.4.4 FP4 E2M1 with an E4M3 scale per 16 channels. Inspected abstract,
+introduction, CSA2 cross-layer reuse, FP4 cache and persistent KV
+management. 890 bytes/token is attributed specifically to the report’s
+global HBM cache.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2606.19348">DeepSeek-V4: Towards
+Highly Efficient Million-Token Context Intelligence</a></td>
+<td>DeepSeek</td>
+<td><a href="../chapters/03-kv-heads.html">03</a>, <a
+href="../chapters/04-latent-kv.html">04</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/06-sparse-reads.html">06</a>, <a
+href="../chapters/08-fewer-records.html">08</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> Flash: 43 layers, 2 SWA-only then
+CSA/HCA alternating, W 128, one K=V head of 512, top-k 512. Read §2.3
+and §4.2: overlapping 2r-source-position CSA windows emitted every r
+positions, HCA non-overlapping dense compressed-history access,
+shared-KV MQA with the same entry as key and value, and local
+uncompressed entries. §2.3.1/2.3.3: each KV entry is key and value; last
+64 dims rotated, output re-rotated; cfg 1 KV head × 512. §4.2.1 Flash:
+43 layers, first two pure SWA, n_win 128; CSA m 4, 64×128 indexer, top-k
+512. §2.3 CSA/HCA, sinks, FP8+BF16 RoPE, FP4 indexer; §4.2.1 configs; §1
+27%/10%, 10%/7%; §2.3.4 ≈2%.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2606.04032">Do Transformers Need
+Three Projections? Systematic Study of QKV Variants</a></td>
+<td>ICML 2026 · Kayyam, Madan Gopal, Lewis</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>abstract</strong> Q-K=V: −50% KV at +3.1% perplexity
+(300M/1.2B, 10B tokens); +GQA-4 −87.5%; +MQA −96.9%.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2606.26560">Erase-then-Delta
+Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear
+Attention</a></td>
+<td>arXiv 2026</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Eq. 8: extra (I − γeeᵀ) erase before delta
+write; 2.5B dense and 25B-A2.8B MoE.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2604.19021">FG²-GDN: Enhancing
+Long-Context Gated Delta Networks with Doubly Fine-Grained
+Control</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Sections 3.2–3.4 distinguish tied
+square-root key/value scaling in base FG²-GDN from independent key/value
+vectors in ‘+’. Setup specifies 340M/15B and 1.3B/100B SlimPajama
+tokens, common 3:1 MLA hybrid, one run per configuration; limitations
+inspected. First submitted April 21, revised August 31, 2026. Eq. 10–13:
+√β on k and v (tied; separate in +); 340M/15B and 1.3B/100B.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2603.05451">FlashAttention-4:
+Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware
+Scaling</a></td>
+<td></td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>sections</strong> Inspected introduction, architecture
+bottlenecks and pipelining sections. Only mechanism-level claims used;
+benchmark maxima omitted. Abstract 1613 TFLOP/s (71%), 1.3× cuDNN, 2.7×
+Triton; 8192 vs 16 ops/clk/SM; τ = log2 256; 10–25% emulated exp.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/zai-org/GLM-5/blob/main/config.json">GLM-5
+config.json</a></td>
+<td>Hugging Face · Zhipu AI (zai-org)</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>official report</strong> 78 layers, 64 heads, kv_lora_rank
+512, qk_rope_head_dim 64, qk_nope 192, v_head_dim 256, q_lora_rank
+2048.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://huggingface.co/zai-org/GLM-5.2">GLM-5.2 model
+card</a></td>
+<td>Z.ai model card</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>official report</strong> IndexShare: one indexer per four
+sparse layers; 2.9× fewer per-token FLOPs at 1M.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2602.15763">GLM-5: from Vibe Coding
+to Agentic Engineering</a></td>
+<td>arXiv · Z.ai</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>abstract</strong> Abstract: GLM-5 adopts DSA to cut training
+and inference cost.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2605.22791">Gated DeltaNet-2:
+Decoupling Erase and Write in Linear Attention</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Section 3 equations 8–10 verify
+independent key-channel erase read and value-channel write target with
+original key write direction. Section 4/setup and appendix specify
+1.3B/100B FineWeb-Edu, recurrent-only and SWA hybrids. Submitted May 21,
+2026; labeled research rather than established deployment. Eq. 8–12
+erase gate b (key), write gate w (value); b=w=β1 recovers KDA;
+1.3B/100B.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/google/gemma-4-31b-it/blob/main/config.json">Gemma
+4 31B config.json and HF modeling_gemma4.py</a></td>
+<td>Hugging Face config · Google DeepMind</td>
+<td><a href="../chapters/01-positions.html">01</a>, <a
+href="../chapters/02-stable-softmax.html">02</a></td>
+<td><strong>official report</strong> Global: proportional RoPE 0.25,
+theta 1e6, 512 dims, 4 KV, K=V; local theta 1e4, W 1024; scaling 1.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://huggingface.co/google/gemma-4-31B-it">Gemma 4 31B
+model card</a></td>
+<td>Google DeepMind</td>
+<td><a href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 60 layers, 5 SWA (W 1024) : 1
+global; global 4 KV heads × 512 with K=V (reported −37.5% KV); p-RoPE
+25%.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2607.02770">Gemma 4 Technical
+Report</a></td>
+<td>arXiv 2026 · Google (Gemma Team)</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>sections</strong> §2: keys reused as values in global layers
+except E2B/E4B, global KV −37.5%; KV sharing 20/35 (E2B), 18/42
+(E4B).</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/google/gemma-4-31B-it/blob/main/config.json">Gemma
+4 config.json (31B, 26B-A4B, E2B, E4B) and Hugging Face
+modeling_gemma4.py</a></td>
+<td>Hugging Face · Google</td>
+<td><a href="../chapters/03-kv-heads.html">03</a></td>
+<td><strong>official report</strong> attention_k_eq_v, 4/2 global KV
+heads × 512, num_kv_shared_layers 20/18; code: v_proj None, v_norm,
+shared layers lack k_proj.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2603.12201">IndexCache: Accelerating
+Sparse Attention via Cross-Layer Index Reuse</a></td>
+<td>arXiv · Tsinghua, Z.ai</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a></td>
+<td><strong>abstract</strong> Shared layers reuse top-k indices; 75%
+indexer compute removed on 30B DSA; 1.82×/1.48×.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2609.07816">Kalman Delta Networks:
+Uncertainty-aware Associative Memory</a></td>
+<td></td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Sections 3–5 and Appendix A.1 explain
+Kalman residual/gain, predictive covariance, diagonal/isotropic retained
+projections, recurrent-only 750M/50B and 1.3B/100B experiments, and 1.3B
+hybrids with nine recurrent plus nine 2K-window layers. Internal
+association uncertainty is not calibrated final-answer confidence.
+Submitted September 7, revised September 29, 2026. Eq. 10–22: gain κ =
+p̂⊙k/(r + Σp̂k²), isotropic variant; 750M/50B and 1.3B/100B.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/config.json">Kimi
+K2, Kimi Linear and Kimi K3 config.json</a></td>
+<td>Hugging Face · Moonshot AI</td>
+<td><a href="../chapters/04-latent-kv.html">04</a></td>
+<td><strong>official report</strong> K2: 64 heads, 61 layers,
+kv_lora_rank 512, rope 64. Kimi Linear (32 heads) and K3 (96 heads):
+mla_use_nope true.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://huggingface.co/moonshotai/Kimi-K3">Kimi K3 model
+card and config</a></td>
+<td>Model card · Moonshot AI</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>official report</strong> 69 KDA + 24 gated MLA, 93 layers,
+96 heads, 2.8T/104B; config full_attn_layers ends 92, 93;
+mla_use_nope.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2603.15569">Mamba-3: Improved
+Sequence Modeling using State Space Principles</a></td>
+<td>ICLR 2026</td>
+<td><a href="../chapters/09-linear-state.html">09</a>, <a
+href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>sections</strong> Trapezoid α, β, γ with λ; complex state ≡
+data-dependent RoPE; MIMO; 1.5B/100B table; N=64 MIMO ≈ Mamba-2
+N=128.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2601.02780">MiMo-V2-Flash Technical
+Report</a></td>
+<td>Xiaomi</td>
+<td><a href="../chapters/02-stable-softmax.html">02</a>, <a
+href="../chapters/05-fixed-patterns.html">05</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> 48 layers: 39 SWA (W 128) + 9
+global with 4 KV heads, d_qk 192, d_v 128. §2.2 sink in denominator;
+Table 2 W=128: MMLU 54.9 → 58.3, BBH 52.4 → 56.1; config SWA-only. §2.1:
+39 SWA + 9 GA, W 128, KV heads 8/4, dims 192/128; §2.2.1: RULER-32K 89.4
+vs 84.7.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2606.13392">MiniMax Sparse
+Attention</a></td>
+<td>arXiv · MiniMax</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a>, <a
+href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>sections</strong> One index head per GQA group plus shared
+key head; block 128, top-16, max-pooled; 28.4× at 1M. M3 card: 9×
+prefill, 15× decode vs M2 at 1M; config: 57/60 sparse layers, top-16 ×
+128.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://github.com/NVIDIA/kvpress">NVIDIA kvpress
+README</a></td>
+<td>NVIDIA (GitHub)</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>official report</strong> Lists SnapKV, ObservedAttention
+(H2O), PyramidKV, AdaKV, KVzip, DuoAttention, DMS presses;
+question-in-prompt bias note.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/allenai/Olmo-Hybrid-7B/blob/main/config.json">Olmo-Hybrid-7B
+config.json</a></td>
+<td>Hugging Face · Ai2</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>official report</strong> linear_allow_neg_eigval true; 32
+layers, 3 linear : 1 full; 30 heads, key 96, value 192.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/Qwen/Qwen3.5-397B-A17B/blob/main/config.json">Qwen3.5-397B-A17B
+config.json</a></td>
+<td>Hugging Face · Qwen</td>
+<td><a href="../chapters/10-delta-rule.html">10</a></td>
+<td><strong>official report</strong> Gated DeltaNet layers, 64 value /
+16 key heads (via research brief B).</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a
+href="https://huggingface.co/Qwen/Qwen3.5-397B-A17B">Qwen3.5-397B-A17B
+model card and config</a></td>
+<td>Model card · Qwen team, Alibaba</td>
+<td><a href="../chapters/12-hybrids.html">12</a></td>
+<td><strong>official report</strong> Hidden layout 15 × (3 GDN + 1 gated
+attention); config: 64 V heads, GQA 32/2/256, mamba_ssm_dtype
+float32.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://arxiv.org/abs/2608.30320">Qwen3.8-Next architecture
+report (QSA)</a></td>
+<td>Qwen</td>
+<td><a href="../chapters/06-sparse-reads.html">06</a>, <a
+href="../chapters/12-hybrids.html">12</a>, <a
+href="../chapters/15-choose.html">15</a></td>
+<td><strong>official report</strong> Flash-Next: 48 layers = 12 × (3 GDN
++ 1 attention to QSA), 24 Q / 2 KV × 256, budget 2048. Section 2.1
+confirms GDN/global mixture and continued-pretraining replacement of
+explicit layers by QSA; indexer averages nonoverlapping micro-block keys
+and expands selected blocks into token indices for core attention.
+Submitted August 31, 2026. §2.1.2 QSA: 4 Q + 1 K heads × 128, 4-token
+pooled keys, budget 2048, 1-in-4 layers. §2.1: 25B-A3B ablation avg
+49.87 / 51.15 / 53.81; NoPE variant endless generation; sigmoid output
+gate.</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://aclanthology.org/2026.acl-long.1926">The Pitfalls
+of KV Cache Compression</a></td>
+<td>ACL 2026</td>
+<td><a href="../chapters/07-kv-eviction.html">07</a></td>
+<td><strong>abstract</strong> Anthology abstract: some instructions
+degrade faster under compression; system-prompt leakage factors; five
+methods on IFEval.</td>
+</tr>
+<tr>
+<td>Living project</td>
+<td><a href="https://github.com/fla-org/flash-linear-attention">Flash
+Linear Attention: efficient implementations for emerging model
+architectures</a></td>
+<td></td>
+<td><a href="../chapters/13-kernels.html">13</a></td>
+<td><strong>official report</strong> Inspected current official
+repository README as implementation-library evidence. Living project;
+year is not a publication date. Library of Triton chunkwise kernels
+(GLA, DeltaNet, Gated DeltaNet); living project, no publication
+date.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<footer class="chapter-footer"><a href="../index.html">← Book contents</a></footer></main><script>
+const bookNav = document.getElementById('book-navigation');
+if (window.innerWidth <= 900) bookNav.open = false;
+const search = document.getElementById('chapter-search');
+search.addEventListener('input', () => {
+  const term = search.value.trim().toLowerCase(); let visible = 0;
+  document.querySelectorAll('#chapter-list li').forEach(row => {
+    row.hidden = !row.dataset.search.includes(term); if (!row.hidden) visible++;
+  });
+  document.getElementById('no-chapters').hidden = visible > 0;
+});
+function revealSection() {
+  let id;
+  try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+  const target = id && document.getElementById(id);
+  const more = target && target.closest('details.more');
+  if (more) { more.open = true; requestAnimationFrame(() => target.scrollIntoView()); }
+}
+window.addEventListener('hashchange', revealSection);
+revealSection();
+const strength = document.getElementById('edit-strength');
+if (strength) {
+  function updateEdit() {
+    const beta = Number(strength.value);
+    const prediction = 2 + beta * 3;
+    document.getElementById('edit-beta').value = beta.toFixed(2);
+    document.getElementById('edit-result').value = '2 + ' + beta.toFixed(2) + ' × 3 = ' + Number(prediction.toFixed(2));
+    document.getElementById('edit-fill').style.width = (prediction / 5 * 100) + '%';
+  }
+  strength.addEventListener('input', updateEdit);
+  updateEdit();
+}
+</script></body></html>

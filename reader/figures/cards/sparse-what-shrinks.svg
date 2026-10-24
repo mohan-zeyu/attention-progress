@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 486" role="img" aria-labelledby="title desc">
+<title id="title">sparse-what-shrinks</title><desc id="desc">Two questions sort every route of chapters 05 to 08: does it shrink the records read or the records stored, and can the next query choose differently? Reads shrink and reversible: sparse reads (06: Quest, MoBA, NSA, DSA). Reads shrink and fixed: static patterns (05). Records shrink and irreversible: eviction (07), compression (08) and sliding-window layers (05). Records leave HBM but can return: offload (14). Llama-3-8B at 128K in BF16: reading 2,048 records keeps 16 GiB in HBM and moves 256 MiB per step; keeping 2,048 records stores and moves 256 MiB.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="486" fill="white"/>
+<text x="30" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">HBM</tspan> = <tspan fill="#3f83b6"><tspan font-style="italic">N</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">stored</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">b</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">rec</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></text>
+<text x="330" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bytes / step</tspan> = <tspan fill="#1f9a74"><tspan font-style="italic">N</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">read</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">b</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">rec</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> + <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">scorer</tspan></text>
+<text x="367.5" y="70" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">reads shrink · every record kept</text>
+<text x="712.5" y="70" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">records shrink · cache smaller</text>
+<text x="30" y="146" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">reversible</text>
+<text x="30" y="168.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">next query can</text>
+<text x="30" y="185.55" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">choose again</text>
+<text x="30" y="304" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">irreversible</text>
+<text x="30" y="326.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">decided before</text>
+<text x="30" y="343.55" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">the query arrives</text>
+<rect x="200" y="86" width="335" height="148" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<rect x="212" y="93" width="139.76" height="23" rx="11.5" fill="#1f9a74" fill-opacity=".14" stroke="#1f9a74" stroke-width="1"/>
+<text x="281.88" y="111" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">06 · Sparse reads</text>
+<text x="212" y="136" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Quest · MoBA · NSA · DSA · MSA</text>
+<text x="212" y="168" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q1</text>
+<rect x="236" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="250" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="264" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="278" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="292" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="306" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="320" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="334" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="348" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="362" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="376" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="390" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="404" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="418" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="432" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="446" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="460" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="474" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="488" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="502" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="212" y="194" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q2</text>
+<rect x="236" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="250" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="264" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="278" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="292" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="306" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="320" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="334" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="348" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="362" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="376" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="390" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="404" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="418" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="432" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="446" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="460" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="474" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="488" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="502" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="212" y="222" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">q2 reads other records</text>
+<rect x="545" y="86" width="335" height="148" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<rect x="557" y="93" width="103.36000000000001" height="23" rx="11.5" fill="#687986" fill-opacity=".14" stroke="#687986" stroke-width="1"/>
+<text x="608.6800000000001" y="111" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">14 · Offload</text>
+<text x="557" y="136" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">records leave HBM, fetched on demand</text>
+<text x="557" y="168" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q1</text>
+<rect x="581" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="595" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="609" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="623" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="637" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="651" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="665" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="679" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="693" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="707" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="721" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="735" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="749" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="763" y="155" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="777" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="791" y="155" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="805" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="819" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="833" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="847" y="155" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="557" y="194" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q2</text>
+<rect x="581" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="595" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="609" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="623" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="637" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="651" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="665" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="679" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="693" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="692" y="180" width="14" height="18" rx="2" fill="none" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="707" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="706" y="180" width="14" height="18" rx="2" fill="none" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="721" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="735" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="749" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="763" y="181" width="12" height="16" rx="2" fill="white" stroke="#687986" stroke-dasharray="3 2"/>
+<rect x="777" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="791" y="181" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="805" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="819" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="833" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="847" y="181" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="557" y="222" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">q2 pulls 8, 9 back</text>
+<rect x="200" y="244" width="335" height="148" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<rect x="212" y="251" width="154.32000000000002" height="23" rx="11.5" fill="#687986" fill-opacity=".14" stroke="#687986" stroke-width="1"/>
+<text x="289.16" y="269" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">05 · Fixed patterns</text>
+<text x="212" y="294" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Sparse Transformer · Longformer · BigBird</text>
+<text x="212" y="326" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q1</text>
+<rect x="236" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="250" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="264" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="278" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="292" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="306" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="320" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="334" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="348" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="362" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="376" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="390" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="404" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="418" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="432" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="446" y="313" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="460" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="474" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="488" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="502" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="212" y="352" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q2</text>
+<rect x="236" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="250" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="264" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="278" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="292" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="306" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="320" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="334" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="348" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="362" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="376" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="390" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="404" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="418" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="432" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="446" y="339" width="12" height="16" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<rect x="460" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="474" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="488" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="502" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="212" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">pattern ignores content</text>
+<rect x="545" y="244" width="335" height="148" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<rect x="557" y="251" width="241.68000000000004" height="23" rx="11.5" fill="#cf5f59" fill-opacity=".14" stroke="#cf5f59" stroke-width="1"/>
+<text x="677.84" y="269" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">07 Evict · 08 Compress · 05 SWA</text>
+<text x="557" y="294" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">StreamingLLM · H2O · SnapKV · CSA/HCA</text>
+<text x="557" y="326" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q1</text>
+<rect x="581" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="595" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="609" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="623" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="637" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="640" y1="316" x2="646" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="646" y1="316" x2="640" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="651" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="654" y1="316" x2="660" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="660" y1="316" x2="654" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="665" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="668" y1="316" x2="674" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="674" y1="316" x2="668" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="679" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="682" y1="316" x2="688" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="688" y1="316" x2="682" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="693" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="696" y1="316" x2="702" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="702" y1="316" x2="696" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="707" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="710" y1="316" x2="716" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="716" y1="316" x2="710" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="721" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="724" y1="316" x2="730" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="730" y1="316" x2="724" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="735" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="738" y1="316" x2="744" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="744" y1="316" x2="738" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="749" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="752" y1="316" x2="758" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="758" y1="316" x2="752" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="763" y="313" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="766" y1="316" x2="772" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="772" y1="316" x2="766" y2="326" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="777" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="791" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="805" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="819" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="833" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="847" y="313" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="557" y="352" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">q2</text>
+<rect x="581" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="595" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="609" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="623" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="637" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="640" y1="342" x2="646" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="646" y1="342" x2="640" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="651" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="654" y1="342" x2="660" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="660" y1="342" x2="654" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="665" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="668" y1="342" x2="674" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="674" y1="342" x2="668" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="679" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="682" y1="342" x2="688" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="688" y1="342" x2="682" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="693" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="696" y1="342" x2="702" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="702" y1="342" x2="696" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="707" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="710" y1="342" x2="716" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="716" y1="342" x2="710" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="721" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="724" y1="342" x2="730" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="730" y1="342" x2="724" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="735" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="738" y1="342" x2="744" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="744" y1="342" x2="738" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="749" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="752" y1="342" x2="758" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="758" y1="342" x2="752" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="763" y="339" width="12" height="16" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<line x1="766" y1="342" x2="772" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<line x1="772" y1="342" x2="766" y2="352" stroke="#cf5f59" stroke-width="1.2"/>
+<rect x="777" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="791" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="805" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="819" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="833" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<rect x="847" y="339" width="12" height="16" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="557" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">q2 needs record 9: gone</text>
+<rect x="200" y="402" width="12" height="12" rx="2" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="217" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">read</text>
+<rect x="262.04" y="402" width="12" height="12" rx="2" fill="#3f83b6" fill-opacity="0.28"/>
+<text x="279.04" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">stored, not read</text>
+<rect x="405.20000000000005" y="402" width="12" height="12" rx="2" fill="#cf5f59" fill-opacity="0.14"/>
+<text x="422.20000000000005" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">evicted / merged away</text>
+<rect x="582.1600000000001" y="402" width="12" height="12" rx="2" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1"/>
+<text x="599.1600000000001" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">off-GPU</text>
+<line x1="20" y1="426" x2="880" y2="426" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="452" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Llama-3-8B · 128K · BF16</text>
+<text x="30" y="470" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">128 KiB per token</text>
+<text x="250" y="452" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">read 2,048 of 131,072 (06)</text>
+<text x="250" y="470" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">HBM 16 GiB · 256 MiB moved per step</text>
+<text x="580" y="452" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">keep 2,048 (07)</text>
+<text x="580" y="470" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">HBM 256 MiB · 256 MiB moved per step</text>
+</svg>

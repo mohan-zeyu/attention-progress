@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 305" role="img" aria-labelledby="title desc">
+<title id="title">07-csa-hca</title><desc id="desc">CSA selects moderately compressed history. HCA reads every eligible heavily compressed historical entry. Both also read recent uncompressed positions. Counts are illustrative.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="305" fill="white"/>
+<text x="30" y="28" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">CSA: select compressed entries</text>
+<circle cx="75" cy="94" r="22" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="75" y="101.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Q</text>
+<rect x="200" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<text x="221.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">c</text>
+<rect x="260" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="281.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<path d="M100 94L140 94L140 58L281 58L281 68" fill="none" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="320" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<text x="341.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">c</text>
+<rect x="380" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<text x="401.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">c</text>
+<rect x="440" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="461.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<path d="M100 94L140 94L140 58L461 58L461 68" fill="none" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="500" y="72" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<text x="521.5" y="100.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">c</text>
+<line x1="645" y1="63" x2="645" y2="130" stroke="#cad5db" stroke-width="2"/>
+<rect x="689" y="72" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="699" y1="87" x2="724" y2="87" stroke="#209f78" stroke-width="2"/>
+<line x1="699" y1="98" x2="724" y2="98" stroke="#209f78" stroke-width="2"/>
+<line x1="699" y1="109" x2="724" y2="109" stroke="#209f78" stroke-width="2"/>
+<rect x="748" y="72" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="758" y1="87" x2="783" y2="87" stroke="#209f78" stroke-width="2"/>
+<line x1="758" y1="98" x2="783" y2="98" stroke="#209f78" stroke-width="2"/>
+<line x1="758" y1="109" x2="783" y2="109" stroke="#209f78" stroke-width="2"/>
+<rect x="807" y="72" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="817" y1="87" x2="842" y2="87" stroke="#209f78" stroke-width="2"/>
+<line x1="817" y1="98" x2="842" y2="98" stroke="#209f78" stroke-width="2"/>
+<line x1="817" y1="109" x2="842" y2="109" stroke="#209f78" stroke-width="2"/>
+<path d="M96 108L125 128L675 128L675 93L685 93" fill="none" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<text x="770" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Recent detail</text>
+<text x="30" y="173" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">HCA: read all compressed entries</text>
+<circle cx="75" cy="239" r="22" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="75" y="246.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Q</text>
+<rect x="200" y="217" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="221.5" y="245.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<path d="M100 239L140 239L140 203L221 203L221 213" fill="none" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="260" y="217" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="281.5" y="245.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<path d="M100 239L140 239L140 203L281 203L281 213" fill="none" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="320" y="217" width="43" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="341.5" y="245.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<path d="M100 239L140 239L140 203L341 203L341 213" fill="none" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="645" y1="208" x2="645" y2="275" stroke="#cad5db" stroke-width="2"/>
+<rect x="689" y="217" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="699" y1="232" x2="724" y2="232" stroke="#209f78" stroke-width="2"/>
+<line x1="699" y1="243" x2="724" y2="243" stroke="#209f78" stroke-width="2"/>
+<line x1="699" y1="254" x2="724" y2="254" stroke="#209f78" stroke-width="2"/>
+<rect x="748" y="217" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="758" y1="232" x2="783" y2="232" stroke="#209f78" stroke-width="2"/>
+<line x1="758" y1="243" x2="783" y2="243" stroke="#209f78" stroke-width="2"/>
+<line x1="758" y1="254" x2="783" y2="254" stroke="#209f78" stroke-width="2"/>
+<rect x="807" y="217" width="45" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<line x1="817" y1="232" x2="842" y2="232" stroke="#209f78" stroke-width="2"/>
+<line x1="817" y1="243" x2="842" y2="243" stroke="#209f78" stroke-width="2"/>
+<line x1="817" y1="254" x2="842" y2="254" stroke="#209f78" stroke-width="2"/>
+<path d="M96 253L125 273L675 273L675 238L685 238" fill="none" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<text x="770" y="297" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Recent detail</text>
+</svg>

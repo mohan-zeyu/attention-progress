@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="title desc">
+<title id="title">10-erase-write</title><desc id="desc">Gated DeltaNet-2 gates the key before the erase read, and gates the incoming value before forming the write target. Their residual corrects the faded state. The gate is not applied after the erase read.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="340" fill="white"/>
+<rect x="40" y="79" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="68" y="79" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="96" y="79" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="124" y="79" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="40" y="107" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="68" y="107" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="96" y="107" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="124" y="107" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="40" y="135" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="68" y="135" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="96" y="135" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="124" y="135" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="40" y="163" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="68" y="163" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="96" y="163" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="124" y="163" width="26" height="26" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<text x="96" y="230" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">Faded state S</text>
+<line x1="159" y1="135" x2="345" y2="135" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="353" y="109" width="151" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="428.5" y="142.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">Erase read</text>
+<rect x="190" y="17" width="108" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="244.0" y="45.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Key k</text>
+<line x1="301" y1="39" x2="324" y2="39" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<circle cx="352" cy="39" r="23" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="352" y="46.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">b</text>
+<path d="M379 39L427 39L427 104" fill="none" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="188" y="242" width="123" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="249.5" y="272.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Value v</text>
+<line x1="315" y1="265" x2="329" y2="265" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<circle cx="356" cy="265" r="23" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="356" y="272.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">w</text>
+<line x1="382" y1="265" x2="429" y2="265" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="435" y="242" width="151" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="510.5" y="272.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Write target</text>
+<line x1="509" y1="136" x2="626" y2="164" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<text x="554" y="121" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="400" fill="#9272b7">−</text>
+<line x1="591" y1="265" x2="643" y2="200" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<text x="630" y="255" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#209f78">+</text>
+<circle cx="657" cy="174" r="27" fill="#ffffff" stroke="#209f78" stroke-width="2"/>
+<text x="657" y="181.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Δ</text>
+<line x1="688" y1="174" x2="752" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<text x="718" y="150" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#209f78">× kᵀ</text>
+<rect x="762" y="120" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<rect x="788" y="120" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.49375"/>
+<rect x="814" y="120" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.7375"/>
+<rect x="840" y="120" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<rect x="762" y="146" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.81875"/>
+<rect x="788" y="146" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.33125"/>
+<rect x="814" y="146" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.575"/>
+<rect x="840" y="146" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.81875"/>
+<rect x="762" y="172" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.65625"/>
+<rect x="788" y="172" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.9"/>
+<rect x="814" y="172" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.4125"/>
+<rect x="840" y="172" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.65625"/>
+<rect x="762" y="198" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.49375"/>
+<rect x="788" y="198" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.7375"/>
+<rect x="814" y="198" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.25"/>
+<rect x="840" y="198" width="24" height="24" rx="2" fill="#209f78" fill-opacity="0.49375"/>
+<text x="810" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">Update S</text>
+<text x="450" y="328" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">Gate the key before reading; gate the value before writing.</text>
+</svg>

@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+<title id="title">pos-rope-spectrum</title><desc id="desc">RoPE pair i rotates by theta_i = b^(-2i/d_h) per token. Left: four pairs of Llama 3 (b = 500K, d_h = 128) over 1,000 tokens: pair 0 turns 159 times, pair 21 turns 2.1 times, pair 42 turns 10 degrees, pair 63 turns 0.14 degrees. Right: wavelength of all 64 pairs for b = 10K, 500K and 10M on a log axis with 8K and 128K context lines; the slowest pair spans 54K, 2.6M and 49M tokens. Bottom: Gemma 3 and DeepSeek-V4 use a small base in local layers and a large base in global layers.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="450" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#2a9aa6">θ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan font-style="italic">b</tspan><tspan dy="-8.8" font-size="14.3">-2<tspan font-style="italic">i</tspan>/<tspan font-style="italic">d</tspan><tspan dy="4.0" font-size="9.7"><tspan font-style="italic">h</tspan></tspan><tspan dy="-4.0" font-size="14.3"> </tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan></text>
+<text x="176.002208" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#2a9aa6">λ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = 2π / <tspan fill="#2a9aa6">θ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan></text>
+<text x="328.933408" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340">(<tspan font-style="italic">R</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan>)<tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>(<tspan font-style="italic">R</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan>) = <tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan> <tspan font-style="italic">R</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan>-<tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan></text>
+<rect x="20" y="56" width="300" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Each pair is a clock</text>
+<text x="34" y="98" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Llama 3 · b = 500K · d_h = 128</text>
+<text x="34" y="116" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">angle swept over Δ = 1,000 tokens</text>
+<circle cx="92" cy="172" r="30" fill="white" stroke="#2a9aa6" stroke-width="2"/>
+<line x1="92.0" y1="147.0" x2="92.0" y2="142.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="104.5" y1="150.34936490538902" x2="107.0" y2="146.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="113.65063509461096" y1="159.5" x2="117.98076211353316" y2="157.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="117.0" y1="172.0" x2="122.0" y2="172.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="113.65063509461098" y1="184.5" x2="117.98076211353316" y2="187.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="104.5" y1="193.65063509461098" x2="107.0" y2="197.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="92.0" y1="197.0" x2="92.0" y2="202.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="79.5" y1="193.65063509461098" x2="77.0" y2="197.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="70.34936490538904" y1="184.5" x2="66.01923788646684" y2="187.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="67.0" y1="172.0" x2="62.0" y2="172.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="70.34936490538904" y1="159.5" x2="66.01923788646684" y2="157.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="79.49999999999999" y1="150.34936490538905" x2="76.99999999999999" y2="146.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<path d="M92 172L92 150A22 22 0 0 1 110.2 159.6Z" fill="#2a9aa6" fill-opacity=".18"/>
+<line x1="92" y1="172" x2="111.8451089727682" y2="158.50290216902334" stroke="#2a9aa6" stroke-width="2.6"/>
+<line x1="92" y1="172" x2="92" y2="148" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="92" cy="172" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="130" y="166" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">pair 0</text>
+<text x="130" y="183" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ = 6.3</text>
+<text x="130" y="200" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">159 turns</text>
+<circle cx="248" cy="172" r="30" fill="white" stroke="#2a9aa6" stroke-width="2"/>
+<line x1="248.0" y1="147.0" x2="248.0" y2="142.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="260.5" y1="150.34936490538902" x2="263.0" y2="146.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="269.65063509461095" y1="159.5" x2="273.98076211353316" y2="157.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="273.0" y1="172.0" x2="278.0" y2="172.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="269.65063509461095" y1="184.5" x2="273.98076211353316" y2="187.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="260.5" y1="193.65063509461098" x2="263.0" y2="197.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="248.0" y1="197.0" x2="248.0" y2="202.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="235.5" y1="193.65063509461098" x2="233.0" y2="197.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="226.34936490538905" y1="184.5" x2="222.01923788646684" y2="187.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="223.0" y1="172.0" x2="218.0" y2="172.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="226.34936490538902" y1="159.5" x2="222.01923788646684" y2="157.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="235.5" y1="150.34936490538905" x2="233.0" y2="146.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<path d="M248 172L248 150A22 22 0 0 1 265.6 158.7Z" fill="#2a9aa6" fill-opacity=".18"/>
+<line x1="248" y1="172" x2="267.15315736849067" y2="157.5377538806093" stroke="#2a9aa6" stroke-width="2.6"/>
+<line x1="248" y1="172" x2="248" y2="148" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="248" cy="172" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="286" y="166" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">pair 21</text>
+<text x="286" y="183" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ = 466</text>
+<text x="286" y="200" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">2.1 turns</text>
+<circle cx="92" cy="284" r="30" fill="white" stroke="#2a9aa6" stroke-width="2"/>
+<line x1="92.0" y1="259.0" x2="92.0" y2="254.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="104.5" y1="262.34936490538905" x2="107.0" y2="258.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="113.65063509461096" y1="271.5" x2="117.98076211353316" y2="269.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="117.0" y1="284.0" x2="122.0" y2="284.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="113.65063509461098" y1="296.5" x2="117.98076211353316" y2="299.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="104.5" y1="305.65063509461095" x2="107.0" y2="309.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="92.0" y1="309.0" x2="92.0" y2="314.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="79.5" y1="305.65063509461095" x2="77.0" y2="309.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="70.34936490538904" y1="296.5" x2="66.01923788646684" y2="299.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="67.0" y1="284.0" x2="62.0" y2="284.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="70.34936490538904" y1="271.5" x2="66.01923788646684" y2="269.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="79.49999999999999" y1="262.34936490538905" x2="76.99999999999999" y2="258.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<path d="M92 284L92 262A22 22 0 0 1 96.0 262.4Z" fill="#2a9aa6" fill-opacity=".18"/>
+<line x1="92" y1="284" x2="96.34372332351482" y2="260.39635477963725" stroke="#2a9aa6" stroke-width="2.6"/>
+<line x1="92" y1="284" x2="92" y2="260" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="92" cy="284" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="130" y="278" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">pair 42</text>
+<text x="130" y="295" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ = 34.5K</text>
+<text x="130" y="312" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">10°</text>
+<circle cx="248" cy="284" r="30" fill="white" stroke="#2a9aa6" stroke-width="2"/>
+<line x1="248.0" y1="259.0" x2="248.0" y2="254.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="260.5" y1="262.34936490538905" x2="263.0" y2="258.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="269.65063509461095" y1="271.5" x2="273.98076211353316" y2="269.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="273.0" y1="284.0" x2="278.0" y2="284.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="269.65063509461095" y1="296.5" x2="273.98076211353316" y2="299.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="260.5" y1="305.65063509461095" x2="263.0" y2="309.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="248.0" y1="309.0" x2="248.0" y2="314.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="235.5" y1="305.65063509461095" x2="233.0" y2="309.98076211353316" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="226.34936490538905" y1="296.5" x2="222.01923788646684" y2="299.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="223.0" y1="284.0" x2="218.0" y2="284.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="226.34936490538902" y1="271.5" x2="222.01923788646684" y2="269.0" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="235.5" y1="262.34936490538905" x2="233.0" y2="258.01923788646684" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="248" y1="284" x2="248.0589233197916" y2="260.00007233255934" stroke="#2a9aa6" stroke-width="2.6"/>
+<line x1="248" y1="284" x2="248" y2="260" stroke="#cad5db" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="248" cy="284" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="286" y="278" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">pair 63</text>
+<text x="286" y="295" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ = 2.6M</text>
+<text x="286" y="312" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">0.14°</text>
+<text x="392" y="66" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986">λ<tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (tokens, log)</tspan></text>
+<line x1="400" y1="309.3333333333333" x2="770" y2="309.3333333333333" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="313.3333333333333" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10</text>
+<line x1="400" y1="276.0" x2="770" y2="276.0" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="280.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">100</text>
+<line x1="400" y1="242.66666666666669" x2="770" y2="242.66666666666669" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="246.66666666666669" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">1K</text>
+<line x1="400" y1="209.33333333333331" x2="770" y2="209.33333333333331" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="213.33333333333331" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10K</text>
+<line x1="400" y1="176.0" x2="770" y2="176.0" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="180.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">100K</text>
+<line x1="400" y1="142.66666666666669" x2="770" y2="142.66666666666669" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="146.66666666666669" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">1M</text>
+<line x1="400" y1="109.33333333333331" x2="770" y2="109.33333333333331" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="113.33333333333331" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10M</text>
+<line x1="400" y1="76.0" x2="770" y2="76.0" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="392" y="80.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">100M</text>
+<line x1="400" y1="326" x2="770" y2="326" stroke="#687986" stroke-width="1.2"/>
+<line x1="400" y1="76" x2="400" y2="326" stroke="#687986" stroke-width="1.2"/>
+<line x1="400.0" y1="326" x2="400.0" y2="331" stroke="#687986" stroke-width="1.2"/>
+<text x="400.0" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">0</text>
+<line x1="493.968253968254" y1="326" x2="493.968253968254" y2="331" stroke="#687986" stroke-width="1.2"/>
+<text x="493.968253968254" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">16</text>
+<line x1="587.936507936508" y1="326" x2="587.936507936508" y2="331" stroke="#687986" stroke-width="1.2"/>
+<text x="587.936507936508" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">32</text>
+<line x1="681.9047619047619" y1="326" x2="681.9047619047619" y2="331" stroke="#687986" stroke-width="1.2"/>
+<text x="681.9047619047619" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">48</text>
+<line x1="770.0" y1="326" x2="770.0" y2="331" stroke="#687986" stroke-width="1.2"/>
+<text x="770.0" y="346" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">63</text>
+<text x="585.0" y="364" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">pair index i  (fast → slow)</text>
+<line x1="400" y1="212.22033521227482" x2="770" y2="212.22033521227482" stroke="#cf5f59" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="406" y="207.22033521227482" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">8K · Llama 3 pre-train</text>
+<line x1="400" y1="172.08300245707733" x2="770" y2="172.08300245707733" stroke="#cf5f59" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="406" y="167.08300245707733" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">128K</text>
+<path d="M400.0 316.1L405.9 314.0L411.7 311.9L417.6 309.8L423.5 307.7L429.4 305.6L435.2 303.6L441.1 301.5L447.0 299.4L452.9 297.3L458.7 295.2L464.6 293.1L470.5 291.1L476.3 289.0L482.2 286.9L488.1 284.8L494.0 282.7L499.8 280.6L505.7 278.6L511.6 276.5L517.5 274.4L523.3 272.3L529.2 270.2L535.1 268.1L541.0 266.1L546.8 264.0L552.7 261.9L558.6 259.8L564.4 257.7L570.3 255.6L576.2 253.6L582.1 251.5L587.9 249.4L593.8 247.3L599.7 245.2L605.6 243.1L611.4 241.1L617.3 239.0L623.2 236.9L629.0 234.8L634.9 232.7L640.8 230.6L646.7 228.6L652.5 226.5L658.4 224.4L664.3 222.3L670.2 220.2L676.0 218.1L681.9 216.1L687.8 214.0L693.7 211.9L699.5 209.8L705.4 207.7L711.3 205.6L717.1 203.6L723.0 201.5L728.9 199.4L734.8 197.3L740.6 195.2L746.5 193.1L752.4 191.1L758.3 189.0L764.1 186.9L770.0 184.8" fill="none" stroke="#687986" stroke-width="1.8"/>
+<text x="778" y="188.8" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">54.4K</text>
+<text x="778" y="204.8" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10K · Llama 2</text>
+<path d="M400.0 316.1L405.9 313.1L411.7 310.1L417.6 307.2L423.5 304.2L429.4 301.2L435.2 298.3L441.1 295.3L447.0 292.3L452.9 289.3L458.7 286.4L464.6 283.4L470.5 280.4L476.3 277.5L482.2 274.5L488.1 271.5L494.0 268.6L499.8 265.6L505.7 262.6L511.6 259.7L517.5 256.7L523.3 253.7L529.2 250.8L535.1 247.8L541.0 244.8L546.8 241.9L552.7 238.9L558.6 235.9L564.4 233.0L570.3 230.0L576.2 227.0L582.1 224.0L587.9 221.1L593.8 218.1L599.7 215.1L605.6 212.2L611.4 209.2L617.3 206.2L623.2 203.3L629.0 200.3L634.9 197.3L640.8 194.4L646.7 191.4L652.5 188.4L658.4 185.5L664.3 182.5L670.2 179.5L676.0 176.6L681.9 173.6L687.8 170.6L693.7 167.6L699.5 164.7L705.4 161.7L711.3 158.7L717.1 155.8L723.0 152.8L728.9 149.8L734.8 146.9L740.6 143.9L746.5 140.9L752.4 138.0L758.3 135.0L764.1 132.0L770.0 129.1" fill="none" stroke="#2a9aa6" stroke-width="2.8"/>
+<text x="778" y="133.1" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">2.6M</text>
+<text x="778" y="149.1" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">500K · Llama 3</text>
+<path d="M400.0 316.1L405.9 312.4L411.7 308.8L417.6 305.1L423.5 301.5L429.4 297.8L435.2 294.2L441.1 290.5L447.0 286.9L452.9 283.2L458.7 279.6L464.6 276.0L470.5 272.3L476.3 268.7L482.2 265.0L488.1 261.4L494.0 257.7L499.8 254.1L505.7 250.4L511.6 246.8L517.5 243.1L523.3 239.5L529.2 235.9L535.1 232.2L541.0 228.6L546.8 224.9L552.7 221.3L558.6 217.6L564.4 214.0L570.3 210.3L576.2 206.7L582.1 203.0L587.9 199.4L593.8 195.7L599.7 192.1L605.6 188.5L611.4 184.8L617.3 181.2L623.2 177.5L629.0 173.9L634.9 170.2L640.8 166.6L646.7 162.9L652.5 159.3L658.4 155.6L664.3 152.0L670.2 148.4L676.0 144.7L681.9 141.1L687.8 137.4L693.7 133.8L699.5 130.1L705.4 126.5L711.3 122.8L717.1 119.2L723.0 115.5L728.9 111.9L734.8 108.2L740.6 104.6L746.5 101.0L752.4 97.3L758.3 93.7L764.1 90.0L770.0 86.4" fill="none" stroke="#2a9aa6" stroke-width="1.8" stroke-dasharray="5 4"/>
+<text x="778" y="90.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">48.8M</text>
+<text x="778" y="106.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">10M · Seed-OSS</text>
+<path d="M605.5555555555555 323L605.5555555555555 318L770 318L770 323" fill="none" stroke="#2a9aa6" stroke-width="1.2"/>
+<text x="687.7777777777778" y="292" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">500K: 29 pairs &lt; 1 turn in 8K</text>
+<text x="687.7777777777778" y="308" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">→ act as content channels</text>
+<line x1="20" y1="372" x2="880" y2="372" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="398" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Two bases in one model</text>
+<rect x="232" y="381" width="278.08000000000004" height="23" rx="11.5" fill="#2a9aa6" fill-opacity=".14" stroke="#2a9aa6" stroke-width="1"/>
+<text x="371.04" y="399" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">Gemma 3 local ×5: b = 10K, W = 1,024</text>
+<rect x="552" y="381" width="241.68000000000004" height="23" rx="11.5" fill="#2a9aa6" fill-opacity=".14" stroke="#2a9aa6" stroke-width="1"/>
+<text x="672.84" y="399" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">global ×1: b = 1M, PI ×8 → 128K</text>
+<rect x="232" y="413" width="307.20000000000005" height="23" rx="11.5" fill="#2a9aa6" fill-opacity=".14" stroke="#2a9aa6" stroke-width="1"/>
+<text x="385.6" y="431" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">DeepSeek-V4 SWA layers: b = 10K, no YaRN</text>
+<rect x="578" y="413" width="292.64000000000004" height="23" rx="11.5" fill="#2a9aa6" fill-opacity=".14" stroke="#2a9aa6" stroke-width="1"/>
+<text x="724.32" y="431" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">compressed layers: b = 160K + YaRN ×16</text>
+</svg>

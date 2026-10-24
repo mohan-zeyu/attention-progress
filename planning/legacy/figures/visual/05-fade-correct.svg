@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-labelledby="title desc">
+<title id="title">05-fade-correct</title><desc id="desc">Toy Gated DeltaNet: scalar decay 0.5 changes state [2,4] to [1,2]. Reading the faded first key gives residual 5-1=4; a full delta correction gives [5,2].</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="260" fill="white"/>
+<text x="154" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#253340">Old state</text>
+<rect x="90" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="119.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#4287b9">2</text>
+<rect x="160" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="189.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#4287b9">4</text>
+<text x="434" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#253340">Fade by 0.5</text>
+<rect x="370" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="399.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#4287b9">1</text>
+<rect x="440" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="469.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#4287b9">2</text>
+<text x="754" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#253340">Correct first key</text>
+<rect x="690" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="719.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#209f78">5</text>
+<rect x="760" y="91" width="58" height="64" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="789.0" y="133.15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#4287b9">2</text>
+<line x1="225" y1="122" x2="360" y2="122" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<line x1="511" y1="122" x2="679" y2="122" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<text x="590" y="97" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">5 − 1 = 4</text>
+</svg>

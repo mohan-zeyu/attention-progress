@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-labelledby="title desc">
+<title id="title">02-growth</title><desc id="desc">Sharing reduces width, but the number of retained position records still grows. Twice the retained history doubles this cache component.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="260" fill="white"/>
+<text x="33" y="52" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#253340">N = 4</text>
+<rect x="180" y="20" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="190" y1="35" x2="230" y2="35" stroke="#4287b9" stroke-width="2"/>
+<line x1="190" y1="46" x2="230" y2="46" stroke="#4287b9" stroke-width="2"/>
+<line x1="190" y1="57" x2="230" y2="57" stroke="#4287b9" stroke-width="2"/>
+<rect x="257" y="20" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="267" y1="35" x2="307" y2="35" stroke="#4287b9" stroke-width="2"/>
+<line x1="267" y1="46" x2="307" y2="46" stroke="#4287b9" stroke-width="2"/>
+<line x1="267" y1="57" x2="307" y2="57" stroke="#4287b9" stroke-width="2"/>
+<rect x="334" y="20" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="344" y1="35" x2="384" y2="35" stroke="#4287b9" stroke-width="2"/>
+<line x1="344" y1="46" x2="384" y2="46" stroke="#4287b9" stroke-width="2"/>
+<line x1="344" y1="57" x2="384" y2="57" stroke="#4287b9" stroke-width="2"/>
+<rect x="411" y="20" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="421" y1="35" x2="461" y2="35" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="46" x2="461" y2="46" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="57" x2="461" y2="57" stroke="#4287b9" stroke-width="2"/>
+<text x="33" y="152" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#253340">N = 8</text>
+<rect x="180" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="190" y1="135" x2="230" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="190" y1="146" x2="230" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="190" y1="157" x2="230" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="257" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="267" y1="135" x2="307" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="267" y1="146" x2="307" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="267" y1="157" x2="307" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="334" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="344" y1="135" x2="384" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="344" y1="146" x2="384" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="344" y1="157" x2="384" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="411" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="421" y1="135" x2="461" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="146" x2="461" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="157" x2="461" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="488" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="498" y1="135" x2="538" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="498" y1="146" x2="538" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="498" y1="157" x2="538" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="565" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="575" y1="135" x2="615" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="575" y1="146" x2="615" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="575" y1="157" x2="615" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="642" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="652" y1="135" x2="692" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="652" y1="146" x2="692" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="652" y1="157" x2="692" y2="157" stroke="#4287b9" stroke-width="2"/>
+<rect x="719" y="120" width="60" height="53" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="729" y1="135" x2="769" y2="135" stroke="#4287b9" stroke-width="2"/>
+<line x1="729" y1="146" x2="769" y2="146" stroke="#4287b9" stroke-width="2"/>
+<line x1="729" y1="157" x2="769" y2="157" stroke="#4287b9" stroke-width="2"/>
+</svg>

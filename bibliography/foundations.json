@@ -1,0 +1,90 @@
+[
+  {
+    "id": "bahdanau2014",
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "url": "https://arxiv.org/abs/1409.0473",
+    "year": 2014,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.1 and 3.1–3.2: fixed-vector encoder–decoder interface, learned alignment, weighted annotations, and dynamic context."
+  },
+  {
+    "id": "luong2015",
+    "title": "Effective Approaches to Attention-based Neural Machine Translation",
+    "url": "https://arxiv.org/abs/1508.04025",
+    "year": 2015,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Read abstract for global/local attention and opened fulltext; chapter uses only concise historical characterization, with score-function types also supported by Transformer section 3.2.1."
+  },
+  {
+    "id": "transformer2017",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "year": 2017,
+    "chapters": [
+      "00"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2–4: previous self-attention work, scaled dot-product/multi-head attention, encoder–decoder/self attention, masks, positions, and sequence complexity."
+  },
+  {
+    "id": "relative2018",
+    "title": "Self-Attention with Relative Position Representations",
+    "url": "https://arxiv.org/abs/1803.02155",
+    "year": 2018,
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 3.1–3.2: relation-aware attention and learned clipped relative offsets; no quality numbers reproduced."
+  },
+  {
+    "id": "mqa2019",
+    "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+    "url": "https://arxiv.org/abs/1911.02150",
+    "year": 2019,
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.4, 3, and 4: incremental cache, bandwidth analysis, shared KV projections, and experiment scope. Worked byte counts are original illustrative calculations."
+  },
+  {
+    "id": "rope2021",
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+    "url": "https://arxiv.org/abs/2104.09864",
+    "year": 2021,
+    "chapters": [
+      "01"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 3.1–3.2: coordinate rotations and relative-position dependence of query/key inner products. No unrestricted extrapolation claim made."
+  },
+  {
+    "id": "gqa2023",
+    "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+    "url": "https://arxiv.org/abs/2305.13245",
+    "year": 2023,
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected HTML sections 2.1–2.2 and 3.2–3.3: grouping, endpoints, pooled projections plus uptraining, and measured tradeoff with stated scope."
+  },
+  {
+    "id": "mla2024",
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "url": "https://arxiv.org/abs/2405.04434",
+    "year": 2024,
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Inspected abstract and HTML sections 2.1.1–2.1.4: latent KV compression, key/value projection absorption, decoupled RoPE, cache dimensions, and baseline-specific 93.3% comparison. Chapter's small arithmetic examples and cache scenario are original."
+  }
+]

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+<title id="title">10-tests</title><desc id="desc">Five different evaluation questions: correction, interference, retention, evidence access and full-system cost. One successful test does not establish the others.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="220" fill="white"/>
+<text x="100" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#253340">Correct?</text>
+<rect x="30" y="79" width="52" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cf6c66" stroke-width="1.7"/>
+<text x="56.0" y="106.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#cf6c66">Tue</text>
+<line x1="85" y1="100" x2="124" y2="100" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="129" y="79" width="52" height="43" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="155.0" y="106.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#209f78">Fri</text>
+<text x="279" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#253340">Interfere?</text>
+<rect x="206" y="70" width="148" height="37" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="280.0" y="95.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">7314</text>
+<rect x="206" y="126" width="148" height="37" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="280.0" y="151.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">7315</text>
+<text x="458" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#253340">Retain?</text>
+<rect x="384" y="91" width="20" height="39" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="414" y="91" width="20" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="444" y="91" width="20" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="474" y="91" width="20" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="504" y="91" width="20" height="39" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="637" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#253340">Find source?</text>
+<rect x="591" y="65" width="89" height="101" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="604" y1="85" x2="666" y2="85" stroke="#cad5db" stroke-width="3"/>
+<line x1="604" y1="103" x2="666" y2="103" stroke="#cad5db" stroke-width="3"/>
+<line x1="604" y1="121" x2="666" y2="121" stroke="#209f78" stroke-width="3"/>
+<line x1="604" y1="139" x2="666" y2="139" stroke="#cad5db" stroke-width="3"/>
+<text x="816" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#253340">At what cost?</text>
+<rect x="754" y="137" width="26" height="30" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="796" y="107" width="26" height="60" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="838" y="77" width="26" height="90" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+</svg>

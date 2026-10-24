@@ -1,0 +1,299 @@
+[
+ {
+  "title": "Learning to (Learn at Test Time): RNNs with Expressive Hidden States",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2407.04620",
+  "venue": "ICML 2025 (PMLR 267) · Stanford, UC San Diego, UC Berkeley",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 2–5; b = 16; eta_base 1/0.1; Thm 1–2; Table 1 ablation 15.91 → 11.09; Table 3 configs."
+ },
+ {
+  "title": "Titans: Learning to Memorize at Test Time",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2501.00663",
+  "venue": "NeurIPS 2025 · Google Research",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 8–18 surprise, momentum, decay; §4 MAC/MAG/MAL; Table 2 S-NIAH; Table 5 ablation; §5.8 throughput."
+ },
+ {
+  "title": "ATLAS: Learning to Optimally Memorize the Context at Test Time",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2505.23735",
+  "venue": "arXiv 2025 · Google Research",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Prop. 1–2 capacity; Eq. 9 Omega rule; Eq. 32–33 Muon update; §6.3 BABILong above 80% at 10M."
+ },
+ {
+  "title": "MesaNet: Sequence Modeling by Locally Optimal Test-Time Training",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2506.05233",
+  "venue": "ICLR 2026 · Google Paradigms of Intelligence",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 3, 7–10; CG ≈ k× GLA FLOPs; H < 1% footprint; ε=1e-4 ≈ 9 steps; Table 3 recall."
+ },
+ {
+  "title": "Test-Time Training Done Right (LaCT)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2505.23884",
+  "venue": "ICLR 2026 · MIT, Adobe Research",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 3 intensity; Eq. 4–7 SwiGLU, dot loss, Muon; <5% vs 70% utilization; Tables 1, 3."
+ },
+ {
+  "title": "End-to-End Test-Time Training for Long Context (TTT-E2E)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2512.23675",
+  "venue": "arXiv 2025 · Astera, Stanford, UC Berkeley, UC San Diego, NVIDIA",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.3 window 8K, b = 1K, last 1/4 blocks; 2.7× prefill at 128K; §3.7 training 3.4×/1.2×; Table 2 S-NIAH."
+ },
+ {
+  "title": "Log-Linear Attention",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2506.04761",
+  "venue": "ICLR 2026 · MIT, CMU, Princeton",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§3.1 Fenwick buckets, L ≤ ⌈log2 t+1⌉+1; §3.2 decoding; §4.2 setup and params; Table 3 ppl; §5 limitations."
+ },
+ {
+  "title": "It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization (Miras)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2504.13173",
+  "venue": "arXiv 2025 · Google Research",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Fig. 1 four design choices: memory architecture, attentional bias, retention gate, learning algorithm; Table 1."
+ },
+ {
+  "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2412.06464",
+  "venue": "ICLR 2025 · NVIDIA, MIT",
+  "chapters": [
+   "11"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§3 Table 1 online-learning objectives for LA, Mamba2, Longhorn, DeltaNet, GDN; SGD reading of the delta rule."
+ },
+ {
+  "title": "Jamba: A Hybrid Transformer-Mamba Language Model",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2403.19887",
+  "venue": "arXiv 2024 · AI21 Labs",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "a:m = 1:7; no explicit positions; Table 1 KV at 256K: 4 GB vs 32/128 GB; config attn_layer_period 8."
+ },
+ {
+  "title": "Hymba: A Hybrid-head Architecture for Small Language Models",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2411.13676",
+  "venue": "arXiv 2024 · NVIDIA",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 1–3 parallel fusion with beta-scaled norms; Table 1 78.6 MB, 664 tok/s; 11.67× cache, 3.49× vs Llama-3.2-3B; config."
+ },
+ {
+  "title": "Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2507.22448",
+  "venue": "Technical report 2025 · TII",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Parallel attention + Mamba-2 mixer; SA_M block, channels ≈ 2:1:5; 34B config: 72 layers, 4 KV heads."
+ },
+ {
+  "title": "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2406.07522",
+  "venue": "ICLR 2025 · Microsoft",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Layer-wise Mamba-MLP-SWA-MLP; SWA window 2048; up to 3.8B."
+ },
+ {
+  "title": "Nemotron-H: A Family of Accurate and Efficient Hybrid Mamba-Transformer Models",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2504.03624",
+  "venue": "arXiv 2025 · NVIDIA",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2: ≈8% attention evenly dispersed, first layer Mamba-2, no position embeddings; 2.4× at 64K in/1K out; 56B config."
+ },
+ {
+  "title": "NVIDIA Nemotron Nano 2: An Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2508.14444",
+  "venue": "arXiv 2025 · NVIDIA",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "Up to 6× throughput vs Qwen3-8B at 8K in/16K out; config hybrid_override_pattern (4 attention layers)."
+ },
+ {
+  "title": "Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2512.20848",
+  "venue": "arXiv 2025 · NVIDIA",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "3.3× vs Qwen3-30B-A3B at 8K/16K on H200; config: 23 Mamba-2 + 6 GQA (2 KV heads), fp32 SSM cache."
+ },
+ {
+  "title": "Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2508.15884",
+  "venue": "NeurIPS 2025 · NVIDIA",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "PostNAS: frozen MLPs, supernet, beam search; full 15, 20; SWA 21, 22; Table 3 at 64K."
+ },
+ {
+  "title": "Qwen3-Next-80B-A3B-Instruct model card and config",
+  "year": 2025,
+  "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+  "venue": "Model card · Qwen team, Alibaba",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "Layout 12 × (3 GDN + 1 gated attention); config: 32 V/16 QK heads, GQA 16/2/256."
+ },
+ {
+  "title": "Qwen3.5-397B-A17B model card and config",
+  "year": 2026,
+  "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+  "venue": "Model card · Qwen team, Alibaba",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "Hidden layout 15 × (3 GDN + 1 gated attention); config: 64 V heads, GQA 32/2/256, mamba_ssm_dtype float32."
+ },
+ {
+  "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2608.30320",
+  "venue": "arXiv 2026 · Qwen team",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.1: 25B-A3B ablation avg 49.87 / 51.15 / 53.81; NoPE variant endless generation; sigmoid output gate."
+ },
+ {
+  "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2510.26692",
+  "venue": "Technical report 2025 · Moonshot AI",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Table 1 ratio ablation; NoPE MLA; TPOT 1.84 vs 11.48 ms at 1M; config full_attn_layers 4…24, 27."
+ },
+ {
+  "title": "Kimi K3 model card and config",
+  "year": 2026,
+  "url": "https://huggingface.co/moonshotai/Kimi-K3",
+  "venue": "Model card · Moonshot AI",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "69 KDA + 24 gated MLA, 93 layers, 96 heads, 2.8T/104B; config full_attn_layers ends 92, 93; mla_use_nope."
+ },
+ {
+  "title": "MiniMax-01: Scaling Foundation Models with Lightning Attention",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2501.08313",
+  "venue": "Technical report 2025 · MiniMax",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Softmax block after every 7 lightning blocks, 80 layers; pure linear attention fails retrieval (§2 conclusion); config."
+ },
+ {
+  "title": "MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2506.13585",
+  "venue": "Technical report 2025 · MiniMax",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Same hybrid design; ~25% of DeepSeek-R1 FLOPs at 100K generation; FP32 LM head fix."
+ },
+ {
+  "title": "Why Did MiniMax M2 End Up as a Full Attention Model?",
+  "year": 2025,
+  "url": "https://huggingface.co/blog/MiniMax-AI/why-did-m2-end-up-as-a-full-attention-model",
+  "venue": "Blog 2025-10-30 · MiniMax",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "Evaluation, cost, infrastructure (precision, prefix cache, speculative decoding) and failed SWA retrofit; crossover at a few thousand tokens."
+ },
+ {
+  "title": "MiniMax Sparse Attention (MiniMax-M3)",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2606.13392",
+  "venue": "arXiv 2026 · MiniMax",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "M3 card: 9× prefill, 15× decode vs M2 at 1M; config: 57/60 sparse layers, top-16 × 128."
+ },
+ {
+  "title": "Model configs used for layout strips (Gemma 3 27B, gpt-oss-120b, Granite 4.0-H-Small, MiniMax-M2, Llama-3.1-70B)",
+  "year": 2025,
+  "url": "https://huggingface.co/openai/gpt-oss-120b/blob/main/config.json",
+  "venue": "config.json files · Google, OpenAI, IBM, MiniMax, Meta",
+  "chapters": [
+   "12"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "Gemma 3 sliding_window_pattern 6, W 1024; gpt-oss alternating SWA-128; Granite 4/40 attention; M2 62 full; Llama 80×8 KV."
+ }
+]

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270" role="img" aria-labelledby="title desc">
+<title id="title">08-cost</title><desc id="desc">A hybrid retains a fixed-size recurrent component and a growing explicit-cache component. Fewer explicit layers reduce the growing term, but do not remove it.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="270" fill="white"/>
+<text x="32" y="70" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Short history</text>
+<rect x="211" y="37" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="233" y="37" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="255" y="37" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="211" y="59" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="233" y="59" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="255" y="59" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<text x="301" y="69" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#687986">+</text>
+<rect x="350" y="35" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="360" y1="50" x2="388" y2="50" stroke="#4287b9" stroke-width="2"/>
+<line x1="360" y1="61" x2="388" y2="61" stroke="#4287b9" stroke-width="2"/>
+<line x1="360" y1="72" x2="388" y2="72" stroke="#4287b9" stroke-width="2"/>
+<rect x="411" y="35" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="421" y1="50" x2="449" y2="50" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="61" x2="449" y2="61" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="72" x2="449" y2="72" stroke="#4287b9" stroke-width="2"/>
+<rect x="472" y="35" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="482" y1="50" x2="510" y2="50" stroke="#4287b9" stroke-width="2"/>
+<line x1="482" y1="61" x2="510" y2="61" stroke="#4287b9" stroke-width="2"/>
+<line x1="482" y1="72" x2="510" y2="72" stroke="#4287b9" stroke-width="2"/>
+<rect x="533" y="35" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="543" y1="50" x2="571" y2="50" stroke="#4287b9" stroke-width="2"/>
+<line x1="543" y1="61" x2="571" y2="61" stroke="#4287b9" stroke-width="2"/>
+<line x1="543" y1="72" x2="571" y2="72" stroke="#4287b9" stroke-width="2"/>
+<text x="32" y="175" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#253340">Long history</text>
+<rect x="211" y="142" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="233" y="142" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="255" y="142" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="211" y="164" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="233" y="164" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="255" y="164" width="20" height="20" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<text x="301" y="174" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#687986">+</text>
+<rect x="350" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="360" y1="155" x2="388" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="360" y1="166" x2="388" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="360" y1="177" x2="388" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="411" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="421" y1="155" x2="449" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="166" x2="449" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="421" y1="177" x2="449" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="472" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="482" y1="155" x2="510" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="482" y1="166" x2="510" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="482" y1="177" x2="510" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="533" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="543" y1="155" x2="571" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="543" y1="166" x2="571" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="543" y1="177" x2="571" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="594" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="604" y1="155" x2="632" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="604" y1="166" x2="632" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="604" y1="177" x2="632" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="655" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="665" y1="155" x2="693" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="665" y1="166" x2="693" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="665" y1="177" x2="693" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="716" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="726" y1="155" x2="754" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="726" y1="166" x2="754" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="726" y1="177" x2="754" y2="177" stroke="#4287b9" stroke-width="2"/>
+<rect x="777" y="140" width="48" height="46" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="787" y1="155" x2="815" y2="155" stroke="#4287b9" stroke-width="2"/>
+<line x1="787" y1="166" x2="815" y2="166" stroke="#4287b9" stroke-width="2"/>
+<line x1="787" y1="177" x2="815" y2="177" stroke="#4287b9" stroke-width="2"/>
+<text x="244" y="250" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">State</text>
+<text x="590" y="250" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">Historical cache still grows</text>
+</svg>

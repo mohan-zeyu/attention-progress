@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+<title id="title">pos-extension</title><desc id="desc">Context extension divides each RoPE frequency by a per-pair factor. For gpt-oss (d_h = 64, b = 150K, trained at 4,096, extended to 131,072, s = 32): PI divides all 32 pairs by 32; NTK-aware rises smoothly from 1 to 32; YaRN keeps pairs 0-8 (wavelength under 128 tokens), ramps pairs 9-17 and divides pairs 18-31 by 32. Llama 3.1 llama3 scaling (s = 8) keeps 29 pairs, blends 6 and divides 29. YaRN also multiplies logits by (0.1 ln s + 1)^2: 1.30 for s = 4, 1.46 for 8, 1.81 for 32, 1.87 for 40; llama3 type uses 1.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="460" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#2a9aa6">θ&#x27;<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> = (1-γ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>) <tspan fill="#2a9aa6">θ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>/<tspan font-style="italic">s</tspan> + γ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> <tspan fill="#2a9aa6">θ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan></text>
+<text x="294.96000000000004" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340">γ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">clip</tspan>((<tspan font-style="italic">L</tspan>/λ<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> - α)/(β - α), 0, 1)</text>
+<text x="649.504" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">logits</tspan> <tspan font-style="normal">×</tspan> (0.1 <tspan font-style="normal">ln</tspan> <tspan font-style="italic">s</tspan> + 1)<tspan dy="-8.4" font-size="13.6">2</tspan><tspan dy="8.4" font-size="20.0"> </tspan></text>
+<text x="30" y="68" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">gpt-oss · d_h = 64 · b = 150K · L = 4,096 → 131,072 · s = 32 · α = 1, β = 32</text>
+<line x1="92" y1="336.0" x2="505" y2="336.0" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="340.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷1</text>
+<line x1="92" y1="290.8" x2="505" y2="290.8" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="294.8" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷2</text>
+<line x1="92" y1="245.6" x2="505" y2="245.6" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="249.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷4</text>
+<line x1="92" y1="200.4" x2="505" y2="200.4" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="204.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷8</text>
+<line x1="92" y1="155.2" x2="505" y2="155.2" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="159.2" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷16</text>
+<line x1="92" y1="110.0" x2="505" y2="110.0" stroke="#cad5db" stroke-width="0.6" stroke-opacity="0.6"/>
+<text x="84" y="114.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">÷32</text>
+<line x1="92" y1="336" x2="505" y2="336" stroke="#687986" stroke-width="1.2"/>
+<line x1="92" y1="110" x2="92" y2="336" stroke="#687986" stroke-width="1.2"/>
+<text x="84" y="96" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986">θ<tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> / θ&#x27;<tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> per pair</tspan></text>
+<line x1="92.0" y1="336" x2="92.0" y2="341" stroke="#687986" stroke-width="1.2"/>
+<text x="92.0" y="356" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">0</text>
+<text x="92.0" y="373" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">λ 6.3</text>
+<line x1="198.5806451612903" y1="336" x2="198.5806451612903" y2="341" stroke="#687986" stroke-width="1.2"/>
+<text x="198.5806451612903" y="356" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">8</text>
+<text x="198.5806451612903" y="373" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">λ 124</text>
+<line x1="318.48387096774195" y1="336" x2="318.48387096774195" y2="341" stroke="#687986" stroke-width="1.2"/>
+<text x="318.48387096774195" y="356" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">17</text>
+<text x="318.48387096774195" y="373" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">λ 3.5K</text>
+<line x1="505.0" y1="336" x2="505.0" y2="341" stroke="#687986" stroke-width="1.2"/>
+<text x="505.0" y="356" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">31</text>
+<text x="505.0" y="373" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">λ 649K</text>
+<text x="515" y="356" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">pair i</text>
+<rect x="205.24193548387098" y="110" width="119.90322580645159" height="226" rx="0" fill="#2a9aa6" fill-opacity="0.07"/>
+<text x="100.0" y="256.1978294643934" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">kept: λ &lt; L/β</text>
+<text x="265.19354838709677" y="126" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">ramp</text>
+<text x="418.4032258064516" y="276" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">÷32: λ &gt; L = 4,096</text>
+<path d="M92.0 110.0L505.0 110.0" fill="none" stroke="#cf5f59" stroke-width="2.2"/>
+<text x="98.0" y="128.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">PI: every pair ÷32</text>
+<text x="98.0" y="144.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">(blurs fast pairs)</text>
+<path d="M92.0 336.0L105.3 328.7L118.6 321.4L132.0 314.1L145.3 306.8L158.6 299.5L171.9 292.3L185.3 285.0L198.6 277.7L211.9 270.4L225.2 263.1L238.5 255.8L251.9 248.5L265.2 241.2L278.5 233.9L291.8 226.6L305.2 219.4L318.5 212.1L331.8 204.8L345.1 197.5L358.5 190.2L371.8 182.9L385.1 175.6L398.4 168.3L411.7 161.0L425.1 153.7L438.4 146.5L451.7 139.2L465.0 131.9L478.4 124.6L491.7 117.3L505.0 110.0" fill="none" stroke="#687986" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="330.48387096774195" y="238.06451612903226" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">NTK-aware: </tspan> <tspan font-style="italic">b</tspan>&#x27; = <tspan font-style="italic">b</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">s</tspan><tspan dy="-5.9" font-size="9.5"><tspan font-style="italic">d</tspan><tspan dy="2.7" font-size="6.5"><tspan font-style="italic">h</tspan></tspan><tspan dy="-2.7" font-size="9.5"> </tspan>/(<tspan font-style="italic">d</tspan><tspan dy="2.7" font-size="6.5"><tspan font-style="italic">h</tspan></tspan><tspan dy="-2.7" font-size="9.5"> </tspan>-2)</tspan><tspan dy="5.9" font-size="14.0"> </tspan></text>
+<path d="M92.0 336.0L105.3 336.0L118.6 336.0L132.0 336.0L145.3 336.0L158.6 336.0L171.9 336.0L185.3 336.0L198.6 336.0L211.9 314.0L225.2 289.7L238.5 265.4L251.9 241.1L265.2 216.8L278.5 192.5L291.8 168.2L305.2 144.0L318.5 119.7L331.8 110.0L345.1 110.0L358.5 110.0L371.8 110.0L385.1 110.0L398.4 110.0L411.7 110.0L425.1 110.0L438.4 110.0L451.7 110.0L465.0 110.0L478.4 110.0L491.7 110.0L505.0 110.0" fill="none" stroke="#2a9aa6" stroke-width="3"/>
+<circle cx="92.0" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="105.3" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="118.6" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="132.0" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="145.3" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="158.6" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="171.9" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="185.3" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="198.6" cy="336.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="211.9" cy="314.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="225.2" cy="289.7" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="238.5" cy="265.4" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="251.9" cy="241.1" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="265.2" cy="216.8" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="278.5" cy="192.5" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="291.8" cy="168.2" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="305.2" cy="144.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="318.5" cy="119.7" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="331.8" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="345.1" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="358.5" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="371.8" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="385.1" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="398.4" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="411.7" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="425.1" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="438.4" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="451.7" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="465.0" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="478.4" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="491.7" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="505.0" cy="110.0" r="2.6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<line x1="225.2258064516129" y1="289.6786079237449" x2="238.5483870967742" y2="306.87040890914255" stroke="#2a9aa6" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="225.2258064516129" cy="289.6786079237449" r="2.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="242.5483870967742" y="311.77040890914253" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#2a9aa6">YaRN (one dot per pair)</text>
+<line x1="560" y1="56" x2="560" y2="440" stroke="#cad5db" stroke-width="1.2"/>
+<text x="580" y="96" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Which pairs move (per-pair strip)</text>
+<text x="580" y="122" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">gpt-oss · YaRN s = 32 · 32 pairs</text>
+<rect x="580" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="589" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="598" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="607" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="616" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="625" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="634" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="643" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="652" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="661" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.92"/>
+<rect x="670" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.84"/>
+<rect x="679" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.75"/>
+<rect x="688" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.66"/>
+<rect x="697" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.58"/>
+<rect x="706" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.49"/>
+<rect x="715" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.41"/>
+<rect x="724" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.32"/>
+<rect x="733" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.23"/>
+<rect x="742" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="751" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="760" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="769" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="778" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="787" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="796" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="805" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="814" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="823" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="832" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="841" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="850" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="859" y="130" width="8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<text x="580" y="170" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">9 kept · 9 ramp · 14 ÷32</text>
+<text x="580" y="198" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Llama 3.1 · llama3 s = 8 · 64 pairs</text>
+<rect x="580.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="584.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="589.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="593.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="598.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="602.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="607.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="611.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="616.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="620.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="625.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="629.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="634.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="638.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="643.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="647.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="652.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="656.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="661.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="665.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="670.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="674.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="679.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="683.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="688.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="692.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="697.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="701.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="706.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="710.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.93"/>
+<rect x="715.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.83"/>
+<rect x="719.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.73"/>
+<rect x="724.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.62"/>
+<rect x="728.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.5"/>
+<rect x="733.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.36"/>
+<rect x="737.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="742.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="746.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="751.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="755.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="760.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="764.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="769.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="773.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="778.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="782.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="787.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="791.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="796.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="800.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="805.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="809.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="814.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="818.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="823.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="827.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="832.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="836.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="841.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="845.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="850.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="854.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="859.0" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="863.5" y="206" width="3.8" height="22" rx="1" fill="#2a9aa6" fill-opacity="0.2"/>
+<text x="580" y="246" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">29 kept · 6 blended · 29 ÷8 · α = 1, β = 4</text>
+<line x1="570" y1="268" x2="880" y2="268" stroke="#cad5db" stroke-width="1.2"/>
+<text x="580" y="296" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">logit multiplier </tspan> (0.1 <tspan font-style="normal">ln</tspan> <tspan font-style="italic">s</tspan> + 1)<tspan dy="-6.3" font-size="10.2">2</tspan><tspan dy="6.3" font-size="15.0"> </tspan></text>
+<text x="720" y="318.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Qwen3 · s = 4</text>
+<rect x="730" y="308" width="76.07257203842049" height="16" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="814.0725720384205" y="318.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">×1.30</text>
+<text x="720" y="341.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">OLMo 3 · s = 8</text>
+<rect x="730" y="331" width="85.64034151547492" height="16" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="823.6403415154749" y="341.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">×1.46</text>
+<text x="720" y="364.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">gpt-oss · s = 32</text>
+<rect x="730" y="354" width="106.41942369263607" height="16" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="844.4194236926361" y="364.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">×1.81</text>
+<text x="720" y="387.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">DeepSeek-V3 · s = 40</text>
+<rect x="730" y="377" width="110.0" height="16" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="848.0" y="387.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">×1.87</text>
+<text x="720" y="410.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Llama 3.1 · llama3</text>
+<rect x="730" y="400" width="58.69797225186766" height="16" rx="4" fill="#cad5db" fill-opacity="0.85"/>
+<text x="796.6979722518677" y="410.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">×1.00</text>
+</svg>

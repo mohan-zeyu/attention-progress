@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-labelledby="title desc">
+<title id="title">05-residual</title><desc id="desc">Toy delta update for a unit key: old prediction 2, target 5, residual 3. With update strength one, the new prediction is 5.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="250" fill="white"/>
+<text x="115" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#4287b9">Old prediction</text>
+<circle cx="115" cy="121" r="42" fill="#4287b9" stroke="#4287b9" stroke-width="2"/>
+<text x="115" y="132.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#ffffff">2</text>
+<text x="355" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">Incoming target</text>
+<circle cx="355" cy="121" r="42" fill="#209f78" stroke="#209f78" stroke-width="2"/>
+<text x="355" y="132.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#ffffff">5</text>
+<text x="595" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Residual</text>
+<circle cx="595" cy="121" r="42" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<text x="595" y="132.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#ffffff">+3</text>
+<text x="820" y="37" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">New prediction</text>
+<circle cx="820" cy="121" r="42" fill="#209f78" stroke="#209f78" stroke-width="2"/>
+<text x="820" y="132.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#ffffff">5</text>
+<line x1="402" y1="121" x2="548" y2="121" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<text x="475" y="92" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#d49a30">5 − 2</text>
+<path d="M115 165L115 187L595 187L595 167" fill="none" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="641" y1="121" x2="772" y2="121" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<text x="705" y="92" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">2 + 3</text>
+<text x="450" y="230" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#209f78">β = 1</text>
+</svg>

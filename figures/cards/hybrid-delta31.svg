@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="img" aria-labelledby="title desc">
+<title id="title">hybrid-delta31</title><desc id="desc">Delta-rule hybrids from config.json. Qwen3-Next-80B: 12 x (3 GDN + 1 gated attention), 48 layers. Qwen3.5-397B: 15 x (3 + 1), 60 layers. Kimi Linear 48B: 20 KDA + 7 MLA, MLA at layers 4, 8, ..., 24 and 27, so the last group is 2:1. Kimi K3: 69 KDA + 24 gated MLA over 93 layers. Kimi Linear ratio ablation, validation perplexity: 0:1 5.77, 1:1 5.66, 3:1 5.65, 7:1 5.70, 15:1 5.82. Qwen3.8 ablation on a 25B-A3B model, average score: full attention 49.87, SWA hybrid 51.15, GDN hybrid 53.81.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="456" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">stack</tspan> = <tspan font-style="italic">n</tspan> <tspan font-style="normal">×</tspan> [ 3 <tspan font-style="normal">×</tspan> (<tspan fill="#8d6bb5"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">GDN</tspan></tspan> <tspan font-style="normal">→</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">MoE</tspan>) + 1 <tspan font-style="normal">×</tspan> (<tspan fill="#3f83b6"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">gated attn</tspan></tspan> <tspan font-style="normal">→</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">MoE</tspan>) ] <tspan font-style="italic">n</tspan> = 12 <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (3-Next)</tspan>,  15 <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (3.5)</tspan></text>
+<text x="158" y="77" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Qwen3-Next-80B</text>
+<rect x="170.0" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="179.79166666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="189.58333333333334" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="199.375" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="209.16666666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="218.95833333333331" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="228.75" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="238.54166666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="248.33333333333331" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="258.125" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="267.91666666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="277.7083333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="287.5" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="297.29166666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="307.0833333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="316.875" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="326.66666666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="336.4583333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="346.25" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="356.04166666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="365.8333333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="375.625" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="385.41666666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="395.2083333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="405.0" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="414.79166666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="424.5833333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="434.375" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="444.16666666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="453.9583333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="463.75" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="473.54166666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="483.3333333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="493.125" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="502.91666666666663" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="512.7083333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="522.5" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="532.2916666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="542.0833333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="551.875" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="561.6666666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="571.4583333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="581.25" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="591.0416666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="600.8333333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="610.625" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="620.4166666666666" y="64" width="8.791666666666666" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="630.2083333333333" y="64" width="8.791666666666666" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="170" y="97" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">36 GDN + 12 GQA (2 KV heads, d 256)</text>
+<text x="652" y="78" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">24 KiB/tok</text>
+<text x="652" y="94" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">48 layers</text>
+<text x="158" y="119" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Qwen3.5-397B</text>
+<rect x="170.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="177.83333333333334" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="185.66666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="193.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="201.33333333333334" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="209.16666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="217.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="224.83333333333331" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="232.66666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="240.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="248.33333333333331" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="256.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="264.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="271.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="279.66666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="287.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="295.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="303.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="311.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="318.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="326.66666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="334.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="342.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="350.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="358.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="365.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="373.66666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="381.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="389.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="397.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="405.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="412.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="420.66666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="428.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="436.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="444.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="452.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="459.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="467.66666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="475.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="483.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="491.16666666666663" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="499.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="506.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="514.6666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="522.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="530.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="538.1666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="546.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="553.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="561.6666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="569.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="577.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="585.1666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="593.0" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="600.8333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="608.6666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="616.5" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="624.3333333333333" y="106" width="6.833333333333333" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="632.1666666666666" y="106" width="6.833333333333333" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="170" y="139" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">45 GDN (64 V heads) + 15 GQA</text>
+<text x="652" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">30 KiB/tok</text>
+<text x="652" y="136" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">60 layers</text>
+<text x="158" y="161" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Kimi Linear 48B</text>
+<rect x="170.0" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="187.40740740740742" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="204.8148148148148" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="222.22222222222223" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="239.62962962962962" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="257.03703703703707" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="274.44444444444446" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="291.85185185185185" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="309.25925925925924" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="326.6666666666667" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="344.0740740740741" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="361.4814814814815" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="378.8888888888889" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="396.2962962962963" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="413.7037037037037" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="431.11111111111114" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="448.51851851851853" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="465.9259259259259" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="483.33333333333337" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="500.74074074074076" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="518.1481481481482" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="535.5555555555557" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="552.962962962963" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="570.3703703703704" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="587.7777777777778" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="605.1851851851852" y="148" width="16.40740740740741" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="622.5925925925926" y="148" width="16.40740740740741" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="170" y="181" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">20 KDA + 7 NoPE MLA · last group 2 : 1</text>
+<text x="652" y="162" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">7.9 KiB/tok</text>
+<text x="652" y="178" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">27 layers</text>
+<text x="158" y="203" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Kimi K3</text>
+<rect x="170.0" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="175.05376344086022" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="180.10752688172042" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="185.16129032258064" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="190.21505376344086" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="195.2688172043011" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="200.32258064516128" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="205.3763440860215" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="210.43010752688173" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="215.48387096774195" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="220.53763440860214" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="225.59139784946237" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="230.64516129032256" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="235.69892473118279" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="240.752688172043" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="245.80645161290323" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="250.86021505376345" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="255.91397849462365" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="260.9677419354839" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="266.02150537634407" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="271.0752688172043" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="276.1290322580645" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="281.18279569892474" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="286.23655913978496" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="291.2903225806451" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="296.3440860215054" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="301.39784946236557" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="306.4516129032258" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="311.505376344086" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="316.55913978494624" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="321.61290322580646" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="326.66666666666663" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="331.7204301075269" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="336.7741935483871" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="341.8279569892473" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="346.8817204301075" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="351.93548387096774" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="356.98924731182797" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="362.04301075268813" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="367.0967741935484" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="372.1505376344086" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="377.2043010752688" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="382.258064516129" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="387.31182795698925" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="392.36559139784947" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="397.41935483870964" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="402.4731182795699" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="407.5268817204301" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="412.5806451612903" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="417.63440860215053" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="422.68817204301075" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="427.741935483871" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="432.7956989247312" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="437.8494623655914" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="442.9032258064516" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="447.9569892473118" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="453.01075268817203" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="458.06451612903226" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="463.1182795698925" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="468.1720430107527" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="473.2258064516129" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="478.2795698924731" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="483.3333333333333" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="488.38709677419354" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="493.44086021505376" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="498.494623655914" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="503.5483870967742" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="508.60215053763443" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="513.6559139784946" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="518.7096774193549" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="523.763440860215" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="528.8172043010752" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="533.8709677419355" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="538.9247311827958" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="543.9784946236559" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="549.0322580645161" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="554.0860215053763" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="559.1397849462365" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="564.1935483870968" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="569.247311827957" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="574.3010752688172" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="579.3548387096774" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="584.4086021505376" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="589.4623655913979" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="594.516129032258" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="599.5698924731182" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="604.6236559139785" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="609.6774193548388" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="614.7311827956989" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="619.7849462365591" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="624.8387096774193" y="190" width="4.053763440860215" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="629.8924731182796" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="634.9462365591398" y="190" width="4.053763440860215" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="170" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">69 KDA + 24 gated NoPE MLA · ends MLA, MLA</text>
+<text x="652" y="204" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">27 KiB/tok</text>
+<text x="652" y="220" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">93 layers</text>
+<line x1="20" y1="238" x2="880" y2="238" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="24" y="250" width="420" height="190" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="38" y="274" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Kimi Linear ratio ablation (reported, val. PPL ↓)</text>
+<line x1="70" y1="377.99999999999966" x2="370" y2="377.99999999999966" stroke="#cad5db" stroke-width="0.8"/>
+<text x="64" y="381.99999999999966" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">5.65</text>
+<line x1="70" y1="333.99999999999983" x2="370" y2="333.99999999999983" stroke="#cad5db" stroke-width="0.8"/>
+<text x="64" y="337.99999999999983" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">5.75</text>
+<line x1="70" y1="290.0" x2="370" y2="290.0" stroke="#cad5db" stroke-width="0.8"/>
+<text x="64" y="294.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">5.85</text>
+<text x="70.0" y="416" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">0:1</text>
+<text x="70.0" y="430" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#3f83b6">KV 1</text>
+<text x="145.0" y="416" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">1:1</text>
+<text x="145.0" y="430" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#3f83b6">KV 1/2</text>
+<text x="220.0" y="416" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">3:1</text>
+<text x="220.0" y="430" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#3f83b6">KV 1/4</text>
+<text x="295.0" y="416" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">7:1</text>
+<text x="295.0" y="430" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#3f83b6">KV 1/8</text>
+<text x="370.0" y="416" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">15:1</text>
+<text x="370.0" y="430" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#3f83b6">KV 1/16</text>
+<path d="M70.0 325.20000000000005L145.0 373.5999999999998L220.0 377.99999999999966L295.0 355.9999999999998L370.0 303.1999999999997" fill="none" stroke="#8d6bb5" stroke-width="2"/>
+<circle cx="70.0" cy="325.20000000000005" r="4.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="78.0" y="319.20000000000005" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#8d6bb5">5.77</text>
+<circle cx="145.0" cy="373.5999999999998" r="4.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="153.0" y="367.5999999999998" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#8d6bb5">5.66</text>
+<circle cx="220.0" cy="377.99999999999966" r="6" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="228.0" y="371.99999999999966" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#1f9a74">5.65</text>
+<circle cx="295.0" cy="355.9999999999998" r="4.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="303.0" y="349.9999999999998" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#8d6bb5">5.70</text>
+<circle cx="370.0" cy="303.1999999999997" r="4.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="378.0" y="297.1999999999997" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#8d6bb5">5.82</text>
+<text x="406" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KDA : MLA</text>
+<rect x="456" y="250" width="420" height="190" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="470" y="274" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Qwen3.8 ablation, 25B-A3B (reported avg ↑)</text>
+<text x="606" y="299.56" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">full attention</text>
+<rect x="616" y="288" width="106.86428571428571" height="17" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="730.8642857142858" y="299.56" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">49.87</text>
+<text x="606" y="324.56" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">3:1 SWA-128 hybrid</text>
+<rect x="616" y="313" width="109.60714285714286" height="17" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="733.6071428571429" y="324.56" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">51.15</text>
+<text x="606" y="349.56" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">3:1 GDN hybrid</text>
+<rect x="616" y="338" width="115.30714285714286" height="17" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="739.3071428571428" y="349.56" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">53.81</text>
+<text x="476" y="384" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">Kimi Linear decode at 1M (reported):</text>
+<text x="476" y="402" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">TPOT 1.84 ms vs 11.48 ms for full MLA (6.3×)</text>
+<text x="476" y="420" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV cache up to 75 % smaller</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 285" role="img" aria-labelledby="title desc">
+<title id="title">01-bottleneck</title><desc id="desc">One summary is a bottleneck. Keeping separate contextual records allows different output steps to consult different positions.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="285" fill="white"/>
+<text x="225" y="35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#687986">One summary</text>
+<text x="675" y="35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#209f78">Several accessible records</text>
+<line x1="450" y1="32" x2="450" y2="260" stroke="#cad5db" stroke-width="2"/>
+<rect x="42" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="52" y1="92" x2="98" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="52" y1="103" x2="98" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="52" y1="114" x2="98" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="137" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="147" y1="92" x2="193" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="147" y1="103" x2="193" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="147" y1="114" x2="193" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="232" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="242" y1="92" x2="288" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="242" y1="103" x2="288" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="242" y1="114" x2="288" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="327" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="337" y1="92" x2="383" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="337" y1="103" x2="383" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="337" y1="114" x2="383" y2="114" stroke="#4287b9" stroke-width="2"/>
+<line x1="75" y1="121" x2="225" y2="169" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="170" y1="121" x2="225" y2="169" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="265" y1="121" x2="225" y2="169" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<line x1="360" y1="121" x2="225" y2="169" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<rect x="195" y="172" width="60" height="44" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<text x="225.0" y="201.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">S</text>
+<line x1="225" y1="219" x2="225" y2="251" stroke="#687986" stroke-width="2" marker-end="url(#a-muted)"/>
+<text x="225" y="276" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">Every output uses S</text>
+<rect x="492" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="502" y1="92" x2="548" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="502" y1="103" x2="548" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="502" y1="114" x2="548" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="587" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="597" y1="92" x2="643" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="597" y1="103" x2="643" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="597" y1="114" x2="643" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="682" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="692" y1="92" x2="738" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="692" y1="103" x2="738" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="692" y1="114" x2="738" y2="114" stroke="#4287b9" stroke-width="2"/>
+<rect x="777" y="77" width="66" height="42" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="787" y1="92" x2="833" y2="92" stroke="#4287b9" stroke-width="2"/>
+<line x1="787" y1="103" x2="833" y2="103" stroke="#4287b9" stroke-width="2"/>
+<line x1="787" y1="114" x2="833" y2="114" stroke="#4287b9" stroke-width="2"/>
+<circle cx="595" cy="233" r="25" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="595" y="240.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">q₁</text>
+<circle cx="755" cy="233" r="25" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="755" y="240.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">q₂</text>
+<line x1="595" y1="205" x2="525" y2="125" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="755" y1="205" x2="810" y2="125" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+</svg>

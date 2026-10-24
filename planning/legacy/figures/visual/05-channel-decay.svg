@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+<title id="title">05-channel-decay</title><desc id="desc">A scalar decay fades all state columns; KDA can give key channels different decay rates. The pictured toy directions are separate; learned directions can overlap.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="300" fill="white"/>
+<text x="225" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">GDN: one decay per head</text>
+<text x="675" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">KDA: decay per key channel</text>
+<line x1="450" y1="32" x2="450" y2="275" stroke="#cad5db" stroke-width="2"/>
+<rect x="73" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="107" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="141" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="175" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="73" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="107" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="141" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="175" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="73" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="107" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="141" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="175" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="73" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="107" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="141" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="175" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<line x1="219" y1="150" x2="276" y2="150" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="286" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.0875"/>
+<rect x="320" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.1728125"/>
+<rect x="354" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.258125"/>
+<rect x="388" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.0875"/>
+<rect x="286" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.2865625"/>
+<rect x="320" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.11593749999999999"/>
+<rect x="354" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.20124999999999998"/>
+<rect x="388" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.2865625"/>
+<rect x="286" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.2296875"/>
+<rect x="320" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.315"/>
+<rect x="354" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.14437499999999998"/>
+<rect x="388" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.2296875"/>
+<rect x="286" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.1728125"/>
+<rect x="320" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.258125"/>
+<rect x="354" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.0875"/>
+<rect x="388" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.1728125"/>
+<rect x="523" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="557" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="591" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="625" y="84" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="523" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="557" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="591" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="625" y="118" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="523" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="557" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="591" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="625" y="152" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="523" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="557" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="591" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="625" y="186" width="32" height="32" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<line x1="669" y1="150" x2="726" y2="150" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="736" y="84" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.06"/>
+<rect x="770" y="84" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.49375"/>
+<rect x="804" y="84" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.29500000000000004"/>
+<rect x="838" y="84" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.225"/>
+<rect x="736" y="118" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.16375"/>
+<rect x="770" y="118" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.33125"/>
+<rect x="804" y="118" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.22999999999999998"/>
+<rect x="838" y="118" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.736875"/>
+<rect x="736" y="152" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.13125"/>
+<rect x="770" y="152" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.9"/>
+<rect x="804" y="152" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.165"/>
+<rect x="838" y="152" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.5906250000000001"/>
+<rect x="736" y="186" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.09875"/>
+<rect x="770" y="186" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.7375"/>
+<rect x="804" y="186" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.1"/>
+<rect x="838" y="186" width="32" height="32" rx="2" fill="#209f78" fill-opacity="0.444375"/>
+<text x="225" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">All columns fade together.</text>
+<text x="675" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">Some fade; some persist.</text>
+</svg>

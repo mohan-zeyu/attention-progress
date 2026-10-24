@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+<title id="title">pos-partial</title><desc id="desc">Rotated (teal) versus position-free (grey) dimensions per head, from configs: GPT-NeoX-20B 24 of 96, GLM-4.5 64 of 128, MiniMax-M2 64 of 128, Phi-4-mini 96 of 128, MiMo-V2-Flash 64 of 192, Qwen3-Next 64 of 256, Gemma 4 global 128 of 512, DeepSeek-V4 64 of 512, DeepSeek-V3 MLA lane 64 of 192. Right: at the same 25 percent, NeoX-style partial RoPE in Qwen3-Next keeps wavelengths 6 to 38M tokens, while p-RoPE in Gemma 4 keeps only 6 to 188 tokens and sets 192 pairs to zero frequency. Bottom right: reported Gemma 2B perplexity at 8K: NoPE 4.86, RoPE 4.46, 0.25-RoPE 4.53, 0.75-RoPE 4.44.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="450" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan> <tspan font-style="normal">→</tspan> (<tspan font-style="italic">R</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#d09124"><tspan font-style="italic">q</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">rot</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)<tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>(<tspan font-style="italic">R</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">rot</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>) + <tspan fill="#d09124"><tspan font-style="italic">q</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">nope</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">nope</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan></text>
+<text x="436.09040000000005" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">rot</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> = <tspan font-style="italic">p</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></text>
+<rect x="30" y="63" width="12" height="12" rx="2" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="48" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">rotated</text>
+<rect x="112" y="63" width="12" height="12" rx="2" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<text x="130" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">position-free dims · rotated/head dim (config)</text>
+<text x="186" y="102" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">GPT-NeoX-20B</text>
+<rect x="196" y="86" width="55.67999999999999" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="86" width="13.919999999999998" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="259.68" y="102" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">24/96</text>
+<text x="186" y="138" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">GLM-4.5</text>
+<rect x="196" y="122" width="74.24" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="122" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="278.24" y="138" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/128</text>
+<text x="186" y="174" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">MiniMax-M2</text>
+<rect x="196" y="158" width="74.24" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="158" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="278.24" y="174" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/128</text>
+<text x="186" y="210" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Phi-4-mini</text>
+<rect x="196" y="194" width="74.24" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="194" width="55.67999999999999" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="278.24" y="210" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">96/128</text>
+<text x="186" y="246" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">MiMo-V2-Flash</text>
+<rect x="196" y="230" width="111.35999999999999" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="230" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="315.36" y="246" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/192</text>
+<text x="186" y="282" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Qwen3-Next</text>
+<rect x="196" y="266" width="148.48" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="266" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="352.48" y="282" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/256</text>
+<text x="186" y="318" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Gemma 4 global · p-RoPE</text>
+<rect x="196" y="302" width="296.96" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="196" y="302" width="74.24" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="500.96" y="318" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">128/512</text>
+<text x="186" y="354" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeepSeek-V4 (K=V)</text>
+<rect x="196" y="338" width="296.96" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="455.84" y="338" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="500.96" y="354" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/512</text>
+<text x="186" y="390" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeepSeek-V3 MLA lane</text>
+<rect x="196" y="374" width="111.35999999999999" height="22" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.2"/>
+<rect x="270.24" y="374" width="37.12" height="22" rx="3" fill="#2a9aa6" fill-opacity="0.85"/>
+<line x1="268.74" y1="371" x2="268.74" y2="399" stroke="#253340" stroke-width="1.6"/>
+<text x="315.36" y="390" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#2a9aa6">64/192</text>
+<line x1="560" y1="56" x2="560" y2="440" stroke="#cad5db" stroke-width="1.2"/>
+<text x="578" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Same p = 0.25, different spectrum</text>
+<line x1="616.6666666666666" y1="182" x2="616.6666666666666" y2="190" stroke="#687986" stroke-width="1.2"/>
+<text x="616.6666666666666" y="206" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10</text>
+<line x1="683.3333333333334" y1="182" x2="683.3333333333334" y2="190" stroke="#687986" stroke-width="1.2"/>
+<text x="683.3333333333334" y="206" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">1K</text>
+<line x1="750.0" y1="182" x2="750.0" y2="190" stroke="#687986" stroke-width="1.2"/>
+<text x="750.0" y="206" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">100K</text>
+<line x1="816.6666666666667" y1="182" x2="816.6666666666667" y2="190" stroke="#687986" stroke-width="1.2"/>
+<text x="816.6666666666667" y="206" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">10M</text>
+<line x1="600" y1="186" x2="850" y2="186" stroke="#687986" stroke-width="1.2"/>
+<text x="856" y="206" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">λ</text>
+<text x="578" y="100" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Qwen3-Next · partial · b = 10M</text>
+<circle cx="609.9" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="617.2" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="624.5" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="631.8" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="639.1" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="646.4" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="653.7" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="661.0" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="668.3" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="675.6" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="682.9" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="690.1" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="697.4" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="704.7" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="712.0" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="719.3" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="726.6" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="733.9" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="741.2" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="748.5" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="755.8" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="763.1" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="770.4" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="777.6" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="784.9" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="792.2" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="799.5" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="806.8" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="814.1" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="821.4" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="828.7" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="836.0" cy="116" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="578" y="144" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Gemma 4 · p-RoPE · b = 1M</text>
+<circle cx="609.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="610.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="611.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="612.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="613.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="613.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="614.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="615.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="616.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="617.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="617.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="618.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="619.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="620.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="620.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="621.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="622.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="623.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="624.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="624.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="625.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="626.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="627.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="627.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="628.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="629.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="630.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="631.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="631.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="632.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="633.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="634.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="634.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="635.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="636.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="637.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="638.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="638.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="639.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="640.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="641.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="642.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="642.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="643.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="644.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="645.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="645.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="646.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="647.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="648.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="649.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="649.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="650.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="651.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="652.1" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="652.9" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="653.7" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="654.5" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="655.3" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="656.0" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="656.8" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="657.6" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="658.4" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<circle cx="659.2" cy="160" r="3" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="667.138594975456" y="165" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">max λ ≈ 188</text>
+<rect x="770" y="151" width="82" height="18" rx="3" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="811.0" y="163.96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">192 pairs θ = 0</text>
+<line x1="763.951330731722" y1="106" x2="763.951330731722" y2="186" stroke="#cf5f59" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="763.951330731722" y="228" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">256K context</text>
+<line x1="570" y1="240" x2="880" y2="240" stroke="#cad5db" stroke-width="1.2"/>
+<text x="578" y="264" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Gemma 2B · 8K · Wiki ppl (reported)</text>
+<text x="650" y="288.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">NoPE</text>
+<rect x="660" y="276" width="149.99999999999997" height="18" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="818.0" y="288.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">4.859</text>
+<text x="650" y="315.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">RoPE</text>
+<rect x="660" y="303" width="20.588235294117574" height="18" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="688.5882352941176" y="315.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">4.463</text>
+<text x="650" y="342.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">0.25-RoPE</text>
+<rect x="660" y="330" width="42.48366013071896" height="18" rx="4" fill="#2a9aa6" fill-opacity="0.85"/>
+<text x="710.4836601307189" y="342.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">4.530</text>
+<text x="650" y="369.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">0.75-RoPE</text>
+<rect x="660" y="357" width="13.398692810457357" height="18" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="681.3986928104573" y="369.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">4.441</text>
+<text x="578" y="398" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">bars start at 4.40 · lower is better</text>
+<text x="578" y="420" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">p-RoPE: Barbero et al., ICLR 2025, Table 2</text>
+</svg>

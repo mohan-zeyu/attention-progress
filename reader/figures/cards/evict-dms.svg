@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">evict-dms</title><desc id="desc">Learned retrofits. DMC: a toy run where 6 tokens become 3 slots because each token either appends a slot or merges into the last one with weight omega. DMS: an eviction decided at step t only takes effect at t + w (w = 256 by default). Cache size grows at one quarter (DMC 4x) or one eighth (DMS 8x) of the vanilla slope.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="440" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#2a9aa6"><tspan font-style="italic">α</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = 1:   <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">last</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">←</tspan> (<tspan font-style="italic">z</tspan> <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">last</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> + <tspan fill="#2a9aa6"><tspan font-style="italic">ω</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>) / (<tspan font-style="italic">z</tspan> + <tspan fill="#2a9aa6"><tspan font-style="italic">ω</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>),   <tspan font-style="italic">z</tspan> <tspan font-style="normal">←</tspan> <tspan font-style="italic">z</tspan> + <tspan fill="#2a9aa6"><tspan font-style="italic">ω</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal"> </tspan> ; <tspan font-style="normal"> </tspan> <tspan fill="#2a9aa6"><tspan font-style="italic">α</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = 0: <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">append </tspan> <tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></text>
+<text x="30" y="76" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">DMC · toy 1-D keys</text>
+<text x="110" y="108" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">token k</text>
+<text x="110" y="132" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">α, ω</text>
+<rect x="120" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="146.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">2</text>
+<text x="146" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">0, 1</text>
+<rect x="182" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="208.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">4</text>
+<text x="208" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">1, 1</text>
+<rect x="244" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="270.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">6</text>
+<text x="270" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">1, 2</text>
+<rect x="306" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="332.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">1</text>
+<text x="332" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">0, 1</text>
+<rect x="368" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="394.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">3</text>
+<text x="394" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">1, 1</text>
+<rect x="430" y="90" width="52" height="26" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="456.0" y="108.04" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#3f83b6">5</text>
+<text x="456" y="134" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">0, 1</text>
+<line x1="146" y1="140" x2="186" y2="178" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<line x1="208" y1="140" x2="186" y2="178" stroke="#2a9aa6" stroke-width="1.2" marker-end="url(#a-teal)"/>
+<line x1="270" y1="140" x2="186" y2="178" stroke="#2a9aa6" stroke-width="1.2" marker-end="url(#a-teal)"/>
+<line x1="332" y1="140" x2="342" y2="178" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<line x1="394" y1="140" x2="342" y2="178" stroke="#2a9aa6" stroke-width="1.2" marker-end="url(#a-teal)"/>
+<line x1="456" y1="140" x2="466" y2="178" stroke="#3f83b6" stroke-width="1.2" marker-end="url(#a-blue)"/>
+<rect x="160" y="180" width="62" height="30" rx="6" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="191.0" y="200.4" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#ffffff">4.5</text>
+<text x="191" y="228" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">z = 4</text>
+<rect x="316" y="180" width="62" height="30" rx="6" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="347.0" y="200.4" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#ffffff">2</text>
+<text x="347" y="228" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">z = 2</text>
+<rect x="440" y="180" width="62" height="30" rx="6" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="471.0" y="200.4" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#ffffff">5</text>
+<text x="471" y="228" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">z = 1</text>
+<text x="110" y="200" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">cache</text>
+<text x="488" y="252" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">6 tokens → 3 slots: (2·1+4·1)/2 = 3, (3·2+6·2)/4 = 4.5</text>
+<line x1="520" y1="62" x2="520" y2="262" stroke="#cad5db" stroke-width="1.2"/>
+<text x="540" y="76" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">DMS · delayed eviction</text>
+<line x1="550" y1="120" x2="860" y2="120" stroke="#cad5db" stroke-width="2"/>
+<circle cx="570" cy="120" r="7" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="570" y="106" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#2a9aa6"><tspan font-style="italic">α</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> = 1 <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> at </tspan> <tspan font-style="italic">t</tspan></text>
+<rect x="570" y="114" width="220" height="12" rx="3" fill="#1f9a74" fill-opacity="0.35"/>
+<text x="680" y="146" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">still readable for w steps</text>
+<rect x="790" y="114" width="60" height="12" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="820" y="106" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">t + w: evicted</text>
+<text x="540" y="178" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">w = 256 default (512 for Qwen3-8B 8×)</text>
+<text x="540" y="200" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">no new params: α from one reused q/k neuron</text>
+<text x="540" y="222" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#cf5f59">to reach 8×: DMC ≈ 44K steps, DMS ≈ 1K</text>
+<text x="540" y="242" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">(reported in the DMS paper)</text>
+<line x1="30" y1="270" x2="870" y2="270" stroke="#cad5db" stroke-width="1.2"/>
+<line x1="120" y1="406" x2="540" y2="406" stroke="#687986" stroke-width="1.2"/>
+<line x1="120" y1="296" x2="120" y2="406" stroke="#687986" stroke-width="1.2"/>
+<text x="112" y="306" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">32K</text>
+<text x="112" y="406" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">0</text>
+<text x="90" y="356" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">slots</text>
+<text x="540" y="424" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">32K generated tokens</text>
+<line x1="120" y1="406" x2="540" y2="296.0" stroke="#3f83b6" stroke-width="2.4"/>
+<text x="548" y="301.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">vanilla 32K</text>
+<line x1="120" y1="406" x2="540" y2="378.5" stroke="#d09124" stroke-width="2.4"/>
+<text x="548" y="376.5" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#d09124">DMC 4× → 8K</text>
+<line x1="120" y1="406" x2="540" y2="392.25" stroke="#1f9a74" stroke-width="2.4"/>
+<text x="548" y="406.25" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">DMS 8× → 4K</text>
+<text x="690" y="340" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">same HBM budget →</text>
+<text x="690" y="360" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">longer reasoning traces</text>
+<text x="690" y="380" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">(“inference-time</text>
+<text x="690" y="398" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">hyper-scaling”)</text>
+</svg>

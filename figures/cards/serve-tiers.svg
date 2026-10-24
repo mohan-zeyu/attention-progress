@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">serve-tiers</title><desc id="desc">Where cached KV can live, with typical bandwidths of an H100-class node (spec values): HBM3 3,350 GB/s, NVLink 900 GB/s, PCIe 5 x16 64 GB/s per direction, a 400 Gb/s RDMA NIC 50 GB/s, one Gen4 NVMe SSD about 7 GB/s. Reloading a 32K-token DeepSeek-V3.2 FP8 prefix (1.22 GiB) takes 0.39 ms, 1.5 ms, 20 ms, 26 ms or 187 ms, all far below the roughly 2.5 GPU-seconds needed to recompute its prefill at H100 BF16 peak (computed). Reported: 56.3% of DeepSeek input tokens hit its on-disk cache; LMCache up to 15× throughput with vLLM.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="440" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">reload wins if </tspan> <tspan font-style="italic">N</tspan> <tspan font-style="normal">·</tspan> <tspan fill="#3f83b6"><tspan font-style="italic">b</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">tok</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> / <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">BW</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">tier</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>   &lt;   <tspan font-style="italic">T</tspan><tspan dy="5.9" font-size="14.3"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">prefill</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan font-style="italic">N</tspan>)</text>
+<text x="30" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">bandwidth, typical spec (log axis)</text>
+<text x="600" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">time to load 1.22 GiB (log axis)</text>
+<text x="190" y="103.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">HBM3 · H100</text>
+<rect x="200" y="88" width="225.08239939656679" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="433.08239939656676" y="103.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">3,350 GB/s</text>
+<text x="190" y="137.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">NVLink 4, both ways</text>
+<rect x="200" y="122" width="188.63533056276057" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="396.6353305627606" y="137.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">900 GB/s</text>
+<text x="190" y="171.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">PCIe 5 x16, one way</text>
+<rect x="200" y="156" width="115.32883822491297" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="323.32883822491294" y="171.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">64 GB/s</text>
+<text x="190" y="205.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">RDMA NIC 400 Gb/s</text>
+<rect x="200" y="190" width="108.4832295792005" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="316.4832295792005" y="205.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">50 GB/s</text>
+<text x="190" y="239.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">NVMe SSD, Gen4</text>
+<rect x="200" y="224" width="53.961496940982435" height="22" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="261.96149694098244" y="239.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">7 GB/s</text>
+<rect x="600" y="88" width="25.968625841845082" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="633.9686258418451" y="104" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">0.39 ms</text>
+<rect x="600" y="122" width="50.98040576279493" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="658.9804057627949" y="138" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">1.5 ms</text>
+<rect x="600" y="156" width="101.28694375880427" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="709.2869437588042" y="172" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">20 ms</text>
+<rect x="600" y="190" width="105.98473873519198" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="713.984738735192" y="206" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">26 ms</text>
+<rect x="600" y="224" width="143.4002462448412" height="22" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="751.4002462448412" y="240" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">187 ms</text>
+<text x="590" y="274" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#cf5f59">recompute</text>
+<rect x="600" y="258" width="192.34127530674215" height="22" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="800.3412753067421" y="274" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">≈2.5 s</text>
+<text x="870" y="302" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">V3.2 FP8, 32K tokens · recompute: 2·37B·32K = 2.4 PFLOP at 989 TFLOP/s</text>
+<text x="30" y="280" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">tokens of KV per TB (computed): V3.2 FP8 25M · Llama-3-70B BF16 3.1M</text>
+<line x1="20" y1="330" x2="880" y2="330" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="354" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Reported</text>
+<text x="30" y="378" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">DeepSeek, 24 h (Feb 2025)</text>
+<text x="230" y="378" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">342B of 608B input tokens (56.3%) hit the on-disk KV cache</text>
+<text x="30" y="396" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">3FS (DeepSeek)</text>
+<text x="230" y="396" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">≈6.6 TiB/s aggregate reads, 180 storage nodes</text>
+<text x="30" y="414" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">LMCache + vLLM</text>
+<text x="230" y="414" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#1f9a74">up to 15× throughput (multi-round QA, document analysis)</text>
+<text x="30" y="432" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Mooncake store</text>
+<text x="230" y="432" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">KV pool over DRAM and SSD/NVMe of the GPU cluster</text>
+</svg>

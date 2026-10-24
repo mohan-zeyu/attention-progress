@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="img" aria-labelledby="title desc">
+<title id="title">kern-fa-generations</title><desc id="desc">Each FlashAttention version answers one GPU generation. The tensor cores outgrow everything else: matmul versus non-matmul throughput is 16× on A100 (312 vs 19.5 TFLOP/s FP32), 256× on H100 (989 vs 3.9 TFLOP/s exponential) and 512× on B200 (8192 vs 16 ops per clock per SM). FA-2 cuts non-matmul work and re-partitions; FA-3 overlaps with asynchronous TMA and warp specialization and adds FP8; FA-4 emulates part of exp on FMA units, skips most rescales and uses tensor memory. Reported utilization: FA-1 25–40% and FA-2 50–73% on A100, FA-2 35% on H100, FA-3 75% (740 TFLOP/s), FA-4 71% (1613 TFLOP/s on B200).</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="456" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">matmul : non-matmul throughput</tspan> <tspan font-style="normal"> </tspan> <tspan fill="#cf5f59">16<tspan font-style="normal">×</tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (A100)</tspan>  <tspan font-style="normal">→</tspan>  <tspan fill="#cf5f59">256<tspan font-style="normal">×</tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (H100)</tspan>  <tspan font-style="normal">→</tspan>  <tspan fill="#cf5f59">512<tspan font-style="normal">×</tspan></tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (B200)</tspan></text>
+<text x="30" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#253340">FA-2 · 2023</text>
+<text x="280" y="74" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#687986">A100</text>
+<rect x="30" y="88" width="220" height="14" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="30" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#3f83b6">matmul BF16 312 TF</text>
+<rect x="30" y="128" width="13.75" height="14" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="52" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">FP32 non-matmul 19.5 TF</text>
+<text x="280" y="140" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#cf5f59">16×</text>
+<circle cx="34" cy="167" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="44" y="172" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">divide by ℓ once, at the end</text>
+<circle cx="34" cy="189" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="44" y="194" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">parallelize over N (Q blocks), not</text>
+<text x="44" y="216" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">only batch × heads</text>
+<circle cx="34" cy="233" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="44" y="238" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">split Q (not K) over 4 warps:</text>
+<text x="44" y="260" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">no shared-memory reduction</text>
+<line x1="300" y1="58" x2="300" y2="290" stroke="#cad5db" stroke-width="1.2"/>
+<text x="314" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#253340">FA-3 · 2024</text>
+<text x="564" y="74" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#687986">H100</text>
+<rect x="314" y="88" width="220" height="14" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="314" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#3f83b6">matmul FP16 989 TF</text>
+<rect x="314" y="128" width="1.5" height="14" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="336" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">exp (MUFU) 3.9 TF</text>
+<text x="564" y="140" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#cf5f59">256×</text>
+<circle cx="318" cy="167" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="328" y="172" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">TMA producer warps feed</text>
+<text x="328" y="194" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">WGMMA consumer warps</text>
+<circle cx="318" cy="211" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="328" y="216" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">ping-pong: softmax under the</text>
+<text x="328" y="238" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">other warpgroup’s GEMM</text>
+<circle cx="318" cy="255" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="328" y="260" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FP8: block scales + Hadamard</text>
+<line x1="584" y1="58" x2="584" y2="290" stroke="#cad5db" stroke-width="1.2"/>
+<text x="598" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#253340">FA-4 · 2026</text>
+<text x="848" y="74" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#687986">B200</text>
+<rect x="598" y="88" width="220" height="14" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="598" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#3f83b6">tensor ops/clk/SM 8192</text>
+<rect x="598" y="128" width="1.5" height="14" rx="2" fill="#cf5f59" fill-opacity="0.9"/>
+<text x="620" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">MUFU exp ops/clk/SM 16</text>
+<text x="848" y="140" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#cf5f59">512×</text>
+<circle cx="602" cy="167" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="612" y="172" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">exp2 as a polynomial on FMA</text>
+<text x="612" y="194" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">units for 10–25% of entries</text>
+<circle cx="602" cy="211" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="612" y="216" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">rescale only if the max grows</text>
+<text x="612" y="238" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">by &gt; 8 (log₂256)</text>
+<circle cx="602" cy="255" r="2.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="612" y="260" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">tensor memory + 2-CTA MMA</text>
+<text x="328" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">ping-pong: 570 → 620–640 TFLOP/s</text>
+<line x1="20" y1="300" x2="880" y2="300" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="324" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Reported utilization of peak (bar = % of peak)</text>
+<text x="190" y="350" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-1 · A100</text>
+<rect x="200" y="336" width="90.0" height="17" rx="3" fill="#cad5db" fill-opacity="0.85"/>
+<rect x="290.0" y="336" width="54.0" height="17" rx="3" fill="#cad5db" fill-opacity="0.35"/>
+<text x="352.0" y="350" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">25–40%</text>
+<text x="190" y="373" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-2 · A100</text>
+<rect x="200" y="359" width="180.0" height="17" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="380.0" y="359" width="82.8" height="17" rx="3" fill="#3f83b6" fill-opacity="0.35"/>
+<text x="470.8" y="373" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">50–73%</text>
+<text x="190" y="396" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-2 · H100</text>
+<rect x="200" y="382" width="126.0" height="17" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="334.0" y="396" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">35%</text>
+<text x="190" y="419" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-3 · H100 FP16</text>
+<rect x="200" y="405" width="270.0" height="17" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="478.0" y="419" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">75% = 740 TFLOP/s (FP8: ≈1.2 PFLOP/s)</text>
+<text x="190" y="442" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-4 · B200 BF16</text>
+<rect x="200" y="428" width="255.6" height="17" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="463.6" y="442" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">71% = 1613 TFLOP/s (1.3× cuDNN 9.13)</text>
+</svg>

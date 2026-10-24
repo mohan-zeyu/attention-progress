@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 295" role="img" aria-labelledby="title desc">
+<title id="title">06-indexer</title><desc id="desc">DSA uses a lightweight indexer to select entries for the main attention. All pictured historical records remain retained; selector work grows with history.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="295" fill="white"/>
+<text x="150" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#d49a30">Cheap indexer</text>
+<text x="676" y="33" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">Main attention</text>
+<rect x="37" y="160.4" width="27" height="12.6" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="37" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="79" y="122.6" width="27" height="50.4" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="79" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="121" y="152.0" width="27" height="21.0" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="121" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="163" y="78.5" width="27" height="94.5" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="163" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="205" y="158.3" width="27" height="14.700000000000001" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="205" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="247" y="139.4" width="27" height="33.6" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="247" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="289" y="93.2" width="27" height="79.8" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="289" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="331" y="154.1" width="27" height="18.9" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="331" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="373" y="146.75" width="27" height="26.25" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="373" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="415" y="162.5" width="27" height="10.5" rx="7" fill="#cad5db" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="415" y="190" width="27" height="39" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<line x1="480" y1="150" x2="582" y2="150" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="609" y="110" width="64" height="65" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="641.0" y="149.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">#4</text>
+<rect x="709" y="110" width="64" height="65" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="741.0" y="149.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">#7</text>
+<text x="234" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#687986">Retained history</text>
+<text x="691" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">Selected read</text>
+</svg>

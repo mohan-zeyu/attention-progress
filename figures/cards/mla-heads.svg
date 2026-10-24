@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+<title id="title">mla-heads</title><desc id="desc">Head count changes FLOPs, not cache. DeepSeek-V3 (128 heads) and Kimi K2 (64 heads) cache the same 576 elements per token and layer. Decode FLOPs per cached token per layer: 278,528 versus 139,264; intensity in BF16 about 242 versus 121 FLOP/B, against an H100 ridge of 295. Kimi K2 reports that 64 to 128 heads costs +83% inference FLOPs at 128K for 0.5 to 1.2% lower validation loss.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="420" fill="white"/>
+<text x="88.25599999999997" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">cache</tspan> = <tspan font-style="italic">d</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">c</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> + <tspan font-style="italic">d</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">r</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> = <tspan fill="#3f83b6">576</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> for any </tspan> <tspan font-style="italic">H</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">q</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></text>
+<text x="456.272" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">FLOP / cached token</tspan> = 2<tspan fill="#d09124"><tspan font-style="italic">H</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">q</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>(576 + 512)</text>
+<text x="20" y="86" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">DeepSeek-V3 · 128 heads</text>
+<rect x="20" y="100" width="214.04" height="20" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="235.04" y="100" width="25.88" height="20" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<text x="270" y="115" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">576</text>
+<line x1="140" y1="122" x2="60" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="122" x2="84" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="122" x2="108" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="122" x2="132" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="122" x2="156" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="122" x2="180" y2="140" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<circle cx="26" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="148" r="3.2" fill="#d09124"/>
+<circle cx="26" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="157" r="3.2" fill="#d09124"/>
+<circle cx="26" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="166" r="3.2" fill="#d09124"/>
+<circle cx="26" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="175" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="175" r="3.2" fill="#d09124"/>
+<text x="20" y="210" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Kimi K2 · 64 heads</text>
+<rect x="20" y="224" width="214.04" height="20" rx="2" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="235.04" y="224" width="25.88" height="20" rx="2" fill="#2a9aa6" fill-opacity="0.9"/>
+<text x="270" y="239" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">576</text>
+<line x1="140" y1="246" x2="60" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="246" x2="84" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="246" x2="108" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="246" x2="132" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="246" x2="156" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<line x1="140" y1="246" x2="180" y2="264" stroke="#d09124" stroke-width="0.9" stroke-opacity="0.6"/>
+<circle cx="26" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="272" r="3.2" fill="#d09124"/>
+<circle cx="26" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="35" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="44" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="53" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="62" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="71" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="80" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="89" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="98" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="107" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="116" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="125" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="134" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="143" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="152" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="161" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="170" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="179" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="188" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="197" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="206" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="215" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="224" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="233" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="242" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="251" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="260" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="269" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="278" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="287" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="296" cy="281" r="3.2" fill="#d09124"/>
+<circle cx="305" cy="281" r="3.2" fill="#d09124"/>
+<line x1="320" y1="64" x2="320" y2="330" stroke="#cad5db" stroke-width="1.2"/>
+<text x="340" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">cache / token / layer (elements)</text>
+<text x="370" y="102.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">V3</text>
+<rect x="380" y="92" width="300.0" height="16" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="688.0" y="102.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">576  identical</text>
+<text x="370" y="124.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">K2</text>
+<rect x="380" y="114" width="300.0" height="16" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="688.0" y="124.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">576  identical</text>
+<text x="340" y="160" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">decode FLOPs / cached token / layer</text>
+<text x="370" y="180.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">V3</text>
+<rect x="380" y="170" width="300.0" height="16" rx="4" fill="#d09124" fill-opacity="0.85"/>
+<text x="688.0" y="180.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">278,528</text>
+<text x="370" y="202.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">K2</text>
+<rect x="380" y="192" width="150.0" height="16" rx="4" fill="#d09124" fill-opacity="0.85"/>
+<text x="538.0" y="202.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#d09124">139,264</text>
+<text x="340" y="238" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">intensity, BF16 (FLOP/B)</text>
+<text x="370" y="258.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">V3</text>
+<rect x="380" y="248" width="245.87570621468925" height="16" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="633.8757062146892" y="258.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">242</text>
+<text x="370" y="280.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">K2</text>
+<rect x="380" y="270" width="122.93785310734462" height="16" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="510.9378531073446" y="280.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">121</text>
+<text x="370" y="302.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">H100</text>
+<rect x="380" y="292" width="300.0" height="16" rx="4" fill="#687986" fill-opacity="0.85"/>
+<text x="688.0" y="302.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#687986">295</text>
+<line x1="20" y1="342" x2="880" y2="342" stroke="#cad5db" stroke-width="1.2"/>
+<text x="20" y="370" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Kimi K2 §2.3 (reported): 64 → 128 heads = +83% inference FLOPs at 128K tokens,</text>
+<text x="20" y="392" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">for only 0.5–1.2% lower validation loss. Same 61 layers, same 68.6 KiB/token cache.</text>
+</svg>

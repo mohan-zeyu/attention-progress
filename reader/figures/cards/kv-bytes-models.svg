@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+<title id="title">kv-bytes-models</title><desc id="desc">KV cache per token summed over all layers in BF16, from each model config: Llama-2-7B 512 KiB, Llama-3-8B 128 KiB, Llama-3-70B 320 KiB, Falcon-7B 8 KiB, DeepSeek-V3 MLA 68.6 KiB. At 128K tokens multiply by 131,072.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="330" fill="white"/>
+<text x="30" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">bytes / token</tspan> = <tspan font-style="italic">L</tspan> <tspan font-style="normal">·</tspan> 2 <tspan font-style="italic">H</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">s</tspan></text>
+<text x="870" y="34" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">BF16 (s = 2 B), all layers</text>
+<text x="270" y="82.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">Llama-2-7B · MHA 32/32</text>
+<rect x="280" y="62" width="300.0" height="30" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="588.0" y="82.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cf5f59">512 KiB  →  64.0 GiB @128K</text>
+<text x="270" y="128.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">Llama-3-8B · GQA 32/8</text>
+<rect x="280" y="108" width="75.0" height="30" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="363.0" y="128.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">128 KiB  →  16.0 GiB @128K</text>
+<text x="270" y="174.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">Llama-3-70B · GQA 64/8</text>
+<rect x="280" y="154" width="187.5" height="30" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="475.5" y="174.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#3f83b6">320 KiB  →  40.0 GiB @128K</text>
+<text x="270" y="220.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">Falcon-7B · MQA 71/1</text>
+<rect x="280" y="200" width="4.6875" height="30" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="292.6875" y="220.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1f9a74">8 KiB  →  1.0 GiB @128K</text>
+<text x="270" y="266.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">DeepSeek-V3 · MLA (ch. next)</text>
+<rect x="280" y="246" width="40.1953125" height="30" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="328.1953125" y="266.4" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#8d6bb5">68.6 KiB  →  8.6 GiB @128K</text>
+<text x="30" y="318" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">Llama-3-70B: L=80, H_kv=8, d_h=128 → 80·2·8·128·2 B = 320 KiB per token.</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 295" role="img" aria-labelledby="title desc">
+<title id="title">01-prefill</title><desc id="desc">Dense causal prefill has many query-key pairs. Cached decoding introduces one query that reads historical records and appends the new key/value.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="295" fill="white"/>
+<text x="225" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#253340">Prefill: many queries</text>
+<text x="675" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#253340">Decode: one new query</text>
+<line x1="450" y1="32" x2="450" y2="270" stroke="#cad5db" stroke-width="2"/>
+<rect x="119" y="65" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="65" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="181" y="65" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="212" y="65" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="243" y="65" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="274" y="65" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="119" y="96" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="96" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="181" y="96" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="212" y="96" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="243" y="96" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="274" y="96" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="119" y="127" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="127" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="181" y="127" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="212" y="127" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="243" y="127" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="274" y="127" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="119" y="158" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="158" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="181" y="158" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="212" y="158" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="243" y="158" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="274" y="158" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="119" y="189" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="189" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="181" y="189" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="212" y="189" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="243" y="189" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="274" y="189" width="25" height="25" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cad5db" stroke-width="1.7"/>
+<rect x="119" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="150" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="181" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="212" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="243" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="274" y="220" width="25" height="25" rx="7" fill="#4287b9" fill-opacity="0.8" stroke="#4287b9" stroke-width="1.7"/>
+<text x="225" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Pairwise work ~ N²</text>
+<circle cx="670" cy="90" r="25" fill="#ffffff" stroke="#d49a30" stroke-width="2"/>
+<text x="670" y="97.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#d49a30">Q</text>
+<rect x="489" y="178" width="50" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="499" y1="193" x2="529" y2="193" stroke="#4287b9" stroke-width="2"/>
+<line x1="499" y1="204" x2="529" y2="204" stroke="#4287b9" stroke-width="2"/>
+<line x1="499" y1="215" x2="529" y2="215" stroke="#4287b9" stroke-width="2"/>
+<rect x="557" y="178" width="50" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="567" y1="193" x2="597" y2="193" stroke="#4287b9" stroke-width="2"/>
+<line x1="567" y1="204" x2="597" y2="204" stroke="#4287b9" stroke-width="2"/>
+<line x1="567" y1="215" x2="597" y2="215" stroke="#4287b9" stroke-width="2"/>
+<rect x="625" y="178" width="50" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="635" y1="193" x2="665" y2="193" stroke="#4287b9" stroke-width="2"/>
+<line x1="635" y1="204" x2="665" y2="204" stroke="#4287b9" stroke-width="2"/>
+<line x1="635" y1="215" x2="665" y2="215" stroke="#4287b9" stroke-width="2"/>
+<rect x="693" y="178" width="50" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="703" y1="193" x2="733" y2="193" stroke="#4287b9" stroke-width="2"/>
+<line x1="703" y1="204" x2="733" y2="204" stroke="#4287b9" stroke-width="2"/>
+<line x1="703" y1="215" x2="733" y2="215" stroke="#4287b9" stroke-width="2"/>
+<rect x="761" y="178" width="50" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="771" y1="193" x2="801" y2="193" stroke="#4287b9" stroke-width="2"/>
+<line x1="771" y1="204" x2="801" y2="204" stroke="#4287b9" stroke-width="2"/>
+<line x1="771" y1="215" x2="801" y2="215" stroke="#4287b9" stroke-width="2"/>
+<line x1="670" y1="117" x2="514" y2="174" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="670" y1="117" x2="582" y2="174" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="670" y1="117" x2="650" y2="174" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="670" y1="117" x2="718" y2="174" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="670" y1="117" x2="786" y2="174" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="687" y1="111" x2="846" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="823" y="178" width="47" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="846.5" y="210.85" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">+</text>
+<text x="674" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Read history; append KV</text>
+</svg>

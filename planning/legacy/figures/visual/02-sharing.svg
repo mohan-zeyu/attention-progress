@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+<title id="title">02-sharing</title><desc id="desc">Eight query heads use eight KV heads in MHA, two in illustrated GQA, or one in MQA. Each query still forms its own read.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="320" fill="white"/>
+<text x="150" y="31" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253340">MHA</text>
+<line x1="74" y1="75" x2="188" y2="75" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="75" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="101" x2="188" y2="101" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="101" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="127" x2="188" y2="127" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="127" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="153" x2="188" y2="153" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="153" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="179" x2="188" y2="179" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="179" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="205" x2="188" y2="205" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="205" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="231" x2="188" y2="231" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="231" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="74" y1="257" x2="188" y2="257" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="58" cy="257" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<rect x="194" y="65" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="91" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="117" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="143" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="169" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="195" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="221" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="194" y="247" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="150" y="309" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">8 Q → 8 KV</text>
+<text x="450" y="31" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253340">GQA</text>
+<line x1="300" y1="32" x2="300" y2="295" stroke="#cad5db" stroke-width="2"/>
+<line x1="374" y1="75" x2="488" y2="111" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="75" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="101" x2="488" y2="111" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="101" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="127" x2="488" y2="111" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="127" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="153" x2="488" y2="111" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="153" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="179" x2="488" y2="215" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="179" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="205" x2="488" y2="215" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="205" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="231" x2="488" y2="215" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="231" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="374" y1="257" x2="488" y2="215" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="358" cy="257" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<rect x="494" y="101" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="494" y="205" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="450" y="309" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">8 Q → 2 KV</text>
+<text x="750" y="31" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253340">MQA</text>
+<line x1="600" y1="32" x2="600" y2="295" stroke="#cad5db" stroke-width="2"/>
+<line x1="674" y1="75" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="75" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="101" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="101" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="127" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="127" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="153" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="153" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="179" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="179" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="205" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="205" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="231" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="231" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="674" y1="257" x2="788" y2="163" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<circle cx="658" cy="257" r="9" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<rect x="794" y="153" width="46" height="20" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="750" y="309" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">8 Q → 1 KV</text>
+</svg>

@@ -1,0 +1,270 @@
+[
+  {
+    "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1911.02150",
+    "venue": "arXiv 2019 · Google",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.4, §3: one shared K/V head for all query heads; incremental-decoding memory-bandwidth argument."
+  },
+  {
+    "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.13245",
+    "venue": "EMNLP 2023 · Google Research",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.1 mean-pooled K/V projections plus uptraining (5% of steps); §2.2 grouping between MHA and MQA."
+  },
+  {
+    "title": "Gemma 4 Technical Report",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2607.02770",
+    "venue": "arXiv 2026 · Google (Gemma Team)",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2: keys reused as values in global layers except E2B/E4B, global KV −37.5%; KV sharing 20/35 (E2B), 18/42 (E4B)."
+  },
+  {
+    "title": "Gemma 4 config.json (31B, 26B-A4B, E2B, E4B) and Hugging Face modeling_gemma4.py",
+    "year": 2026,
+    "url": "https://huggingface.co/google/gemma-4-31B-it/blob/main/config.json",
+    "venue": "Hugging Face · Google",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "attention_k_eq_v, 4/2 global KV heads × 512, num_kv_shared_layers 20/18; code: v_proj None, v_norm, shared layers lack k_proj."
+  },
+  {
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.19348",
+    "venue": "arXiv 2026 · DeepSeek-AI",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.3.1/2.3.3: each KV entry is key and value; last 64 dims rotated, output re-rotated; cfg 1 KV head × 512."
+  },
+  {
+    "title": "Do Transformers Need Three Projections? Systematic Study of QKV Variants",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.04032",
+    "venue": "ICML 2026 · Kayyam, Madan Gopal, Lewis",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Q-K=V: −50% KV at +3.1% perplexity (300M/1.2B, 10B tokens); +GQA-4 −87.5%; +MQA −96.9%."
+  },
+  {
+    "title": "Multi-matrix Factorization Attention",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.19255",
+    "venue": "arXiv 2024 · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "More and wider heads via low-rank QK factorisation; MFA-KR reuses key cache as value."
+  },
+  {
+    "title": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.19427",
+    "venue": "arXiv 2025 · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2 MFA: 64 heads × 256, one K and one V head, query rank 2048; §5.1 intensities; Table 4 ridges."
+  },
+  {
+    "title": "Step-3 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/stepfun-ai/step3/blob/main/config.json",
+    "venue": "Hugging Face · StepFun",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 layers, num_attention_heads 64, num_attention_groups 1, head_dim 256, share_q_dim 2048."
+  },
+  {
+    "title": "Hardware-Efficient Attention for Fast Decoding",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.21487",
+    "venue": "arXiv 2025 · Princeton (Zadouri, Strauss, Dao)",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Table 1 intensities (MHA 1, GQA g, MQA h_q, MLA 2h_q, GTA 2g); §3.3 GTA/GLA; Table 5 GLA-2 per-device bytes."
+  },
+  {
+    "title": "Reducing Transformer Key-Value Cache Size with Cross-Layer Attention",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.12981",
+    "venue": "NeurIPS 2024 · MIT / IBM",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "K/V heads shared between adjacent layers: another 2× beyond MQA at nearly MQA accuracy (1B/3B models)."
+  },
+  {
+    "title": "You Only Cache Once: Decoder-Decoder Architectures for Language Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.05254",
+    "venue": "NeurIPS 2024 · Microsoft Research / Tsinghua",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Self-decoder (SWA or gRet) + cross-decoder on one global KV; ≈80× less KV at 65B; 2.87× prefill at 32K."
+  },
+  {
+    "title": "Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.02265",
+    "venue": "arXiv 2024 · Tencent",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.2.2 GQA + CLA saves ≈95% vs MHA; Table 2 caption: shares every 2 layers; cfg cla_share_factor 2, 64 layers."
+  },
+  {
+    "title": "Introducing Gemma 3n: The developer guide",
+    "year": 2025,
+    "url": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
+    "venue": "Google Developers Blog, 2025-06-26",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Middle-layer local/global KV shared with all top layers; 2× prefill vs Gemma 3 4B; cfg 15 of 35 shared."
+  },
+  {
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.04434",
+    "venue": "arXiv 2024 · DeepSeek-AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.1 Eqs 9–19 (latent, absorption, decoupled RoPE, √(d_h+d_h^R)); Table 1: 576 ≈ GQA 2.25 groups; §3.1.2 hyper-parameters."
+  },
+  {
+    "title": "DeepSeek-V2 / V3 / V3.2 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/config.json",
+    "venue": "Hugging Face · DeepSeek-AI",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "kv_lora_rank 512, qk_rope_head_dim 64, qk_nope/v 128, 128 heads, q_lora_rank 1536, hidden 7168, layers 60 (V2) / 61 (V3, V3.2)."
+  },
+  {
+    "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.02556",
+    "venue": "arXiv 2025 · DeepSeek-AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.1: latent shared across all query heads (MQA mode); App. A Fig. 7: MHA mode trains/prefills, MQA mode decodes."
+  },
+  {
+    "title": "Kimi K2: Open Agentic Intelligence",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.20534",
+    "venue": "arXiv 2025 · Moonshot AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.3: 64 vs 128 heads, +83% inference FLOPs at 128K, 0.5–1.2% val-loss gain; §2.1 QK-Norm unusable with MLA."
+  },
+  {
+    "title": "Kimi K2, Kimi Linear and Kimi K3 config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/config.json",
+    "venue": "Hugging Face · Moonshot AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "K2: 64 heads, 61 layers, kv_lora_rank 512, rope 64. Kimi Linear (32 heads) and K3 (96 heads): mla_use_nope true."
+  },
+  {
+    "title": "GLM-5 config.json",
+    "year": 2026,
+    "url": "https://huggingface.co/zai-org/GLM-5/blob/main/config.json",
+    "venue": "Hugging Face · Zhipu AI (zai-org)",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "78 layers, 64 heads, kv_lora_rank 512, qk_rope_head_dim 64, qk_nope 192, v_head_dim 256, q_lora_rank 2048."
+  },
+  {
+    "title": "Mistral Large 3 params.json",
+    "year": 2025,
+    "url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512-BF16/blob/main/params.json",
+    "venue": "Hugging Face · Mistral AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 layers, 128 heads, kv_lora_rank 512, qk_rope_head_dim 64, qk_nope 128, v 128, q_lora_rank 1536."
+  },
+  {
+    "title": "FlashMLA README (commit ba89a34, pre-2026-09 format)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/FlashMLA/blob/ba89a3466e9470ad08ab39738d4e7bb66989e1e7/README.md",
+    "venue": "GitHub · DeepSeek-AI",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "V3.2 FP8 row: 512 FP8 values, fp32 scales, 64 BF16 RoPE = 656 B; MQA mode K 576, V 512."
+  },
+  {
+    "title": "Towards Economical Inference: Enabling DeepSeek's Multi-Head Latent Attention in Any Transformer-based LLMs (MHA2MLA)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.14837",
+    "venue": "ACL 2025 · Ji et al.",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Partial-RoPE (2-norm) + joint SVD; 0.3–0.6% data; Table 2 Llama-2-7B −68.75% BF16, −92.19% with Int4, LongBench 27.4→26.4."
+  },
+  {
+    "title": "TransMLA: Multi-Head Latent Attention Is All You Need",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.07864",
+    "venue": "arXiv 2025 · Meng et al.",
+    "chapters": [
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "GQA→MLA: RoRoPE/FreqFold, balanced KV PCA; Table 1 LLaMA-2-7B −92.97% with 6B tokens; 10.6× at 8K (abstract)."
+  }
+]

@@ -1,0 +1,322 @@
+[
+ {
+  "title": "Generating Long Sequences with Sparse Transformers",
+  "year": 2019,
+  "url": "https://arxiv.org/abs/1904.10509",
+  "venue": "arXiv · OpenAI",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§4.3 strided and fixed pattern definitions, l ≈ √n; abstract O(n√n); strided fails on text."
+ },
+ {
+  "title": "Language Models are Few-Shot Learners (GPT-3)",
+  "year": 2020,
+  "url": "https://arxiv.org/abs/2005.14165",
+  "venue": "NeurIPS 2020 · OpenAI",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.1: alternating dense and locally banded sparse layers; n_ctx 2048."
+ },
+ {
+  "title": "Longformer: The Long-Document Transformer",
+  "year": 2020,
+  "url": "https://arxiv.org/abs/2004.05150",
+  "venue": "arXiv · AI2",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Pretraining section: sliding window 512, positions extended to 4,096."
+ },
+ {
+  "title": "Big Bird: Transformers for Longer Sequences",
+  "year": 2020,
+  "url": "https://arxiv.org/abs/2007.14062",
+  "venue": "NeurIPS 2020 · Google Research",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Table 8 ITC: block 64, g 2b, w 3b, r 3b, length 4096."
+ },
+ {
+  "title": "Mistral 7B",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2310.06825",
+  "venue": "arXiv · Mistral AI",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Table 1: W 4096, 32 layers; §2 rolling buffer i mod W, 8× less cache at 32K."
+ },
+ {
+  "title": "Gemma 2: Improving Open Language Models at a Practical Size",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2408.00118",
+  "venue": "arXiv · Google DeepMind",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "1:1 local/global, window 4096, restated in Gemma 3 report §5.2; 46 layers per config."
+ },
+ {
+  "title": "Gemma 3 Technical Report",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2503.19786",
+  "venue": "arXiv · Google DeepMind",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2: 5 local per global, span 1024, 128K; §5.2: KV overhead 60% global-only, under 15% windowed."
+ },
+ {
+  "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2508.10925",
+  "venue": "OpenAI model card",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "§2.2: banded 128 alternating with dense, following GPT-3; 64 Q / 8 KV × 64; 36 layers."
+ },
+ {
+  "title": "The Llama 4 herd (blog) and Llama-4-Scout config",
+  "year": 2025,
+  "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+  "venue": "Meta blog + HF config",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "iRoPE quote; config attention_chunk_size 8192, no_rope_layers 1,1,1,0 over 48 layers; RoPE layers chunked."
+ },
+ {
+  "title": "OLMo 3 7B config.json",
+  "year": 2025,
+  "url": "https://huggingface.co/allenai/Olmo-3-1025-7B",
+  "venue": "AI2 model card",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "32 layers, layer_types three sliding then one full, sliding_window 4096."
+ },
+ {
+  "title": "MiMo-V2-Flash Technical Report",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2601.02780",
+  "venue": "arXiv · Xiaomi",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.1: 39 SWA + 9 GA, W 128, KV heads 8/4, dims 192/128; §2.2.1: RULER-32K 89.4 vs 84.7."
+ },
+ {
+  "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2606.19348",
+  "venue": "arXiv · DeepSeek-AI",
+  "chapters": [
+   "05",
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§4.2.1 Flash: 43 layers, first two pure SWA, n_win 128; CSA m 4, 64×128 indexer, top-k 512."
+ },
+ {
+  "title": "Efficient Streaming Language Models with Attention Sinks",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2309.17453",
+  "venue": "ICLR 2024 · MIT, Meta AI",
+  "chapters": [
+   "05"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Table 1 PPL 5158.07 vs 5.40; §3.2 cache positions; §4.4 four sinks; App. C; 22.2×."
+ },
+ {
+  "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2407.02490",
+  "venue": "NeurIPS 2024 · Microsoft",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Three patterns; A-shape 1k+4k; Vertical-Slash from last 64 queries; 64-blocks top-100; 30 → 3 min at 1M."
+ },
+ {
+  "title": "FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2502.20766",
+  "venue": "ICLR 2025 oral",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "JS-divergence pattern switch; cumulative-attention index selection to a threshold."
+ },
+ {
+  "title": "XAttention: Block Sparse Attention with Antidiagonal Scoring",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2503.16428",
+  "venue": "ICML 2025 · MIT Han Lab",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2 antidiagonal block scores, minimal set over threshold; Table 5: 6.89% density at 128K, S 8."
+ },
+ {
+  "title": "Qwen2.5-1M Technical Report",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2501.15383",
+  "venue": "arXiv · Qwen",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§5: MInference Vertical-Slash in deployment; 3–7× prefill speedup at 1M on H20/A100."
+ },
+ {
+  "title": "Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2406.10774",
+  "venue": "ICML 2024 · MIT Han Lab",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§3.4 min/max bound; page 16; layers 1–2 dense; 7.03× at 32K, budget 2048; passkey results."
+ },
+ {
+  "title": "MoBA: Mixture of Block Attention for Long-Context LLMs",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2502.13189",
+  "venue": "arXiv · Moonshot AI",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 6 mean-key gate; 512/top-3 and 4096/top-12 sparsity; last 3 layers full; Kimi; 6.5×."
+ },
+ {
+  "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2502.11089",
+  "venue": "ACL 2025 · DeepSeek-AI, PKU",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "Eq. 5 gates; l 32, d 16, l′ 64, n 16 incl. 1+2 forced, w 512; GQA 4×16; 9.0×/6.0×."
+ },
+ {
+  "title": "InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2509.24663",
+  "venue": "arXiv · Tsinghua, OpenBMB",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "No extra parameters; block 64; 1 + 32 local + 63 top-k blocks ≈ 6K tokens; MiniCPM4.1."
+ },
+ {
+  "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2512.02556",
+  "venue": "arXiv · DeepSeek-AI",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.1 Eq. 1 ReLU then weights, FP8, top-2048, MQA mode; training 2.1B then 943.7B tokens."
+ },
+ {
+  "title": "DeepSeek-V3.2 config.json",
+  "year": 2025,
+  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/config.json",
+  "venue": "DeepSeek-AI model card",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "index_n_heads 64, index_head_dim 128, index_topk 2048, 128 heads, kv_lora_rank 512, rope 64."
+ },
+ {
+  "title": "DeepSeek-V3.2-Exp in vLLM (blog)",
+  "year": 2025,
+  "url": "https://vllm.ai/blog/2025-09-29-deepseek-v3-2",
+  "venue": "vLLM blog",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "FP8 MLA cache 656 B per token: 512 e4m3, 4 fp32 scales, 64 BF16 RoPE; top-2048 indices."
+ },
+ {
+  "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2602.15763",
+  "venue": "arXiv · Z.ai",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "Abstract: GLM-5 adopts DSA to cut training and inference cost."
+ },
+ {
+  "title": "MiniMax Sparse Attention",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2606.13392",
+  "venue": "arXiv · MiniMax",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "One index head per GQA group plus shared key head; block 128, top-16, max-pooled; 28.4× at 1M."
+ },
+ {
+  "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2608.30320",
+  "venue": "arXiv · Qwen",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "sections",
+  "evidence_note": "§2.1.2 QSA: 4 Q + 1 K heads × 128, 4-token pooled keys, budget 2048, 1-in-4 layers."
+ },
+ {
+  "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2603.12201",
+  "venue": "arXiv · Tsinghua, Z.ai",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "abstract",
+  "evidence_note": "Shared layers reuse top-k indices; 75% indexer compute removed on 30B DSA; 1.82×/1.48×."
+ },
+ {
+  "title": "GLM-5.2 model card",
+  "year": 2026,
+  "url": "https://huggingface.co/zai-org/GLM-5.2",
+  "venue": "Z.ai model card",
+  "chapters": [
+   "06"
+  ],
+  "reading_depth": "official report",
+  "evidence_note": "IndexShare: one indexer per four sparse layers; 2.9× fewer per-token FLOPs at 1M."
+ }
+]

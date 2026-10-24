@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="365" viewBox="0 0 1000 365" role="img" aria-labelledby="title desc">
+<title id="title">Separate cache capacity from reads and arithmetic</title><desc id="desc">Cache bytes are a product of batch, positions, independent cache sets, dimensions per record and bytes per element. Access count and selector work separately affect traffic and arithmetic.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7d8da4" stroke-width="1.5"/></marker></defs>
+<rect width="1000" height="365" rx="12" fill="white"/>
+<text x="500" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">Cache bytes ≈ B × N × C × Dentry × s</text>
+<rect x="20" y="66" width="180" height="133" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="110" y="99" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">B</text>
+<text x="110" y="134" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Concurrent sequences</text>
+<text x="110" y="173" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#52647b">Batch / serving load</text>
+<rect x="215" y="66" width="180" height="133" rx="12" fill="#eaf5f0" stroke="#c8d3e2"/>
+<text x="305" y="99" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">N</text>
+<text x="305" y="134" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Stored records</text>
+<text x="305" y="173" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#52647b">Sequence compression</text>
+<rect x="410" y="66" width="180" height="133" rx="12" fill="#f1edfa" stroke="#c8d3e2"/>
+<text x="500" y="99" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">C</text>
+<text x="500" y="134" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Independent caches</text>
+<text x="500" y="173" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#52647b">Cross-layer reuse</text>
+<rect x="605" y="66" width="180" height="133" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="695" y="99" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">Dentry</text>
+<text x="695" y="134" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Elements per record</text>
+<text x="695" y="173" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#52647b">Sharing / MLA</text>
+<rect x="800" y="66" width="180" height="133" rx="12" fill="#fbf1e5" stroke="#c8d3e2"/>
+<text x="890" y="99" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="650" fill="#203044">s</text>
+<text x="890" y="134" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Bytes per element</text>
+<text x="890" y="173" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#52647b">KV quantization</text>
+<text x="500" y="244" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Read traffic: accessed records × record size, plus indices and metadata</text>
+<text x="500" y="276" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Arithmetic: attention operation + selection + update work</text>
+<text x="500" y="321" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#52647b">Recurrent layers: replace growing history with a state of fixed dimensions</text>
+</svg>

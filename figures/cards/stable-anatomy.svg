@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">stable-anatomy</title><desc id="desc">A 2026 attention block as eight stages, with what four released models put at each stage, from configs and code. gpt-oss-120b: 8 KV heads of 64, full RoPE base 150K with YaRN x32, 128-token window alternating 1:1 with full layers, learned sink per head. Gemma 4 31B: K=V on global layers (4 x 512), q and k RMS-norm with scale 1.0, p-RoPE 1/4 at base 1M on global layers and 10K on local, window 1,024 at 5:1, V-norm. DeepSeek-V4-Pro: K=V single 512-d MQA entry, q RMS and kv-norm, last 64 of 512 dims rotated, window 128 plus compressed entries, sink per head, output de-rotation, 16-group low-rank output projection. Qwen3-Next-80B: 2 KV heads of 256, per-head q and k RMS-norm, 1/4 of 256 dims rotated at base 10M, full attention in 1 of 4 layers, elementwise sigmoid output gate.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="440" fill="white"/>
+<text x="30" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-style="italic">y</tspan> = <tspan font-style="italic">W</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">O</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>[<tspan fill="#2a9aa6">σ(<tspan font-style="italic">XW</tspan><tspan dy="5.6" font-size="13.6">θ</tspan><tspan dy="-5.6" font-size="20.0"> </tspan>)</tspan> <tspan font-style="normal">⊙</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">softmax</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">j</tspan> ∪ <tspan fill="#2a9aa6"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">sink</tspan></tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>(<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">RoPE</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">p</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>(<tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan>)<tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">RoPE</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">p</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan>) / <tspan font-style="normal">√</tspan> <tspan font-style="italic">d</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan> + <tspan font-style="italic">m</tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="italic">W</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan>) <tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan></tspan>]</text>
+<rect x="168" y="58" width="82" height="34" rx="5" fill="#d09124" fill-opacity="0.9" stroke="#d09124" stroke-width="1.6"/>
+<text x="209.0" y="79.68" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#ffffff"><tspan font-style="italic">W</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">Q</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> · <tspan font-style="italic">W</tspan><tspan dy="3.6" font-size="8.8">KV</tspan><tspan dy="-3.6" font-size="13.0"> </tspan></text>
+<rect x="258" y="58" width="82" height="34" rx="5" fill="#d09124" fill-opacity="0.9" stroke="#d09124" stroke-width="1.6"/>
+<text x="299.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">QK-norm</text>
+<line x1="251" y1="75" x2="257" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="348" y="58" width="82" height="34" rx="5" fill="#2a9aa6" fill-opacity="0.9" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="389.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">RoPE (part)</text>
+<line x1="341" y1="75" x2="347" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="438" y="58" width="82" height="34" rx="5" fill="#3f83b6" fill-opacity="0.9" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="479.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">mask</text>
+<line x1="431" y1="75" x2="437" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="528" y="58" width="82" height="34" rx="5" fill="#3f83b6" fill-opacity="0.9" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="569.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">softmax</text>
+<line x1="521" y1="75" x2="527" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="618" y="58" width="82" height="34" rx="5" fill="#8d6bb5" fill-opacity="0.9" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="659.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">· V</text>
+<line x1="611" y1="75" x2="617" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="708" y="58" width="82" height="34" rx="5" fill="#2a9aa6" fill-opacity="0.9" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="749.0" y="79.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">⊙ σ gate</text>
+<line x1="701" y1="75" x2="707" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<rect x="798" y="58" width="82" height="34" rx="5" fill="#1f9a74" fill-opacity="0.9" stroke="#1f9a74" stroke-width="1.6"/>
+<text x="839.0" y="79.68" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#ffffff"><tspan font-style="italic">W</tspan><tspan dy="3.6" font-size="8.8"><tspan font-style="italic">O</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan></text>
+<line x1="791" y1="75" x2="797" y2="75" stroke="#687986" stroke-width="1.2" marker-end="url(#a-muted)"/>
+<text x="30" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">stage →</text>
+<rect x="20" y="112" width="860" height="68" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="30" y="152" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">gpt-oss-120b</text>
+<text x="209.0" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">8 KV × 64</text>
+<text x="209.0" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">GQA, bias</text>
+<text x="299.0" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="389.0" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">full · 150K</text>
+<text x="389.0" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">YaRN ×32</text>
+<text x="479.0" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">128 ⇄ full</text>
+<text x="479.0" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1 : 1</text>
+<text x="569.0" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">+ sink</text>
+<text x="569.0" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">per head</text>
+<text x="659.0" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="749.0" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="839.0" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<rect x="20" y="190" width="860" height="68" rx="6" fill="#ffffff" fill-opacity="1"/>
+<text x="30" y="230" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Gemma 4 31B</text>
+<text x="209.0" y="220" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">global: K=V</text>
+<text x="209.0" y="238" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">4 × 512</text>
+<text x="299.0" y="220" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">q, k RMS</text>
+<text x="299.0" y="238" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">scale 1.0</text>
+<text x="389.0" y="220" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">global ¼ · 1M</text>
+<text x="389.0" y="238" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">local 10K</text>
+<text x="479.0" y="220" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">1,024 ⇄ full</text>
+<text x="479.0" y="238" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">5 : 1</text>
+<text x="569.0" y="230" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="659.0" y="220" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">V-norm</text>
+<text x="659.0" y="238" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">no gain</text>
+<text x="749.0" y="230" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="839.0" y="230" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<rect x="20" y="268" width="860" height="68" rx="6" fill="#eef3f5" fill-opacity="1"/>
+<text x="30" y="308" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">DeepSeek-V4-Pro</text>
+<text x="209.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">K=V · MQA</text>
+<text x="209.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1 × 512</text>
+<text x="299.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">q RMS</text>
+<text x="299.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">+ kv-norm</text>
+<text x="389.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">64 of 512</text>
+<text x="389.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10K | 160K</text>
+<text x="479.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">128 + comp.</text>
+<text x="479.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">entries</text>
+<text x="569.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">+ sink</text>
+<text x="569.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">per head</text>
+<text x="659.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">de-rotate</text>
+<text x="659.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">output</text>
+<text x="749.0" y="308" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="839.0" y="298" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">16 groups</text>
+<text x="839.0" y="316" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">low-rank</text>
+<rect x="20" y="346" width="860" height="68" rx="6" fill="#ffffff" fill-opacity="1"/>
+<text x="30" y="386" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Qwen3-Next-80B</text>
+<text x="209.0" y="376" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">2 KV × 256</text>
+<text x="209.0" y="394" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">GQA</text>
+<text x="299.0" y="376" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">q, k RMS</text>
+<text x="299.0" y="394" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">per head</text>
+<text x="389.0" y="376" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">¼ of 256</text>
+<text x="389.0" y="394" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10M</text>
+<text x="479.0" y="376" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">full</text>
+<text x="479.0" y="394" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1 in 4 layers</text>
+<text x="569.0" y="386" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="659.0" y="386" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="749.0" y="376" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">σ gate</text>
+<text x="749.0" y="394" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">elementwise</text>
+<text x="839.0" y="386" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cad5db">—</text>
+<text x="30" y="432" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Sink or gate, never both here · K=V comes with partial RoPE · every row but gpt-oss normalises q (and k)</text>
+</svg>

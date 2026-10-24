@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">hybrid-why</title><desc id="desc">Per-sequence memory in elements against context length for the Qwen3-Next-80B-A3B stack (36 Gated DeltaNet + 12 gated attention layers): the fixed state is 18.9M elements and the 12 attention layers add 12,288 elements per token, so KV overtakes the state at N = 1,536. The same 48 layers as all attention would need 49,152 per token, as all GDN a flat 25.2M. Right: the whole recurrent state equals the KV of N* tokens: Jamba 448, Qwen3-Next 1,536, Kimi Linear 2,601, Qwen3.5 3,072, MiniMax-01 3,584, Nemotron 3 Nano 3,925, Granite 4.0-H 4,608, Kimi K3 7,851, Nemotron-H-56B 11,059.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="440" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-style="italic">M</tspan>(<tspan font-style="italic">N</tspan>) = <tspan fill="#8d6bb5"><tspan font-style="normal">Σ</tspan><tspan dy="5.9" font-size="14.3">ℓ <tspan font-style="normal">∈</tspan> <tspan font-style="italic">R</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> |<tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3">ℓ</tspan><tspan dy="-5.9" font-size="21.0"> </tspan>|</tspan> + <tspan font-style="italic">N</tspan> <tspan font-style="normal">·</tspan> <tspan fill="#3f83b6"><tspan font-style="normal">Σ</tspan><tspan dy="5.9" font-size="14.3">ℓ <tspan font-style="normal">∈</tspan> <tspan font-style="italic">G</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="italic">c</tspan><tspan dy="5.9" font-size="14.3">ℓ</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>  <tspan font-style="italic">N</tspan><tspan dy="-8.8" font-size="14.3">*</tspan><tspan dy="8.8" font-size="21.0"> </tspan> = <tspan fill="#8d6bb5"><tspan font-style="normal">Σ</tspan> |<tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3">ℓ</tspan><tspan dy="-5.9" font-size="21.0"> </tspan>|</tspan>  /  <tspan fill="#3f83b6"><tspan font-style="normal">Σ</tspan> <tspan font-style="italic">c</tspan><tspan dy="5.9" font-size="14.3">ℓ</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan></text>
+<rect x="24" y="56" width="470" height="340" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="38" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Qwen3-Next stack: elements per sequence (config)</text>
+<line x1="84.0" y1="96" x2="84.0" y2="332" stroke="#cad5db" stroke-width="0.8"/>
+<text x="84.0" y="348" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1K</text>
+<line x1="184.0" y1="96" x2="184.0" y2="332" stroke="#cad5db" stroke-width="0.8"/>
+<text x="184.0" y="348" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10K</text>
+<line x1="284.0" y1="96" x2="284.0" y2="332" stroke="#cad5db" stroke-width="0.8"/>
+<text x="284.0" y="348" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">100K</text>
+<line x1="384.0" y1="96" x2="384.0" y2="332" stroke="#cad5db" stroke-width="0.8"/>
+<text x="384.0" y="348" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1M</text>
+<line x1="84" y1="332.0" x2="384" y2="332.0" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="336.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1M</text>
+<line x1="84" y1="284.8" x2="384" y2="284.8" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="288.8" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10M</text>
+<line x1="84" y1="237.6" x2="384" y2="237.6" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="241.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">100M</text>
+<line x1="84" y1="190.4" x2="384" y2="190.4" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="194.4" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">1G</text>
+<line x1="84" y1="143.2" x2="384" y2="143.2" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="147.2" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">10G</text>
+<line x1="84" y1="96.0" x2="384" y2="96.0" stroke="#cad5db" stroke-width="0.8"/>
+<text x="78" y="100.0" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">100G</text>
+<text x="234.0" y="366" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">context N (tokens, log)</text>
+<path d="M84.0 252.2L89.0 249.8L94.0 247.4L99.0 245.1L104.0 242.7L109.0 240.4L114.0 238.0L119.0 235.6L124.0 233.3L129.0 230.9L134.0 228.6L139.0 226.2L144.0 223.8L149.0 221.5L154.0 219.1L159.0 216.8L164.0 214.4L169.0 212.0L174.0 209.7L179.0 207.3L184.0 205.0L189.0 202.6L194.0 200.2L199.0 197.9L204.0 195.5L209.0 193.2L214.0 190.8L219.0 188.4L224.0 186.1L229.0 183.7L234.0 181.4L239.0 179.0L244.0 176.6L249.0 174.3L254.0 171.9L259.0 169.6L264.0 167.2L269.0 164.8L274.0 162.5L279.0 160.1L284.0 157.8L289.0 155.4L294.0 153.0L299.0 150.7L304.0 148.3L309.0 146.0L314.0 143.6L319.0 141.2L324.0 138.9L329.0 136.5L334.0 134.2L339.0 131.8L344.0 129.4L349.0 127.1L354.0 124.7L359.0 122.4L364.0 120.0L369.0 117.6L374.0 115.3L379.0 112.9L384.0 110.6" fill="none" stroke="#cf5f59" stroke-width="2.2"/>
+<path d="M84.0 261.5L89.0 260.5L94.0 259.5L99.0 258.4L104.0 257.2L109.0 256.0L114.0 254.7L119.0 253.3L124.0 251.9L129.0 250.4L134.0 248.9L139.0 247.2L144.0 245.6L149.0 243.8L154.0 242.1L159.0 240.2L164.0 238.4L169.0 236.4L174.0 234.5L179.0 232.5L184.0 230.4L189.0 228.4L194.0 226.3L199.0 224.2L204.0 222.0L209.0 219.9L214.0 217.7L219.0 215.5L224.0 213.3L229.0 211.0L234.0 208.8L239.0 206.5L244.0 204.3L249.0 202.0L254.0 199.7L259.0 197.4L264.0 195.1L269.0 192.8L274.0 190.5L279.0 188.2L284.0 185.9L289.0 183.5L294.0 181.2L299.0 178.9L304.0 176.5L309.0 174.2L314.0 171.9L319.0 169.5L324.0 167.2L329.0 164.8L334.0 162.5L339.0 160.1L344.0 157.8L349.0 155.4L354.0 153.1L359.0 150.7L364.0 148.4L369.0 146.0L374.0 143.7L379.0 141.3L384.0 138.9" fill="none" stroke="#1f9a74" stroke-width="2.6"/>
+<path d="M84.0 280.6L89.0 278.2L94.0 275.9L99.0 273.5L104.0 271.1L109.0 268.8L114.0 266.4L119.0 264.1L124.0 261.7L129.0 259.3L134.0 257.0L139.0 254.6L144.0 252.3L149.0 249.9L154.0 247.5L159.0 245.2L164.0 242.8L169.0 240.5L174.0 238.1L179.0 235.7L184.0 233.4L189.0 231.0L194.0 228.7L199.0 226.3L204.0 223.9L209.0 221.6L214.0 219.2L219.0 216.9L224.0 214.5L229.0 212.1L234.0 209.8L239.0 207.4L244.0 205.1L249.0 202.7L254.0 200.3L259.0 198.0L264.0 195.6L269.0 193.3L274.0 190.9L279.0 188.5L284.0 186.2L289.0 183.8L294.0 181.5L299.0 179.1L304.0 176.7L309.0 174.4L314.0 172.0L319.0 169.7L324.0 167.3L329.0 164.9L334.0 162.6L339.0 160.2L344.0 157.9L349.0 155.5L354.0 153.1L359.0 150.8L364.0 148.4L369.0 146.1L374.0 143.7L379.0 141.3L384.0 139.0" fill="none" stroke="#3f83b6" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="84.0" y1="271.77882185232573" x2="384.0" y2="271.77882185232573" stroke="#8d6bb5" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="84.0" y1="265.8817134844139" x2="384.0" y2="265.8817134844139" stroke="#8d6bb5" stroke-width="2.2"/>
+<text x="390" y="114.55925564247318" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">48 attn: 51.5G</text>
+<text x="390" y="152.9450253871674" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">hybrid: 12.9G</text>
+<text x="390" y="261.8817134844139" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8d6bb5">48 GDN</text>
+<text x="390" y="275.8817134844139" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">25.2M flat</text>
+<text x="90" y="287.77882185232573" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">state of 36 GDN layers: 18.9M</text>
+<circle cx="102.6391215695493" cy="271.77882185232573" r="5" fill="#253340" stroke="#253340" stroke-width="2"/>
+<line x1="106.6391215695493" y1="275.77882185232573" x2="142.6391215695493" y2="307.77882185232573" stroke="#253340" stroke-width="1"/>
+<text x="144.6391215695493" y="313.77882185232573" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">N* = 1,536: KV = state</text>
+<text x="380" y="185.65636401038495" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">KV of 12 attn layers</text>
+<rect x="508" y="56" width="368" height="340" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="522" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">state = KV of N* tokens (config)</text>
+<text x="636" y="104.92" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Jamba</text>
+<rect x="646" y="92" width="5.266298942038159" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="659.2662989420381" y="104.92" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">448</text>
+<text x="636" y="135.92000000000002" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Qwen3-Next</text>
+<rect x="646" y="123" width="18.055882086987975" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="672.0558820869879" y="135.92000000000002" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">1,536</text>
+<text x="636" y="166.92000000000002" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Kimi Linear</text>
+<rect x="646" y="154" width="30.575097205895652" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="684.5750972058956" y="166.92000000000002" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">2,601</text>
+<text x="636" y="197.92000000000002" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Qwen3.5-397B</text>
+<rect x="646" y="185" width="36.11176417397595" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="690.111764173976" y="197.92000000000002" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">3,072</text>
+<text x="636" y="228.92000000000002" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MiniMax-01</text>
+<rect x="646" y="216" width="42.130391536305275" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="696.1303915363053" y="228.92000000000002" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">3,584</text>
+<text x="636" y="259.92" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Nemotron 3 Nano</text>
+<rect x="646" y="247" width="46.13889140066914" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="700.1388914006691" y="259.92" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">3,925</text>
+<text x="636" y="290.92" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Granite 4.0-H-S</text>
+<rect x="646" y="278" width="54.16764626096392" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="708.1676462609639" y="290.92" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">4,608</text>
+<text x="636" y="321.92" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Kimi K3</text>
+<rect x="646" y="309" width="92.28953793290533" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="746.2895379329053" y="321.92" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">7,851</text>
+<text x="636" y="352.92" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Nemotron-H-56B</text>
+<rect x="646" y="340" width="130.0" height="19" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="784.0" y="352.92" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">11,059</text>
+<text x="692" y="388" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">elements; fp32 state doubles the byte N*</text>
+<text x="24" y="428" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Past N*, the few attention layers dominate memory. The hybrid cuts the KV slope 4×; it does not stop it growing.</text>
+</svg>

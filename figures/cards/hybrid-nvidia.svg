@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 462" role="img" aria-labelledby="title desc">
+<title id="title">hybrid-nvidia</title><desc id="desc">NVIDIA hybrids drawn from config.json token-mixer layers. Nemotron-H-56B: 10 attention among 64 mixers (118 layers with FFNs), reported 2.4 times the throughput of Qwen-2.5-72B and Llama-3.1-70B at 64K in / 1K out. Nemotron Nano 2 9B: 4 attention among 31 mixers, up to 6 times Qwen3-8B. Nemotron 3 Nano: 6 attention among 29 mixers, 3.3 times Qwen3-30B-A3B. Jet-Nemotron-2B retrofits Qwen2.5-1.5B: 2 full and 2 SWA layers kept, 24 JetBlocks; KV at 64K falls from 1,792 MB to 154 MB and throughput rises from 241 to 2,885 tokens per second (reported, H100).</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="462" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">KV/tok</tspan> = <tspan fill="#3f83b6"><tspan font-style="italic">L</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">attn</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> 2<tspan fill="#3f83b6"><tspan font-style="italic">H</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">kv</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="italic">d</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">h</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="italic">s</tspan>  <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">state</tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">L</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">ssm</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">H</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">P</tspan> <tspan font-style="normal">·</tspan> <tspan font-style="italic">N</tspan><tspan dy="5.9" font-size="14.3">state</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></text>
+<text x="210" y="70" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Mamba-2 mixers (purple) and attention (blue); FFN/MoE layers omitted · reported throughput</text>
+<text x="198" y="99" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Nemotron-H-56B</text>
+<rect x="210.0" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="217.34375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="224.6875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="232.03125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="239.375" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="246.71875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="254.0625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="261.40625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="268.75" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="276.09375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="283.4375" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="290.78125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="298.125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="305.46875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="312.8125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="320.15625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="327.5" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="334.84375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="342.1875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="349.53125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="356.875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="364.21875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="371.5625" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="378.90625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="386.25" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="393.59375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="400.9375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="408.28125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="415.625" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="422.96875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="430.3125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="437.65625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="445.0" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="452.34375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="459.6875" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="467.03125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="474.375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="481.71875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="489.0625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="496.40625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="503.75" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="511.09375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="518.4375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="525.78125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="533.125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="540.46875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="547.8125" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="555.15625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="562.5" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="569.84375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="577.1875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="584.53125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="591.875" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="599.21875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="606.5625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="613.90625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="621.25" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="628.59375" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="635.9375" y="86" width="6.34375" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="643.28125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="650.625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="657.96875" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="665.3125" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="672.65625" y="86" width="6.34375" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="210" y="120" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">10 / 64 mixers</text>
+<text x="445.0" y="120" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">2.4× vs Llama-3.1-70B</text>
+<text x="680" y="120" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV 40 KiB/tok</text>
+<text x="690" y="99" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">64</text>
+<text x="198" y="147" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Nemotron Nano 2 9B</text>
+<rect x="210.0" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="225.16129032258064" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="240.32258064516128" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="255.48387096774195" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="270.64516129032256" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="285.80645161290323" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="300.9677419354839" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="316.1290322580645" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="331.2903225806452" y="134" width="14.161290322580646" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="346.45161290322585" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="361.61290322580646" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="376.7741935483871" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="391.93548387096774" y="134" width="14.161290322580646" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="407.0967741935484" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="422.258064516129" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="437.4193548387097" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="452.58064516129036" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="467.741935483871" y="134" width="14.161290322580646" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="482.90322580645164" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="498.06451612903226" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="513.2258064516129" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="528.3870967741935" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="543.5483870967741" y="134" width="14.161290322580646" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="558.7096774193549" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="573.8709677419355" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="589.0322580645161" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="604.1935483870968" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="619.3548387096774" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="634.516129032258" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="649.6774193548388" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="664.8387096774194" y="134" width="14.161290322580646" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="210" y="168" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">4 / 31</text>
+<text x="445.0" y="168" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">up to 6× vs Qwen3-8B</text>
+<text x="680" y="168" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV 16 KiB/tok</text>
+<text x="690" y="147" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">31</text>
+<text x="198" y="195" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Nemotron 3 Nano</text>
+<rect x="210.0" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="226.20689655172413" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="242.41379310344828" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="258.62068965517244" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="274.82758620689657" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="291.0344827586207" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="307.2413793103448" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="323.44827586206895" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="339.65517241379314" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="355.8620689655172" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="372.0689655172414" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="388.2758620689655" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="404.48275862068965" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="420.68965517241384" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="436.8965517241379" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="453.1034482758621" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="469.3103448275862" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="485.51724137931035" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="501.7241379310345" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="517.9310344827586" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="534.1379310344828" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="550.344827586207" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="566.551724137931" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="582.7586206896551" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="598.9655172413793" y="182" width="15.206896551724139" height="18" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="615.1724137931035" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="631.3793103448277" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="647.5862068965517" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="663.7931034482758" y="182" width="15.206896551724139" height="18" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="210" y="216" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">6 / 29, H_kv = 2</text>
+<text x="445.0" y="216" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">3.3× vs Qwen3-30B-A3B</text>
+<text x="680" y="216" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV 6 KiB/tok</text>
+<text x="690" y="195" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">29</text>
+<text x="30" y="252" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">No position embeddings; first layer Mamba-2; attention ≈ 8 % of layers, evenly spread (Nemotron-H).</text>
+<line x1="20" y1="266" x2="880" y2="266" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="292" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Jet-Nemotron-2B · PostNAS retrofit of Qwen2.5-1.5B (MLPs frozen, search where attention stays)</text>
+<text x="198" y="318" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Qwen2.5-1.5B</text>
+<rect x="210.0" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="222.85714285714286" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="235.71428571428572" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="248.57142857142856" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="261.42857142857144" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="274.2857142857143" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="287.1428571428571" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="300.0" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="312.8571428571429" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="325.7142857142857" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="338.57142857142856" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="351.42857142857144" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="364.2857142857143" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="377.1428571428571" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="390.0" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="402.8571428571429" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="415.7142857142857" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="428.57142857142856" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="441.42857142857144" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="454.28571428571433" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="467.14285714285717" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="480.0" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="492.8571428571429" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="505.7142857142857" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="518.5714285714286" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="531.4285714285714" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="544.2857142857142" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="557.1428571428571" y="306" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="198" y="346" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Jet-Nemotron-2B</text>
+<rect x="210.0" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="222.85714285714286" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="235.71428571428572" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="248.57142857142856" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="261.42857142857144" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="274.2857142857143" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="287.1428571428571" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="300.0" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="312.8571428571429" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="325.7142857142857" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="338.57142857142856" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="351.42857142857144" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="364.2857142857143" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="377.1428571428571" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="390.0" y="334" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="402.8571428571429" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="415.7142857142857" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="428.57142857142856" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="441.42857142857144" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="454.28571428571433" y="334" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.9"/>
+<rect x="467.14285714285717" y="334" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.3"/>
+<rect x="480.0" y="334" width="11.857142857142858" height="16" rx="0" fill="#3f83b6" fill-opacity="0.3"/>
+<rect x="492.8571428571429" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="505.7142857142857" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="518.5714285714286" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="531.4285714285714" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="544.2857142857142" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<rect x="557.1428571428571" y="334" width="11.857142857142858" height="16" rx="0" fill="#8d6bb5" fill-opacity="0.8"/>
+<text x="428.57142857142856" y="366" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">full: 15, 20</text>
+<text x="512.1428571428571" y="366" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">SWA: 21, 22</text>
+<text x="210" y="386" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">all other layers → JetBlock (GDN + dynamic conv on V)</text>
+<text x="600" y="314" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV cache MB @64K</text>
+<text x="686" y="328.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Qwen2.5-1.5B</text>
+<rect x="696" y="320" width="110.0" height="13" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="814.0" y="328.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">1,792</text>
+<text x="686" y="345.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Jet-2B</text>
+<rect x="696" y="337" width="9.453125" height="13" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="713.453125" y="345.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">154</text>
+<text x="600" y="366" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">tok/s @64K, H100</text>
+<text x="686" y="380.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Qwen2.5-1.5B</text>
+<rect x="696" y="372" width="9.188908145580589" height="13" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="713.1889081455806" y="380.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">241</text>
+<text x="686" y="397.84" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Jet-2B</text>
+<rect x="696" y="389" width="110.0" height="13" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="814.0" y="397.84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">2,885</text>
+<text x="30" y="428" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Reported: KV cache size, not parameter count, sets long-context generation throughput (Key Finding 4).</text>
+<text x="30" y="450" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Attention importance is task-specific: retrieval and MMLU depend on different 2–3 layers.</text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 452" role="img" aria-labelledby="title desc">
+<title id="title">kern-flash-tiles</title><desc id="desc">FlashAttention keeps Q, K, V and O in HBM and streams tiles through on-chip SRAM, so the N×N score and probability matrices are never written. A100: HBM 1.5–2.0 TB/s, SRAM 192 KB per SM at about 19 TB/s. Example tiles of 128 rows with d = 64 fit in 144 KiB. Reported for GPT-2 medium attention (N = 1024, d = 64) on A100: HBM traffic 40.3 GB to 4.4 GB, runtime 41.7 ms to 7.3 ms, while FLOPs rise from 66.6 to 75.2 G because of recomputation.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="452" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">HBM accesses:  standard </tspan> Θ(<tspan font-style="italic">Nd</tspan> + <tspan fill="#cf5f59"><tspan font-style="italic">N</tspan><tspan dy="-8.4" font-size="13.6">2</tspan><tspan dy="8.4" font-size="20.0"> </tspan></tspan>) <tspan font-style="normal"> </tspan> <tspan font-style="normal">→</tspan> <tspan font-style="normal"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">FlashAttention </tspan> Θ(<tspan font-style="italic">N</tspan><tspan dy="-8.4" font-size="13.6">2</tspan><tspan dy="8.4" font-size="20.0"> </tspan> <tspan font-style="italic">d</tspan><tspan dy="-8.4" font-size="13.6">2</tspan><tspan dy="8.4" font-size="20.0"> </tspan> / <tspan fill="#1f9a74"><tspan font-style="italic">M</tspan></tspan>), <tspan font-style="normal"> </tspan> <tspan font-style="italic">M</tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">SRAM size</tspan></text>
+<rect x="30" y="58" width="330" height="238" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="44" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">HBM · A100 40–80 GB · 1.5–2.0 TB/s</text>
+<rect x="56" y="104" width="34" height="142" rx="3" fill="#d09124" fill-opacity="0.22"/>
+<rect x="56" y="130" width="34" height="26" rx="3" fill="#d09124" fill-opacity="0.9"/>
+<text x="73" y="266" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#d09124">Q</text>
+<rect x="102" y="104" width="34" height="142" rx="3" fill="#3f83b6" fill-opacity="0.22"/>
+<rect x="102" y="178" width="34" height="26" rx="3" fill="#3f83b6" fill-opacity="0.9"/>
+<text x="119" y="266" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#3f83b6">K</text>
+<rect x="148" y="104" width="34" height="142" rx="3" fill="#8d6bb5" fill-opacity="0.22"/>
+<rect x="148" y="178" width="34" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.9"/>
+<text x="165" y="266" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#8d6bb5">V</text>
+<rect x="194" y="104" width="34" height="142" rx="3" fill="#1f9a74" fill-opacity="0.22"/>
+<rect x="194" y="130" width="34" height="26" rx="3" fill="#1f9a74" fill-opacity="0.9"/>
+<text x="211" y="266" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1f9a74">O</text>
+<path d="M55 104L50 104L50 246L55 246" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="44" y="179.55" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">N</tspan></text>
+<text x="73" y="98" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">d</tspan></text>
+<text x="46" y="286" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">tiles </tspan> <tspan font-style="italic">Q</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan>, <tspan font-style="italic">O</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (rows </tspan> <tspan font-style="italic">i</tspan>)  <tspan font-style="normal">·</tspan>  <tspan font-style="italic">K</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">j</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan>, <tspan font-style="italic">V</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">j</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (rows </tspan> <tspan font-style="italic">j</tspan>)</text>
+<rect x="246" y="106" width="98" height="98" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6" stroke-dasharray="5 4"/>
+<line x1="246" y1="106" x2="344" y2="204" stroke="#cf5f59" stroke-width="1.2" stroke-opacity="0.6"/>
+<line x1="344" y1="106" x2="246" y2="204" stroke="#cf5f59" stroke-width="1.2" stroke-opacity="0.6"/>
+<text x="295" y="228" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#253340"><tspan fill="#cf5f59"><tspan font-style="italic">S</tspan>, <tspan font-style="italic">P</tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-6.7" font-size="10.9"><tspan font-style="italic">N</tspan><tspan font-style="normal">×</tspan> <tspan font-style="italic">N</tspan></tspan><tspan dy="6.7" font-size="16.0"> </tspan></tspan></text>
+<text x="295" y="248" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">never written</text>
+<line x1="364" y1="140" x2="444" y2="140" stroke="#3f83b6" stroke-width="2.4" marker-end="url(#a-blue)"/>
+<text x="404" y="130" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">load tiles</text>
+<line x1="444" y1="196" x2="364" y2="196" stroke="#1f9a74" stroke-width="2.4" marker-end="url(#a-green)"/>
+<text x="404" y="216" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#1f9a74"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">write </tspan> <tspan font-style="italic">O</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">i</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> once</tspan></text>
+<rect x="450" y="58" width="420" height="238" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="464" y="82" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">SRAM · 192 KB per SM × 108 · ≈19 TB/s</text>
+<rect x="466" y="102" width="52" height="66" rx="4" fill="#d09124" fill-opacity="0.85"/>
+<text x="492.0" y="141" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#ffffff"><tspan font-style="italic">Q</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></text>
+<text x="492.0" y="186" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986">B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">r</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="normal">×</tspan> <tspan font-style="italic">d</tspan></text>
+<text x="492.0" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">16 KiB</text>
+<text x="527" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#253340">·</text>
+<rect x="536" y="102" width="52" height="66" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="562.0" y="141" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#ffffff"><tspan font-style="italic">K</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan><tspan dy="-7.1" font-size="11.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="7.1" font-size="17.0"> </tspan></text>
+<text x="562.0" y="186" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986">B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">c</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="normal">×</tspan> <tspan font-style="italic">d</tspan></text>
+<text x="562.0" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">16 KiB</text>
+<text x="597" y="140" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#253340">→</text>
+<rect x="607" y="102" width="70" height="66" rx="4" fill="#253340" fill-opacity="0.12"/>
+<text x="642.0" y="141" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#253340"><tspan font-style="italic">S</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">ij</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></text>
+<text x="642.0" y="186" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986">B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">r</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="normal">×</tspan> B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">c</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan></text>
+<text x="642.0" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">64 KiB</text>
+<text x="686" y="142" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#253340">·</text>
+<rect x="695" y="102" width="52" height="66" rx="4" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="721.0" y="141" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#ffffff"><tspan font-style="italic">V</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">j</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></text>
+<text x="721.0" y="186" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986">B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">c</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="normal">×</tspan> <tspan font-style="italic">d</tspan></text>
+<text x="721.0" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">16 KiB</text>
+<text x="756" y="140" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#253340">→</text>
+<rect x="766" y="102" width="88" height="66" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="810.0" y="141" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#ffffff">Õ<tspan dy="4.8" font-size="11.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan>, <tspan font-style="italic">m</tspan><tspan dy="4.8" font-size="11.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan>, ℓ<tspan dy="4.8" font-size="11.6"><tspan font-style="italic">i</tspan></tspan><tspan dy="-4.8" font-size="17.0"> </tspan></text>
+<text x="810.0" y="186" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986">B<tspan dy="3.6" font-size="8.8"><tspan font-style="italic">r</tspan></tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-style="normal">×</tspan> <tspan font-style="italic">d</tspan></text>
+<text x="810.0" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">32 KiB</text>
+<text x="466" y="236" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">example: B = 128 rows, d = 64, BF16; S and Õ in FP32</text>
+<text x="466" y="256" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">16 + 16 + 64 + 16 + 32 = 144 KiB  &lt;  192 KB</text>
+<text x="466" y="278" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">loop j over K/V tiles, i over Q tiles (FA-1 Alg. 1)</text>
+<line x1="20" y1="310" x2="880" y2="310" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="334" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Reported (FA-1 Fig. 2): GPT-2 medium attention fwd + bwd, N = 1024, d = 64, 16 heads, batch 64, A100</text>
+<text x="30" y="356" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">HBM read + write</text>
+<text x="100" y="383" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">standard</text>
+<rect x="108" y="368" width="110.00000000000001" height="20" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="224.0" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">40.3 GB</text>
+<text x="100" y="409" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Flash</text>
+<rect x="108" y="394" width="12.009925558312657" height="20" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="126.00992555831266" y="409" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">4.4 GB</text>
+<text x="330" y="356" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">runtime</text>
+<text x="400" y="383" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">standard</text>
+<rect x="408" y="368" width="109.99999999999999" height="20" rx="3" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="524.0" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">41.7 ms</text>
+<text x="400" y="409" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Flash</text>
+<rect x="408" y="394" width="19.256594724220623" height="20" rx="3" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="433.25659472422063" y="409" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">7.3 ms</text>
+<text x="620" y="356" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">FLOPs (recompute adds)</text>
+<text x="690" y="383" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">standard</text>
+<rect x="698" y="368" width="97.42021276595743" height="20" rx="3" fill="#687986" fill-opacity="0.85"/>
+<text x="801.4202127659574" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#687986">66.6 G</text>
+<text x="690" y="409" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Flash</text>
+<rect x="698" y="394" width="110.0" height="20" rx="3" fill="#d09124" fill-opacity="0.85"/>
+<text x="814.0" y="409" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#d09124">75.2 G</text>
+<text x="30" y="440" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">Fewer bytes beats fewer FLOPs: 9× less traffic, 5.7× faster, 13% more arithmetic.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 305" role="img" aria-labelledby="title desc">
+<title id="title">10-uncertainty</title><desc id="desc">A one-dimensional Kalman illustration: greater prior uncertainty and a reliable new observation can move an estimate farther toward that observation. Internal memory uncertainty is not answer confidence.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="305" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Uncertain memory · reliable update</text>
+<line x1="210" y1="96" x2="784" y2="96" stroke="#cad5db" stroke-width="3"/>
+<line x1="285.4" y1="69" x2="394.6" y2="69" stroke="#9272b7" stroke-width="7"/>
+<circle cx="340" cy="69" r="8" fill="#9272b7" stroke="#9272b7" stroke-width="2"/>
+<line x1="718" y1="69" x2="742" y2="69" stroke="#209f78" stroke-width="5"/>
+<circle cx="730" cy="69" r="8" fill="#209f78" stroke="#209f78" stroke-width="2"/>
+<text x="844" y="76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">New</text>
+<line x1="340" y1="96" x2="652.0" y2="96" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<circle cx="652.0" cy="96" r="7" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<text x="75" y="76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">Prior</text>
+<text x="450" y="138" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#d49a30">Large correction</text>
+<text x="450" y="177" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Certain memory · noisy update</text>
+<line x1="210" y1="239" x2="784" y2="239" stroke="#cad5db" stroke-width="3"/>
+<line x1="329.5" y1="212" x2="350.5" y2="212" stroke="#9272b7" stroke-width="7"/>
+<circle cx="340" cy="212" r="8" fill="#9272b7" stroke="#9272b7" stroke-width="2"/>
+<line x1="660" y1="212" x2="800" y2="212" stroke="#209f78" stroke-width="5"/>
+<circle cx="730" cy="212" r="8" fill="#209f78" stroke="#209f78" stroke-width="2"/>
+<text x="844" y="219" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#209f78">New</text>
+<line x1="340" y1="239" x2="363.40000000000003" y2="239" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<circle cx="363.40000000000003" cy="239" r="7" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<text x="75" y="219" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#9272b7">Prior</text>
+<text x="450" y="281" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#d49a30">Small correction</text>
+</svg>

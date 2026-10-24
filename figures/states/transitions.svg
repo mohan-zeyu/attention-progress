@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 170" role="img" aria-labelledby="title desc">
+<title id="title">transitions</title><desc id="desc">The transition matrix A_t of each rule as a toy 6×6 heat map, blue positive and red negative: identity (linear attention), a scalar times identity (RetNet, Mamba-2), a diagonal (GLA), I − beta k kᵀ (DeltaNet), alpha (I − beta k kᵀ) (Gated DeltaNet), Diag(alpha)(I − beta k kᵀ) (KDA).</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="700" height="170" fill="white"/>
+<text x="59.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">linear attn</text>
+<rect x="26" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="37" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="48" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="59" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="70" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="81" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="26" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="37" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="48" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="59" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="70" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="81" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="26" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="37" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="48" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="59" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="70" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="81" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="26" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="37" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="48" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="59" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="70" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="81" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="26" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="37" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="48" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="59" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="70" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="81" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="26" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="37" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="48" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="59" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="70" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="81" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<text x="59.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">I</text>
+<text x="171.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">RetNet · Mamba-2</text>
+<rect x="138" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="149" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="160" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="171" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="182" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="193" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="138" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="149" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="160" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="171" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="182" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="193" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="138" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="149" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="160" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="171" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="182" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="193" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="138" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="149" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="160" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="171" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="182" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="193" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="138" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="149" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="160" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="171" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="182" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="193" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="138" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="149" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="160" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="171" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="182" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="193" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<text x="171.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">αI</text>
+<text x="283.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">GLA</text>
+<rect x="250" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="261" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="272" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="283" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="294" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="305" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="250" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="261" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8579999999999999"/>
+<rect x="272" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="283" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="294" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="305" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="250" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="261" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="272" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.48"/>
+<rect x="283" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="294" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="305" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="250" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="261" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="272" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="283" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8160000000000001"/>
+<rect x="294" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="305" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="250" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="261" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="272" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="283" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="294" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.14400000000000002"/>
+<rect x="305" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="250" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="261" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="272" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="283" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="294" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="305" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8916"/>
+<text x="283.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">Diag(α)</text>
+<text x="395.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">DeltaNet</text>
+<rect x="362" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6199999999999999"/>
+<rect x="373" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="384" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="395" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="406" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="417" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="362" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="373" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6199999999999999"/>
+<rect x="384" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="395" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="406" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="417" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="362" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="373" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="384" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="395" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="406" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="417" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="362" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="373" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="384" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="395" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<rect x="406" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="417" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="362" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="373" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="384" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="395" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="406" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6199999999999999"/>
+<rect x="417" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="362" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="373" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="384" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="395" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="406" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="417" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8999999999999999"/>
+<text x="395.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">I − βkkᵀ</text>
+<text x="507.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">Gated DeltaNet</text>
+<rect x="474" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.45199999999999985"/>
+<rect x="485" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="496" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="507" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="518" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="529" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="474" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="485" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.45199999999999985"/>
+<rect x="496" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="507" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="518" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="529" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="474" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="485" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="496" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="507" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="518" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="529" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="474" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="485" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="496" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="507" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<rect x="518" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="529" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="474" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="485" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.256"/>
+<rect x="496" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="507" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="518" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.45199999999999985"/>
+<rect x="529" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="474" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="485" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="496" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="507" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="518" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="529" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6479999999999999"/>
+<text x="507.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">α(I − βkkᵀ)</text>
+<text x="619.0" y="34" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#253340">KDA</text>
+<rect x="586" y="46" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.6199999999999999"/>
+<rect x="597" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="608" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="619" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="630" y="46" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.3400000000000001"/>
+<rect x="641" y="46" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="586" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.32600000000000007"/>
+<rect x="597" y="57" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.5919999999999999"/>
+<rect x="608" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="619" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="630" y="57" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.32600000000000007"/>
+<rect x="641" y="57" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="586" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="597" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="608" y="68" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.48"/>
+<rect x="619" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="630" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="641" y="68" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="586" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="597" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="608" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="619" y="79" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8160000000000001"/>
+<rect x="630" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="641" y="79" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="586" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.08800000000000001"/>
+<rect x="597" y="90" width="9.5" height="9.5" fill="#cf5f59" fill-opacity="0.08800000000000001"/>
+<rect x="608" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="619" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="630" y="90" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.11599999999999999"/>
+<rect x="641" y="90" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="586" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="597" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="608" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="619" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="630" y="101" width="9.5" height="9.5" fill="#f4f7f8"/>
+<rect x="641" y="101" width="9.5" height="9.5" fill="#3f83b6" fill-opacity="0.8916"/>
+<text x="619.0" y="132" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">Diag(α)(I − βkkᵀ)</text>
+<text x="26" y="150" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">diagonal: decays only</text>
+<text x="362" y="150" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">off-diagonal: edits along k</text>
+</svg>

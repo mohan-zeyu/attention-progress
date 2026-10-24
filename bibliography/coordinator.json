@@ -1,0 +1,257 @@
+[
+  {
+    "title": "The Llama 3 Herd of Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.21783",
+    "venue": "Meta",
+    "chapters": [
+      "00",
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Table 3: 8B has 32 layers, 32 Q / 8 KV heads, width 4096; 70B has 80 layers, 64 Q / 8 KV heads; 405B has 126 layers."
+  },
+  {
+    "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2307.09288",
+    "venue": "Meta",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "7B uses MHA with 32 heads; GQA is used only for 34B/70B (§2.2)."
+  },
+  {
+    "title": "The Falcon Series of Open Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2311.16867",
+    "venue": "TII",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Falcon-7B: multiquery attention, 71 heads, head dim 64, 32 layers."
+  },
+  {
+    "title": "DeepSeek-V3 Technical Report",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.19437",
+    "venue": "DeepSeek",
+    "chapters": [
+      "03",
+      "04"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "61 layers; MLA with KV compression dim 512 and decoupled RoPE dim 64, giving 576 cached elements per token per layer."
+  },
+  {
+    "title": "NVIDIA H100 Tensor Core GPU datasheet",
+    "year": 2023,
+    "url": "https://www.nvidia.com/en-us/data-center/h100/",
+    "venue": "NVIDIA",
+    "chapters": [
+      "03"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "H100 SXM: 989 TFLOP/s dense BF16, 3.35 TB/s HBM3, so the ridge is about 295 FLOP/B."
+  },
+  {
+    "title": "Gemma 2: Improving Open Language Models at a Practical Size",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2408.00118",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "27B: 46 layers alternating local/global, 16 KV heads × 128."
+  },
+  {
+    "title": "Gemma 3 Technical Report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2503.19786",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "27B: 62 layers, 5 local : 1 global, W 1024, 16 KV heads × 128."
+  },
+  {
+    "title": "GLM-4.6 config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/zai-org/GLM-4.6/blob/main/config.json",
+    "venue": "Zhipu AI",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "92 layers, 96 Q / 8 KV heads, head dim 128."
+  },
+  {
+    "title": "MiniMax-M2 config.json and blog post on returning to full attention",
+    "year": 2025,
+    "url": "https://www.minimax.io/news/why-did-m2-end-up-as-a-full-attention-model",
+    "venue": "MiniMax",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "62 full-attention layers, 48 Q / 8 KV heads × 128."
+  },
+  {
+    "title": "Kimi K2: Open Agentic Intelligence",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.20534",
+    "venue": "Moonshot AI",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "61 MLA layers, 64 heads, d_c 512 + d_r 64."
+  },
+  {
+    "title": "MiniMax-01: Scaling Foundation Models with Lightning Attention",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.08313",
+    "venue": "MiniMax",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "80 layers = 10 × (7 lightning + 1 softmax), GQA 64/8/128."
+  },
+  {
+    "title": "Nemotron-H: A Family of Accurate and Efficient Hybrid Mamba-Transformer Models",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.03624",
+    "venue": "NVIDIA",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "56B: 118 layers, 10 attention layers with GQA 64/8/128."
+  },
+  {
+    "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.10925",
+    "venue": "OpenAI",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "120b: 36 layers alternating banded W 128 and dense; 64 Q / 8 KV heads × 64."
+  },
+  {
+    "title": "Qwen3-Next-80B-A3B config.json",
+    "year": 2025,
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/blob/main/config.json",
+    "venue": "Qwen",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers = 12 × (3 GDN + 1 gated attention), attention 16 Q / 2 KV × 256."
+  },
+  {
+    "title": "MiMo-V2-Flash Technical Report",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2601.02780",
+    "venue": "Xiaomi",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers: 39 SWA (W 128) + 9 global with 4 KV heads, d_qk 192, d_v 128."
+  },
+  {
+    "title": "Jamba: A Hybrid Transformer-Mamba Language Model",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.19887",
+    "venue": "AI21 Labs",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "32 layers with 1 attention : 7 Mamba; GQA 32/8/128; 4 GB KV at 256K."
+  },
+  {
+    "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2510.26692",
+    "venue": "Moonshot AI",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Released 48B-A3B: 27 layers = 20 KDA + 7 MLA."
+  },
+  {
+    "title": "NVIDIA Nemotron 3 Nano technical report",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.20848",
+    "venue": "NVIDIA",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "52 layers: 23 Mamba-2 + 23 MoE + 6 attention with GQA 32/2/128."
+  },
+  {
+    "title": "Llama 4 multimodal intelligence (blog) and Scout config",
+    "year": 2025,
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+    "venue": "Meta",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "48 layers, 3 chunked : 1 global NoPE, 8 KV heads × 128."
+  },
+  {
+    "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.19969",
+    "venue": "DeepSeek",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Abstract: global KV (main KV + indexer K, always in HBM) is 890 bytes per token, about 1/4 of V4-Flash; §2.4.4 FP4 E2M1 with an E4M3 scale per 16 channels."
+  },
+  {
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.19348",
+    "venue": "DeepSeek",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Flash: 43 layers, 2 SWA-only then CSA/HCA alternating, W 128, one K=V head of 512, top-k 512."
+  },
+  {
+    "title": "Qwen3.8-Next architecture report (QSA)",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.30320",
+    "venue": "Qwen",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Flash-Next: 48 layers = 12 × (3 GDN + 1 attention to QSA), 24 Q / 2 KV × 256, budget 2048."
+  },
+  {
+    "title": "Gemma 4 31B model card",
+    "year": 2026,
+    "url": "https://huggingface.co/google/gemma-4-31B-it",
+    "venue": "Google DeepMind",
+    "chapters": [
+      "15"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "60 layers, 5 SWA (W 1024) : 1 global; global 4 KV heads × 512 with K=V (reported −37.5% KV); p-RoPE 25%."
+  }
+]

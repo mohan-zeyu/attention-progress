@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">kern-sage</title><desc id="desc">Low-bit attention kernels. Bits per operand of the two matmuls: FA-2 16/16; FA-3 FP8 8/8; SageAttention 1 INT8 QK with FP16 PV; SageAttention 2 INT4 QK with FP8 PV; SageAttention 3 FP4 for both (NVFP4, 1×16 blocks). Smoothing K by subtracting its mean over tokens leaves softmax unchanged and shrinks the INT8 step for a toy channel 9.8, 10.2, 10.3, 9.7 from 0.081 to 0.0024, 34× finer. Reported kernel speedups over FlashAttention-2 on consumer GPUs: about 2.1×, 3× and 5×.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="440" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">softmax</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan font-style="italic">q</tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> − <tspan fill="#3f83b6"><tspan font-style="italic">μ</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">K</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)) = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">softmax</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan font-style="italic">q</tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)</text>
+<text x="540" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">Q</tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">K</tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan> <tspan font-style="normal">≈</tspan> <tspan font-style="italic">δ</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">Q</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="italic">δ</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">K</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="normal">·</tspan> <tspan fill="#d09124"><tspan font-style="italic">Q</tspan></tspan><tspan dy="5.9" font-size="14.3">8</tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan fill="#3f83b6"><tspan font-style="italic">K</tspan></tspan><tspan dy="5.9" font-size="14.3">8</tspan><tspan dy="-5.9" font-size="21.0"> </tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan></text>
+<text x="30" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">bits per operand</text>
+<text x="233" y="74" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">Q</tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">K</tspan></tspan><tspan dy="-6.3" font-size="10.2"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="6.3" font-size="15.0"> </tspan></text>
+<text x="383" y="74" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#1f9a74"><tspan font-style="italic">P</tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">V</tspan></tspan></text>
+<text x="170" y="107" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">FA-2</text>
+<rect x="185" y="88" width="96" height="26" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="287" y="106" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">BF16</text>
+<rect x="335" y="88" width="96" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="437" y="106" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">BF16</text>
+<text x="170" y="141" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-3 FP8 · H100</text>
+<rect x="185" y="122" width="48" height="26" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="239" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">FP8</text>
+<rect x="335" y="122" width="48" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="389" y="140" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">FP8</text>
+<text x="170" y="175" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 1 · ICLR 25</text>
+<rect x="185" y="156" width="48" height="26" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="239" y="174" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">INT8</text>
+<rect x="335" y="156" width="96" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="437" y="174" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">FP16</text>
+<text x="170" y="209" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 2 · ICML 25</text>
+<rect x="185" y="190" width="24" height="26" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="215" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">INT4</text>
+<rect x="335" y="190" width="48" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="389" y="208" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">FP8</text>
+<text x="170" y="243" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 3 · NeurIPS 25</text>
+<rect x="185" y="224" width="24" height="26" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="215" y="242" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">FP4</text>
+<rect x="335" y="224" width="24" height="26" rx="3" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="365" y="242" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">FP4</text>
+<text x="30" y="274" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Sage 1: FP16 accumulator in PV (2× faster on RTX 4090)</text>
+<text x="30" y="294" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Sage 3: NVFP4 = E2M1 values + E4M3 scale per 16</text>
+<text x="520" y="74" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">toy · one key channel, 4 tokens</text>
+<rect x="520" y="88" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="548" y="108" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">9.8</text>
+<rect x="520" y="170" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.3"/>
+<text x="548" y="190" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">−0.2</text>
+<rect x="582" y="88" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="610" y="108" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">10.2</text>
+<rect x="582" y="170" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.3"/>
+<text x="610" y="190" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">+0.2</text>
+<rect x="644" y="88" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="672" y="108" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">10.3</text>
+<rect x="644" y="170" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.3"/>
+<text x="672" y="190" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">+0.3</text>
+<rect x="706" y="88" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="734" y="108" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">9.7</text>
+<rect x="706" y="170" width="56" height="30" rx="3" fill="#3f83b6" fill-opacity="0.3"/>
+<text x="734" y="190" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">−0.3</text>
+<text x="520" y="142" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">INT8 step </tspan> Δ = 10.3/127 = <tspan fill="#cf5f59">0.081</tspan></text>
+<line x1="640" y1="150" x2="640" y2="166" stroke="#3f83b6" stroke-width="1.4" marker-end="url(#a-blue)"/>
+<text x="652" y="162" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#3f83b6">− <tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">K</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> = 10.0</text>
+<text x="520" y="224" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340">Δ = 0.3/127 = <tspan fill="#1f9a74">0.0024</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> (34× finer)</tspan></text>
+<text x="520" y="252" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986"><tspan font-style="italic">q</tspan><tspan dy="-5.9" font-size="9.5"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="5.9" font-size="14.0"> </tspan> <tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">K</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> is the same for every key </tspan> <tspan font-style="italic">j</tspan></text>
+<text x="520" y="272" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">so the row softmax cancels it exactly</text>
+<line x1="20" y1="310" x2="880" y2="310" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="334" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">Reported kernel throughput vs FlashAttention-2 on the same GPU</text>
+<text x="180" y="359.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 1</text>
+<rect x="190" y="346" width="84.0" height="20" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="282.0" y="359.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">≈2.1×</text>
+<text x="180" y="387.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 2 · RTX 4090</text>
+<rect x="190" y="374" width="120.0" height="20" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="318.0" y="387.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">≈3×</text>
+<text x="180" y="415.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 3 · RTX 5090</text>
+<rect x="190" y="402" width="200.0" height="20" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="398.0" y="415.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">≈5×</text>
+<text x="520" y="350" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">Sage 3: 1038 TOPS on RTX 5090</text>
+<text x="520" y="374" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">FA-3 FP8: ≈1.2 PFLOP/s on H100, 2.6× lower</text>
+<text x="520" y="394" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">   error than baseline FP8 (RMSE 9.1e-3 vs 2.4e-2)</text>
+<text x="520" y="418" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sage 2 matches FA-3 FP8 speed on Hopper</text>
+</svg>

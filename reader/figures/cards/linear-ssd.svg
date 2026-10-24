@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+<title id="title">linear-ssd</title><desc id="desc">Mamba-2 written as masked attention. Left: the 8×8 mask L with L_tj = a_(j+1)…a_t for toy decays a_t = 0.9, 0.2, 0.95, 0.95, 0.9, 0.5, 0.95; the small a_3 = 0.2 cuts every path that crosses token 3. Middle: dictionary x↔v, B↔k, C↔q, N↔d_k, P↔d_v. Right: Nemotron 3 Nano numbers: 64 heads of 64×128 state = 524,288 numbers per Mamba-2 layer, 8 B/C groups, chunk 128, and 23 Mamba-2 + 23 MoE + 6 attention layers.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="470" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#2a9aa6"><tspan font-style="italic">a</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> + <tspan fill="#2a9aa6">Δ<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">x</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#3f83b6">B<tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>,   <tspan fill="#1f9a74"><tspan font-style="italic">y</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan fill="#d09124"><tspan font-style="italic">C</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal"> </tspan> ⇔ <tspan font-style="normal"> </tspan> <tspan fill="#1f9a74"><tspan font-style="italic">Y</tspan></tspan> = (<tspan fill="#2a9aa6"><tspan font-style="italic">L</tspan></tspan> <tspan font-style="normal">∘</tspan> <tspan fill="#d09124"><tspan font-style="italic">C</tspan></tspan><tspan fill="#3f83b6">B</tspan><tspan dy="-8.8" font-size="14.3"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.8" font-size="21.0"> </tspan>)(<tspan fill="#2a9aa6">Δ</tspan><tspan fill="#8d6bb5"><tspan font-style="italic">X</tspan></tspan>)</text>
+<text x="138" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.9</text>
+<text x="164" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.2</text>
+<text x="190" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.95</text>
+<text x="216" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.95</text>
+<text x="242" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.9</text>
+<text x="268" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.5</text>
+<text x="294" y="100" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#2a9aa6">.95</text>
+<text x="90" y="100" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#253340"><tspan fill="#2a9aa6"><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">t</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan></tspan></text>
+<rect x="100" y="108" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="126" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="152" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="178" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="204" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="230" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="256" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="108" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="134" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="126" y="134" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="152" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="178" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="204" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="230" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="256" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="134" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="160" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.18000000000000002"/>
+<rect x="126" y="160" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.2"/>
+<rect x="152" y="160" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="178" y="160" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="204" y="160" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="230" y="160" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="256" y="160" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="160" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="186" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.171"/>
+<rect x="126" y="186" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.19"/>
+<rect x="152" y="186" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.95"/>
+<rect x="178" y="186" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="204" y="186" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="230" y="186" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="256" y="186" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="186" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="212" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.16245"/>
+<rect x="126" y="212" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.1805"/>
+<rect x="152" y="212" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.9025"/>
+<rect x="178" y="212" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.95"/>
+<rect x="204" y="212" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="230" y="212" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="256" y="212" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="212" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.146205"/>
+<rect x="126" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.16245"/>
+<rect x="152" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.81225"/>
+<rect x="178" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.855"/>
+<rect x="204" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.9"/>
+<rect x="230" y="238" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="256" y="238" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="282" y="238" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.0731025"/>
+<rect x="126" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.081225"/>
+<rect x="152" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.406125"/>
+<rect x="178" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.4275"/>
+<rect x="204" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.45"/>
+<rect x="230" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.5"/>
+<rect x="256" y="264" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<rect x="282" y="264" width="24.5" height="24.5" fill="#f4f7f8"/>
+<rect x="100" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.07"/>
+<rect x="126" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.07716375"/>
+<rect x="152" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.38581875"/>
+<rect x="178" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.40612499999999996"/>
+<rect x="204" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.4275"/>
+<rect x="230" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.475"/>
+<rect x="256" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="0.95"/>
+<rect x="282" y="290" width="24.5" height="24.5" fill="#2a9aa6" fill-opacity="1.0"/>
+<text x="112" y="125" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="151" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.90</text>
+<text x="138" y="151" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="177" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.18</text>
+<text x="138" y="177" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.20</text>
+<text x="164" y="177" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.17</text>
+<text x="138" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.19</text>
+<text x="164" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.95</text>
+<text x="190" y="203" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.16</text>
+<text x="138" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.18</text>
+<text x="164" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.90</text>
+<text x="190" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.95</text>
+<text x="216" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.15</text>
+<text x="138" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.16</text>
+<text x="164" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.81</text>
+<text x="190" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.85</text>
+<text x="216" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.90</text>
+<text x="242" y="255" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.07</text>
+<text x="138" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.08</text>
+<text x="164" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.41</text>
+<text x="190" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.43</text>
+<text x="216" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.45</text>
+<text x="242" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.50</text>
+<text x="268" y="281" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<text x="112" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.07</text>
+<text x="138" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.08</text>
+<text x="164" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.39</text>
+<text x="190" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.41</text>
+<text x="216" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.43</text>
+<text x="242" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">.47</text>
+<text x="268" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">.95</text>
+<text x="294" y="307" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#ffffff">1</text>
+<path d="M100 321L100 326L306 326L306 321" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="203.0" y="341" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">key position j (B)</text>
+<path d="M97 108L92 108L92 314L97 314" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="86" y="215.55" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">query t (C)</text>
+<text x="204.0" y="360" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">a₃ = 0.2 cuts every path across token 3</text>
+<rect x="330" y="64" width="200" height="256" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="344" y="88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">SSM ↔ attention</text>
+<text x="356" y="116" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">x</tspan></tspan></text>
+<text x="382" y="112" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="116" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan></tspan></text>
+<text x="454" y="115" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">value</text>
+<text x="356" y="150" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#3f83b6">B</tspan></text>
+<text x="382" y="146" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="150" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan></tspan></text>
+<text x="454" y="149" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">key</text>
+<text x="356" y="184" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">C</tspan></tspan></text>
+<text x="382" y="180" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="184" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#d09124"><tspan font-style="italic">q</tspan></tspan></text>
+<text x="454" y="183" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">query</text>
+<text x="356" y="218" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan fill="#2a9aa6"><tspan font-style="italic">L</tspan></tspan></text>
+<text x="382" y="214" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="218" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="17" fill="#253340"><tspan fill="#2a9aa6"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">mask</tspan></tspan></text>
+<text x="454" y="217" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">causal × decay</text>
+<text x="356" y="252" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-style="italic">N</tspan></text>
+<text x="382" y="248" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="252" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-style="italic">d</tspan><tspan dy="5.3" font-size="12.9"><tspan font-style="italic">k</tspan></tspan><tspan dy="-5.3" font-size="19.0"> </tspan></text>
+<text x="454" y="251" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">state size</text>
+<text x="356" y="286" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-style="italic">P</tspan></text>
+<text x="382" y="282" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#687986">↔</text>
+<text x="418" y="286" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="19" fill="#253340"><tspan font-style="italic">d</tspan><tspan dy="5.3" font-size="12.9"><tspan font-style="italic">v</tspan></tspan><tspan dy="-5.3" font-size="19.0"> </tspan></text>
+<text x="454" y="285" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">head dim</text>
+<rect x="546" y="64" width="334" height="256" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="560" y="88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Nemotron 3 Nano 30B-A3B (config)</text>
+<rect x="600" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="616" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.65"/>
+<rect x="632" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="648" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.55"/>
+<rect x="664" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="680" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.45"/>
+<rect x="696" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="712" y="122" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="600" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="616" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.45"/>
+<rect x="632" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="648" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="664" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.65"/>
+<rect x="680" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="696" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.55"/>
+<rect x="712" y="138" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="600" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.65"/>
+<rect x="616" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="632" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.55"/>
+<rect x="648" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="664" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.45"/>
+<rect x="680" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="696" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="712" y="154" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.65"/>
+<rect x="600" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.45"/>
+<rect x="616" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="632" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="648" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.65"/>
+<rect x="664" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.25"/>
+<rect x="680" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.55"/>
+<rect x="696" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="712" y="170" width="14" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.45"/>
+<path d="M600 119L600 114L726 114L726 119" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="663.0" y="108" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">N</tspan> = 128</text>
+<path d="M597 122L592 122L592 184L597 184" fill="none" stroke="#687986" stroke-width="1.2"/>
+<text x="586" y="157.55" text-anchor="end" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#687986"><tspan font-style="italic">P</tspan> = 64</text>
+<text x="744" y="136.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">× 64 heads</text>
+<text x="744" y="154.9" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">= 524,288</text>
+<text x="744" y="173.8" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">per layer</text>
+<text x="566" y="230.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">n_groups = 8: B, C shared by 8 heads (GQA-like)</text>
+<text x="566" y="247.55" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">chunk_size = 128 · conv kernel 4</text>
+<text x="566" y="265.1" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">one decay scalar per head per token</text>
+<text x="30" y="392" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">52 layers</text>
+<rect x="110.0" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="125.2" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="140.4" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="155.6" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="170.8" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="186.0" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="201.2" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="216.39999999999998" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="231.6" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="246.79999999999998" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="262.0" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="277.2" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="292.4" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="307.6" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="322.79999999999995" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="338.0" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="353.2" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="368.4" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="383.59999999999997" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="398.8" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="414.0" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="429.2" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="444.4" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="459.59999999999997" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="474.79999999999995" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="490.0" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="505.2" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="520.4" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="535.5999999999999" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="550.8" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="566.0" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="581.2" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="596.4" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="611.5999999999999" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="626.8" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="642.0" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="657.1999999999999" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="672.4" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="687.6" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="702.8" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="718.0" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="733.1999999999999" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="748.4" y="377" width="13.6" height="22" rx="4" fill="#3f83b6" fill-opacity="0.88" stroke="#3f83b6" stroke-width="1.6"/>
+<rect x="763.6" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="778.8" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="794.0" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="809.1999999999999" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="824.4" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="839.5999999999999" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="854.8" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="870.0" y="377" width="13.6" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.88" stroke="#8d6bb5" stroke-width="1.6"/>
+<rect x="885.1999999999999" y="377" width="13.6" height="22" rx="4" fill="#cad5db" fill-opacity="0.88" stroke="#cad5db" stroke-width="1.6"/>
+<rect x="110" y="414" width="12" height="12" rx="2" fill="#8d6bb5" fill-opacity="0.88"/>
+<text x="128" y="425" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">Mamba-2 × 23</text>
+<rect x="250" y="414" width="12" height="12" rx="2" fill="#cad5db" fill-opacity="0.88"/>
+<text x="268" y="425" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">MoE × 23</text>
+<rect x="360" y="414" width="12" height="12" rx="2" fill="#3f83b6" fill-opacity="0.88"/>
+<text x="378" y="425" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">GQA attention × 6</text>
+<text x="870" y="425" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">decode cache = fixed SSM state + KV of 6 layers</text>
+<text x="450" y="456" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">ΔX: row t of X scaled by its step size Δ. Mamba-1 decays each (channel, state) entry separately: no matmul form.</text>
+</svg>

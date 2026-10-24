@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 170" role="img" aria-labelledby="title desc">
+<title id="title">ttt-batch</title><desc id="desc">Mini-batch TTT on 32 toy tokens. With b = 1 every gradient uses the latest weights: 32 sequential steps. With b = 8 the gradients in a batch share the batch-start weights: 4 steps, each one matrix product. With b = T there is one step, which equals linear attention.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="640" height="170" fill="white"/>
+<text x="58" y="49" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">b = 1</text>
+<rect x="70" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="83" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="96" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="109" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="122" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="135" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="148" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="161" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="174" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="187" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="200" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="213" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="226" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="239" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="252" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="265" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="278" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="291" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="304" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="317" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="330" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="343" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="356" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="369" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="382" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="395" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="408" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="421" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="434" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="447" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="460" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="473" y="34" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<text x="500" y="49" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">32 steps</text>
+<text x="58" y="91" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">b = 8</text>
+<rect x="70" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="83" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="96" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="109" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="122" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="135" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="148" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="161" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="174" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="187" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="200" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="213" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="226" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="239" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="252" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="265" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="278" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="291" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="304" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="317" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="330" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="343" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="356" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="369" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="382" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="395" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="408" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="421" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="434" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="447" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="460" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<rect x="473" y="76" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.35"/>
+<text x="500" y="91" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">4 steps</text>
+<text x="58" y="133" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">b = T</text>
+<rect x="70" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="83" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="96" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="109" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="122" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="135" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="148" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="161" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="174" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="187" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="200" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="213" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="226" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="239" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="252" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="265" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="278" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="291" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="304" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="317" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="330" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="343" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="356" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="369" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="382" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="395" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="408" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="421" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="434" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="447" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="460" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<rect x="473" y="118" width="11" height="20" rx="2" fill="#8d6bb5" fill-opacity="0.75"/>
+<text x="500" y="133" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">1 step</text>
+<text x="500" y="150" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">= linear attention</text>
+</svg>

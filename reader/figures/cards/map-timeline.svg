@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="title desc">
+<title id="title">map-timeline</title><desc id="desc">Timeline 2014–2026 in five lanes: KV width (MHA, MQA, GQA, MLA, K=V), positions and stability (RoPE, YaRN, soft-capping, sink logits, output gates), sparse/evict/compress (Sparse Transformer to DSA and CSA/HCA), recurrent state (linear attention to KDA, GDN-2, Mamba-3), and hybrids/systems (FlashAttention, PagedAttention, MiniMax-01, Qwen3-Next, Kimi Linear, DeepSeek-V4). Years before 2023 are compressed.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="480" fill="white"/>
+<rect x="478" y="34" width="412" height="418" rx="10" fill="#eef3f5" fill-opacity="0.9"/>
+<text x="691.0" y="28" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#687986">2023–2026: most of the book (axis stretched)</text>
+<line x1="182" y1="40" x2="182" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="182" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2014</text>
+<line x1="238" y1="40" x2="238" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="238" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2017</text>
+<line x1="288" y1="40" x2="288" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="288" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2019</text>
+<line x1="338" y1="40" x2="338" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="338" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2020</text>
+<line x1="388" y1="40" x2="388" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="388" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2021</text>
+<line x1="438" y1="40" x2="438" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="438" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">2022</text>
+<line x1="492" y1="40" x2="492" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="492" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">2023</text>
+<line x1="592" y1="40" x2="592" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="592" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">2024</text>
+<line x1="692" y1="40" x2="692" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="692" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">2025</text>
+<line x1="792" y1="40" x2="792" y2="448" stroke="#cad5db" stroke-width="1" stroke-opacity="0.7"/>
+<text x="792" y="468" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">2026</text>
+<rect x="16" y="42" width="150" height="74" rx="8" fill="#3f83b6" fill-opacity="0.12"/>
+<text x="26" y="84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">KV width</text>
+<circle cx="238" cy="54" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="244" y="59" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MHA</text>
+<circle cx="288" cy="54" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="294" y="59" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MQA</text>
+<circle cx="492" cy="54" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="498" y="59" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">GQA</text>
+<circle cx="592" cy="54" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="598" y="59" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MLA</text>
+<circle cx="592" cy="72" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="598" y="77" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">CLA · YOCO</text>
+<circle cx="792" cy="54" r="3.5" fill="#3f83b6" stroke="#3f83b6" stroke-width="2"/>
+<text x="798" y="59" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">K = V</text>
+<rect x="16" y="124" width="150" height="74" rx="8" fill="#2a9aa6" fill-opacity="0.12"/>
+<text x="26" y="166" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#2a9aa6">Position · stability</text>
+<circle cx="388" cy="136" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="394" y="141" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">RoPE</text>
+<circle cx="388" cy="154" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="394" y="159" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">ALiBi</text>
+<circle cx="492" cy="136" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="498" y="141" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">PI · YaRN</text>
+<circle cx="592" cy="136" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="598" y="141" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">soft-cap</text>
+<circle cx="692" cy="136" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="698" y="141" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">iRoPE</text>
+<circle cx="692" cy="154" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="698" y="159" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">sink logit</text>
+<circle cx="692" cy="172" r="3.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="698" y="177" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">output gate</text>
+<rect x="16" y="206" width="150" height="74" rx="8" fill="#1f9a74" fill-opacity="0.12"/>
+<text x="26" y="248" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#1f9a74">Sparse · compress</text>
+<circle cx="288" cy="218" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="294" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Sparse Transf.</text>
+<circle cx="338" cy="236" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="344" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Longformer</text>
+<circle cx="338" cy="254" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="344" y="259" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">BigBird</text>
+<circle cx="492" cy="218" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="498" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">SWA</text>
+<circle cx="492" cy="236" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="498" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">H2O</text>
+<circle cx="492" cy="254" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="498" y="259" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">StreamingLLM</text>
+<circle cx="592" cy="218" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="598" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">SnapKV</text>
+<circle cx="592" cy="236" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="598" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Quest</text>
+<circle cx="592" cy="254" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="598" y="259" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MInference</text>
+<circle cx="692" cy="218" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="698" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">NSA</text>
+<circle cx="692" cy="236" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="698" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MoBA</text>
+<circle cx="692" cy="254" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="698" y="259" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">DSA</text>
+<circle cx="792" cy="218" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="798" y="223" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">CSA · HCA</text>
+<circle cx="792" cy="236" r="3.5" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="798" y="241" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MSA</text>
+<rect x="16" y="288" width="150" height="74" rx="8" fill="#8d6bb5" fill-opacity="0.12"/>
+<text x="26" y="330" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">Recurrent state</text>
+<circle cx="338" cy="300" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="344" y="305" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Linear Transf.</text>
+<circle cx="388" cy="318" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="394" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">S4</text>
+<circle cx="492" cy="300" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="498" y="305" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">RetNet</text>
+<circle cx="492" cy="318" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="498" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Mamba</text>
+<circle cx="492" cy="336" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="498" y="341" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">GLA</text>
+<circle cx="592" cy="300" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="598" y="305" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Mamba-2</text>
+<circle cx="592" cy="318" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="598" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">DeltaNet</text>
+<circle cx="592" cy="336" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="598" y="341" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">GDN</text>
+<circle cx="592" cy="354" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="598" y="359" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">TTT</text>
+<circle cx="692" cy="300" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="698" y="305" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">RWKV-7</text>
+<circle cx="692" cy="318" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="698" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Titans</text>
+<circle cx="692" cy="336" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="698" y="341" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">KDA</text>
+<circle cx="792" cy="300" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="798" y="305" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">GDN-2</text>
+<circle cx="792" cy="318" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="798" y="323" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">KDN</text>
+<circle cx="792" cy="336" r="3.5" fill="#8d6bb5" stroke="#8d6bb5" stroke-width="2"/>
+<text x="798" y="341" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Mamba-3</text>
+<rect x="16" y="370" width="150" height="74" rx="8" fill="#d09124" fill-opacity="0.12"/>
+<text x="26" y="412" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Hybrid · systems</text>
+<circle cx="182" cy="382" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="188" y="387" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Bahdanau</text>
+<circle cx="438" cy="382" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="444" y="387" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">FlashAttn</text>
+<circle cx="492" cy="400" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="498" y="405" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">PagedAttn</text>
+<circle cx="492" cy="418" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="498" y="423" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Ring</text>
+<circle cx="592" cy="382" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="598" y="387" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Jamba</text>
+<circle cx="592" cy="400" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="598" y="405" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">FA-3</text>
+<circle cx="692" cy="382" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="698" y="387" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">MiniMax-01</text>
+<circle cx="692" cy="400" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="698" y="405" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Qwen3-Next</text>
+<circle cx="692" cy="418" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="698" y="423" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">Kimi Linear</text>
+<circle cx="792" cy="382" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="798" y="387" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">DeepSeek-V4</text>
+<circle cx="792" cy="400" r="3.5" fill="#d09124" stroke="#d09124" stroke-width="2"/>
+<text x="798" y="405" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#253340">FA-4</text>
+</svg>

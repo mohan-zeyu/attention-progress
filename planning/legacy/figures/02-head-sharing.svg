@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc"><title id="title">MHA GQA and MQA head sharing</title><desc id="desc">Eight illustrative query heads read eight two or one KV heads. Cache rows remain attached to every historical position; only their width changes.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#203044"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,Helvetica,sans-serif;fill:#203044}.small{font-size:14px}.body{font-size:17px}.title{font-size:23px;font-weight:700}.label{font-size:16px;font-weight:600}</style>
+<text x="25" y="36" class="title" text-anchor="start">Share representations across heads, retain positions</text>
+<rect x="20" y="64" width="330" height="435" rx="10" fill="#fafbfd" stroke="#cbd5e1"/>
+<text x="40" y="98" class="title" text-anchor="start">MHA</text>
+<text x="40" y="124" class="body" text-anchor="start">Hq = 8; Hkv = 8</text>
+<rect x="40" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="55" y="173" class="small" text-anchor="middle">Q1</text>
+<rect x="77" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="92" y="173" class="small" text-anchor="middle">Q2</text>
+<rect x="114" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="129" y="173" class="small" text-anchor="middle">Q3</text>
+<rect x="151" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="166" y="173" class="small" text-anchor="middle">Q4</text>
+<rect x="188" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="203" y="173" class="small" text-anchor="middle">Q5</text>
+<rect x="225" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="240" y="173" class="small" text-anchor="middle">Q6</text>
+<rect x="262" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="277" y="173" class="small" text-anchor="middle">Q7</text>
+<rect x="299" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="314" y="173" class="small" text-anchor="middle">Q8</text>
+<line x1="55" y1="187" x2="55" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="40" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="55" y="284" class="small" text-anchor="middle">K</text>
+<text x="55" y="306" class="small" text-anchor="middle">V</text>
+<line x1="92" y1="187" x2="92" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="77" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="92" y="284" class="small" text-anchor="middle">K</text>
+<text x="92" y="306" class="small" text-anchor="middle">V</text>
+<line x1="129" y1="187" x2="129" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="114" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="129" y="284" class="small" text-anchor="middle">K</text>
+<text x="129" y="306" class="small" text-anchor="middle">V</text>
+<line x1="166" y1="187" x2="166" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="151" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="166" y="284" class="small" text-anchor="middle">K</text>
+<text x="166" y="306" class="small" text-anchor="middle">V</text>
+<line x1="203" y1="187" x2="203" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="188" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="203" y="284" class="small" text-anchor="middle">K</text>
+<text x="203" y="306" class="small" text-anchor="middle">V</text>
+<line x1="240" y1="187" x2="240" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="225" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="240" y="284" class="small" text-anchor="middle">K</text>
+<text x="240" y="306" class="small" text-anchor="middle">V</text>
+<line x1="277" y1="187" x2="277" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="262" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="277" y="284" class="small" text-anchor="middle">K</text>
+<text x="277" y="306" class="small" text-anchor="middle">V</text>
+<line x1="314" y1="187" x2="314" y2="254" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="299" y="260" width="30" height="58" rx="5" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="314" y="284" class="small" text-anchor="middle">K</text>
+<text x="314" y="306" class="small" text-anchor="middle">V</text>
+<text x="40" y="221" class="small" text-anchor="start">reads</text>
+<text x="40" y="351" class="label" text-anchor="start">Historical cache rows</text>
+<text x="40" y="389" class="small" text-anchor="start">j1</text>
+<rect x="74" y="371" width="250.0" height="25" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="40" y="423" class="small" text-anchor="start">j2</text>
+<rect x="74" y="405" width="250.0" height="25" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="40" y="457" class="small" text-anchor="start">j3</text>
+<rect x="74" y="439" width="250.0" height="25" rx="3" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="40" y="480" class="small" text-anchor="start">Width: 8 × (dk + dv) elements</text>
+<rect x="375" y="64" width="330" height="435" rx="10" fill="#fafbfd" stroke="#cbd5e1"/>
+<text x="395" y="98" class="title" text-anchor="start">GQA</text>
+<text x="395" y="124" class="body" text-anchor="start">Hq = 8; Hkv = 2</text>
+<rect x="395" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="410" y="173" class="small" text-anchor="middle">Q1</text>
+<rect x="432" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="447" y="173" class="small" text-anchor="middle">Q2</text>
+<rect x="469" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="484" y="173" class="small" text-anchor="middle">Q3</text>
+<rect x="506" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="521" y="173" class="small" text-anchor="middle">Q4</text>
+<rect x="543" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="558" y="173" class="small" text-anchor="middle">Q5</text>
+<rect x="580" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="595" y="173" class="small" text-anchor="middle">Q6</text>
+<rect x="617" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="632" y="173" class="small" text-anchor="middle">Q7</text>
+<rect x="654" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="669" y="173" class="small" text-anchor="middle">Q8</text>
+<line x1="410" y1="187" x2="465" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="447" y1="187" x2="465" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="484" y1="187" x2="465" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="521" y1="187" x2="465" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="421" y="260" width="88" height="58" rx="6" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="465" y="284" class="body" text-anchor="middle">K / V</text>
+<text x="465" y="306" class="small" text-anchor="middle">one group</text>
+<line x1="558" y1="187" x2="615" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="595" y1="187" x2="615" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="632" y1="187" x2="615" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="669" y1="187" x2="615" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="571" y="260" width="88" height="58" rx="6" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="615" y="284" class="body" text-anchor="middle">K / V</text>
+<text x="615" y="306" class="small" text-anchor="middle">one group</text>
+<text x="395" y="221" class="small" text-anchor="start">reads</text>
+<text x="395" y="351" class="label" text-anchor="start">Historical cache rows</text>
+<text x="395" y="389" class="small" text-anchor="start">j1</text>
+<rect x="429" y="371" width="62.5" height="25" rx="3" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="395" y="423" class="small" text-anchor="start">j2</text>
+<rect x="429" y="405" width="62.5" height="25" rx="3" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="395" y="457" class="small" text-anchor="start">j3</text>
+<rect x="429" y="439" width="62.5" height="25" rx="3" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="395" y="480" class="small" text-anchor="start">Width: 2 × (dk + dv) elements</text>
+<rect x="730" y="64" width="330" height="435" rx="10" fill="#fafbfd" stroke="#cbd5e1"/>
+<text x="750" y="98" class="title" text-anchor="start">MQA</text>
+<text x="750" y="124" class="body" text-anchor="start">Hq = 8; Hkv = 1</text>
+<rect x="750" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="765" y="173" class="small" text-anchor="middle">Q1</text>
+<rect x="787" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="802" y="173" class="small" text-anchor="middle">Q2</text>
+<rect x="824" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="839" y="173" class="small" text-anchor="middle">Q3</text>
+<rect x="861" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="876" y="173" class="small" text-anchor="middle">Q4</text>
+<rect x="898" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="913" y="173" class="small" text-anchor="middle">Q5</text>
+<rect x="935" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="950" y="173" class="small" text-anchor="middle">Q6</text>
+<rect x="972" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="987" y="173" class="small" text-anchor="middle">Q7</text>
+<rect x="1009" y="150" width="30" height="35" rx="5" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="1024" y="173" class="small" text-anchor="middle">Q8</text>
+<line x1="765" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="802" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="839" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="876" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="913" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="950" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="987" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<line x1="1024" y1="187" x2="895" y2="253" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="830" y="260" width="130" height="58" rx="6" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="895" y="284" class="body" text-anchor="middle">K / V</text>
+<text x="895" y="306" class="small" text-anchor="middle">shared by all</text>
+<text x="750" y="221" class="small" text-anchor="start">reads</text>
+<text x="750" y="351" class="label" text-anchor="start">Historical cache rows</text>
+<text x="750" y="389" class="small" text-anchor="start">j1</text>
+<rect x="784" y="371" width="31.25" height="25" rx="3" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="750" y="423" class="small" text-anchor="start">j2</text>
+<rect x="784" y="405" width="31.25" height="25" rx="3" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="750" y="457" class="small" text-anchor="start">j3</text>
+<rect x="784" y="439" width="31.25" height="25" rx="3" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="750" y="480" class="small" text-anchor="start">Width: 1 × (dk + dv) elements</text>
+<text x="25" y="534" class="body" text-anchor="start">Each query head has its own attention weights. The number N of retained positions is unchanged.</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+<title id="title">kv-tie</title><desc id="desc">K=V tying: one projection u = W_K h serves as key (normed, 25% of dims rotated) and as value (normed, never rotated). Gemma 4 31B global layer: 4 KV heads × 512 store 4,096 elements with separate K and V; the report gives 37.5% less global KV. DeepSeek-V4: one 512-element entry is both key and value (1,024 → 512 elements). Kayyam et al.: K=V cuts KV to 50% of MHA at +3.1% perplexity; with GQA-4 to 12.5%, with MQA to 3.1%.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="450" fill="white"/>
+<defs><pattern id="tied" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="8" fill="#3f83b6"/><rect x="4" width="4" height="8" fill="#8d6bb5"/></pattern></defs>
+<text x="189.0448" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">u</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan font-style="italic">W</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">K</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan> <tspan font-style="italic">h</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></text>
+<text x="325.0416" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan fill="#2a9aa6">RoPE</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">norm</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">g</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">u</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>))</text>
+<text x="580.604" y="34" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> = <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">norm</tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">u</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan>)</text>
+<rect x="20" y="54" width="430" height="200" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="34" y="78" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">One projection, two reads · Gemma 4 31B global</text>
+<rect x="40" y="96" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="112" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="128" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="144" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="160" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="176" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<rect x="40" y="192" width="14" height="14" rx="2" fill="#253340" fill-opacity="0.25"/>
+<text x="34" y="232" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan font-style="italic">h</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">j</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-6.3" font-size="10.2">5376</tspan><tspan dy="6.3" font-size="15.0"> </tspan></text>
+<line x1="58" y1="150" x2="106" y2="150" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<rect x="108" y="134" width="52" height="32" rx="6" fill="#3f83b6" fill-opacity="1" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="134.0" y="155.76" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="16" fill="#ffffff"><tspan font-style="italic">W</tspan><tspan dy="4.5" font-size="10.9"><tspan font-style="italic">K</tspan></tspan><tspan dy="-4.5" font-size="16.0"> </tspan></text>
+<rect x="108" y="180" width="52" height="28" rx="6" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="134.0" y="199.04" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="14" fill="#687986"><tspan font-style="italic">W</tspan><tspan dy="3.9" font-size="9.5"><tspan font-style="italic">V</tspan></tspan><tspan dy="-3.9" font-size="14.0"> </tspan></text>
+<line x1="110" y1="182" x2="158" y2="206" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="134" y="226" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#cf5f59">removed</text>
+<line x1="162" y1="150" x2="194" y2="150" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<rect x="198" y="102" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<rect x="198" y="118" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<rect x="198" y="134" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<rect x="198" y="150" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<rect x="198" y="166" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<rect x="198" y="182" width="14" height="14" rx="2" fill="#3f83b6" fill-opacity="0.8"/>
+<text x="178" y="232" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">u</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">j</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan></tspan> <tspan font-style="normal">∈</tspan> <tspan font-style="normal">ℝ</tspan><tspan dy="-6.3" font-size="10.2">4 <tspan font-style="normal">×</tspan> 512</tspan><tspan dy="6.3" font-size="15.0"> </tspan></text>
+<line x1="218" y1="126" x2="292" y2="112" stroke="#3f83b6" stroke-width="1.4" marker-end="url(#a-blue)"/>
+<line x1="218" y1="176" x2="292" y2="180" stroke="#8d6bb5" stroke-width="1.4" marker-end="url(#a-purple)"/>
+<rect x="298" y="100" width="14" height="22" rx="2" fill="#2a9aa6" fill-opacity="0.85"/>
+<rect x="298" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="314" y="100" width="14" height="22" rx="2" fill="#2a9aa6" fill-opacity="0.85"/>
+<rect x="314" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="330" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="330" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="346" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="346" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="362" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="362" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="378" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="378" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="394" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="394" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="410" y="100" width="14" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="410" y="168" width="14" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="434" y="117" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="18" fill="#253340"><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan></text>
+<text x="434" y="185" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="18" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.0" font-size="12.2"><tspan font-style="italic">j</tspan></tspan><tspan dy="-5.0" font-size="18.0"> </tspan></tspan></text>
+<text x="298" y="142" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">norm (gain) · RoPE on 25%</text>
+<text x="298" y="210" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#8d6bb5">norm · never rotated</text>
+<rect x="466" y="54" width="414" height="200" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="480" y="78" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">Study · KV cache as % of MHA</text>
+<text x="586" y="109.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">separate K, V</text>
+<rect x="596" y="96" width="200.0" height="20" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="804.0" y="109.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">100%</text>
+<text x="586" y="140.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">K=V</text>
+<rect x="596" y="127" width="100.0" height="20" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="704.0" y="140.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">50%</text>
+<text x="586" y="171.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">K=V + GQA-4</text>
+<rect x="596" y="158" width="25.0" height="20" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="629.0" y="171.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">12.5%</text>
+<text x="586" y="202.6" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">K=V + MQA</text>
+<rect x="596" y="189" width="6.2" height="20" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="610.2" y="202.6" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">3.1%</text>
+<text x="866" y="226" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">K=V alone: +3.1% perplexity</text>
+<text x="866" y="244" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">Kayyam et al., 300M / 1.2B, 10B tokens (reported)</text>
+<text x="20" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Stored per token in one global layer (elements · BF16 bytes)</text>
+<text x="188" y="315" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Gemma 4 · K ≠ V</text>
+<rect x="200" y="298" width="62.0" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="264.0" y="298" width="62.0" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="328.0" y="298" width="62.0" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="392.0" y="298" width="62.0" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="456.0" y="298" width="62.0" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="520.0" y="298" width="62.0" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="584.0" y="298" width="62.0" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<rect x="648.0" y="298" width="62.0" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="720.0" y="315" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">4,096 · 8 KiB</text>
+<text x="188" y="349" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Gemma 4 · K = V</text>
+<rect x="200" y="332" width="318.0" height="22" rx="2" fill="url(#tied)" fill-opacity=".9"/>
+<text x="528.0" y="349" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">2,560 · 5 KiB  (reported −37.5%)</text>
+<text x="188" y="383" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeepSeek-V4 · K ≠ V</text>
+<rect x="200" y="366" width="62.0" height="22" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<rect x="264.0" y="366" width="62.0" height="22" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="336.0" y="383" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">1,024 · 2 KiB</text>
+<text x="188" y="417" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">DeepSeek-V4 · K = V</text>
+<rect x="200" y="400" width="56.0" height="22" rx="2" fill="url(#tied)" fill-opacity=".9"/>
+<rect x="256.0" y="400" width="7.0" height="22" rx="0" fill="#2a9aa6" fill-opacity="1"/>
+<text x="272.0" y="417" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">512 · 1 KiB  (one entry)</text>
+<line x1="259.75" y1="424" x2="330" y2="435.45" stroke="#2a9aa6" stroke-width="1" stroke-dasharray="5 4"/>
+<circle cx="259.75" cy="424" r="2.5" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="334" y="440" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#2a9aa6">last 64 dims rotated; the output is rotated back by −t</text>
+<rect x="590" y="272" width="22" height="14" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="618" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#3f83b6">K</text>
+<rect x="640" y="272" width="22" height="14" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="668" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#8d6bb5">V</text>
+<rect x="690" y="272" width="22" height="14" rx="2" fill="url(#tied)" fill-opacity=".9"/>
+<text x="718" y="284" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#253340">one vector = K and V</text>
+</svg>

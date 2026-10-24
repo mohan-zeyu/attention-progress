@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 275" role="img" aria-labelledby="title desc">
+<title id="title">04-collision</title><desc id="desc">Different associations can overlap in the same state coordinates. Bounded state has finite capacity; similar keys can interfere.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="275" fill="white"/>
+<rect x="40" y="38" width="169" height="50" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="124.5" y="70.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#4287b9">Order 7314</text>
+<rect x="40" y="176" width="169" height="50" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cf6c66" stroke-width="1.7"/>
+<text x="124.5" y="208.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#cf6c66">Order 7315</text>
+<line x1="212" y1="62" x2="401" y2="111" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<line x1="212" y1="200" x2="401" y2="138" stroke="#cf6c66" stroke-width="2" marker-end="url(#a-red)"/>
+<rect x="410" y="78" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="440" y="78" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="470" y="78" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="500" y="78" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="410" y="108" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="440" y="108" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.33125"/>
+<rect x="470" y="108" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.575"/>
+<rect x="500" y="108" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.81875"/>
+<rect x="410" y="138" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="440" y="138" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.9"/>
+<rect x="470" y="138" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.4125"/>
+<rect x="500" y="138" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.65625"/>
+<rect x="410" y="168" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="440" y="168" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.7375"/>
+<rect x="470" y="168" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.25"/>
+<rect x="500" y="168" width="28" height="28" rx="2" fill="#9272b7" fill-opacity="0.49375"/>
+<rect x="441" y="109" width="27" height="27" rx="7" fill="#cf6c66" fill-opacity="0.75" stroke="#cf6c66" stroke-width="1.7"/>
+<line x1="533" y1="137" x2="665" y2="137" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="673" y="105" width="185" height="62" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#cf6c66" stroke-width="1.7"/>
+<text x="765.5" y="143.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#cf6c66">Mixed read?</text>
+</svg>

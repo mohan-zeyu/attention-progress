@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="875" viewBox="0 0 1000 875" role="img" aria-labelledby="title desc">
+<title id="title">Attention: organizations, choices and examples</title><desc id="desc">First distinguish growing addressable records from bounded recurrent decode state. MQA and GQA share heads, MLA shrinks each position&#x27;s record, and CSA and HCA pool positions. Kernel linear attention, RetNet, GLA and delta mechanisms update aggregate state. Hybrid layer stacks combine the organizations. Lower lanes separate representation, update, retrieval and execution choices; they are not a flat list of alternative algorithms.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7d8da4" stroke-width="1.5"/></marker></defs>
+<rect width="1000" height="875" rx="12" fill="white"/>
+<text x="500" y="35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="650" fill="#203044">Preserve and use context within a compute, storage and bandwidth budget</text>
+<text x="25" y="90" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="650" fill="#203044">1 · CHOOSE HOW HISTORY IS RETAINED</text>
+<rect x="25" y="112" width="460" height="195" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="255" y="146" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="650" fill="#203044">ADDRESSABLE RECORDS</text>
+<text x="255" y="181" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#52647b">A growing sequence of separate entries</text>
+<text x="255" y="221" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Share KV heads: MQA / GQA</text>
+<text x="255" y="247" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Shrink each position&#x27;s record: MLA</text>
+<text x="255" y="273" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Pool positions: CSA / HCA</text>
+<rect x="515" y="112" width="460" height="195" rx="12" fill="#f1edfa" stroke="#c8d3e2"/>
+<text x="745" y="146" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="650" fill="#203044">BOUNDED RECURRENT STATE</text>
+<text x="745" y="181" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#52647b">One aggregate state, fixed at decode</text>
+<text x="745" y="221" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Accumulate: kernel linear attention</text>
+<text x="745" y="247" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Decay: RetNet / GLA</text>
+<text x="745" y="273" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Correct: DeltaNet / GDN / KDA</text>
+<path d="M255 307L255 325L340 325L340 336" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M745 307L745 325L660 325L660 336" fill="none" stroke="#7d8da4" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="220" y="340" width="560" height="80" rx="12" fill="#f4f7fb" stroke="#c8d3e2"/>
+<text x="500" y="372" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="650" fill="#203044">HYBRID MODEL DESIGNS</text>
+<text x="500" y="401" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Layer stacks combine the two organizations</text>
+<text x="25" y="470" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="650" fill="#203044">2 · DESCRIBE THE CHOICES WITHIN THE ORGANIZATION</text>
+<rect x="25" y="488" width="230" height="244" rx="12" fill="#e5edf8" stroke="#c8d3e2"/>
+<text x="140" y="521" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="650" fill="#203044">REPRESENTATION</text>
+<text x="140" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#52647b">What is retained?</text>
+<text x="140" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Records: one / many positions</text>
+<text x="140" y="624" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">State: shape and capacity</text>
+<rect x="265" y="488" width="230" height="244" rx="12" fill="#f1edfa" stroke="#c8d3e2"/>
+<text x="380" y="521" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="650" fill="#203044">UPDATE</text>
+<text x="380" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#52647b">How does it change?</text>
+<text x="380" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Records: append / pool</text>
+<text x="380" y="624" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">State: add / decay / correct</text>
+<text x="380" y="648" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">FG² / GDN-2 / KDN*</text>
+<rect x="505" y="488" width="230" height="244" rx="12" fill="#eaf5f0" stroke="#c8d3e2"/>
+<text x="620" y="521" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="650" fill="#203044">RETRIEVAL</text>
+<text x="620" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#52647b">How is memory read?</text>
+<text x="620" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Records: dense / sparse</text>
+<text x="620" y="624" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">MoBA / NSA / DSA</text>
+<text x="620" y="648" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">State: read aggregate</text>
+<rect x="745" y="488" width="230" height="244" rx="12" fill="#fbf1e5" stroke="#c8d3e2"/>
+<text x="860" y="521" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="650" fill="#203044">EXECUTION / STORAGE</text>
+<text x="860" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#52647b">How is it realized?</text>
+<text x="860" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Tiling / distribution</text>
+<text x="860" y="624" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">Reuse / precision / placement</text>
+<text x="860" y="648" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">FlashAttention: kernels</text>
+<text x="860" y="672" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#203044">FLA: implementation library</text>
+<text x="500" y="773" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5c6d83">* Research extensions: finer-grained writes, independent editing and uncertainty</text>
+<rect x="25" y="800" width="950" height="45" rx="12" fill="#f4f7fb" stroke="#c8d3e2"/>
+<text x="500" y="829" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#203044">Supporting choices: relative position / RoPE · output gates</text>
+</svg>

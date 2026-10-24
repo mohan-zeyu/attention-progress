@@ -1,0 +1,370 @@
+[
+  {
+    "file": "choose-kv-bytes.svg",
+    "description": "Growing KV bytes per token, all layers, for 17 frontier designs on a log scale, from 516,096 B (Llama 3.1-405B, all GQA) down to 6,144 B (Nemotron 3 Nano) and a reported 890 B (DeepSeek-V4.1-Flash, FP4). Right column: the same cache at one million tokens."
+  },
+  {
+    "file": "choose-properties.svg",
+    "description": "What each lever guarantees by construction. Full attention: exact recall, nothing discarded, cost grows. Windows alone: flat cost, no recall beyond W. Sparse reads: cache intact, recall only if the selector finds it. Eviction: flat cost, irreversible. Compression: blurred detail, still N/r growth. Recurrent state: flat cost, recall limited by capacity. Hybrids: exact recall through a few full layers."
+  },
+  {
+    "file": "choose-recipes.svg",
+    "description": "Three 2026 stacks combine several levers each. DeepSeek-V4-Flash: partial RoPE, sinks, one K=V head, a 128-token window branch, a top-512 indexer, CSA/HCA compression and FP8 storage. Qwen3.8-Flash-Next: partial mRoPE, output gates, GQA with 2 KV heads, a QSA indexer and 3:1 Gated DeltaNet hybrid. Gemma 4 31B: dual RoPE bases, QK-norm, K=V global layers and a 5:1 window ratio."
+  },
+  {
+    "file": "delta-deltanet.svg",
+    "description": "Toy delta update for order 7314 with d_v = 1, d_k = 2, k_t = e₁ and v_t = 5 (Friday). The state [2, 4] predicts 2 (Tuesday) at k_t; the residual is 5 − 2 = 3; with β = 1 the write [3, 0] gives [5, 4], so 7314 now reads Friday and order 2208 keeps 4. Additive linear attention would give [7, 4]. β = 0, 0.5, 1 give 2, 3.5, 5. A query halfway between both keys moves from 4.24 to 6.36."
+  },
+  {
+    "file": "delta-gated.svg",
+    "description": "Gated DeltaNet on the toy with α = 0.8 and β = 0.5: decay [2, 4] to [1.6, 3.2], read 1.6, residual 3.4, write 1.7, result [3.3, 3.2]. The grid gives S_t for α = 1, 0.8, 0 and β = 0, 0.5, 1: α = 1 is DeltaNet, α = 0 wipes the state before writing. Qwen3-Next-80B-A3B: 36 Gated DeltaNet layers and 12 gated-attention layers, 32 value heads × 128 × 128 = 524,288 state numbers per layer."
+  },
+  {
+    "file": "delta-kda.svg",
+    "description": "KDA on the toy with per-channel decay α = (0.8, 1) and β = 0.5: [2, 4] fades to [1.6, 4], the residual 3.4 is written at half strength, giving [3.3, 4]; scalar-decay Gated DeltaNet gives [3.3, 3.2]. The transition is diagonal plus a rank-1 term tied to k, which halves the chunk matrices of general DPLR. Kimi-Linear-48B-A3B: 27 layers, 20 KDA and 7 MLA, 32 heads × 128 × 128 = 524,288 state numbers per KDA layer."
+  },
+  {
+    "file": "delta-sum-form.svg",
+    "description": "Product form versus sum form on the toy with α = 0.8 and β = 0.5. Product (Gated DeltaNet, KDA): decay first, the erase reads the faded 1.6 and removes 0.8, result [3.3, 3.2]. Sum (RWKV-7, Comba): decay and erase act in parallel, the erase reads the unfaded 2 and removes 1.0, result [3.1, 3.2]. RWKV-7 uses vector decay w_t in (0.545, 1) and a vector in-context learning rate a_t in (0, 1) per channel, with head size 64 (4,096 state numbers per head)."
+  },
+  {
+    "file": "delta-eigen.svg",
+    "description": "The delta transition I − βkkᵀ has eigenvalues 1 (d_k − 1 times) and 1 − β. With β in [0, 1] they stay in [0, 1]; allowing β up to 2 reaches −1, a reflection. Parity toy: with β = 2 for every 1-bit, the 1-D state flips sign and after bits 1 0 1 1 0 1 ends at +1 (even); with β ≤ 1 the sign can never flip. Two reflections with mirrors 30° apart make a 60° rotation, as in DeltaProduct with n_h = 2. Olmo Hybrid 7B ships linear_allow_neg_eigval = true."
+  },
+  {
+    "file": "delta-taxonomy.svg",
+    "description": "Ten transition matrices A_t drawn as toy 6×6 heat maps (teal positive, red negative), with the models that use them, their eigenvalues and their chunk algorithm: identity (linear attention), fixed γI (RetNet, Lightning), α_t I (Mamba-2, mLSTM), Diag(α_t) (GLA, HGRN2), I − βkkᵀ (DeltaNet), α(I − βkkᵀ) (Gated DeltaNet), Diag(α)(I − βkkᵀ) (KDA), Diag(w) − κ̂(a⊙κ̂)ᵀ (RWKV-7, Comba), a product of Householders (DeltaProduct), and α times a rotation (Mamba-3). All keep the same d_v×d_k state."
+  },
+  {
+    "file": "delta-frontier.svg",
+    "description": "Four 2026 refinements of the delta rule, each shown as a toy 5×5 state with the part it gates. FG²-GDN: per-channel write strength β on key and value (tied; separate in FG²-GDN+). Gated DeltaNet-2: an erase gate b per key channel and a write gate w per value channel, both at address k. Kalman DeltaNet: step size from an uncertainty state p per key channel. Erase-then-Delta: a separate erase address e before the write at k. Timeline: RWKV-7 already had per-channel write strength in March 2025."
+  },
+  {
+    "file": "compress-compressive.svg",
+    "description": "Compressive Transformer. Toy: memories that leave the FIFO are pooled 3 to 1 into a compressed memory instead of being dropped. Real Enwik8 setting: a Transformer-XL with 2,304 memory slots reaches 2,304 past tokens per layer; the Compressive Transformer attends to fewer slots (768 memory + 1,152 compressed) yet reaches 4,224 past tokens per layer at rate c = 3."
+  },
+  {
+    "file": "compress-beacon.svg",
+    "description": "Learned summary tokens. Gist: a toy 10-position mask where tokens after the gist token G cannot attend to the prompt, so only G's KV needs caching. Activation Beacon: every 1,024-token chunk of Llama-2 leaves 1,024/alpha beacon KVs (128 at alpha = 8) and drops the raw KV. At 128K a Llama-2-7B cache falls from 64 GiB to about 8.5 GiB."
+  },
+  {
+    "file": "compress-nsa.svg",
+    "description": "NSA compression branch. Toy positions 0 to 159: windows of l = 32 tokens slide by d = 16, so neighbouring windows overlap by 16 and each emits one compressed key. At 64K this gives 4,095 compressed keys that are read densely and double as the block scorer; the raw KV is kept for the selection and window branches, so the cache does not shrink."
+  },
+  {
+    "file": "compress-csa.svg",
+    "description": "CSA in DeepSeek-V4. Toy with m = 4: entry i pools the 8 positions of blocks i-1 and i with a per-channel softmax, and entries are emitted every 4 positions, so windows overlap. At 1M tokens a CSA layer stores 262,144 entries; an FP4 indexer picks the top 1,024 (Pro) or 512 (Flash), and attention reads those plus 128 raw window entries and a sink logit."
+  },
+  {
+    "file": "compress-hca.svg",
+    "description": "HCA in DeepSeek-V4: every 128 tokens become one entry with no overlap, and queries read all entries densely plus a 128-token raw window. Entries read per query: at 8K, MLA 8,192, CSA 1,152, HCA 192; at 128K, 131,072, 1,152 and 1,152; at 1M, 1,048,576, 1,152 and 8,320. CSA also pays an indexer pass over N/4 entries."
+  },
+  {
+    "file": "compress-v4.svg",
+    "description": "DeepSeek-V4 layer layouts from config.json: Flash has 2 sliding-window-only layers, then 21 CSA and 20 HCA layers alternating; Pro has 2 HCA layers, then 30 CSA and 29 more HCA layers. Derived main-KV bytes per token (576-byte entries, scales and indexer keys left out): Pro about 4,460 B, Flash about 3,114 B, versus 40,016 B for DeepSeek-V3.2 MLA in FP8 and 249,856 B for a BF16 GQA8 baseline."
+  },
+  {
+    "file": "fixed-lineage.svg",
+    "description": "Three fixed sparse patterns on a toy 24×24 query×key grid. Sparse Transformer (2019): local band of l = 4 plus every 4th key, causal, so any pair connects in two hops (example 23 → 3 → 1). Longformer (2020): window of ±3 plus global tokens 0 and 1. BigBird (2020): 3-block window, one global block and one random block per query block. Real configs at n = 4,096: Sparse Transformer with l = 64 reads at most 128 keys per query; Longformer window 512; BigBird-ITC 128 global + 192 window + 192 random = 512 keys. GPT-3 alternated dense and banded layers; gpt-oss does the same with a 128-token band."
+  },
+  {
+    "file": "fixed-swa-layouts.svg",
+    "description": "First twelve layers of eight production models, local (L), global (G) or chunked (C): Mistral 7B all local W 4,096; Gemma 2 1:1 W 4,096; Gemma 3 5:1 W 1,024; gpt-oss 1:1 W 128; Llama 4 Scout 3:1 chunk 8,192; OLMo 3 3:1 W 4,096; MiMo-V2-Flash 39 local and 9 global, W 128; DeepSeek-V4-Flash two local layers then CSA/HCA. KV cache at 128K tokens in BF16 versus an all-global stack: Gemma 3 27B 10.4 vs 62.0 GiB; Llama 4 Scout 7.1 vs 24.0 GiB; gpt-oss-120b 4.5 vs 9.0 GiB; MiMo-V2-Flash 2.8 vs 15.0 GiB."
+  },
+  {
+    "file": "fixed-chunked.svg",
+    "description": "Toy 24×24 masks with equal size 6: a sliding window gives every query the last 6 keys; chunked attention gives a query only the keys of its own 6-token chunk, so keys per query saw-tooth from 1 to 6 (mean 3.5) and the cache empties at each boundary. Llama 4 Scout: 36 chunked RoPE layers with C = 8,192 and 12 global NoPE layers; at 128K in BF16 a chunked layer holds at most 32 MiB of KV versus 512 MiB for a global layer."
+  },
+  {
+    "file": "fixed-streaming.svg",
+    "description": "Toy 24×24 masks with a 6-token window. Window only: once token 0 leaves the cache, Llama-2-13B perplexity on PG19 jumps to 5158.07 (cache 1024). StreamingLLM keeps the first 4 tokens as sinks plus 1020 recent tokens: perplexity 5.40. Positions are assigned inside the cache: text positions 0,1,2,3,6,7,8 and new token 9 become 0 to 7. The cache stays 4 + W records: 1 GiB for Llama-2-7B with 2,048 slots, at any length."
+  },
+  {
+    "file": "hybrid-why.svg",
+    "description": "Per-sequence memory in elements against context length for the Qwen3-Next-80B-A3B stack (36 Gated DeltaNet + 12 gated attention layers): the fixed state is 18.9M elements and the 12 attention layers add 12,288 elements per token, so KV overtakes the state at N = 1,536. The same 48 layers as all attention would need 49,152 per token, as all GDN a flat 25.2M. Right: the whole recurrent state equals the KV of N* tokens: Jamba 448, Qwen3-Next 1,536, Kimi Linear 2,601, Qwen3.5 3,072, MiniMax-01 3,584, Nemotron 3 Nano 3,925, Granite 4.0-H 4,608, Kimi K3 7,851, Nemotron-H-56B 11,059."
+  },
+  {
+    "file": "hybrid-seq-par.svg",
+    "description": "Sequential versus parallel hybrids. Sequential (Jamba, Nemotron-H, Samba): whole layers alternate, and only the attention layers keep a KV cache. Parallel (Hymba, Falcon-H1): every layer runs attention heads and SSM heads side by side; Falcon-H1 splits channels SSM 2 : attention 1 : MLP 5. Computed KV per token in BF16: Falcon-H1-34B 144 KiB (72 layers, 4 KV heads), Nemotron-H-56B 40 KiB (10 layers, 8 KV heads). Reported for Hymba-1.5B at 8K: 78.6 MB cache and 664 tok/s, 11.67 times smaller and 3.49 times faster than Llama-3.2-3B."
+  },
+  {
+    "file": "hybrid-nvidia.svg",
+    "description": "NVIDIA hybrids drawn from config.json token-mixer layers. Nemotron-H-56B: 10 attention among 64 mixers (118 layers with FFNs), reported 2.4 times the throughput of Qwen-2.5-72B and Llama-3.1-70B at 64K in / 1K out. Nemotron Nano 2 9B: 4 attention among 31 mixers, up to 6 times Qwen3-8B. Nemotron 3 Nano: 6 attention among 29 mixers, 3.3 times Qwen3-30B-A3B. Jet-Nemotron-2B retrofits Qwen2.5-1.5B: 2 full and 2 SWA layers kept, 24 JetBlocks; KV at 64K falls from 1,792 MB to 154 MB and throughput rises from 241 to 2,885 tokens per second (reported, H100)."
+  },
+  {
+    "file": "hybrid-delta31.svg",
+    "description": "Delta-rule hybrids from config.json. Qwen3-Next-80B: 12 x (3 GDN + 1 gated attention), 48 layers. Qwen3.5-397B: 15 x (3 + 1), 60 layers. Kimi Linear 48B: 20 KDA + 7 MLA, MLA at layers 4, 8, ..., 24 and 27, so the last group is 2:1. Kimi K3: 69 KDA + 24 gated MLA over 93 layers. Kimi Linear ratio ablation, validation perplexity: 0:1 5.77, 1:1 5.66, 3:1 5.65, 7:1 5.70, 15:1 5.82. Qwen3.8 ablation on a 25B-A3B model, average score: full attention 49.87, SWA hybrid 51.15, GDN hybrid 53.81."
+  },
+  {
+    "file": "hybrid-minimax.svg",
+    "description": "MiniMax layouts from config.json. Text-01 (Jan 2025) and M1 (Jun 2025): 80 layers, 70 lightning-attention plus 10 softmax, KV 40 KiB per token. M2 (Oct 2025): 62 full GQA layers, 248 KiB. M3 (2026): 3 dense plus 57 sparse MSA layers, 120 KiB retained per token, each query reads 16 blocks of 128 tokens plus a local block. The M2 blog gives four reasons for leaving the hybrid: multi-hop reasoning deficits that appeared only at scale, costly evaluation and late-surfacing precision problems, immature infrastructure (memory-bound kernels, low-precision state, prefix caching, speculative decoding), and a sliding-window hybrid that degraded with context length."
+  },
+  {
+    "file": "hybrid-layouts.svg",
+    "description": "Layer strips for 13 production models 2024–2026, read from config.json and scaled to equal width: blue global attention, light blue sliding window, purple recurrent, green sparse, split cells parallel. Right: KV per token for the growing layers in BF16, computed from config, log scale: Jamba 16 KiB, MiniMax-Text-01 40, Gemma 3 27B 80, Nemotron-H-56B 40, Falcon-H1-34B 144, gpt-oss-120b 36, Qwen3-Next 24, MiniMax-M2 248, Kimi Linear 7.9, Nemotron 3 Nano 6, Qwen3.5-397B 30, MiniMax-M3 120, Kimi K3 27; Llama-3.1-70B reference 320."
+  },
+  {
+    "file": "kern-flash-tiles.svg",
+    "description": "FlashAttention keeps Q, K, V and O in HBM and streams tiles through on-chip SRAM, so the N×N score and probability matrices are never written. A100: HBM 1.5–2.0 TB/s, SRAM 192 KB per SM at about 19 TB/s. Example tiles of 128 rows with d = 64 fit in 144 KiB. Reported for GPT-2 medium attention (N = 1024, d = 64) on A100: HBM traffic 40.3 GB to 4.4 GB, runtime 41.7 ms to 7.3 ms, while FLOPs rise from 66.6 to 75.2 G because of recomputation."
+  },
+  {
+    "file": "kern-online-softmax.svg",
+    "description": "Toy worked example of the online softmax: one query row with scores 1, 3 | 2, 5 and scalar values 4, 2 | 6, 1 in two tiles. After tile 1: m = 3, ℓ = 1.135, unnormalised output 2.541. Tile 2 alone: m = 5, ℓ = 1.050, 1.299. Merging rescales the old statistics by e^(3−5) = 0.135, giving ℓ = 1.203, Õ = 1.643, o = 1.365, identical to a full softmax."
+  },
+  {
+    "file": "kern-fa-generations.svg",
+    "description": "Each FlashAttention version answers one GPU generation. The tensor cores outgrow everything else: matmul versus non-matmul throughput is 16× on A100 (312 vs 19.5 TFLOP/s FP32), 256× on H100 (989 vs 3.9 TFLOP/s exponential) and 512× on B200 (8192 vs 16 ops per clock per SM). FA-2 cuts non-matmul work and re-partitions; FA-3 overlaps with asynchronous TMA and warp specialization and adds FP8; FA-4 emulates part of exp on FMA units, skips most rescales and uses tensor memory. Reported utilization: FA-1 25–40% and FA-2 50–73% on A100, FA-2 35% on H100, FA-3 75% (740 TFLOP/s), FA-4 71% (1613 TFLOP/s on B200)."
+  },
+  {
+    "file": "kern-split-kv.svg",
+    "description": "Split-KV decoding. Toy: batch 1 with 16 heads launches 16 thread blocks on a 108-SM A100, 15% of the SMs. Splitting each head’s KV into 6 chunks launches 96 blocks, 89%. Each chunk returns (m, ℓ, o) and a log-sum-exp reduction merges them exactly: chunk A (scores 1, 2; values 10, 20) gives o = 17.31, LSE = 2.313; chunk B (scores 3, 0; values 30, 0) gives o = 28.58, LSE = 3.049; weights 0.324 and 0.676 give 24.93, the full-softmax value. Reported for CodeLlama-34B on A100: up to 8× faster decoding and up to 50× faster attention than FlashAttention."
+  },
+  {
+    "file": "kern-flashmla.svg",
+    "description": "FlashMLA runs absorbed MLA decode as MQA: 128 query heads become 128 rows of one matmul against a single 576-wide latent per token (512 latent plus 64 RoPE dims). Each cached token then serves 128 × 2 × (576 + 512) = 278,528 FLOPs: about 242 FLOP per byte in BF16 (1,152 B) and 425 in FP8 (656 B), against 1 for MHA, 8 for GQA-8 and an H100 ridge of about 295. Reported on H800: 3000 GB/s memory-bound, 580 then 660 TFLOP/s compute-bound. FlashInfer stores a ragged, paged batch as one block-sparse matrix."
+  },
+  {
+    "file": "kern-chunkwise.svg",
+    "description": "Kernel view of chunkwise linear attention (flash-linear-attention). Each chunk of C = 64 tokens does a masked C×C attention and two state matmuls on tensor cores; a 128×128 state passes between chunks. Non-materialized: the state stays in SRAM (64 KiB in FP32) and chunks run in sequence. Materialized: all 512 chunk states for N = 32K go to HBM (32 MiB per head, computed) and chunks run in parallel; GLA reports about 10–20% more memory. Computed per head at N = 32K, d = 128: chunkwise 3.2 GFLOP, all matmul; step-by-step recurrence 2.1 GFLOP, all rank-1; causal softmax 275 GFLOP."
+  },
+  {
+    "file": "kern-sage.svg",
+    "description": "Low-bit attention kernels. Bits per operand of the two matmuls: FA-2 16/16; FA-3 FP8 8/8; SageAttention 1 INT8 QK with FP16 PV; SageAttention 2 INT4 QK with FP8 PV; SageAttention 3 FP4 for both (NVFP4, 1×16 blocks). Smoothing K by subtracting its mean over tokens leaves softmax unchanged and shrinks the INT8 step for a toy channel 9.8, 10.2, 10.3, 9.7 from 0.081 to 0.0024, 34× finer. Reported kernel speedups over FlashAttention-2 on consumer GPUs: about 2.1×, 3× and 5×."
+  },
+  {
+    "file": "evict-h2o.svg",
+    "description": "H2O on a toy 16-token decode with budget 6 (3 heavy hitters + 3 recent). Tokens 1, 4 and 9 collect the most accumulated attention and stay; every other token leaves the recent window and is evicted for good. Real setting: 20% budget split 10% + 10%; Llama-3-8B at 32K drops from 4 GiB to 0.8 GiB of KV."
+  },
+  {
+    "file": "evict-snapkv.svg",
+    "description": "SnapKV on a toy 40-token prompt: the last 8 prompt queries (the observation window) vote with their attention, votes are max-pooled so neighbours of a hit survive, and each head keeps its own top 8 positions plus the window. Real setting: window 32, pool kernel 7, budget 1024 of a 16K prompt (6.25%)."
+  },
+  {
+    "file": "evict-budgets.svg",
+    "description": "Same scorer, different budget split. PyramidKV gives Llama-3-8B layers a linear budget from 250 entries per head at layer 0 to 6.4 at layer 31 (mean 128, beta 20). Ada-KV pools one layer's budget across heads: a toy layer budget of 12 over 4 heads becomes 6, 3, 2 and 1."
+  },
+  {
+    "file": "evict-kvzip.svg",
+    "description": "Query-aware vs query-agnostic scoring on a toy 14-token context at a 50% budget. SnapKV votes with question 1 and drops the refund amount, so question 2 fails. KVzip scores each KV pair by how much the model needs it to repeat the whole context, so both questions still find their evidence. Reported: 3 to 4 times smaller KV, about 2 times faster decode, contexts up to 170K."
+  },
+  {
+    "file": "evict-duo.svg",
+    "description": "DuoAttention on Llama-3-8B: half of the 256 KV heads (32 layers x 8) are retrieval heads that keep the full cache; the rest are streaming heads that keep 64 sink plus 256 recent tokens. At 128K tokens the BF16 cache falls from 16 GiB to about 8.02 GiB. Placement of heads in the grid is a toy; the 50% ratio is the paper's."
+  },
+  {
+    "file": "evict-dms.svg",
+    "description": "Learned retrofits. DMC: a toy run where 6 tokens become 3 slots because each token either appends a slot or merges into the last one with weight omega. DMS: an eviction decided at step t only takes effect at t + w (w = 256 by default). Cache size grows at one quarter (DMC 4x) or one eighth (DMS 8x) of the vanilla slope."
+  },
+  {
+    "file": "evict-pitfalls.svg",
+    "description": "Toy 30-token conversation, three budgets. Selection stores all 30 records, so question 2 still reads its evidence. Eviction chosen while answering question 1 stores 13 and has already dropped question 2's evidence and a system-prompt rule; the evicted set only grows. Compression (next chapter) stores 8 merged records: the evidence survives only inside a pooled record."
+  },
+  {
+    "file": "kv-head-sharing.svg",
+    "description": "Eight query heads read eight, two or one KV head. Per token and layer the cache stores 2·H_kv·d_h elements: 16, 4 or 2 head-vectors."
+  },
+  {
+    "file": "kv-bytes-models.svg",
+    "description": "KV cache per token summed over all layers in BF16, from each model config: Llama-2-7B 512 KiB, Llama-3-8B 128 KiB, Llama-3-70B 320 KiB, Falcon-7B 8 KiB, DeepSeek-V3 MLA 68.6 KiB. At 128K tokens multiply by 131,072."
+  },
+  {
+    "file": "kv-decode-intensity.svg",
+    "description": "During decode one KV head is read from HBM once and reused by every query head in its group, so attention arithmetic intensity is about H_q/H_kv FLOPs per byte, far below the roughly 295 FLOP/byte an H100 needs to be compute-bound."
+  },
+  {
+    "file": "kv-tie.svg",
+    "description": "K=V tying: one projection u = W_K h serves as key (normed, 25% of dims rotated) and as value (normed, never rotated). Gemma 4 31B global layer: 4 KV heads × 512 store 4,096 elements with separate K and V; the report gives 37.5% less global KV. DeepSeek-V4: one 512-element entry is both key and value (1,024 → 512 elements). Kayyam et al.: K=V cuts KV to 50% of MHA at +3.1% perplexity; with GQA-4 to 12.5%, with MQA to 3.1%."
+  },
+  {
+    "file": "kv-designs.svg",
+    "description": "Decode arithmetic intensity (FLOPs per KV byte, BF16) against cached elements per token per layer: MHA Llama-2-7B 8,192 elements, 1 FLOP/B; GQA Llama-3-70B 2,048, 8; GTA-8 toy 1,088, about 15; MFA Step-3 512, 64; GLA-2 toy 576, 128; MLA DeepSeek-V3 576, 242; K=V MQA DeepSeek-V4-Pro 512, 256. Ridge points: A800 156, H100 295."
+  },
+  {
+    "file": "kv-cross-layer.svg",
+    "description": "Which layers own a KV cache. CLA2 in Hunyuan-Large: 64 layers, every second layer reuses its neighbour, 32 caches, with GQA-8 about 5% of MHA (reported 95% saved). Gemma 3n E4B: 35 layers, layers 20 to 34 reuse layer 18 (local) or 19 (global): 20 caches, growing cache 14 to 8 KiB per token. Gemma 4 E2B: layers 15 to 34 reuse layers 13 and 14: 15 caches, 14 to 6 KiB per token. YOCO: a self-decoder with window caches, then one global KV read by every cross-decoder layer; reported about 80 times less KV at 65B."
+  },
+  {
+    "file": "mla-record.svg",
+    "description": "MLA record in DeepSeek-V3: h_t (7168) is down-projected to a latent c_t of 512 and a shared RoPE key k^R of 64; only these 576 elements are cached per token and layer. Per-head keys (128 heads × 128, plus the shared 64) and values (128 × 128) are reconstructed by W_UK and W_UV and never cached. Elements per token per layer: MHA with the same shapes 40,960, GQA-8 2,048, MLA 576, K=V MQA 512. All 61 layers: 68.6 KiB per token in BF16."
+  },
+  {
+    "file": "mla-absorb.svg",
+    "description": "Weight absorption. The score q_i^T W_UK,i c_j is re-bracketed as (W_UK,i^T q_i)^T c_j, so each of the 128 heads gets a 576-dimensional query (512 absorbed + 64 RoPE) and all heads read the same cached 576-element row: MQA with one KV head, d_k 576, d_v 512. W_UV folds into the output projection. Per cached token and layer in BF16: 1,152 bytes and 278,528 FLOPs, intensity about 242 FLOP/B (2·H_q), versus 1 for an expanded MHA cache; H100 ridge 295. Toy check: 7·(2·4+3·5) = 161 = 14·4 + 21·5."
+  },
+  {
+    "file": "mla-rope.svg",
+    "description": "Why RoPE breaks absorption and how MLA fixes it. With RoPE on the content key, the score is q^T R_(j-t) W_UK c_j: the rotation depends on the key position j and sits between the query and W_UK, so W_UK cannot be folded into the query once. MLA adds a separate 64-dimensional lane: per-head rotated queries q^R and one rotated key k^R shared by all 128 heads. Score = absorbed content term over 512 dims + positional term over 64 dims, scaled by 1/sqrt(192). Shared k^R costs 64 elements per token; per-head rotated keys would cost 8,192."
+  },
+  {
+    "file": "mla-heads.svg",
+    "description": "Head count changes FLOPs, not cache. DeepSeek-V3 (128 heads) and Kimi K2 (64 heads) cache the same 576 elements per token and layer. Decode FLOPs per cached token per layer: 278,528 versus 139,264; intensity in BF16 about 242 versus 121 FLOP/B, against an H100 ridge of 295. Kimi K2 reports that 64 to 128 heads costs +83% inference FLOPs at 128K for 0.5 to 1.2% lower validation loss."
+  },
+  {
+    "file": "mla-convert.svg",
+    "description": "Converting a trained MHA or GQA model to MLA, Llama-2-7B per layer (32 heads × 128, d 4096). Step 1: keep RoPE on a few high-norm frequency pairs (MHA2MLA) or concentrate it in one head (TransMLA); the rest become NoPE. Step 2: joint SVD of the stacked NoPE key and value projections gives W_DKV (r × 4096) and the up-projections. Step 3: fine-tune with 0.3–0.6% of pre-training data (MHA2MLA) or 6B tokens (TransMLA). KV bytes per token and layer: MHA 16 KiB; MHA2MLA 5 KiB (−68.75%); with Int4 1.25 KiB (−92.19%); TransMLA 1,152 B (−92.97%)."
+  },
+  {
+    "file": "linear-reassociate.svg",
+    "description": "Softmax attention forms an N×N score matrix and keeps N key/value records. Linear attention drops the softmax, reassociates (QKᵀ)V = Q(KᵀV) and keeps one d_v×d_k state per head: 16,384 numbers at d_h = 128, against 2·N·128 for the KV cache (1.05M at 4K, 33.6M at 128K, 268M at 1M tokens). They break even at N = 64."
+  },
+  {
+    "file": "linear-fixed-decay.svg",
+    "description": "Fixed per-head decay. Left: toy decay masks D_tj = γ^(t−j) for γ = 0.7 and γ = 0.95. RetNet experiments space 1−γ from 1/32 to 1/512, horizons of about 32 to 512 tokens. Right: MiniMax-01 lightning decay λ = exp(−s_h(1−ℓ/79)) with ALiBi slopes s_h = 2^(−h/8); the grid gives the horizon 1/(1−λ) in tokens per head and layer, from about 1.7 tokens (head 1, layer 0) to tens of thousands of tokens in the last lightning layer. Bottom: the 80-layer MiniMax-01 stack with one softmax layer after every seven lightning layers."
+  },
+  {
+    "file": "linear-gla.svg",
+    "description": "GLA multiplies the state by Diag(α_t): each key channel (column) fades at its own data-dependent rate, toy α = 1.0, 0.95, 0.5, 0.9, 0.1, 0.99. A scalar decay (Mamba-2, mLSTM) fades every column by the same 0.8. The 1/16 temperature maps sigmoid outputs 0.01, 0.1, 0.5 and 0.9 to α = 0.75, 0.866, 0.958 and 0.993. Bottom right: what one decay value covers in each design."
+  },
+  {
+    "file": "linear-ssd.svg",
+    "description": "Mamba-2 written as masked attention. Left: the 8×8 mask L with L_tj = a_(j+1)…a_t for toy decays a_t = 0.9, 0.2, 0.95, 0.95, 0.9, 0.5, 0.95; the small a_3 = 0.2 cuts every path that crosses token 3. Middle: dictionary x↔v, B↔k, C↔q, N↔d_k, P↔d_v. Right: Nemotron 3 Nano numbers: 64 heads of 64×128 state = 524,288 numbers per Mamba-2 layer, 8 B/C groups, chunk 128, and 23 Mamba-2 + 23 MoE + 6 attention layers."
+  },
+  {
+    "file": "linear-mamba3.svg",
+    "description": "Mamba-3 changes three things. (a) Trapezoid write: with toy Δ = 0.5, α = 0.8, Mamba-2 (λ = 1) writes 0.5 of x_t only, the trapezoid rule (λ = ½) writes 0.2 of x_(t−1) and 0.25 of x_t. (b) A complex state turns the decay into a rotation: eigenvalues move from the real point α to α·e^(±iθ), equivalent to data-dependent RoPE on B and C. (c) MIMO: rank-R writes (P×R)(R×N) with R = 4 do about 4× the decode FLOPs on the same 64×128 state."
+  },
+  {
+    "file": "linear-chunkwise.svg",
+    "description": "Chunkwise form for N = 16 toy tokens in chunks of C = 4: only the four diagonal 4×4 blocks are computed as small masked attention; everything below them is carried by a state S passed between chunks. Our count per head with d = 128, C = 64, N = 32K: chunkwise about 98K FLOPs per token in 512 sequential steps, recurrent 66K FLOPs per token in 32,768 matrix-vector steps, quadratic form 8.4M FLOPs per token."
+  },
+  {
+    "file": "map-costs.svg",
+    "description": "Prefill pays compute that grows with N squared; decode pays bytes that grow with N for every generated token. Llama-3-8B at 128K: attention prefill 4.5 PFLOP versus 2.1 PFLOP for everything else; each decode step reads 16 GiB of KV versus 15 GiB of weights."
+  },
+  {
+    "file": "map-routes.svg",
+    "description": "Seven levers organise the book. Positions and stable softmax make attention trainable at length; MQA/GQA/MLA thin each record; fixed patterns and sparse reads touch fewer records; eviction and compression keep fewer; linear, delta and test-time-learning layers replace records with a fixed state; hybrids mix both; kernels and serving move fewer bytes."
+  },
+  {
+    "file": "map-timeline.svg",
+    "description": "Timeline 2014–2026 in five lanes: KV width (MHA, MQA, GQA, MLA, K=V), positions and stability (RoPE, YaRN, soft-capping, sink logits, output gates), sparse/evict/compress (Sparse Transformer to DSA and CSA/HCA), recurrent state (linear attention to KDA, GDN-2, Mamba-3), and hybrids/systems (FlashAttention, PagedAttention, MiniMax-01, Qwen3-Next, Kimi Linear, DeepSeek-V4). Years before 2023 are compressed."
+  },
+  {
+    "file": "map-legend.svg",
+    "description": "Colour legend used by every figure: gold query, blue key and KV cache, purple value and recurrent state, green output or kept, red erased or evicted, teal gates and positions, grey inactive. Notation: N tokens, L layers, H_q and H_kv heads, d_h head dim, s bytes per element, W window, S_t state."
+  },
+  {
+    "file": "pos-rope-spectrum.svg",
+    "description": "RoPE pair i rotates by theta_i = b^(-2i/d_h) per token. Left: four pairs of Llama 3 (b = 500K, d_h = 128) over 1,000 tokens: pair 0 turns 159 times, pair 21 turns 2.1 times, pair 42 turns 10 degrees, pair 63 turns 0.14 degrees. Right: wavelength of all 64 pairs for b = 10K, 500K and 10M on a log axis with 8K and 128K context lines; the slowest pair spans 54K, 2.6M and 49M tokens. Bottom: Gemma 3 and DeepSeek-V4 use a small base in local layers and a large base in global layers."
+  },
+  {
+    "file": "pos-extension.svg",
+    "description": "Context extension divides each RoPE frequency by a per-pair factor. For gpt-oss (d_h = 64, b = 150K, trained at 4,096, extended to 131,072, s = 32): PI divides all 32 pairs by 32; NTK-aware rises smoothly from 1 to 32; YaRN keeps pairs 0-8 (wavelength under 128 tokens), ramps pairs 9-17 and divides pairs 18-31 by 32. Llama 3.1 llama3 scaling (s = 8) keeps 29 pairs, blends 6 and divides 29. YaRN also multiplies logits by (0.1 ln s + 1)^2: 1.30 for s = 4, 1.46 for 8, 1.81 for 32, 1.87 for 40; llama3 type uses 1."
+  },
+  {
+    "file": "pos-partial.svg",
+    "description": "Rotated (teal) versus position-free (grey) dimensions per head, from configs: GPT-NeoX-20B 24 of 96, GLM-4.5 64 of 128, MiniMax-M2 64 of 128, Phi-4-mini 96 of 128, MiMo-V2-Flash 64 of 192, Qwen3-Next 64 of 256, Gemma 4 global 128 of 512, DeepSeek-V4 64 of 512, DeepSeek-V3 MLA lane 64 of 192. Right: at the same 25 percent, NeoX-style partial RoPE in Qwen3-Next keeps wavelengths 6 to 38M tokens, while p-RoPE in Gemma 4 keeps only 6 to 188 tokens and sets 192 pairs to zero frequency. Bottom right: reported Gemma 2B perplexity at 8K: NoPE 4.86, RoPE 4.46, 0.25-RoPE 4.53, 0.75-RoPE 4.44."
+  },
+  {
+    "file": "pos-nope.svg",
+    "description": "Llama 4 interleaves three chunked RoPE layers (chunk 8,192) with one full-attention NoPE layer. Toy masks with 16 tokens and chunk 4. Layer strips: Llama 4 Scout 36 RoPE plus 12 NoPE of 48 layers; SmolLM3-3B 27 RoPE plus 9 NoPE of 36, all full attention; Command A pattern three sliding-window RoPE layers (W = 4,096) then one full NoPE layer. KV cache of Llama 4 Scout at 128K in BF16: 7.1 GiB with iRoPE versus 24 GiB if all 48 layers were global."
+  },
+  {
+    "file": "pos-temperature.svg",
+    "description": "Left, toy: one key 3 logits above n - 1 equal keys. Plain softmax top weight falls from 0.019 at 1K keys to 2e-6 at 10M; Llama 4 temperature slows the fall; SSMax with s ln n keeps it near 0.8. Right, real configs: the Llama 4 query multiplier 1 + 0.1 ln(1 + floor((t+1)/8192)) is 1.07 at 8K, 1.28 at 128K, 1.49 at 1M and 1.72 at 10M; YaRN applies a constant logit multiplier of 1.81 (gpt-oss, s = 32) or 1.87 (DeepSeek-V3, s = 40)."
+  },
+  {
+    "file": "serve-kv-bytes.svg",
+    "description": "Bytes per token per layer of DeepSeek KV caches, from the FlashMLA formats. V3.2 BF16: 512 latent + 64 RoPE values × 2 B = 1,152 B. V3.2 FP8: 512 e4m3 + 4 fp32 scales (one per 128) + 64 BF16 RoPE values = 656 B, 57%. V4.1 (512 dims) FP8: 512 e4m3 including RoPE + 16 e8m0 scales (one per 32) = 528 B, 52% of BF16. V4.1 FP4: 512 e2m1 values in 256 B + 32 e4m3 scales (one per 16) = 288 B, 28%. Over V3.2’s 61 layers a 128K sequence drops from 8.58 GiB to 4.88 GiB."
+  },
+  {
+    "file": "serve-kivi.svg",
+    "description": "Where the outliers are. Toy key cache (10 tokens × 12 channels) has two outlier channels, so KIVI quantizes keys per channel in groups of tokens and values per token, keeping the last R tokens in full precision (paper defaults: G = 32, R = 128, 2 bits). KVQuant quantizes keys before RoPE, because RoPE mixes channel pairs by position and smears the outlier channel. Reported LLaMA-7B Wikitext-2 perplexity: FP16 5.68, KVQuant 3-bit with 1% sparse outliers 5.75, uniform INT3 10.87."
+  },
+  {
+    "file": "serve-paged.svg",
+    "description": "PagedAttention stores each request’s KV in fixed blocks addressed through a block table, like virtual memory. Toy with block size 4: request A uses physical blocks 7, 1, 3 and request B blocks 5, 2; only the last block of each request has empty slots. Reported KV memory breakdown: Orca (Max) 20.4% token states, 13.3% reservation, 57.3% internal and 8.9% external fragmentation; Orca (Pow2) 26.8%, 17.9%, 13.6%, 41.6%; vLLM 96.3% token states. OPT-13B needs 800 KB per token, so reserving 2,048 tokens costs 1.6 GB per request, while paging wastes at most 15 tokens, 12 MB, with block 16."
+  },
+  {
+    "file": "serve-radix.svg",
+    "description": "RadixAttention keeps finished requests’ KV in a radix tree keyed by token sequences. Toy: a 1,000-token system prompt is shared by two chats and a few-shot branch; a new turn of chat 1 matches 1,350 of 1,410 tokens and prefills only 60. Least-recently-used leaves are evicted first. Reported hit rates: 50–99% across SGLang benchmarks, 52.4% for LLaVA-NeXT-34B and 74.1% for Vicuna-33B in Chatbot Arena, and 56.3% of DeepSeek’s 608B daily input tokens hit its on-disk cache."
+  },
+  {
+    "file": "serve-disagg.svg",
+    "description": "Prefill/decode disaggregation. On one GPU a new long prefill stalls every running decode; split pools let prefill GPUs run prompts and ship the KV to decode GPUs. Computed transfer for a 32K-token prompt: DeepSeek-V3.2 FP8 (61 × 656 B = 40,016 B per token) is 1.22 GiB, 26 ms over one 400 Gb/s NIC or 6.9 ms at Mooncake’s reported 190 GB/s; Llama-3-70B BF16 (320 KiB per token) is 10 GiB, 215 ms over one NIC. Reported: DistServe 7.4× more requests, Splitwise 1.4× throughput at 20% lower cost, Mooncake 59–498% more capacity; DeepSeek uses 4 prefill nodes against 18 decode nodes per unit."
+  },
+  {
+    "file": "serve-cp.svg",
+    "description": "Context parallelism over P GPUs. Ring Attention keeps each GPU’s query block and passes K/V blocks around a ring; communication hides behind compute when the block has at least F/B tokens: 1.0K on A100 NVLink, 24.5K on A100 InfiniBand (reported). DeepSpeed-Ulysses all-to-alls from a token split to a head split, moving 4Nh/P per link but needing P ≤ heads. Computed bytes received per GPU per layer at N = 128K, P = 8, BF16: MHA 64 heads, ring 4 GiB vs Ulysses 1 GiB; GQA 64/8, ring 512 MiB vs Ulysses 576 MiB."
+  },
+  {
+    "file": "serve-tiers.svg",
+    "description": "Where cached KV can live, with typical bandwidths of an H100-class node (spec values): HBM3 3,350 GB/s, NVLink 900 GB/s, PCIe 5 x16 64 GB/s per direction, a 400 Gb/s RDMA NIC 50 GB/s, one Gen4 NVMe SSD about 7 GB/s. Reloading a 32K-token DeepSeek-V3.2 FP8 prefix (1.22 GiB) takes 0.39 ms, 1.5 ms, 20 ms, 26 ms or 187 ms, all far below the roughly 2.5 GPU-seconds needed to recompute its prefill at H100 BF16 peak (computed). Reported: 56.3% of DeepSeek input tokens hit its on-disk cache; LMCache up to 15× throughput with vLLM."
+  },
+  {
+    "file": "sparse-what-shrinks.svg",
+    "description": "Two questions sort every route of chapters 05 to 08: does it shrink the records read or the records stored, and can the next query choose differently? Reads shrink and reversible: sparse reads (06: Quest, MoBA, NSA, DSA). Reads shrink and fixed: static patterns (05). Records shrink and irreversible: eviction (07), compression (08) and sliding-window layers (05). Records leave HBM but can return: offload (14). Llama-3-8B at 128K in BF16: reading 2,048 records keeps 16 GiB in HBM and moves 256 MiB per step; keeping 2,048 records stores and moves 256 MiB."
+  },
+  {
+    "file": "sparse-prefill.svg",
+    "description": "Three per-head prefill patterns from MInference on toy 32×32 masks: A-shape (static first columns plus local band; real 1,024 + 4,096), Vertical-Slash (columns and diagonals estimated from the last 64 queries), Block-Sparse (64×64 blocks scored by mean-pooled q and k, top 100 kept). XAttention scores each block by the sum of its antidiagonal cells and keeps the fewest blocks whose softmax mass passes a threshold: 6.89% density at 128K with stride 8. Reported: 1M-token prefill on one A100 from 30 to 3 minutes; Qwen2.5-1M 3–7× prefill speedup at 1M."
+  },
+  {
+    "file": "sparse-quest.svg",
+    "description": "Toy Quest example with a 4-channel query q = (2, −1, 1, 1) and four pages of four keys. Each page stores per-channel min and max of its keys. The bound U_p is A 6, B 4, C 1, D 5; true best scores A 6, B 3, C -1, D 3. Top-2 by bound: A and D. Real scale: 32K context in 16-token pages is 2,048 pages; a 2,048-token budget reads 128 pages (6.25%); metadata adds 12.5% to K. Reported 7.03× self-attention speedup at 32K."
+  },
+  {
+    "file": "sparse-moba.svg",
+    "description": "MoBA on a toy 32-token grid with 8 blocks of 4: each query block reads its own block causally plus the top-2 past blocks by q times the mean key. Gate for the last block: scores per past block with blocks 2 and 4 selected. Mean pooling can hide a single sharp key: block X with one score of 3.6 averages 0.55, below block Y at 0.95; max pooling (MSA) would pick X. Real settings: block 512 top-3 at 8K reads 18.75%; block 4,096 top-12 at 1M reads 4.69%. Reported 6.5× prefill at 1M; RULER 128K 0.7818 versus 0.7849 for full attention."
+  },
+  {
+    "file": "sparse-nsa.svg",
+    "description": "NSA reads three key sets for one query at 64K tokens: about 4,095 compressed records (32-token blocks, stride 16), 16 selected 64-token blocks (1,024 tokens: the first block, 2 local blocks and 13 by score) and a 512-token sliding window, about 5,631 reads or 8.6% of 65,536. Three sigmoid gates mix the branches. Block scores come from the compression attention, summed over the 16 heads of a GQA group, so the group shares one selection. Reported: 9.0× forward and 6.0× backward speedup at 64K versus FlashAttention-2."
+  },
+  {
+    "file": "sparse-dsa.svg",
+    "description": "DeepSeek Sparse Attention. A lightning indexer with 64 FP8 heads of 128 dims scores every past token: ReLU per head, then a weighted sum. The top 2,048 of 131,072 tokens (1.56%) are read by MQA-mode MLA, where 128 query heads share each 576-dim latent record (656 bytes in FP8). Multiply-accumulates per decode token per layer at 128K: dense MLA 18.3 G, indexer 1.07 G, sparse main attention 0.29 G; the indexer costs more than the main read once N exceeds 34,816. Training: 1,000-step indexer-only KL warm-up (2.1B tokens), then 15,000 sparse steps (943.7B tokens)."
+  },
+  {
+    "file": "sparse-indexers.svg",
+    "description": "Index dot products per query per layer at N = 1M, counted as heads times keys scored divided by layers sharing one indexer: DSA 64 heads over every token, 64M; IndexShare in GLM-5.2 reuses one indexer for 4 sparse layers, 16M; DeepSeek-V4-Flash CSA scores 1M/4 compressed entries with 64 heads, 16M; MSA uses one index head per GQA group (4) over every token, 4M; QSA scores 4-token pooled keys with 4 heads, 1M. Every design reads about 2,048 tokens per query in the main attention."
+  },
+  {
+    "file": "stable-qk-norm.svg",
+    "description": "Three ways to bound attention logits. QK-norm: RMS-normalised q and k with gain g give |logit| at most sqrt(d_h) g_q g_k, 11.3 for d_h = 128 and g = 1; toy histograms of 4,096 logits: without norm and with q, k grown 4x the logits spread to about plus or minus 50 and the top weight over 64 keys is near 1, with QK-norm they stay within the bound. Soft-cap (Gemma 2): c tanh(e / c) with c = 50 maps 50 to 38 and 100 to 48; final logits use c = 30. QK-Clip (Kimi K2, tau = 100): a head with max logit 250 gets gamma = 0.4 and W_q, W_k scaled by 0.63."
+  },
+  {
+    "file": "stable-sinks.svg",
+    "description": "Toy 12-token causal attention. Vanilla softmax: rows with nothing to read dump weight on token 0, which becomes a sink. With a learned per-head sink logit z_h the extra column outside the sequence absorbs that mass and token 0 is ordinary; rows sum to less than 1. One query with six equal logits: vanilla must give each key 0.167; with z_h = 3 the sink takes 0.77 and each key 0.038, so the head outputs almost nothing. Cost: one scalar per head, 2,304 parameters in gpt-oss-120b. MiMo-V2-Flash at window 128 reports MMLU 54.9 to 58.3 with the sink."
+  },
+  {
+    "file": "stable-gated.svg",
+    "description": "Qwen3-Next attention layer shapes: x has 2,048 dims; q_proj outputs 16 heads x 256 for queries plus another 4,096 for the gate; SDPA output Y (4,096) is multiplied elementwise by sigmoid of the gate, then o_proj maps 4,096 to 2,048. Toy head with 12 channels: most gate values are near 0. Reported for a 15B MoE: first-token attention 46.7 percent to 4.8, max activation 1,053 to 94, perplexity 6.026 to 5.761, RULER at 128K 31.65 to 58.82. An output gate rescales one token read; a state gate changes every later read."
+  },
+  {
+    "file": "stable-knobs.svg",
+    "description": "Left: decay bias multiplying attention weights, toy 10 tokens. ALiBi-like constant forget gate f = 0.8 gives the same smooth decay in every row; FoX with data-dependent gates (f = 0.97 except f = 0.05 at token 5) keeps the past until token 5 and then wipes everything before it. Right: differential attention, toy 10 keys: softmax 1 puts 0.46 on key 6 and 0.06 on each other key; lambda times softmax 2 with lambda = 0.6 is 0.06 everywhere; the difference keeps 0.40 on key 6 and zero elsewhere. lambda_init = 0.8 - 0.6 exp(-0.3(l - 1)) is 0.20 at layer 1, 0.56 at layer 4 and 0.79 at layer 16."
+  },
+  {
+    "file": "stable-anatomy.svg",
+    "description": "A 2026 attention block as eight stages, with what four released models put at each stage, from configs and code. gpt-oss-120b: 8 KV heads of 64, full RoPE base 150K with YaRN x32, 128-token window alternating 1:1 with full layers, learned sink per head. Gemma 4 31B: K=V on global layers (4 x 512), q and k RMS-norm with scale 1.0, p-RoPE 1/4 at base 1M on global layers and 10K on local, window 1,024 at 5:1, V-norm. DeepSeek-V4-Pro: K=V single 512-d MQA entry, q RMS and kv-norm, last 64 of 512 dims rotated, window 128 plus compressed entries, sink per head, output de-rotation, 16-group low-rank output projection. Qwen3-Next-80B: 2 KV heads of 256, per-head q and k RMS-norm, 1/4 of 256 dims rotated at base 10M, full attention in 1 of 4 layers, elementwise sigmoid output gate."
+  },
+  {
+    "file": "ttt-one-step.svg",
+    "description": "Toy, d = 3, beta = 1: S_{t-1} stores e1 to e1 and e2 to e2; the new pair is k = e1, v = e3. Linear attention takes the gradient of minus <Sk, v>, adds v k^T and reads back [1, 0, 1]: the old value survives, error 1. DeltaNet takes the gradient of 1/2 ||Sk - v||^2, subtracts (Sk - v) k^T and reads back exactly [0, 0, 1], error 0. Decay alpha_t before the step acts as weight decay."
+  },
+  {
+    "file": "ttt-minibatch.svg",
+    "description": "Mini-batch TTT over a toy 32-token sequence. With b = 1 every gradient uses the latest W: 32 sequential steps (online GD). With b = 8 gradients inside a batch share the batch-start W: 4 sequential steps. With b = T one step, which with linear f, eta = 1/2 and W0 = 0 equals linear attention. The paper uses b = 16. Reported 125M ablation (Table 1): perplexity 15.91 for linear attention falls to 11.09; mini-batch TTT is the largest single gain, -1.70."
+  },
+  {
+    "file": "ttt-titans.svg",
+    "description": "Titans memory update. Toy trace over 16 tokens: momentary surprise (gradient norm) spikes at token 6; with momentum eta = 0.7 the write keeps going for several tokens. Three placements: MAC prepends memory read-outs as tokens to segment attention, MAG gates sliding-window attention with the memory branch, MAL stacks the memory layer before SWA. Reported ablation (Table 5): long-context accuracy MAC 97.95, MAG 96.70, MAL 96.91, memory alone 92.68, linear memory 85.34, without momentum 87.12, without weight decay 85.60."
+  },
+  {
+    "file": "ttt-window-exact.svg",
+    "description": "Which past pairs the memory is fit to. Delta rule: only token t, one gradient step. ATLAS: the last c tokens with gates gamma, Muon (Newton-Schulz) steps. Mesa: every past token with discount zeta, solved exactly by conjugate gradient. Toy with correlated keys k1 = [1, 0], k2 = [0.6, 0.8], values +1 and -1: reading at k1 gives 0.40 (linear attention), 0.04 (DeltaNet), 1.00 (Mesa). Mesa costs about k times GLA FLOPs for k CG steps; a stopping rule eps = 1e-4 matches 30 fixed steps with about 9 on average."
+  },
+  {
+    "file": "ttt-large-chunk.svg",
+    "description": "Arithmetic intensity of a fast-weight matmul r = b / (1 + 2b/h) FLOP per byte versus chunk size b, for fast-weight width h = 64, 256 and 1024. TTT with b = 16, h = 64 reaches about 11, far below the H100 ridge of about 290; only large chunks with wide fast weights cross it. LaCT mask: tokens read W updated on earlier chunks and use sliding-window attention locally. Reported: GPU utilization below 5 % for small-batch TTT versus up to 70 % on A100 for LaCT; state per block 2304d versus 384d (GLA) and 128d (DeltaNet)."
+  },
+  {
+    "file": "ttt-fenwick.svg",
+    "description": "Log-linear attention. A 16 by 16 causal mask coloured by Fenwick level: each query row t splits its prefix into power-of-two buckets, one state per bucket. For t = 13 the buckets are tokens 0 to 7 (8 tokens, level 4), 8 to 11 (4, level 3), 12 (1, level 1) and token 13 itself (level 0): 4 states. At t = 2^20 a KV cache holds 1,048,576 records, log-linear at most 22 states, linear attention 1 state."
+  },
+  {
+    "file": "ttt-recall-gap.svg",
+    "description": "Left: reported in-context recall average (MesaNet Table 3, 1B models, 50B tokens, 2K context): Mamba2 37.67, GLA 39.64, Gated DeltaNet 39.54, DeltaNet 40.46, Mesa 41.79, SWA-1024 40.84, Transformer 52.27. Right: reported pass-key retrieval (TTT-E2E Table 2, 3B models): full attention stays at 1.00 to 0.99 from 8K to 128K, while TTT-E2E falls 1.00, 0.46, 0.24, 0.13, 0.06, tracking 8K/N, the share of needles inside its 8K window."
+  }
+]

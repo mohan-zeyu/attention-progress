@@ -1,0 +1,344 @@
+[
+  {
+    "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2205.14135",
+    "venue": "NeurIPS 2022 · Stanford",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Alg. 1 (m, ℓ update, block sizes); Thm 2 HBM accesses; §2.1 A100 SRAM/HBM; Fig. 2 40.3 vs 4.4 GB."
+  },
+  {
+    "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2307.08691",
+    "venue": "ICLR 2024 · Princeton / Stanford",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract 25–40%, 50–73%, 225 TFLOP/s; §3.1 312 vs 19.5 TFLOP/s, deferred 1/ℓ; §3.2–3.3 split-Q."
+  },
+  {
+    "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.08608",
+    "venue": "NeurIPS 2024 · Colfax, Meta, NVIDIA, Princeton, Together AI",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract 35%, 740 TFLOP/s (75%), 1.2 PFLOP/s FP8; 989 vs 3.9 TFLOPS exp; ping-pong 570→620–640; Table 3 RMSE."
+  },
+  {
+    "title": "FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.05451",
+    "venue": "arXiv 2026 · Zadouri, …, Dao",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Abstract 1613 TFLOP/s (71%), 1.3× cuDNN, 2.7× Triton; 8192 vs 16 ops/clk/SM; τ = log2 256; 10–25% emulated exp."
+  },
+  {
+    "title": "Flash-Decoding for long-context inference",
+    "year": 2023,
+    "url": "https://crfm.stanford.edu/2023/10/12/flashdecoding.html",
+    "venue": "Stanford CRFM blog · Dao, Haziza, Massa, Sizov",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Split-KV with log-sum-exp reduction; <1% GPU at batch 1; up to 8× decode, 50× attention, CodeLlama-34B, A100."
+  },
+  {
+    "title": "FlashMLA: efficient MLA decoding kernels (README)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/FlashMLA",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "13",
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Commits 480405a/1408756 and current: block 64; 3000 GB/s, 580/660 TFLOPS H800; 656 B V3.2; 528/288 B V4.1 layouts."
+  },
+  {
+    "title": "FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.01005",
+    "venue": "MLSys 2025 · UW, NVIDIA, CMU et al.",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.2 LSE merge operator; §3.1 page table as BSR (Fig. 2); §3.3.1 split-KV scheduler; abstract 29–69%."
+  },
+  {
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.06635",
+    "venue": "ICML 2024 · MIT, IBM",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§2.2 chunkwise form, O(LCd + Ld²); §3.3 materialized vs not, +10–20% memory; chunk 64; faster than FA-2 at 1K."
+  },
+  {
+    "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.06484",
+    "venue": "NeurIPS 2024 · MIT et al.",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Abstract: memory-efficient Householder-product (WY) representation enables chunkwise DeltaNet training; 1.3B on 100B tokens."
+  },
+  {
+    "title": "flash-linear-attention: efficient implementations of linear attention models",
+    "year": null,
+    "url": "https://github.com/fla-org/flash-linear-attention",
+    "venue": "GitHub · fla-org",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Library of Triton chunkwise kernels (GLA, DeltaNet, Gated DeltaNet); living project, no publication date."
+  },
+  {
+    "title": "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.02367",
+    "venue": "ICLR 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 K smoothing γ(K)=K−mean(K); INT8 QK, FP16 PV with FP16 accumulator (2× on RTX 4090); abstract 2.1×/2.7×."
+  },
+  {
+    "title": "SageAttention2: Efficient Attention with Thorough Outlier Smoothing and Per-thread INT4 Quantization",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.10958",
+    "venue": "ICML 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "INT4 Q,K thread-level, FP8 P̃V, smooth Q; ≈3×/4.5× over FA-2/xformers on RTX 4090; matches FA-3 FP8 on Hopper."
+  },
+  {
+    "title": "SageAttention3: Microscaling FP4 Attention for Inference and An Exploration of 8-Bit Training",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.11594",
+    "venue": "NeurIPS 2025 · Tsinghua",
+    "chapters": [
+      "13"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "NVFP4 (E2M1, 1×16, E4M3 scales) for QKᵀ and PV; 1038 TOPS RTX 5090, ≈5× FA-2; 8-bit training slower in pretraining."
+  },
+  {
+    "title": "vLLM blog: DeepSeek-V3.2-Exp in vLLM",
+    "year": 2025,
+    "url": "https://vllm.ai/blog/2025-09-29-deepseek-v3-2",
+    "venue": "vLLM blog",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "656 B/token MLA FP8 layout: 512 e4m3 + 4 fp32 scales per 128 + 64 BF16 RoPE; block size 64."
+  },
+  {
+    "title": "Optimizing Inference for Long Context and Large Batch Sizes with NVFP4 KV Cache",
+    "year": 2025,
+    "url": "https://developer.nvidia.com/blog/optimizing-inference-for-long-context-and-large-batch-sizes-with-nvfp4-kv-cache/",
+    "venue": "NVIDIA Technical Blog",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "≈50% of FP8 memory, <1% accuracy loss, dequantized to FP8 before attention math; Blackwell."
+  },
+  {
+    "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.02750",
+    "venue": "ICML 2024",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Per-channel K, per-token V; G = 32, R = 128; outlier channels in K only; 2.6× memory, 4× batch, 2.35–3.47×."
+  },
+  {
+    "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.18079",
+    "venue": "NeurIPS 2024 · UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Pre-RoPE per-channel keys, nuq, 1% outliers; Table 1 LLaMA-7B 5.68 / 5.75 / int3 10.87; 1M on one A100."
+  },
+  {
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.06180",
+    "venue": "SOSP 2023 · UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "Fig. 2 breakdown (20.4/13.3/57.3/8.9, 26.8/17.9/13.6/41.6, 96.3); block 16; OPT-13B 800 KB; CoW; 2–4×."
+  },
+  {
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.07104",
+    "venue": "NeurIPS 2024 · Stanford, UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "RadixAttention: page = 1 token, LRU leaf eviction, DFS order; hit 50–99%, 52.4%, 74.1%; up to 6.4×."
+  },
+  {
+    "title": "DeepSeek-V3/R1 Inference System Overview (Open Source Week day 6)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "PD disaggregation; prefill 4 nodes EP32, decode 18 nodes EP144; 342B/608B (56.3%) disk-cache hits; 73.7k/14.8k tok/s."
+  },
+  {
+    "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.09670",
+    "venue": "OSDI 2024 · PKU, UCSD",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Separate prefill/decode GPUs; TTFT/TPOT; 7.4× more requests or 12.6× tighter SLO."
+  },
+  {
+    "title": "Splitwise: Efficient Generative LLM Inference Using Phase Splitting",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2311.18677",
+    "venue": "ISCA 2024 · UW, Microsoft",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "Prompt and token phases on separate machines; 1.4× throughput at 20% lower cost, or 2.35× at equal cost and power."
+  },
+  {
+    "title": "Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot",
+    "year": 2025,
+    "url": "https://www.usenix.org/conference/fast25/presentation/qin",
+    "venue": "FAST 2025 (best paper) · Moonshot AI, Tsinghua",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "+59–498% effective capacity; Kimi +115% (A800) / +107% (H800); KV pool on CPU/DRAM/SSD/NIC."
+  },
+  {
+    "title": "Mooncake (GitHub README)",
+    "year": 2025,
+    "url": "https://github.com/kvcache-ai/Mooncake",
+    "venue": "GitHub · Moonshot AI",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "Transfer Engine 87 / 190 GB/s on 4×200 / 8×400 Gbps RoCE; Mooncake Store over DRAM and SSD."
+  },
+  {
+    "title": "RingAttention with Blockwise Transformers for Near-Infinite Context",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2310.01889",
+    "venue": "ICLR 2024 · UC Berkeley",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 overlap condition c ≥ F/B; Table 2 A100 NVLink 1.0K, A100 IB 24.5K, TPU v4 1.0K."
+  },
+  {
+    "title": "DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.14509",
+    "venue": "arXiv 2023 · Microsoft",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3 all-to-all, 4Nh/P per link vs Megatron-SP 4Nh; 2.5× faster at 4× longer sequences; >1M tokens."
+  },
+  {
+    "title": "The Llama 3 Herd of Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.21783",
+    "venue": "arXiv 2024 · Meta",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "sections",
+    "evidence_note": "§3.3.2 all-gather K/V CP, 2×CP chunks, GQA K/V small; Table 4 CP = 16 at 131,072."
+  },
+  {
+    "title": "LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2510.09665",
+    "venue": "arXiv 2025 · Liu et al.",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "KV across GPU, CPU, storage, network; up to 15× throughput with vLLM; truncation can halve prefix hit ratio."
+  },
+  {
+    "title": "3FS: Fire-Flyer File System (README)",
+    "year": 2025,
+    "url": "https://github.com/deepseek-ai/3FS",
+    "venue": "GitHub · DeepSeek",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "≈6.6 TiB/s aggregate reads, 180 storage nodes × 16 NVMe SSDs; KVCache use case."
+  },
+  {
+    "title": "NVIDIA H100 Tensor Core GPU (product page)",
+    "year": 2023,
+    "url": "https://www.nvidia.com/en-us/data-center/h100/",
+    "venue": "NVIDIA",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "official report",
+    "evidence_note": "H100 SXM: 80 GB, 3.35 TB/s HBM, 900 GB/s NVLink, 128 GB/s PCIe Gen5; BF16 1,979 TFLOPS with sparsity."
+  },
+  {
+    "title": "DeepSeek-V3 Technical Report",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.19437",
+    "venue": "arXiv 2024 · DeepSeek-AI",
+    "chapters": [
+      "14"
+    ],
+    "reading_depth": "abstract",
+    "evidence_note": "671B total, 37B activated per token (used for the recompute estimate)."
+  }
+]

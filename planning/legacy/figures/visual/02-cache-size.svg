@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270" role="img" aria-labelledby="title desc">
+<title id="title">02-cache-size</title><desc id="desc">For the same eight query heads, holding context length, dimensions and precision fixed, KV element counts are proportional to eight, two or one KV heads.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="270" fill="white"/>
+<text x="35" y="59" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#253340">MHA · 8</text>
+<rect x="220" y="30" width="600.0" height="42" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="845" y="60" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">8</text>
+<text x="35" y="129" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#253340">GQA · 2</text>
+<rect x="220" y="100" width="150.0" height="42" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="845" y="130" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">2</text>
+<text x="35" y="199" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#253340">MQA · 1</text>
+<rect x="220" y="170" width="75.0" height="42" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="845" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#209f78">1</text>
+<text x="450" y="262" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#687986">Same context · same head width · same precision</text>
+</svg>

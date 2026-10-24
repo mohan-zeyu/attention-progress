@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 468" role="img" aria-labelledby="title desc">
+<title id="title">delta-deltanet</title><desc id="desc">Toy delta update for order 7314 with d_v = 1, d_k = 2, k_t = e₁ and v_t = 5 (Friday). The state [2, 4] predicts 2 (Tuesday) at k_t; the residual is 5 − 2 = 3; with β = 1 the write [3, 0] gives [5, 4], so 7314 now reads Friday and order 2208 keeps 4. Additive linear attention would give [7, 4]. β = 0, 0.5, 1 give 2, 3.5, 5. A query halfway between both keys moves from 4.24 to 6.36.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="468" fill="white"/>
+<text x="30" y="36" text-anchor="start" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="20" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> + <tspan fill="#2a9aa6">β<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>(<tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan> - <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>)<tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan> = <tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan>(<tspan font-style="italic">I</tspan> - <tspan fill="#2a9aa6">β<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan>) + <tspan fill="#2a9aa6">β<tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan fill="#8d6bb5"><tspan font-style="italic">v</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan fill="#3f83b6"><tspan font-style="italic">k</tspan><tspan dy="5.6" font-size="13.6"><tspan font-style="italic">t</tspan></tspan><tspan dy="-5.6" font-size="20.0"> </tspan></tspan><tspan dy="-8.4" font-size="13.6"><tspan font-style="normal">⊤</tspan></tspan><tspan dy="8.4" font-size="20.0"> </tspan></text>
+<text x="870" y="64" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">toy: 1 value channel, 2 key channels, k = e₁, v = 5 (Friday)</text>
+<text x="30" y="84" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">key direction →</text>
+<text x="153.5" y="96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">7314</text>
+<text x="203.5" y="96" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#687986">2208</text>
+<text x="30" y="126" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#2a9aa6">β = 1</text>
+<rect x="130" y="104" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.28"/>
+<text x="153.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">2</text>
+<rect x="180" y="104" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="203.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<text x="178" y="160" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">t</tspan>-1</tspan><tspan dy="-4.2" font-size="15.0"> </tspan></tspan></text>
+<text x="154" y="178" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Tue</text>
+<line x1="234" y1="121" x2="280" y2="121" stroke="#3f83b6" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<text x="257" y="112" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">read</text>
+<rect x="284" y="104" width="84" height="34" rx="17" fill="#f4f7f8" fill-opacity="1" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="326.0" y="126.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#8d6bb5">Sk = 2</text>
+<text x="326" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">predicts Tue</text>
+<line x1="372" y1="121" x2="412" y2="121" stroke="#cf5f59" stroke-width="1.8" marker-end="url(#a-red)"/>
+<rect x="416" y="104" width="110" height="34" rx="17" fill="#f4f7f8" fill-opacity="1" stroke="#cf5f59" stroke-width="1.6"/>
+<text x="471.0" y="126.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cf5f59">5 − 2 = 3</text>
+<text x="471" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#cf5f59">residual</text>
+<line x1="530" y1="121" x2="570" y2="121" stroke="#1f9a74" stroke-width="1.8" marker-end="url(#a-green)"/>
+<text x="550" y="112" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">× βkᵀ</text>
+<rect x="574" y="104" width="47" height="34" rx="4" fill="#1f9a74" fill-opacity="0.38"/>
+<text x="597.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">3</text>
+<rect x="624" y="104" width="47" height="34" rx="4" fill="#cad5db" fill-opacity="0.08"/>
+<text x="647.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">0</text>
+<text x="622" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">write along k</text>
+<text x="690" y="127" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#253340">=</text>
+<rect x="712" y="104" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.58"/>
+<rect x="710.5" y="102.5" width="50" height="37" rx="5" fill="none" stroke="#1f9a74" stroke-width="2"/>
+<text x="735.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">5</text>
+<rect x="762" y="104" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="785.5" y="126.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<text x="760" y="160" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="15" fill="#253340"><tspan fill="#8d6bb5"><tspan font-style="italic">S</tspan><tspan dy="4.2" font-size="10.2"><tspan font-style="italic">t</tspan></tspan><tspan dy="-4.2" font-size="15.0"> </tspan></tspan></text>
+<text x="736" y="178" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">Fri</text>
+<text x="786" y="178" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">untouched</text>
+<text x="30" y="228" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#cf5f59">add</text>
+<text x="30" y="246" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">(linear attn)</text>
+<rect x="130" y="206" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.28"/>
+<text x="153.5" y="228.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">2</text>
+<rect x="180" y="206" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="203.5" y="228.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<text x="266" y="229" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#253340">+ 5 kᵀ =</text>
+<rect x="310" y="206" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.58"/>
+<rect x="308.5" y="204.5" width="50" height="37" rx="5" fill="none" stroke="#cf5f59" stroke-width="2"/>
+<text x="333.5" y="228.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">7</text>
+<rect x="360" y="206" width="47" height="34" rx="4" fill="#8d6bb5" fill-opacity="0.48000000000000004"/>
+<text x="383.5" y="228.76" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#253340">4</text>
+<text x="420" y="229" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#cf5f59">reads 7: neither Tue nor Fri, nothing was replaced</text>
+<line x1="20" y1="268" x2="880" y2="268" stroke="#cad5db" stroke-width="1.2"/>
+<text x="30" y="296" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Partial edit: Sk after the update = 2 + β · 3</text>
+<line x1="60" y1="344" x2="400" y2="344" stroke="#cad5db" stroke-width="3"/>
+<circle cx="60" cy="344" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="60" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">2</text>
+<text x="60" y="368" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β = 0</text>
+<circle cx="145.0" cy="344" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="145.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">2.75</text>
+<text x="145.0" y="368" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β = 0.25</text>
+<circle cx="230.0" cy="344" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="230.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">3.5</text>
+<text x="230.0" y="368" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β = 0.5</text>
+<circle cx="315.0" cy="344" r="6" fill="#2a9aa6" stroke="#2a9aa6" stroke-width="2"/>
+<text x="315.0" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4.25</text>
+<text x="315.0" y="368" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β = 0.75</text>
+<circle cx="400" cy="344" r="6" fill="#1f9a74" stroke="#1f9a74" stroke-width="2"/>
+<text x="400" y="330" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">5</text>
+<text x="400" y="368" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#2a9aa6">β = 1</text>
+<text x="60" y="388" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Tue</text>
+<text x="400" y="388" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">Fri</text>
+<text x="470" y="296" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#253340">Who else moves? (β = 1)</text>
+<text x="470" y="324" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#d09124">q = e₂ (order 2208)</text>
+<text x="690" y="324" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">4.00</text>
+<text x="716" y="324" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">→</text>
+<text x="782" y="324" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#253340">4.00</text>
+<text x="800" y="324" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">kept</text>
+<text x="470" y="354" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#d09124">q = e₁ (order 7314)</text>
+<text x="690" y="354" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">2.00</text>
+<text x="716" y="354" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">→</text>
+<text x="782" y="354" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#1f9a74">5.00</text>
+<text x="800" y="354" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#1f9a74">edited</text>
+<text x="470" y="384" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#d09124">q = (e₁ + e₂)/√2</text>
+<text x="690" y="384" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">4.24</text>
+<text x="716" y="384" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">→</text>
+<text x="782" y="384" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#cf5f59">6.36</text>
+<text x="800" y="384" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#cf5f59">shifted</text>
+<text x="450" y="446" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">Cost over linear attention: one extra matrix-vector read of S per token. State size unchanged.</text>
+</svg>

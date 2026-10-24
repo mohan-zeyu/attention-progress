@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+<title id="title">09-storage</title><desc id="desc">Sharing cache sets across layers reduces repeated storage. Quantizing sixteen-bit elements to four bits reduces raw element bits fourfold, before metadata and numerical costs.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="300" fill="white"/>
+<text x="225" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Share across layers</text>
+<text x="675" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Use fewer bits</text>
+<line x1="450" y1="32" x2="450" y2="275" stroke="#cad5db" stroke-width="2"/>
+<text x="28" y="88" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#687986">L1</text>
+<circle cx="75" cy="81" r="12" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="91" y1="81" x2="235" y2="144" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<text x="28" y="131" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#687986">L2</text>
+<circle cx="75" cy="124" r="12" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="91" y1="124" x2="235" y2="144" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<text x="28" y="174" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#687986">L3</text>
+<circle cx="75" cy="167" r="12" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="91" y1="167" x2="235" y2="144" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<text x="28" y="217" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#687986">L4</text>
+<circle cx="75" cy="210" r="12" fill="#d49a30" stroke="#d49a30" stroke-width="2"/>
+<line x1="91" y1="210" x2="235" y2="144" stroke="#4287b9" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="245" y="105" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="269" y="105" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.49375"/>
+<rect x="293" y="105" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.7375"/>
+<rect x="317" y="105" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.25"/>
+<rect x="245" y="129" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="269" y="129" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.33125"/>
+<rect x="293" y="129" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.575"/>
+<rect x="317" y="129" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.81875"/>
+<rect x="245" y="153" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<rect x="269" y="153" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.9"/>
+<rect x="293" y="153" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.4125"/>
+<rect x="317" y="153" width="22" height="22" rx="2" fill="#4287b9" fill-opacity="0.65625"/>
+<text x="225" y="271" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">Different queries, one cache</text>
+<rect x="510" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="532" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="554" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="576" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="598" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="620" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="642" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="664" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="686" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="708" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="730" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="752" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="774" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="796" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="818" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="840" y="82" width="17" height="40" rx="7" fill="#4287b9" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<text x="675" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#4287b9">16 bits</text>
+<line x1="675" y1="127" x2="675" y2="171" stroke="#d49a30" stroke-width="2" marker-end="url(#a-gold)"/>
+<rect x="635" y="182" width="17" height="40" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="657" y="182" width="17" height="40" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="679" y="182" width="17" height="40" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<rect x="701" y="182" width="17" height="40" rx="7" fill="#209f78" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="675" y="270" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">4 bits + scales / overhead</text>
+</svg>

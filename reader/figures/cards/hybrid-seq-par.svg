@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+<title id="title">hybrid-seq-par</title><desc id="desc">Sequential versus parallel hybrids. Sequential (Jamba, Nemotron-H, Samba): whole layers alternate, and only the attention layers keep a KV cache. Parallel (Hymba, Falcon-H1): every layer runs attention heads and SSM heads side by side; Falcon-H1 splits channels SSM 2 : attention 1 : MLP 5. Computed KV per token in BF16: Falcon-H1-34B 144 KiB (72 layers, 4 KV heads), Nemotron-H-56B 40 KiB (10 layers, 8 KV heads). Reported for Hymba-1.5B at 8K: 78.6 MB cache and 664 tok/s, 11.67 times smaller and 3.49 times faster than Llama-3.2-3B.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3f83b6"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1f9a74"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d09124"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cf5f59"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8d6bb5"/></marker>
+<marker id="a-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2a9aa6"/></marker>
+<marker id="a-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#cad5db"/></marker>
+</defs>
+<rect width="900" height="450" fill="white"/>
+<text x="450" y="34" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="21" fill="#253340"><tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">Hymba: </tspan> <tspan font-style="italic">Y</tspan> = <tspan font-style="italic">W</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">out</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan>(<tspan fill="#2a9aa6">β<tspan dy="5.9" font-size="14.3">1</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">⊙</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">norm</tspan>(<tspan fill="#3f83b6"><tspan font-style="italic">M</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">attn</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan font-style="italic">X</tspan>) + <tspan fill="#2a9aa6">β<tspan dy="5.9" font-size="14.3">2</tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan> <tspan font-style="normal">⊙</tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal">norm</tspan>(<tspan fill="#8d6bb5"><tspan font-style="italic">M</tspan><tspan dy="5.9" font-size="14.3"><tspan font-style="italic">ssm</tspan></tspan><tspan dy="-5.9" font-size="21.0"> </tspan></tspan><tspan font-style="italic">X</tspan>))</text>
+<rect x="24" y="56" width="270" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="38" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">inter-layer (sequential)</text>
+<rect x="64" y="92" width="120" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.85" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="124.0" y="107.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">Mamba-2</text>
+<rect x="194" y="97" width="14" height="12" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="212" y="107" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">state</text>
+<rect x="64" y="120" width="120" height="22" rx="4" fill="#f4f7f8" fill-opacity="0.85" stroke="#cad5db" stroke-width="1.6"/>
+<text x="124.0" y="135.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">FFN</text>
+<rect x="64" y="148" width="120" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.85" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="124.0" y="163.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">Mamba-2</text>
+<rect x="194" y="153" width="14" height="12" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="212" y="163" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">state</text>
+<rect x="64" y="176" width="120" height="22" rx="4" fill="#f4f7f8" fill-opacity="0.85" stroke="#cad5db" stroke-width="1.6"/>
+<text x="124.0" y="191.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">FFN</text>
+<rect x="64" y="204" width="120" height="22" rx="4" fill="#8d6bb5" fill-opacity="0.85" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="124.0" y="219.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">Mamba-2</text>
+<rect x="194" y="209" width="14" height="12" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="212" y="219" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">state</text>
+<rect x="64" y="232" width="120" height="22" rx="4" fill="#f4f7f8" fill-opacity="0.85" stroke="#cad5db" stroke-width="1.6"/>
+<text x="124.0" y="247.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">FFN</text>
+<rect x="64" y="260" width="120" height="22" rx="4" fill="#3f83b6" fill-opacity="0.85" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="124.0" y="275.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#ffffff">attention</text>
+<rect x="194" y="263" width="50" height="16" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="250" y="275" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">KV</text>
+<rect x="64" y="288" width="120" height="22" rx="4" fill="#f4f7f8" fill-opacity="0.85" stroke="#cad5db" stroke-width="1.6"/>
+<text x="124.0" y="303.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">FFN</text>
+<line x1="52" y1="88" x2="52" y2="318" stroke="#687986" stroke-width="1.4"/>
+<text x="46" y="330" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#687986">residual</text>
+<text x="40" y="346.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Jamba 4/32 · Nemotron-H 10/118</text>
+<rect x="308" y="56" width="300" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="322" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">intra-layer (parallel), one layer</text>
+<rect x="330" y="92" width="256" height="24" rx="4" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="458.0" y="108.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">norm(x)</text>
+<line x1="394" y1="116" x2="394" y2="136" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<line x1="522" y1="116" x2="522" y2="136" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<rect x="330" y="138" width="120" height="70" rx="4" fill="#3f83b6" fill-opacity="0.22" stroke="#3f83b6" stroke-width="1.6"/>
+<text x="390" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#3f83b6">attention</text>
+<text x="390" y="178" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#3f83b6">heads</text>
+<text x="390" y="198" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#3f83b6">KV every layer</text>
+<rect x="458" y="138" width="128" height="70" rx="4" fill="#8d6bb5" fill-opacity="0.22" stroke="#8d6bb5" stroke-width="1.6"/>
+<text x="522" y="160" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#8d6bb5">SSM heads</text>
+<text x="522" y="178" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#8d6bb5">Mamba / Mamba-2</text>
+<text x="522" y="198" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8d6bb5">fixed state</text>
+<line x1="390" y1="208" x2="450" y2="232" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<line x1="522" y1="208" x2="470" y2="232" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<rect x="400" y="234" width="116" height="24" rx="4" fill="#f4f7f8" fill-opacity="1" stroke="#2a9aa6" stroke-width="1.6"/>
+<text x="458.0" y="250.68" text-anchor="middle" font-family="STIX Two Math,Cambria Math,Times New Roman,serif" font-size="13" fill="#2a9aa6">β<tspan dy="3.6" font-size="8.8">1</tspan><tspan dy="-3.6" font-size="13.0"> </tspan>, β<tspan dy="3.6" font-size="8.8">2</tspan><tspan dy="-3.6" font-size="13.0"> </tspan> <tspan font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-style="normal"> + concat</tspan></text>
+<line x1="458" y1="258" x2="458" y2="274" stroke="#687986" stroke-width="1.8" marker-end="url(#a-muted)"/>
+<rect x="400" y="276" width="116" height="24" rx="4" fill="#f4f7f8" fill-opacity="1" stroke="#cad5db" stroke-width="1.6"/>
+<text x="458.0" y="292.68" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#687986">MLP</text>
+<text x="458" y="322" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Falcon-H1 channels (SA_M block):</text>
+<rect x="338" y="330" width="58.0" height="16" rx="2" fill="#8d6bb5" fill-opacity="0.85"/>
+<text x="367.0" y="343" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#ffffff">SSM 2</text>
+<rect x="398.0" y="330" width="28.0" height="16" rx="2" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="412.0" y="343" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#ffffff">attn 1</text>
+<rect x="428.0" y="330" width="148.0" height="16" rx="2" fill="#cad5db" fill-opacity="0.85"/>
+<text x="502.0" y="343" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#253340">MLP 5</text>
+<rect x="622" y="56" width="254" height="300" rx="10" fill="#eef3f5" stroke="#cad5db" stroke-width="1"/>
+<text x="636" y="80" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#687986">KV per token, BF16 (config)</text>
+<text x="736" y="108.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Falcon-H1-34B</text>
+<rect x="746" y="96" width="90.0" height="18" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="844.0" y="108.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">144 KiB</text>
+<text x="736" y="136.24" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Nemotron-H-56B</text>
+<rect x="746" y="124" width="25.0" height="18" rx="4" fill="#3f83b6" fill-opacity="0.85"/>
+<text x="779.0" y="136.24" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#3f83b6">40 KiB</text>
+<text x="636" y="172.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Falcon-H1: 72 layers × 4 KV</text>
+<text x="636" y="188.2" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">Nemotron-H: 10 layers × 8 KV</text>
+<line x1="634" y1="212" x2="864" y2="212" stroke="#cad5db" stroke-width="1.2"/>
+<text x="636" y="236" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#253340">Hymba-1.5B, 8K (reported)</text>
+<text x="722" y="258.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">cache MB</text>
+<rect x="732" y="248" width="7.705882352941176" height="16" rx="4" fill="#1f9a74" fill-opacity="0.85"/>
+<text x="747.7058823529412" y="258.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1f9a74">78.6</text>
+<text x="722" y="280.88" text-anchor="end" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#253340">Llama-3.2-3B</text>
+<rect x="732" y="270" width="90.0" height="16" rx="4" fill="#cf5f59" fill-opacity="0.85"/>
+<text x="830.0" y="280.88" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf5f59">918</text>
+<text x="636" y="310.0" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">3 global layers (0, 15, 31), rest SWA</text>
+<text x="636" y="326.2" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#687986">KV shared by layer pairs; 664 tok/s</text>
+<text x="24" y="384" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Parallel ≠ fewer KV layers: Falcon-H1 keeps KV in all 72 layers and saves through few KV heads.</text>
+<text x="24" y="406" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#253340">Sequential hybrids put KV in few layers. Hymba gets both: parallel heads + SWA + cross-layer KV sharing.</text>
+<text x="24" y="430" text-anchor="start" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#687986">Samba (Microsoft): Mamba-MLP-SWA(2048)-MLP repeated, no global layer at all.</text>
+</svg>

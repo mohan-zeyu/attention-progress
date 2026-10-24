@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc"><title id="title">MLA cache records</title><desc id="desc">Every position produces a compressed content latent and a separate positional key. Multiple attention heads share the cache basis and learn distinct projections.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#203044"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,Helvetica,sans-serif;fill:#203044}.small{font-size:14px}.body{font-size:17px}.title{font-size:23px;font-weight:700}.label{font-size:16px;font-weight:600}</style>
+<text x="30" y="38" class="title" text-anchor="start">MLA keeps compact records at every position</text>
+<text x="40" y="83" class="label" text-anchor="start">Context representations</text>
+<text x="378" y="83" class="label" text-anchor="start">Cached per position</text>
+<text x="770" y="83" class="label" text-anchor="start">Head-specific content views</text>
+<rect x="40" y="113" width="195" height="66" rx="10" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="137" y="141" class="body" text-anchor="middle">h1 ∈ Rᵈᵐ</text>
+<text x="137" y="165" class="small" text-anchor="middle">learned hidden vector</text>
+<line x1="235" y1="146" x2="361" y2="146" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="295" y="130" class="small" text-anchor="middle">project</text>
+<rect x="370" y="113" width="177" height="66" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="458" y="142" class="body" text-anchor="middle">c1 ∈ Rᵈᶜ</text>
+<text x="458" y="165" class="small" text-anchor="middle">content latent</text>
+<rect x="557" y="113" width="132" height="66" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="623" y="142" class="body" text-anchor="middle">kR1 ∈ Rᵈʳ</text>
+<text x="623" y="165" class="small" text-anchor="middle">positional key</text>
+<rect x="40" y="205" width="195" height="66" rx="10" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="137" y="233" class="body" text-anchor="middle">h2 ∈ Rᵈᵐ</text>
+<text x="137" y="257" class="small" text-anchor="middle">learned hidden vector</text>
+<line x1="235" y1="238" x2="361" y2="238" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="295" y="222" class="small" text-anchor="middle">project</text>
+<rect x="370" y="205" width="177" height="66" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="458" y="234" class="body" text-anchor="middle">c2 ∈ Rᵈᶜ</text>
+<text x="458" y="257" class="small" text-anchor="middle">content latent</text>
+<rect x="557" y="205" width="132" height="66" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="623" y="234" class="body" text-anchor="middle">kR2 ∈ Rᵈʳ</text>
+<text x="623" y="257" class="small" text-anchor="middle">positional key</text>
+<rect x="40" y="297" width="195" height="66" rx="10" fill="#e5edf8" stroke="#cbd5e1"/>
+<text x="137" y="325" class="body" text-anchor="middle">h3 ∈ Rᵈᵐ</text>
+<text x="137" y="349" class="small" text-anchor="middle">learned hidden vector</text>
+<line x1="235" y1="330" x2="361" y2="330" stroke="#203044" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="295" y="314" class="small" text-anchor="middle">project</text>
+<rect x="370" y="297" width="177" height="66" rx="10" fill="#eaf5f0" stroke="#cbd5e1"/>
+<text x="458" y="326" class="body" text-anchor="middle">c3 ∈ Rᵈᶜ</text>
+<text x="458" y="349" class="small" text-anchor="middle">content latent</text>
+<rect x="557" y="297" width="132" height="66" rx="10" fill="#f1edfa" stroke="#cbd5e1"/>
+<text x="623" y="326" class="body" text-anchor="middle">kR3 ∈ Rᵈʳ</text>
+<text x="623" y="349" class="small" text-anchor="middle">positional key</text>
+<rect x="765" y="111" width="275" height="105" rx="10" fill="#fbf1e5" stroke="#cbd5e1"/>
+<text x="785" y="139" class="label" text-anchor="start">Conceptual content projections</text>
+<text x="785" y="171" class="body" text-anchor="start">key head i:  Ai cj ∈ Rᵈᵏ</text>
+<text x="785" y="199" class="body" text-anchor="start">value head i:  Ui cj ∈ Rᵈᵛ</text>
+<text x="765" y="234" class="small" text-anchor="start">Content uses cj; position uses kRj.</text>
+<rect x="765" y="245" width="275" height="121" rx="10" fill="#fafbfd" stroke="#cbd5e1"/>
+<text x="785" y="278" class="label" text-anchor="start">With projection absorption</text>
+<text x="785" y="308" class="body" text-anchor="start">match / read directly in</text>
+<text x="785" y="334" class="body" text-anchor="start">latent content coordinates</text>
+<text x="785" y="356" class="small" text-anchor="start">(next diagram)</text>
+<text x="40" y="417" class="body" text-anchor="start">More positions → more rows. A smaller content basis does not make the row count constant.</text>
+<text x="40" y="459" class="small" text-anchor="start">Cache width per row per layer: dc + dr elements. This illustration shows three positions; an actual cache holds N.</text>
+</svg>

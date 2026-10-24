@@ -1,0 +1,154 @@
+[
+  {
+    "file": "00-query.svg",
+    "description": "Illustrative read: a query about delivery uses the Friday correction among stored conversation records."
+  },
+  {
+    "file": "00-organizations.svg",
+    "description": "History can remain separate records or update a bounded aggregate state. At fixed model dimensions, record count grows but decode-state dimensions stay fixed."
+  },
+  {
+    "file": "00-choices.svg",
+    "description": "Three operations within addressable records: sharing heads, shrinking each record and pooling positions. These are operations, with named designs shown underneath."
+  },
+  {
+    "file": "01-bottleneck.svg",
+    "description": "One summary is a bottleneck. Keeping separate contextual records allows different output steps to consult different positions."
+  },
+  {
+    "file": "01-qkv.svg",
+    "description": "A query matches keys. Softmax supplies weights, shown illustratively as 0.1, 0.2, 0.6 and 0.1. The output combines the corresponding values."
+  },
+  {
+    "file": "01-heads.svg",
+    "description": "Multiple heads make different learned reads over the same context. The pictured patterns are examples, not assigned head roles."
+  },
+  {
+    "file": "01-prefill.svg",
+    "description": "Dense causal prefill has many query-key pairs. Cached decoding introduces one query that reads historical records and appends the new key/value."
+  },
+  {
+    "file": "02-sharing.svg",
+    "description": "Eight query heads use eight KV heads in MHA, two in illustrated GQA, or one in MQA. Each query still forms its own read."
+  },
+  {
+    "file": "02-cache-size.svg",
+    "description": "For the same eight query heads, holding context length, dimensions and precision fixed, KV element counts are proportional to eight, two or one KV heads."
+  },
+  {
+    "file": "02-growth.svg",
+    "description": "Sharing reduces width, but the number of retained position records still grows. Twice the retained history doubles this cache component."
+  },
+  {
+    "file": "03-records.svg",
+    "description": "MLA caches one learned latent plus a positional key per historical position rather than expanded content keys and values for every head. Widths are schematic."
+  },
+  {
+    "file": "03-absorption.svg",
+    "description": "Content projection absorption moves key expansion to the query side and value projection after the weighted latent sum. It is algebraically equivalent for the chosen parameterization."
+  },
+  {
+    "file": "03-position.svg",
+    "description": "MLA matches content through a latent and position through a separate RoPE key. The two scores combine before softmax."
+  },
+  {
+    "file": "04-aggregate.svg",
+    "description": "Kernel linear attention accumulates feature-mapped key/value contributions into fixed-size state. A normalized variant also keeps a normalizer."
+  },
+  {
+    "file": "04-collision.svg",
+    "description": "Different associations can overlap in the same state coordinates. Bounded state has finite capacity; similar keys can interfere."
+  },
+  {
+    "file": "04-decay.svg",
+    "description": "RetNet uses fixed retention factors per head. GLA makes state forgetting input dependent; the illustrated variant decays key channels separately."
+  },
+  {
+    "file": "05-residual.svg",
+    "description": "Toy delta update for a unit key: old prediction 2, target 5, residual 3. With update strength one, the new prediction is 5."
+  },
+  {
+    "file": "05-fade-correct.svg",
+    "description": "Toy Gated DeltaNet: scalar decay 0.5 changes state [2,4] to [1,2]. Reading the faded first key gives residual 5-1=4; a full delta correction gives [5,2]."
+  },
+  {
+    "file": "05-channel-decay.svg",
+    "description": "A scalar decay fades all state columns; KDA can give key channels different decay rates. The pictured toy directions are separate; learned directions can overlap."
+  },
+  {
+    "file": "06-patterns.svg",
+    "description": "Illustrative causal visibility graphs compare dense connections, local plus global links, and the added random links used by BigBird. Original document models also use bidirectional forms."
+  },
+  {
+    "file": "06-blocks.svg",
+    "description": "MoBA scores mean-key summaries, selects historical blocks, and reads original entries inside them. The current block is included causally; unselected history remains stored."
+  },
+  {
+    "file": "06-minference.svg",
+    "description": "MInference approximates attention during inference using sparse head patterns, primarily accelerating prefill without retraining the model."
+  },
+  {
+    "file": "06-nsa.svg",
+    "description": "NSA trains three gated read branches: compressed summaries, selected original blocks and a local window. Detailed selectable history remains stored."
+  },
+  {
+    "file": "06-indexer.svg",
+    "description": "DSA uses a lightweight indexer to select entries for the main attention. All pictured historical records remain retained; selector work grows with history."
+  },
+  {
+    "file": "07-pool.svg",
+    "description": "MLA retains a compact record at each position. A simple pooling example maps twelve positions to three group records. Pooling diagrams are schematic, not complete V4 cache layouts."
+  },
+  {
+    "file": "07-csa-hca.svg",
+    "description": "CSA selects moderately compressed history. HCA reads every eligible heavily compressed historical entry. Both also read recent uncompressed positions. Counts are illustrative."
+  },
+  {
+    "file": "07-overlap.svg",
+    "description": "CSA ratio four emits every four positions. Interior source windows overlap eight positions, but output count remains about N divided by four, not N divided by eight."
+  },
+  {
+    "file": "08-stacks.svg",
+    "description": "One repeating group in Qwen3-Next has three Gated DeltaNet layers plus gated global GQA; Kimi Linear has three KDA layers plus full MLA. Residual and feed-forward operations are omitted."
+  },
+  {
+    "file": "08-gates.svg",
+    "description": "An output gate modulates this readout after attention. A state gate alters carried memory and therefore future reads. Both can coexist in a recurrent layer."
+  },
+  {
+    "file": "08-cost.svg",
+    "description": "A hybrid retains a fixed-size recurrent component and a growing explicit-cache component. Fewer explicit layers reduce the growing term, but do not remove it."
+  },
+  {
+    "file": "09-tiles.svg",
+    "description": "Naive attention stores full score and probability intermediates in HBM. FlashAttention maintains tiled scores and running softmax/output on chip; dense pairwise arithmetic stays quadratic."
+  },
+  {
+    "file": "09-execution.svg",
+    "description": "FLA implements multiple recurrent rules with efficient chunkwise kernels. Ring Attention distributes dense context across devices while circulating KV blocks; scheduling is distinct from the attention rule."
+  },
+  {
+    "file": "09-storage.svg",
+    "description": "Sharing cache sets across layers reduces repeated storage. Quantizing sixteen-bit elements to four bits reduces raw element bits fourfold, before metadata and numerical costs."
+  },
+  {
+    "file": "09-tiers.svg",
+    "description": "Computed compatible prefixes can be retained in GPU, host RAM or SSD. Reuse may save recomputation, while loading has transfer costs. Persistence alone is not semantic memory."
+  },
+  {
+    "file": "10-write-control.svg",
+    "description": "FG-squared-GDN uses tied key/value channel scaling; its plus variant separates the factors. The strips depict scaling factors rather than arbitrary rates for every state element."
+  },
+  {
+    "file": "10-erase-write.svg",
+    "description": "Gated DeltaNet-2 gates the key before the erase read, and gates the incoming value before forming the write target. Their residual corrects the faded state. The gate is not applied after the erase read."
+  },
+  {
+    "file": "10-uncertainty.svg",
+    "description": "A one-dimensional Kalman illustration: greater prior uncertainty and a reliable new observation can move an estimate farther toward that observation. Internal memory uncertainty is not answer confidence."
+  },
+  {
+    "file": "10-tests.svg",
+    "description": "Five different evaluation questions: correction, interference, retention, evidence access and full-system cost. One successful test does not establish the others."
+  }
+]

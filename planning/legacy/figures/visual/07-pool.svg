@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 285" role="img" aria-labelledby="title desc">
+<title id="title">07-pool</title><desc id="desc">MLA retains a compact record at each position. A simple pooling example maps twelve positions to three group records. Pooling diagrams are schematic, not complete V4 cache layouts.</desc>
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#253340"/></marker>
+<marker id="a-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#687986"/></marker>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4287b9"/></marker>
+<marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#209f78"/></marker>
+<marker id="a-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d49a30"/></marker>
+<marker id="a-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf6c66"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#9272b7"/></marker>
+</defs>
+<rect width="900" height="285" fill="white"/>
+<text x="225" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">MLA: shrink each record</text>
+<text x="675" y="32" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#253340">Pool: keep fewer records</text>
+<line x1="450" y1="32" x2="450" y2="260" stroke="#cad5db" stroke-width="2"/>
+<rect x="35" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="47" y1="125" x2="47" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="39" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="67" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="79" y1="125" x2="79" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="71" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="99" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="111" y1="125" x2="111" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="103" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="131" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="143" y1="125" x2="143" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="135" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="163" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="175" y1="125" x2="175" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="167" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="195" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="207" y1="125" x2="207" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="199" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="227" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="239" y1="125" x2="239" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="231" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="259" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="271" y1="125" x2="271" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="263" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="291" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="303" y1="125" x2="303" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="295" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="323" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="335" y1="125" x2="335" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="327" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="355" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="367" y1="125" x2="367" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="359" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="387" y="70" width="24" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="399" y1="125" x2="399" y2="171" stroke="#9272b7" stroke-width="2" marker-end="url(#a-purple)"/>
+<rect x="391" y="181" width="16" height="37" rx="7" fill="#9272b7" fill-opacity="1" stroke="#9272b7" stroke-width="1.7"/>
+<rect x="492" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="524" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="556" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="588" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="620" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="652" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="684" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="716" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="748" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="780" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="812" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<rect x="844" y="70" width="23" height="51" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#4287b9" stroke-width="1.7"/>
+<line x1="504" y1="125" x2="550" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="536" y1="125" x2="550" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="568" y1="125" x2="550" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="600" y1="125" x2="550" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="525" y="183" width="50" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="550.0" y="209.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<line x1="632" y1="125" x2="678" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="664" y1="125" x2="678" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="696" y1="125" x2="678" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="728" y1="125" x2="678" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="653" y="183" width="50" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="678.0" y="209.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<line x1="760" y1="125" x2="806" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="792" y1="125" x2="806" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="824" y1="125" x2="806" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<line x1="856" y1="125" x2="806" y2="174" stroke="#209f78" stroke-width="2" marker-end="url(#a-green)"/>
+<rect x="781" y="183" width="50" height="38" rx="7" fill="#f3f6f7" fill-opacity="1" stroke="#209f78" stroke-width="1.7"/>
+<text x="806.0" y="209.35" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#209f78">c</text>
+<text x="225" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#9272b7">One per position</text>
+<text x="675" y="272" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#209f78">One per group</text>
+</svg>
