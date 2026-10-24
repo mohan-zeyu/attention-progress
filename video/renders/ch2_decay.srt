@@ -1,0 +1,307 @@
+1
+00:00:00,000 --> 00:00:01,415
+Chapter two: forgetting.
+
+2
+00:00:01,735 --> 00:00:04,422
+At the end of chapter one, the state could only add.
+
+3
+00:00:04,742 --> 00:00:08,245
+After many tokens it is crowded with overlapping entries,
+
+4
+00:00:08,245 --> 00:00:10,396
+and every read is mostly crosstalk.
+
+5
+00:00:10,716 --> 00:00:14,331
+The simplest fix is to let the state fade a little before each write.
+
+6
+00:00:15,633 --> 00:00:20,580
+Multiply the old state by a decay, alpha t, somewhere between zero and one.
+
+7
+00:00:20,900 --> 00:00:23,234
+Then add the new outer product, as before.
+
+8
+00:00:24,333 --> 00:00:25,360
+Now unroll it.
+
+9
+00:00:25,680 --> 00:00:30,866
+A token j that was written earlier has been multiplied by every decay since then.
+
+10
+00:00:31,186 --> 00:00:34,922
+So its weight in the output carries the product of the alphas,
+
+11
+00:00:34,922 --> 00:00:36,248
+from j plus 1 up to t.
+
+12
+00:00:36,568 --> 00:00:40,578
+The output is attention without the softmax, with a weight mask, D.
+
+13
+00:00:41,667 --> 00:00:44,146
+Picture D as a lower triangular grid.
+
+14
+00:00:44,466 --> 00:00:49,078
+The diagonal is one, and each step away from it multiplies in one more decay.
+
+15
+00:00:49,398 --> 00:00:53,118
+Plain linear attention is the case where every alpha is one,
+
+16
+00:00:53,118 --> 00:00:55,784
+so its mask is all ones below the diagonal.
+
+17
+00:00:56,104 --> 00:00:59,168
+With a decay, the mask fades away from the diagonal.
+
+18
+00:00:59,488 --> 00:01:02,840
+It also tells the model how far away each token is,
+
+19
+00:01:02,840 --> 00:01:06,652
+so these layers usually need no other positional encoding.
+
+20
+00:01:08,367 --> 00:01:13,332
+RetNet, from 2023, uses one fixed decay per head, called gamma.
+
+21
+00:01:13,652 --> 00:01:19,111
+Then D t j is gamma to the power t minus j, and old tokens fade at a set rate.
+
+22
+00:01:19,431 --> 00:01:23,564
+A head remembers roughly the last one over one minus gamma tokens.
+
+23
+00:01:23,884 --> 00:01:29,557
+With gamma equal to 0.99, the horizon is about 100 tokens,
+
+24
+00:01:29,557 --> 00:01:36,893
+and a token 100 steps back keeps 0.99 to the 100, about 0.37 of its weight.
+
+25
+00:01:38,000 --> 00:01:41,958
+Different heads get different decays, so together they cover several scales.
+
+26
+00:01:42,278 --> 00:01:48,673
+RetNet's experiments space one minus gamma from one over 32 to one over 512.
+
+27
+00:01:48,993 --> 00:01:53,384
+So the horizons run from about 32 to 512 tokens.
+
+28
+00:01:53,704 --> 00:01:59,304
+Lightning attention, from 2025, keeps this fixed decay and adds a fast kernel.
+
+29
+00:01:59,600 --> 00:02:02,185
+The price is that the decay ignores content.
+
+30
+00:02:02,505 --> 00:02:06,331
+An important number and a greeting fade at exactly the same rate.
+
+31
+00:02:08,033 --> 00:02:11,699
+The next step is to let each token decide how much to forget.
+
+32
+00:02:12,019 --> 00:02:13,627
+Mamba-2, from 2024,
+
+33
+00:02:13,627 --> 00:02:21,161
+uses one decay per head that depends on the token. a t equals e to the delta t times A h.
+
+34
+00:02:21,481 --> 00:02:25,098
+A h is negative, and delta t is computed from the input.
+
+35
+00:02:25,418 --> 00:02:27,244
+So the mask is no longer smooth.
+
+36
+00:02:27,564 --> 00:02:31,340
+A token can choose to keep almost everything, or to forget a lot.
+
+37
+00:02:32,233 --> 00:02:38,735
+Its paper shows that this state space model is the same computation as the masked linear attention above,
+
+38
+00:02:38,735 --> 00:02:40,345
+under a simple dictionary.
+
+39
+00:02:40,665 --> 00:02:43,106
+The SSM input, x, plays the value.
+
+40
+00:02:43,426 --> 00:02:44,538
+B plays the key.
+
+41
+00:02:44,858 --> 00:02:46,228
+And C plays the query.
+
+42
+00:02:46,548 --> 00:02:48,468
+This is called the state space duality.
+
+43
+00:02:48,767 --> 00:02:53,684
+Because the decay is one scalar per head, the whole layer runs as matrix products,
+
+44
+00:02:53,684 --> 00:02:57,762
+reported two to eight times faster than the scan of the first Mamba.
+
+45
+00:02:58,082 --> 00:03:01,698
+One catch: delta t sets both the decay and the write strength.
+
+46
+00:03:02,018 --> 00:03:04,123
+So a strong write also forgets more.
+
+47
+00:03:05,833 --> 00:03:10,482
+GLA, gated linear attention, from 2023, goes finer.
+
+48
+00:03:10,802 --> 00:03:12,880
+It decays each key channel separately.
+
+49
+00:03:13,200 --> 00:03:17,111
+The old state is multiplied on the right by a diagonal matrix,
+
+50
+00:03:17,111 --> 00:03:19,066
+with one decay per key channel.
+
+51
+00:03:20,167 --> 00:03:23,093
+Each column of the state belongs to one key channel.
+
+52
+00:03:23,413 --> 00:03:27,432
+So one channel can be cleared at a topic switch, while the others are kept.
+
+53
+00:03:27,733 --> 00:03:31,399
+The decays come from a sigmoid, raised to the power one sixteenth.
+
+54
+00:03:31,719 --> 00:03:35,788
+That power keeps them close to one, so by default the state forgets slowly.
+
+55
+00:03:36,108 --> 00:03:48,974
+Sigmoid outputs of 0.01, 0.1, 0.5 and 0.9 become decays of 0.75, 0.866,
+
+56
+00:03:48,974 --> 00:03:51,874
+0.958 and 0.993.
+
+57
+00:03:52,967 --> 00:03:55,851
+A diagonal decay still trains well in chunks,
+
+58
+00:03:55,851 --> 00:03:59,441
+because the products of decays become sums in log space.
+
+59
+00:04:01,133 --> 00:04:05,619
+Mamba-3, from 2026, changes the write in three ways.
+
+60
+00:04:05,939 --> 00:04:07,627
+First, a trapezoid write.
+
+61
+00:04:07,947 --> 00:04:11,066
+Each write averages the inputs at both ends of the step.
+
+62
+00:04:11,386 --> 00:04:18,321
+With a toy step of 0.5 and a decay of 0.8, Mamba-2 writes 0.5 of x t.
+
+63
+00:04:18,641 --> 00:04:24,818
+The trapezoid rule writes 0.2 of x t minus 1, and 0.25 of x t.
+
+64
+00:04:25,133 --> 00:04:26,428
+Second, rotations.
+
+65
+00:04:26,748 --> 00:04:31,660
+A complex valued state turns the real decay into a decay plus a rotation.
+
+66
+00:04:31,980 --> 00:04:35,316
+That works like a position encoding that depends on the data.
+
+67
+00:04:35,633 --> 00:04:36,503
+Third, MIMO.
+
+68
+00:04:36,823 --> 00:04:41,720
+Writes of rank 4 instead of rank 1 do about four times the work on the same state.
+
+69
+00:04:42,040 --> 00:04:47,413
+Decode is limited by bytes, not compute, so the reported latency stays about flat.
+
+70
+00:04:49,100 --> 00:04:49,898
+To recap.
+
+71
+00:04:50,218 --> 00:04:53,546
+Decay multiplies the old state by alpha before each write.
+
+72
+00:04:53,866 --> 00:04:58,197
+It is fixed per head in RetNet, chosen by the input in Mamba-2,
+
+73
+00:04:58,197 --> 00:05:00,328
+and set per key channel in GLA.
+
+74
+00:05:01,233 --> 00:05:03,687
+Left over: decay fades everything a little.
+
+75
+00:05:04,007 --> 00:05:07,288
+It cannot remove one wrong association and keep the rest.
+
+76
+00:05:07,608 --> 00:05:11,344
+And a scalar decay also fades memories that were still correct.
+
+77
+00:05:11,664 --> 00:05:14,448
+Next: correcting the state, with the delta rule.
