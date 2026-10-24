@@ -1,0 +1,263 @@
+1
+00:00:00,000 --> 00:00:01,468
+Chapter six: limits.
+
+2
+00:00:01,788 --> 00:00:03,229
+Learning is not recall.
+
+3
+00:00:03,549 --> 00:00:07,250
+Every mechanism in this series improves how the table is written.
+
+4
+00:00:07,570 --> 00:00:12,986
+But a fixed state still holds only about d k exact pairs, per d v by d k state.
+
+5
+00:00:13,306 --> 00:00:14,905
+A KV cache keeps all N.
+
+6
+00:00:15,200 --> 00:00:16,407
+Remember chapter one.
+
+7
+00:00:16,727 --> 00:00:21,607
+A space with d k dimensions has room for only d k orthogonal keys.
+
+8
+00:00:21,927 --> 00:00:26,179
+Every later mechanism kept the table cleaner, but none of them made it larger.
+
+9
+00:00:26,467 --> 00:00:28,741
+Here is a small simulation of that limit.
+
+10
+00:00:29,061 --> 00:00:30,540
+The state is 8 by 8.
+
+11
+00:00:30,860 --> 00:00:34,685
+We store random key value pairs, then read every stored key back.
+
+12
+00:00:35,005 --> 00:00:38,714
+With plain additive writes, the reads blur as soon as keys overlap.
+
+13
+00:00:39,034 --> 00:00:42,659
+With the best possible write, an exact least squares solve,
+
+14
+00:00:42,659 --> 00:00:44,747
+every read is exact up to 8 pairs.
+
+15
+00:00:45,067 --> 00:00:48,311
+Past 8 pairs, both errors climb, and they keep climbing.
+
+16
+00:00:50,100 --> 00:00:52,383
+This is the limit no write rule escapes.
+
+17
+00:00:52,703 --> 00:00:56,956
+A better write keeps the reads clean up to d k pairs, but past d k,
+
+18
+00:00:56,956 --> 00:00:59,051
+every fixed state starts to blur.
+
+19
+00:00:59,367 --> 00:01:01,607
+The reported numbers show the same gap.
+
+20
+00:01:01,927 --> 00:01:07,847
+In one comparison of 1 billion parameter models on in context recall tasks,
+
+21
+00:01:07,847 --> 00:01:11,557
+the best fixed state layer, Mesa, scores 41.79.
+
+22
+00:01:11,877 --> 00:01:14,689
+A Transformer scores 52.27.
+
+23
+00:01:15,000 --> 00:01:19,373
+Going from plain additive writes to an exact solve gains about 4 points.
+
+24
+00:01:19,693 --> 00:01:22,360
+Keeping the full cache gains 10.5 more.
+
+25
+00:01:25,067 --> 00:01:29,198
+Log linear attention, from 2025, is a middle ground.
+
+26
+00:01:29,518 --> 00:01:33,939
+Instead of one state, it keeps one state per power of two bucket of the past,
+
+27
+00:01:33,939 --> 00:01:35,087
+like a Fenwick tree.
+
+28
+00:01:35,407 --> 00:01:39,754
+The output adds up the read of each bucket's state, with a weight lambda for each.
+
+29
+00:01:40,867 --> 00:01:45,539
+Recent tokens get small buckets, and far tokens are merged into big ones.
+
+30
+00:01:45,859 --> 00:01:47,940
+Watch the buckets as tokens arrive.
+
+31
+00:01:48,260 --> 00:01:55,073
+At token 13, the buckets are tokens 0 to 7, 8 to 11, and 12, plus the token itself.
+
+32
+00:01:55,393 --> 00:01:56,575
+That is 4 states.
+
+33
+00:01:57,883 --> 00:02:00,896
+Each bucket is itself a linear attention state,
+
+34
+00:02:00,896 --> 00:02:03,524
+the sum of v k transpose over its tokens.
+
+35
+00:02:03,844 --> 00:02:08,941
+When a new token arrives, two buckets of the same size merge into one twice as big,
+
+36
+00:02:08,941 --> 00:02:10,415
+like carrying in binary.
+
+37
+00:02:10,717 --> 00:02:18,779
+After about a million tokens, two to the 20, a KV cache holds 1,048,576 records.
+
+38
+00:02:19,099 --> 00:02:22,255
+Log linear attention holds at most 22 states.
+
+39
+00:02:22,575 --> 00:02:24,191
+Linear attention holds 1.
+
+40
+00:02:25,483 --> 00:02:28,741
+So the number of states grows with the logarithm of the length.
+
+41
+00:02:29,061 --> 00:02:31,980
+Double the context, and you add just one more state.
+
+42
+00:02:32,283 --> 00:02:36,955
+The reported gains in perplexity are small, and the gap to Transformers remains.
+
+43
+00:02:38,650 --> 00:02:43,093
+So in practice, models keep a few full attention layers for exact recall,
+
+44
+00:02:43,093 --> 00:02:45,344
+and make the rest fixed state layers.
+
+45
+00:02:45,664 --> 00:02:48,833
+That is the hybrid design, in Part 5 of the essay.
+
+46
+00:02:49,150 --> 00:02:52,273
+Tasks that need one exact detail from far back,
+
+47
+00:02:52,273 --> 00:02:55,263
+like a number to repeat or a passage to copy,
+
+48
+00:02:55,263 --> 00:02:57,854
+still need attention over real records.
+
+49
+00:02:58,174 --> 00:03:00,343
+The many cheap state layers carry the rest.
+
+50
+00:03:02,050 --> 00:03:03,816
+Let's put the whole series together.
+
+51
+00:03:04,136 --> 00:03:07,829
+Chapter one: linear attention turned the cache into one matrix,
+
+52
+00:03:07,829 --> 00:03:10,878
+written with outer products and read with the query.
+
+53
+00:03:11,183 --> 00:03:14,627
+Chapter two: decay let the state forget, at a fixed rate,
+
+54
+00:03:14,627 --> 00:03:18,372
+at a rate chosen by the input, or at one rate per key channel.
+
+55
+00:03:18,683 --> 00:03:23,085
+Chapter three: the delta rule read the old value and wrote only the error,
+
+56
+00:03:23,085 --> 00:03:25,286
+so a single entry could be corrected.
+
+57
+00:03:25,583 --> 00:03:31,301
+Chapter four: all of these became one rule, S t equals S t minus 1 times A t,
+
+58
+00:03:31,301 --> 00:03:34,493
+plus W t, differing only in the transition.
+
+59
+00:03:35,583 --> 00:03:38,767
+Chapter five: each write became one gradient step,
+
+60
+00:03:38,767 --> 00:03:43,669
+which opened the door to richer models, better optimizers, and better losses.
+
+61
+00:03:44,983 --> 00:03:45,781
+To recap.
+
+62
+00:03:46,101 --> 00:03:49,022
+A fixed state can be written better and better,
+
+63
+00:03:49,022 --> 00:03:53,187
+but it holds only about d k exact pairs, while a cache holds all N.
+
+64
+00:03:54,083 --> 00:03:57,283
+Left over: exact recall still needs real records.
+
+65
+00:03:57,603 --> 00:04:02,229
+That is why hybrids mix a few full attention layers with many fixed state layers.
+
+66
+00:04:02,549 --> 00:04:03,705
+Thanks for watching.
