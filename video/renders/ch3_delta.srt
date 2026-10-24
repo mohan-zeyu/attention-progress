@@ -1,0 +1,399 @@
+1
+00:00:00,000 --> 00:00:02,590
+Chapter three: correcting, with the delta rule.
+
+2
+00:00:02,910 --> 00:00:04,258
+Decay can only fade.
+
+3
+00:00:04,578 --> 00:00:09,079
+If the state holds one wrong association, decay cannot remove just that one.
+
+4
+00:00:09,399 --> 00:00:12,855
+It fades everything, including memories that were still correct.
+
+5
+00:00:13,175 --> 00:00:16,759
+The delta rule fixes this by checking the table before it writes.
+
+6
+00:00:18,067 --> 00:00:25,125
+DeltaNet, from 2021, with a parallel training method in 2024, works in three steps.
+
+7
+00:00:25,445 --> 00:00:25,864
+First,
+
+8
+00:00:25,864 --> 00:00:31,443
+read what the state currently returns for the new key: v hat equals S t minus 1,
+
+9
+00:00:31,443 --> 00:00:32,140
+times k t.
+
+10
+00:00:32,460 --> 00:00:34,476
+Second, compare it with the new value.
+
+11
+00:00:34,796 --> 00:00:36,762
+The error is v t minus v hat.
+
+12
+00:00:37,082 --> 00:00:41,513
+Third, write only the error, scaled by a strength, beta, between zero and one.
+
+13
+00:00:41,800 --> 00:00:47,812
+Rearranged, the same rule reads: the old state times I minus beta k k transpose,
+
+14
+00:00:47,812 --> 00:00:49,615
+plus beta v k transpose.
+
+15
+00:00:49,935 --> 00:00:54,645
+If the state already holds the right value, the error is zero, and nothing changes.
+
+16
+00:00:54,965 --> 00:00:57,987
+If it holds a stale value, that value is replaced.
+
+17
+00:01:00,100 --> 00:01:01,420
+Take a toy example.
+
+18
+00:01:01,740 --> 00:01:04,560
+The state maps two order numbers to a shipping day,
+
+19
+00:01:04,560 --> 00:01:06,385
+with one key direction per order.
+
+20
+00:01:06,705 --> 00:01:10,816
+Order 7314 ships on day 2, a Tuesday.
+
+21
+00:01:11,136 --> 00:01:13,965
+Order 2208 ships on day 4.
+
+22
+00:01:14,285 --> 00:01:20,723
+Now a new fact arrives: order 7314 now ships on day 5, a Friday.
+
+23
+00:01:21,033 --> 00:01:24,853
+Linear attention just adds 5 on top of 2, and returns 7.
+
+24
+00:01:25,173 --> 00:01:27,626
+That is a mix of the old answer and the new one.
+
+25
+00:01:27,933 --> 00:01:30,849
+DeltaNet reads 2, and finds an error of 3.
+
+26
+00:01:31,169 --> 00:01:36,296
+With beta equal to 1, it writes 3, and now the state returns exactly 5.
+
+27
+00:01:36,616 --> 00:01:40,604
+With beta equal to one half, it moves halfway, to 3.5.
+
+28
+00:01:40,924 --> 00:01:44,233
+Either way, order 2208 stays at 4.
+
+29
+00:01:44,533 --> 00:01:47,655
+But the edit is clean only along the key that was written.
+
+30
+00:01:47,975 --> 00:01:51,813
+A query halfway between the two order keys also sees the change.
+
+31
+00:01:52,133 --> 00:01:56,577
+It reads 4.24 before the update, and 6.36 after.
+
+32
+00:01:58,267 --> 00:02:02,330
+Now look at the transition itself, I minus beta k k transpose.
+
+33
+00:02:02,650 --> 00:02:05,307
+It leaves every direction except k untouched.
+
+34
+00:02:05,627 --> 00:02:08,635
+Along k, it multiplies by one minus beta.
+
+35
+00:02:08,955 --> 00:02:12,907
+So its eigenvalues are all ones, plus a single one minus beta.
+
+36
+00:02:13,800 --> 00:02:15,723
+Watch a vector as beta grows.
+
+37
+00:02:16,043 --> 00:02:20,068
+With beta between zero and one, the old entry along k is shrunk.
+
+38
+00:02:20,388 --> 00:02:23,197
+With beta equal to one, it is erased completely,
+
+39
+00:02:23,197 --> 00:02:25,304
+and the write puts in the new value.
+
+40
+00:02:25,624 --> 00:02:27,947
+With beta equal to two, it is flipped.
+
+41
+00:02:28,267 --> 00:02:31,403
+That is a reflection, and it will matter for state tracking.
+
+42
+00:02:33,100 --> 00:02:39,201
+Gated DeltaNet, from 2024, combines both tools: decay first, then correct.
+
+43
+00:02:39,521 --> 00:02:42,610
+The decay, alpha, can clear a whole head at once,
+
+44
+00:02:42,610 --> 00:02:45,511
+and the delta step edits a single association.
+
+45
+00:02:45,831 --> 00:02:49,728
+Mamba-2 had only the first tool, and DeltaNet only the second.
+
+46
+00:02:50,633 --> 00:02:51,666
+The order matters.
+
+47
+00:02:51,986 --> 00:02:55,594
+The state fades first, so the error is read from the faded state.
+
+48
+00:02:55,914 --> 00:03:02,436
+In the toy, with alpha 0.8 and beta 0.5, the state fades from 2 and 4,
+
+49
+00:03:02,436 --> 00:03:03,834
+to 1.6 and 3.2.
+
+50
+00:03:04,154 --> 00:03:08,963
+The read is 1.6, the error is 3.4, and the write adds 1.7.
+
+51
+00:03:09,283 --> 00:03:11,627
+The result is 3.3 and 3.2.
+
+52
+00:03:11,947 --> 00:03:19,598
+The price: a scalar decay also fades the unrelated order 2208, from 4 down to 3.2.
+
+53
+00:03:20,300 --> 00:03:23,543
+KDA, Kimi Delta Attention, from 2025,
+
+54
+00:03:23,543 --> 00:03:28,539
+puts GLA's per-channel decay inside the gated delta rule.
+
+55
+00:03:28,859 --> 00:03:35,507
+In the toy, with alpha equal to 0.8 for the first channel and 1 for the second,
+
+56
+00:03:35,507 --> 00:03:38,200
+only order 7314's channel fades.
+
+57
+00:03:38,520 --> 00:03:40,576
+The result is 3.3 and 4.
+
+58
+00:03:40,896 --> 00:03:43,319
+Order 2208 is kept.
+
+59
+00:03:44,233 --> 00:03:49,923
+KDA's speed trick is that both low rank vectors in its transition are tied to k t.
+
+60
+00:03:50,243 --> 00:03:56,905
+That is reported to make its kernels about two times faster than a general diagonal plus low rank transition.
+
+61
+00:03:58,600 --> 00:04:05,915
+RWKV-7 and Comba, from 2025, write the same idea as a sum instead of a product.
+
+62
+00:04:06,235 --> 00:04:09,865
+The decay and the erase are both applied to the old state,
+
+63
+00:04:09,865 --> 00:04:12,180
+so the erase reads the unfaded value.
+
+64
+00:04:12,500 --> 00:04:18,541
+In the toy, the erase reads 2 instead of 1.6, and removes 1 instead of 0.8.
+
+65
+00:04:18,861 --> 00:04:23,241
+The result is 3.1 and 3.2, instead of 3.3 and 3.2.
+
+66
+00:04:23,533 --> 00:04:29,399
+RWKV-7 also makes the decay and the write strength vectors over key channels.
+
+67
+00:04:29,719 --> 00:04:32,504
+Its removal key differs from its write key,
+
+68
+00:04:32,504 --> 00:04:36,455
+so its transition is a general diagonal plus low rank matrix.
+
+69
+00:04:36,775 --> 00:04:39,534
+That costs about twice KDA's work per chunk.
+
+70
+00:04:41,433 --> 00:04:45,090
+Some tasks need the state to track something, not just remember it.
+
+71
+00:04:45,410 --> 00:04:49,875
+The simplest is parity: is the number of 1 bits so far even, or odd?
+
+72
+00:04:50,195 --> 00:04:58,094
+A linear RNN whose transition has only positive eigenvalues provably cannot solve parity in finite precision.
+
+73
+00:04:58,414 --> 00:05:00,664
+The state can only shrink or stay the same.
+
+74
+00:05:00,984 --> 00:05:02,090
+It can never flip.
+
+75
+00:05:02,400 --> 00:05:06,814
+The fix is to let beta go up to 2, for example two times a sigmoid.
+
+76
+00:05:07,134 --> 00:05:10,644
+Then the eigenvalue, one minus beta, reaches minus 1.
+
+77
+00:05:10,964 --> 00:05:12,195
+That is a reflection.
+
+78
+00:05:12,515 --> 00:05:14,276
+On the bits 1 0 1 1 0 1,
+
+79
+00:05:14,276 --> 00:05:19,338
+a one number state that flips its sign at every 1 bit ends at plus 1,
+
+80
+00:05:19,338 --> 00:05:21,686
+correctly showing an even count.
+
+81
+00:05:22,600 --> 00:05:28,270
+DeltaProduct, from 2025, goes further and takes several delta steps per token.
+
+82
+00:05:28,590 --> 00:05:30,580
+Two reflections make a rotation.
+
+83
+00:05:30,900 --> 00:05:35,227
+For example, two mirrors 30 degrees apart give a 60 degree rotation,
+
+84
+00:05:35,227 --> 00:05:37,009
+and the state does not grow.
+
+85
+00:05:37,300 --> 00:05:40,015
+Note that this adds expressivity, not capacity.
+
+86
+00:05:40,335 --> 00:05:42,901
+The state can track more kinds of structure,
+
+87
+00:05:42,901 --> 00:05:45,292
+but it still holds about d k exact pairs.
+
+88
+00:05:47,000 --> 00:05:48,665
+One more detail: training.
+
+89
+00:05:48,985 --> 00:05:53,338
+For a decay alone, a chunk only needs cumulative products of decays.
+
+90
+00:05:53,658 --> 00:05:56,392
+But the delta rule's transitions do not commute.
+
+91
+00:05:56,712 --> 00:06:01,474
+So the product of a chunk's transitions is rewritten in a compact form,
+
+92
+00:06:01,474 --> 00:06:05,028
+called the WY or UT form, before the matrix products.
+
+93
+00:06:06,333 --> 00:06:07,131
+To recap.
+
+94
+00:06:07,451 --> 00:06:10,770
+The delta rule reads what the state returns for the new key,
+
+95
+00:06:10,770 --> 00:06:12,208
+and writes only the error.
+
+96
+00:06:12,528 --> 00:06:17,449
+Gated DeltaNet puts a decay in front, and KDA makes that decay per channel.
+
+97
+00:06:17,769 --> 00:06:21,159
+Letting beta reach 2 adds reflections, for state tracking.
+
+98
+00:06:22,067 --> 00:06:27,738
+Left over: the delta rule keeps the table clean, but the table is still d v by d k.
+
+99
+00:06:28,058 --> 00:06:29,695
+A better write cannot add room.
+
+100
+00:06:30,015 --> 00:06:32,368
+Next, all of these rules on one axis.
